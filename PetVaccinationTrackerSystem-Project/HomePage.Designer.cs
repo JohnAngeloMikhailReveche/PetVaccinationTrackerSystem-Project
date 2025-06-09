@@ -292,6 +292,7 @@
             Controls.Add(panel2);
             Controls.Add(panel1);
             Controls.Add(pictureBox1);
+            MaximizeBox = false;
             Name = "HomePage";
             Text = "HomePage";
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
