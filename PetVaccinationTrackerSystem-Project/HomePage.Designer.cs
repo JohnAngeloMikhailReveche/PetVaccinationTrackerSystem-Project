@@ -30,7 +30,6 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(HomePage));
             pictureBox1 = new PictureBox();
-            panel1 = new Panel();
             panel2 = new Panel();
             pictureBox2 = new PictureBox();
             panel3 = new Panel();
@@ -48,6 +47,10 @@
             hopeRoundButton1 = new ReaLTaiizor.Controls.HopeRoundButton();
             hopeRoundButton2 = new ReaLTaiizor.Controls.HopeRoundButton();
             hopeRoundButton3 = new ReaLTaiizor.Controls.HopeRoundButton();
+            panel1 = new Panel();
+            hopeRoundButton5 = new ReaLTaiizor.Controls.HopeRoundButton();
+            hopeRoundButton4 = new ReaLTaiizor.Controls.HopeRoundButton();
+            pictureBoxUser = new PictureBox();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox2).BeginInit();
@@ -55,24 +58,18 @@
             ((System.ComponentModel.ISupportInitialize)pictureBox3).BeginInit();
             panel4.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox4).BeginInit();
+            panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)pictureBoxUser).BeginInit();
             SuspendLayout();
             // 
             // pictureBox1
             // 
             pictureBox1.Image = (Image)resources.GetObject("pictureBox1.Image");
-            pictureBox1.Location = new Point(200, 0);
+            pictureBox1.Location = new Point(201, 0);
             pictureBox1.Name = "pictureBox1";
             pictureBox1.Size = new Size(782, 330);
             pictureBox1.TabIndex = 1;
             pictureBox1.TabStop = false;
-            // 
-            // panel1
-            // 
-            panel1.Dock = DockStyle.Left;
-            panel1.Location = new Point(0, 0);
-            panel1.Name = "panel1";
-            panel1.Size = new Size(200, 593);
-            panel1.TabIndex = 2;
             // 
             // panel2
             // 
@@ -86,6 +83,7 @@
             // 
             // pictureBox2
             // 
+            pictureBox2.BackColor = Color.FromArgb(249, 249, 249);
             pictureBox2.Image = (Image)resources.GetObject("pictureBox2.Image");
             pictureBox2.Location = new Point(0, 0);
             pictureBox2.Name = "pictureBox2";
@@ -270,6 +268,68 @@
             hopeRoundButton3.TextColor = Color.White;
             hopeRoundButton3.WarningColor = Color.FromArgb(230, 162, 60);
             // 
+            // panel1
+            // 
+            panel1.BackColor = SystemColors.ButtonFace;
+            panel1.Controls.Add(hopeRoundButton5);
+            panel1.Controls.Add(hopeRoundButton4);
+            panel1.Controls.Add(pictureBoxUser);
+            panel1.Dock = DockStyle.Left;
+            panel1.Location = new Point(0, 0);
+            panel1.Name = "panel1";
+            panel1.Size = new Size(201, 593);
+            panel1.TabIndex = 2;
+            // 
+            // hopeRoundButton5
+            // 
+            hopeRoundButton5.BorderColor = Color.FromArgb(220, 223, 230);
+            hopeRoundButton5.ButtonType = ReaLTaiizor.Util.HopeButtonType.Primary;
+            hopeRoundButton5.DangerColor = Color.FromArgb(245, 108, 108);
+            hopeRoundButton5.DefaultColor = Color.FromArgb(255, 255, 255);
+            hopeRoundButton5.Font = new Font("Segoe UI Semibold", 10.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            hopeRoundButton5.HoverTextColor = Color.FromArgb(48, 49, 51);
+            hopeRoundButton5.InfoColor = Color.FromArgb(144, 147, 153);
+            hopeRoundButton5.Location = new Point(30, 351);
+            hopeRoundButton5.Name = "hopeRoundButton5";
+            hopeRoundButton5.PrimaryColor = Color.FromArgb(168, 130, 95);
+            hopeRoundButton5.Size = new Size(145, 35);
+            hopeRoundButton5.SuccessColor = Color.FromArgb(103, 194, 58);
+            hopeRoundButton5.TabIndex = 16;
+            hopeRoundButton5.Text = "Settings";
+            hopeRoundButton5.TextColor = Color.White;
+            hopeRoundButton5.WarningColor = Color.FromArgb(230, 162, 60);
+            // 
+            // hopeRoundButton4
+            // 
+            hopeRoundButton4.BackColor = Color.White;
+            hopeRoundButton4.BorderColor = Color.FromArgb(220, 223, 230);
+            hopeRoundButton4.ButtonType = ReaLTaiizor.Util.HopeButtonType.Primary;
+            hopeRoundButton4.DangerColor = Color.FromArgb(245, 108, 108);
+            hopeRoundButton4.DefaultColor = Color.FromArgb(255, 255, 255);
+            hopeRoundButton4.Font = new Font("Segoe UI Semibold", 10.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            hopeRoundButton4.HoverTextColor = Color.FromArgb(48, 49, 51);
+            hopeRoundButton4.InfoColor = Color.FromArgb(144, 147, 153);
+            hopeRoundButton4.Location = new Point(30, 395);
+            hopeRoundButton4.Name = "hopeRoundButton4";
+            hopeRoundButton4.PrimaryColor = Color.FromArgb(89, 85, 84);
+            hopeRoundButton4.Size = new Size(145, 35);
+            hopeRoundButton4.SuccessColor = Color.FromArgb(103, 194, 58);
+            hopeRoundButton4.TabIndex = 16;
+            hopeRoundButton4.Text = "Log Out";
+            hopeRoundButton4.TextColor = Color.White;
+            hopeRoundButton4.WarningColor = Color.FromArgb(230, 162, 60);
+            // 
+            // pictureBoxUser
+            // 
+            pictureBoxUser.Image = (Image)resources.GetObject("pictureBoxUser.Image");
+            pictureBoxUser.Location = new Point(26, 178);
+            pictureBoxUser.Name = "pictureBoxUser";
+            pictureBoxUser.Size = new Size(150, 150);
+            pictureBoxUser.SizeMode = PictureBoxSizeMode.Zoom;
+            pictureBoxUser.TabIndex = 0;
+            pictureBoxUser.TabStop = false;
+            pictureBoxUser.Click += pictureBox5_Click;
+            // 
             // HomePage
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
@@ -292,6 +352,7 @@
             Controls.Add(panel2);
             Controls.Add(panel1);
             Controls.Add(pictureBox1);
+            FormBorderStyle = FormBorderStyle.FixedSingle;
             MaximizeBox = false;
             Name = "HomePage";
             Text = "HomePage";
@@ -302,6 +363,8 @@
             ((System.ComponentModel.ISupportInitialize)pictureBox3).EndInit();
             panel4.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)pictureBox4).EndInit();
+            panel1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)pictureBoxUser).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -309,7 +372,6 @@
         #endregion
 
         private PictureBox pictureBox1;
-        private Panel panel1;
         private Panel panel2;
         private Panel panel3;
         private Panel panel4;
@@ -327,5 +389,9 @@
         private ReaLTaiizor.Controls.HopeRoundButton hopeRoundButton1;
         private ReaLTaiizor.Controls.HopeRoundButton hopeRoundButton2;
         private ReaLTaiizor.Controls.HopeRoundButton hopeRoundButton3;
+        private Panel panel1;
+        private ReaLTaiizor.Controls.HopeRoundButton hopeRoundButton4;
+        private PictureBox pictureBoxUser;
+        private ReaLTaiizor.Controls.HopeRoundButton hopeRoundButton5;
     }
 }
