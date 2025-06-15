@@ -6,7 +6,9 @@
     <RootNamespace>PetVaccinationTrackerSystem_Project</RootNamespace>
     <Nullable>enable</Nullable>
     <UseWindowsForms>true</UseWindowsForms>
-    <ImplicitUsings>enable</ImplicitUsings>
+	  <ApplicationHighDpiMode>SystemAware</ApplicationHighDpiMode>
+	  <ForceDesignerDpiUnaware>true</ForceDesignerDpiUnaware>
+	  <ImplicitUsings>enable</ImplicitUsings>
   </PropertyGroup>
 
   <ItemGroup>
