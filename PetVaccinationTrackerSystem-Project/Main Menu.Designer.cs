@@ -48,7 +48,7 @@
             // 
             // sidePanelNav
             // 
-            sidePanelNav.BackColor = SystemColors.ButtonFace;
+            sidePanelNav.BackColor = Color.FromArgb(243, 243, 243);
             sidePanelNav.Controls.Add(sidePanelHighlight);
             sidePanelNav.Controls.Add(buttonSettings);
             sidePanelNav.Controls.Add(buttonAlerts);
@@ -77,13 +77,13 @@
             buttonSettings.Dock = DockStyle.Top;
             buttonSettings.FlatAppearance.BorderSize = 0;
             buttonSettings.FlatStyle = FlatStyle.Flat;
-            buttonSettings.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            buttonSettings.Font = new Font("Segoe UI", 10.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
             buttonSettings.ForeColor = Color.FromArgb(89, 85, 84);
             buttonSettings.Location = new Point(0, 420);
             buttonSettings.Name = "buttonSettings";
             buttonSettings.Size = new Size(202, 50);
             buttonSettings.TabIndex = 7;
-            buttonSettings.Text = "        Settings";
+            buttonSettings.Text = "       Settings";
             buttonSettings.TextAlign = ContentAlignment.MiddleLeft;
             buttonSettings.UseVisualStyleBackColor = true;
             buttonSettings.Click += buttonSettings_Click;
@@ -93,13 +93,13 @@
             buttonAlerts.Dock = DockStyle.Top;
             buttonAlerts.FlatAppearance.BorderSize = 0;
             buttonAlerts.FlatStyle = FlatStyle.Flat;
-            buttonAlerts.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            buttonAlerts.Font = new Font("Segoe UI", 10.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
             buttonAlerts.ForeColor = Color.FromArgb(89, 85, 84);
             buttonAlerts.Location = new Point(0, 370);
             buttonAlerts.Name = "buttonAlerts";
             buttonAlerts.Size = new Size(202, 50);
             buttonAlerts.TabIndex = 6;
-            buttonAlerts.Text = "        Alerts";
+            buttonAlerts.Text = "       Alerts";
             buttonAlerts.TextAlign = ContentAlignment.MiddleLeft;
             buttonAlerts.UseVisualStyleBackColor = true;
             buttonAlerts.Click += buttonAlerts_Click;
@@ -110,11 +110,11 @@
             buttonLogOut.ButtonType = ReaLTaiizor.Util.HopeButtonType.Primary;
             buttonLogOut.DangerColor = Color.FromArgb(245, 108, 108);
             buttonLogOut.DefaultColor = Color.FromArgb(255, 255, 255);
-            buttonLogOut.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            buttonLogOut.Font = new Font("Segoe UI", 10.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
             buttonLogOut.ForeColor = Color.Black;
             buttonLogOut.HoverTextColor = Color.FromArgb(48, 49, 51);
             buttonLogOut.InfoColor = Color.FromArgb(144, 147, 153);
-            buttonLogOut.Location = new Point(30, 535);
+            buttonLogOut.Location = new Point(30, 530);
             buttonLogOut.Name = "buttonLogOut";
             buttonLogOut.PrimaryColor = Color.FromArgb(89, 85, 84);
             buttonLogOut.Size = new Size(140, 40);
@@ -129,13 +129,13 @@
             buttonVaccinationReports.Dock = DockStyle.Top;
             buttonVaccinationReports.FlatAppearance.BorderSize = 0;
             buttonVaccinationReports.FlatStyle = FlatStyle.Flat;
-            buttonVaccinationReports.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            buttonVaccinationReports.Font = new Font("Segoe UI", 10.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
             buttonVaccinationReports.ForeColor = Color.FromArgb(89, 85, 84);
             buttonVaccinationReports.Location = new Point(0, 320);
             buttonVaccinationReports.Name = "buttonVaccinationReports";
             buttonVaccinationReports.Size = new Size(202, 50);
             buttonVaccinationReports.TabIndex = 4;
-            buttonVaccinationReports.Text = "        Vaccine Reports";
+            buttonVaccinationReports.Text = "       Vaccine Reports";
             buttonVaccinationReports.TextAlign = ContentAlignment.MiddleLeft;
             buttonVaccinationReports.UseVisualStyleBackColor = true;
             buttonVaccinationReports.Click += buttonVaccinationReports_Click;
@@ -145,13 +145,13 @@
             buttonVaccinationRecords.Dock = DockStyle.Top;
             buttonVaccinationRecords.FlatAppearance.BorderSize = 0;
             buttonVaccinationRecords.FlatStyle = FlatStyle.Flat;
-            buttonVaccinationRecords.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            buttonVaccinationRecords.Font = new Font("Segoe UI", 10.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
             buttonVaccinationRecords.ForeColor = Color.FromArgb(89, 85, 84);
             buttonVaccinationRecords.Location = new Point(0, 270);
             buttonVaccinationRecords.Name = "buttonVaccinationRecords";
             buttonVaccinationRecords.Size = new Size(202, 50);
             buttonVaccinationRecords.TabIndex = 3;
-            buttonVaccinationRecords.Text = "        Vaccine Records";
+            buttonVaccinationRecords.Text = "       Vaccine Records";
             buttonVaccinationRecords.TextAlign = ContentAlignment.MiddleLeft;
             buttonVaccinationRecords.UseVisualStyleBackColor = true;
             buttonVaccinationRecords.Click += buttonVaccinationRecords_Click;
@@ -161,13 +161,13 @@
             buttonPetProfile.Dock = DockStyle.Top;
             buttonPetProfile.FlatAppearance.BorderSize = 0;
             buttonPetProfile.FlatStyle = FlatStyle.Flat;
-            buttonPetProfile.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            buttonPetProfile.Font = new Font("Segoe UI", 10.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
             buttonPetProfile.ForeColor = Color.FromArgb(89, 85, 84);
             buttonPetProfile.Location = new Point(0, 220);
             buttonPetProfile.Name = "buttonPetProfile";
             buttonPetProfile.Size = new Size(202, 50);
             buttonPetProfile.TabIndex = 2;
-            buttonPetProfile.Text = "        Pet Profile";
+            buttonPetProfile.Text = "       Pet Profile";
             buttonPetProfile.TextAlign = ContentAlignment.MiddleLeft;
             buttonPetProfile.UseVisualStyleBackColor = true;
             buttonPetProfile.Click += buttonPetProfile_Click;
@@ -177,13 +177,13 @@
             buttonHome.Dock = DockStyle.Top;
             buttonHome.FlatAppearance.BorderSize = 0;
             buttonHome.FlatStyle = FlatStyle.Flat;
-            buttonHome.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            buttonHome.Font = new Font("Segoe UI", 10.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
             buttonHome.ForeColor = Color.FromArgb(89, 85, 84);
             buttonHome.Location = new Point(0, 170);
             buttonHome.Name = "buttonHome";
             buttonHome.Size = new Size(202, 50);
             buttonHome.TabIndex = 1;
-            buttonHome.Text = "        Home";
+            buttonHome.Text = "       Home";
             buttonHome.TextAlign = ContentAlignment.MiddleLeft;
             buttonHome.UseVisualStyleBackColor = true;
             buttonHome.Click += buttonHome_Click;
