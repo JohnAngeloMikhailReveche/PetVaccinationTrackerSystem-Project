@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using VaccinationForm;
 
 namespace PetVaccinationTrackerSystem_Project
 {
@@ -15,7 +16,7 @@ namespace PetVaccinationTrackerSystem_Project
         public mainMenu()
         {
             InitializeComponent();
-            loadform(new Home());
+            loadform(new HomePage());
         }
         public void loadform(object Form)
         {
@@ -31,7 +32,7 @@ namespace PetVaccinationTrackerSystem_Project
 
         private void buttonHome_Click(object sender, EventArgs e)
         {
-            loadform(new Home());
+            loadform(new HomePage());
             sidePanelHighlight.Height = buttonHome.Height;
             sidePanelHighlight.Top = buttonHome.Top;
         }
@@ -44,6 +45,7 @@ namespace PetVaccinationTrackerSystem_Project
 
         private void buttonVaccinationRecords_Click(object sender, EventArgs e)
         {
+            loadform(new VaccinationForm.VaccineRecordsPage());
             sidePanelHighlight.Height = buttonVaccinationRecords.Height;
             sidePanelHighlight.Top = buttonVaccinationRecords.Top;
         }
@@ -65,5 +67,16 @@ namespace PetVaccinationTrackerSystem_Project
             sidePanelHighlight.Height = buttonSettings.Height;
             sidePanelHighlight.Top = buttonSettings.Top;
         }
+
+        private void mainMenu_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void mainMenu_Load_1(object sender, EventArgs e)
+        {
+
+        }
+
     }
 }

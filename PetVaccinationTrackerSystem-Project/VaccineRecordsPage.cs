@@ -2,9 +2,9 @@ using System.Drawing.Drawing2D;
 
 namespace VaccinationForm
 {
-    public partial class VaccinationForm : Form
+    public partial class VaccineRecordsPage : Form
     {
-        public VaccinationForm()
+        public VaccineRecordsPage()
         {
             InitializeComponent();
         }
@@ -111,8 +111,9 @@ namespace VaccinationForm
         }
 
         private void hopeRoundButton3_Click(object sender, EventArgs e)
-        {
+        { 
 
         }
+     
     }
 }

@@ -1,6 +1,6 @@
 ﻿namespace VaccinationForm
 {
-    partial class VaccinationForm
+    partial class VaccineRecordsPage
     {
         /// <summary>
         ///  Required designer variable.
@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(VaccineRecordsPage));
             pctBanner = new PictureBox();
             pctPetImage = new PictureBox();
             errFields = new ErrorProvider(components);
@@ -77,8 +78,9 @@
             // 
             // pctBanner
             // 
+            pctBanner.BackgroundImageLayout = ImageLayout.Zoom;
             pctBanner.Dock = DockStyle.Top;
-            pctBanner.Image = Properties.Resources.vaccination_records_banner;
+            pctBanner.Image = (Image)resources.GetObject("pctBanner.Image");
             pctBanner.Location = new Point(0, 0);
             pctBanner.Margin = new Padding(0);
             pctBanner.Name = "pctBanner";
@@ -115,7 +117,7 @@
             // dtpNextDue
             // 
             dtpNextDue.Format = DateTimePickerFormat.Short;
-            dtpNextDue.Location = new Point(130, 82);
+            dtpNextDue.Location = new Point(135, 82);
             dtpNextDue.Name = "dtpNextDue";
             dtpNextDue.Size = new Size(200, 23);
             dtpNextDue.TabIndex = 14;
@@ -280,9 +282,9 @@
             label6.ForeColor = Color.FromArgb(89, 85, 84);
             label6.Location = new Point(3, 135);
             label6.Name = "label6";
-            label6.Size = new Size(90, 15);
+            label6.Size = new Size(93, 15);
             label6.TabIndex = 20;
-            label6.Text = "Color/Markings";
+            label6.Text = "Color/Markings:";
             label6.Click += label6_Click;
             // 
             // label4
@@ -323,8 +325,8 @@
             pnlVaccineCard.Controls.Add(label8);
             pnlVaccineCard.Controls.Add(cmbVaccineName);
             pnlVaccineCard.Controls.Add(label7);
-            pnlVaccineCard.Location = new Point(10, 29);
-            pnlVaccineCard.Margin = new Padding(0, 5, 0, 0);
+            pnlVaccineCard.Location = new Point(30, 29);
+            pnlVaccineCard.Margin = new Padding(20, 5, 0, 0);
             pnlVaccineCard.Name = "pnlVaccineCard";
             pnlVaccineCard.Size = new Size(660, 191);
             pnlVaccineCard.TabIndex = 0;
@@ -378,14 +380,14 @@
             label9.ForeColor = Color.FromArgb(89, 85, 84);
             label9.Location = new Point(15, 85);
             label9.Name = "label9";
-            label9.Size = new Size(86, 15);
+            label9.Size = new Size(85, 15);
             label9.TabIndex = 13;
             label9.Text = "Next Due Date:";
             // 
             // dtpDateGiven
             // 
             dtpDateGiven.Format = DateTimePickerFormat.Short;
-            dtpDateGiven.Location = new Point(130, 47);
+            dtpDateGiven.Location = new Point(135, 47);
             dtpDateGiven.Name = "dtpDateGiven";
             dtpDateGiven.Size = new Size(200, 23);
             dtpDateGiven.TabIndex = 12;
@@ -406,7 +408,7 @@
             cmbVaccineName.DropDownStyle = ComboBoxStyle.DropDownList;
             cmbVaccineName.FormattingEnabled = true;
             cmbVaccineName.Items.AddRange(new object[] { "Rabies", "DHPP", "5-in-1", "6-in-1", "Canine Parvovirus", "Canine Distemper", "Canine Hepatitis", "Leptospirosis", "Bordetella", "Canine Influenza", "Lyme Disease", "Coronavirus (CCV)", "FVRCP", "FVR", "Calicivirus", "Panleukopenia", "FeLV (Feline Leukemia)", "FIV (Feline Immunodeficiency Virus)", "Chlamydia", "Myxomatosis (Rabbit)", "RHDV1 (Rabbit)", "RHDV2 (Rabbit)" });
-            cmbVaccineName.Location = new Point(130, 12);
+            cmbVaccineName.Location = new Point(135, 12);
             cmbVaccineName.Name = "cmbVaccineName";
             cmbVaccineName.Size = new Size(200, 23);
             cmbVaccineName.TabIndex = 10;
@@ -457,16 +459,16 @@
             hopeRoundButton1.ButtonType = ReaLTaiizor.Util.HopeButtonType.Primary;
             hopeRoundButton1.DangerColor = Color.FromArgb(245, 108, 108);
             hopeRoundButton1.DefaultColor = Color.FromArgb(255, 255, 255);
-            hopeRoundButton1.Font = new Font("Segoe UI Semibold", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            hopeRoundButton1.Font = new Font("Segoe UI", 10.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
             hopeRoundButton1.HoverTextColor = Color.FromArgb(48, 49, 51);
             hopeRoundButton1.InfoColor = Color.FromArgb(144, 147, 153);
             hopeRoundButton1.Location = new Point(13, 223);
             hopeRoundButton1.Name = "hopeRoundButton1";
             hopeRoundButton1.PrimaryColor = Color.FromArgb(89, 85, 84);
-            hopeRoundButton1.Size = new Size(140, 40);
+            hopeRoundButton1.Size = new Size(122, 40);
             hopeRoundButton1.SuccessColor = Color.FromArgb(103, 194, 58);
             hopeRoundButton1.TabIndex = 23;
-            hopeRoundButton1.Text = "+ Add Record";
+            hopeRoundButton1.Text = "+ Record";
             hopeRoundButton1.TextColor = Color.White;
             hopeRoundButton1.WarningColor = Color.FromArgb(230, 162, 60);
             // 
@@ -476,13 +478,13 @@
             hopeRoundButton2.ButtonType = ReaLTaiizor.Util.HopeButtonType.Primary;
             hopeRoundButton2.DangerColor = Color.FromArgb(245, 108, 108);
             hopeRoundButton2.DefaultColor = Color.FromArgb(255, 255, 255);
-            hopeRoundButton2.Font = new Font("Segoe UI", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            hopeRoundButton2.Font = new Font("Segoe UI", 10.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
             hopeRoundButton2.HoverTextColor = Color.FromArgb(48, 49, 51);
             hopeRoundButton2.InfoColor = Color.FromArgb(144, 147, 153);
-            hopeRoundButton2.Location = new Point(435, 548);
+            hopeRoundButton2.Location = new Point(489, 548);
             hopeRoundButton2.Name = "hopeRoundButton2";
             hopeRoundButton2.PrimaryColor = Color.FromArgb(168, 130, 95);
-            hopeRoundButton2.Size = new Size(140, 40);
+            hopeRoundButton2.Size = new Size(122, 40);
             hopeRoundButton2.SuccessColor = Color.FromArgb(103, 194, 58);
             hopeRoundButton2.TabIndex = 24;
             hopeRoundButton2.Text = "Clear";
@@ -495,13 +497,13 @@
             hopeRoundButton3.ButtonType = ReaLTaiizor.Util.HopeButtonType.Primary;
             hopeRoundButton3.DangerColor = Color.FromArgb(245, 108, 108);
             hopeRoundButton3.DefaultColor = Color.FromArgb(255, 255, 255);
-            hopeRoundButton3.Font = new Font("Segoe UI", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            hopeRoundButton3.Font = new Font("Segoe UI", 10.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
             hopeRoundButton3.HoverTextColor = Color.FromArgb(48, 49, 51);
             hopeRoundButton3.InfoColor = Color.FromArgb(144, 147, 153);
-            hopeRoundButton3.Location = new Point(605, 548);
+            hopeRoundButton3.Location = new Point(621, 548);
             hopeRoundButton3.Name = "hopeRoundButton3";
             hopeRoundButton3.PrimaryColor = Color.FromArgb(89, 85, 84);
-            hopeRoundButton3.Size = new Size(140, 40);
+            hopeRoundButton3.Size = new Size(122, 40);
             hopeRoundButton3.SuccessColor = Color.FromArgb(103, 194, 58);
             hopeRoundButton3.TabIndex = 25;
             hopeRoundButton3.Text = "Save";
@@ -511,14 +513,14 @@
             // 
             // panel1
             // 
-            panel1.BackColor = Color.FromArgb(89, 85, 84);
+            panel1.BackColor = Color.White;
             panel1.Dock = DockStyle.Top;
             panel1.Location = new Point(0, 93);
             panel1.Name = "panel1";
             panel1.Size = new Size(780, 2);
             panel1.TabIndex = 26;
             // 
-            // Form1
+            // VaccineRecordsPage
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
@@ -532,7 +534,7 @@
             Controls.Add(pctBanner);
             Controls.Add(pnlPetInfo);
             FormBorderStyle = FormBorderStyle.None;
-            Name = "Form1";
+            Name = "VaccineRecordsPage";
             Text = "Form1";
             Load += Form1_Load;
             ((System.ComponentModel.ISupportInitialize)pctBanner).EndInit();
