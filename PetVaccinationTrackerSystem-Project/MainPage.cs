@@ -16,23 +16,11 @@ namespace PetVaccinationTrackerSystem_Project
         public mainMenu()
         {
             InitializeComponent();
-            loadform(new HomePage());
         }
-        public void loadform(object Form)
-        {
-            if (this.mainPanel.Controls.Count > 0)
-                this.mainPanel.Controls.RemoveAt(0);
-            Form frm = Form as Form;
-            frm.TopLevel = false;
-            frm.Dock = DockStyle.Fill;
-            this.mainPanel.Controls.Add(frm);
-            this.mainPanel.Tag = frm;
-            frm.Show();
-        }
+     
 
         private void buttonHome_Click(object sender, EventArgs e)
         {
-            loadform(new HomePage());
             sidePanelHighlight.Height = buttonHome.Height;
             sidePanelHighlight.Top = buttonHome.Top;
         }
@@ -45,7 +33,6 @@ namespace PetVaccinationTrackerSystem_Project
 
         private void buttonVaccinationRecords_Click(object sender, EventArgs e)
         {
-            loadform(new VaccinationForm.VaccineRecordsPage());
             sidePanelHighlight.Height = buttonVaccinationRecords.Height;
             sidePanelHighlight.Top = buttonVaccinationRecords.Top;
         }
@@ -69,11 +56,6 @@ namespace PetVaccinationTrackerSystem_Project
         }
 
         private void mainMenu_Load(object sender, EventArgs e)
-        {
-
-        }
-
-        private void mainMenu_Load_1(object sender, EventArgs e)
         {
 
         }

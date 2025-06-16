@@ -40,7 +40,7 @@
             buttonHome = new Button();
             sidePanelPBPanel = new Panel();
             userPictureBox = new PictureBox();
-            mainPanel = new Panel();
+            home1 = new Home();
             sidePanelNav.SuspendLayout();
             sidePanelPBPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)userPictureBox).BeginInit();
@@ -62,7 +62,7 @@
             sidePanelNav.Location = new Point(0, 0);
             sidePanelNav.Margin = new Padding(3, 2, 3, 2);
             sidePanelNav.Name = "sidePanelNav";
-            sidePanelNav.Size = new Size(205, 601);
+            sidePanelNav.Size = new Size(200, 601);
             sidePanelNav.TabIndex = 0;
             // 
             // sidePanelHighlight
@@ -84,7 +84,7 @@
             buttonSettings.Location = new Point(0, 350);
             buttonSettings.Margin = new Padding(3, 2, 3, 2);
             buttonSettings.Name = "buttonSettings";
-            buttonSettings.Size = new Size(205, 40);
+            buttonSettings.Size = new Size(200, 40);
             buttonSettings.TabIndex = 7;
             buttonSettings.Text = "        Settings";
             buttonSettings.TextAlign = ContentAlignment.MiddleLeft;
@@ -101,7 +101,7 @@
             buttonAlerts.Location = new Point(0, 310);
             buttonAlerts.Margin = new Padding(3, 2, 3, 2);
             buttonAlerts.Name = "buttonAlerts";
-            buttonAlerts.Size = new Size(205, 40);
+            buttonAlerts.Size = new Size(200, 40);
             buttonAlerts.TabIndex = 6;
             buttonAlerts.Text = "        Alerts";
             buttonAlerts.TextAlign = ContentAlignment.MiddleLeft;
@@ -118,7 +118,7 @@
             buttonLogOut.ForeColor = Color.Black;
             buttonLogOut.HoverTextColor = Color.FromArgb(48, 49, 51);
             buttonLogOut.InfoColor = Color.FromArgb(144, 147, 153);
-            buttonLogOut.Location = new Point(41, 545);
+            buttonLogOut.Location = new Point(40, 544);
             buttonLogOut.Margin = new Padding(3, 2, 3, 2);
             buttonLogOut.Name = "buttonLogOut";
             buttonLogOut.PrimaryColor = Color.FromArgb(89, 85, 84);
@@ -139,7 +139,7 @@
             buttonVaccinationReports.Location = new Point(0, 270);
             buttonVaccinationReports.Margin = new Padding(3, 2, 3, 2);
             buttonVaccinationReports.Name = "buttonVaccinationReports";
-            buttonVaccinationReports.Size = new Size(205, 40);
+            buttonVaccinationReports.Size = new Size(200, 40);
             buttonVaccinationReports.TabIndex = 4;
             buttonVaccinationReports.Text = "        Vaccine Reports";
             buttonVaccinationReports.TextAlign = ContentAlignment.MiddleLeft;
@@ -156,7 +156,7 @@
             buttonVaccinationRecords.Location = new Point(0, 230);
             buttonVaccinationRecords.Margin = new Padding(3, 2, 3, 2);
             buttonVaccinationRecords.Name = "buttonVaccinationRecords";
-            buttonVaccinationRecords.Size = new Size(205, 40);
+            buttonVaccinationRecords.Size = new Size(200, 40);
             buttonVaccinationRecords.TabIndex = 3;
             buttonVaccinationRecords.Text = "        Vaccine Records";
             buttonVaccinationRecords.TextAlign = ContentAlignment.MiddleLeft;
@@ -173,7 +173,7 @@
             buttonPetProfile.Location = new Point(0, 190);
             buttonPetProfile.Margin = new Padding(3, 2, 3, 2);
             buttonPetProfile.Name = "buttonPetProfile";
-            buttonPetProfile.Size = new Size(205, 40);
+            buttonPetProfile.Size = new Size(200, 40);
             buttonPetProfile.TabIndex = 2;
             buttonPetProfile.Text = "        Pet Profile";
             buttonPetProfile.TextAlign = ContentAlignment.MiddleLeft;
@@ -190,7 +190,7 @@
             buttonHome.Location = new Point(0, 150);
             buttonHome.Margin = new Padding(3, 2, 3, 2);
             buttonHome.Name = "buttonHome";
-            buttonHome.Size = new Size(205, 40);
+            buttonHome.Size = new Size(200, 40);
             buttonHome.TabIndex = 1;
             buttonHome.Text = "        Home";
             buttonHome.TextAlign = ContentAlignment.MiddleLeft;
@@ -204,13 +204,13 @@
             sidePanelPBPanel.Location = new Point(0, 0);
             sidePanelPBPanel.Margin = new Padding(3, 2, 3, 2);
             sidePanelPBPanel.Name = "sidePanelPBPanel";
-            sidePanelPBPanel.Size = new Size(205, 150);
+            sidePanelPBPanel.Size = new Size(200, 150);
             sidePanelPBPanel.TabIndex = 0;
             // 
             // userPictureBox
             // 
             userPictureBox.Image = (Image)resources.GetObject("userPictureBox.Image");
-            userPictureBox.Location = new Point(41, 15);
+            userPictureBox.Location = new Point(40, 15);
             userPictureBox.Margin = new Padding(3, 2, 3, 2);
             userPictureBox.Name = "userPictureBox";
             userPictureBox.Size = new Size(120, 120);
@@ -218,13 +218,14 @@
             userPictureBox.TabIndex = 0;
             userPictureBox.TabStop = false;
             // 
-            // mainPanel
+            // home1
             // 
-            mainPanel.Dock = DockStyle.Fill;
-            mainPanel.Location = new Point(205, 0);
-            mainPanel.Name = "mainPanel";
-            mainPanel.Size = new Size(779, 601);
-            mainPanel.TabIndex = 1;
+            home1.BackColor = Color.White;
+            home1.Dock = DockStyle.Fill;
+            home1.Location = new Point(200, 0);
+            home1.Name = "home1";
+            home1.Size = new Size(784, 601);
+            home1.TabIndex = 1;
             // 
             // mainMenu
             // 
@@ -232,14 +233,13 @@
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.White;
             ClientSize = new Size(984, 601);
-            Controls.Add(mainPanel);
+            Controls.Add(home1);
             Controls.Add(sidePanelNav);
             FormBorderStyle = FormBorderStyle.FixedSingle;
             Margin = new Padding(3, 2, 3, 2);
             MaximizeBox = false;
             Name = "mainMenu";
             Text = "Pet Vaccination Tracker System";
-            Load += mainMenu_Load_1;
             sidePanelNav.ResumeLayout(false);
             sidePanelPBPanel.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)userPictureBox).EndInit();
@@ -259,6 +259,6 @@
         private ReaLTaiizor.Controls.HopeRoundButton buttonLogOut;
         private Button buttonSettings;
         private Button buttonAlerts;
-        private Panel mainPanel;
+        private Home home1;
     }
 }
