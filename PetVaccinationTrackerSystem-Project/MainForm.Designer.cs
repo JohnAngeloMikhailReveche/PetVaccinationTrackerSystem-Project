@@ -28,134 +28,222 @@
         /// </summary>
         private void InitializeComponent()
         {
-            panel1 = new Panel();
-            panel6 = new Panel();
-            button4 = new Button();
-            button3 = new Button();
-            button2 = new Button();
-            button1 = new Button();
-            panel5 = new Panel();
-            panel4 = new Panel();
-            panel2 = new Panel();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainForm));
+            mainFormTopB = new Panel();
+            mainFormButtonAlerts = new Button();
+            mainFormButtonSettings = new Button();
+            mainFormButtonExit = new Button();
             panel3 = new Panel();
-            userControl11 = new UserControl1();
-            panel1.SuspendLayout();
+            homePanel1 = new homePanel();
+            mainFormSideB = new Panel();
+            mainFormButtonLO = new ReaLTaiizor.Controls.HopeRoundButton();
+            mainFormButtonVRTS = new Button();
+            mainFormSideBHighlight = new Panel();
+            mainFormButtonVRDS = new Button();
+            mainFormButtonPetP = new Button();
+            mainFormButtonH = new Button();
+            mainFormUserPB = new Panel();
+            pictureBox1 = new PictureBox();
+            mainFormTopB.SuspendLayout();
+            panel3.SuspendLayout();
+            mainFormSideB.SuspendLayout();
+            mainFormUserPB.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             SuspendLayout();
             // 
-            // panel1
+            // mainFormTopB
             // 
-            panel1.Controls.Add(panel6);
-            panel1.Controls.Add(button4);
-            panel1.Controls.Add(button3);
-            panel1.Controls.Add(button2);
-            panel1.Controls.Add(button1);
-            panel1.Controls.Add(panel5);
-            panel1.Controls.Add(panel4);
-            panel1.Dock = DockStyle.Left;
-            panel1.Location = new Point(0, 0);
-            panel1.Name = "panel1";
-            panel1.Size = new Size(200, 640);
-            panel1.TabIndex = 0;
+            mainFormTopB.BackColor = Color.FromArgb(89, 85, 84);
+            mainFormTopB.Controls.Add(mainFormButtonAlerts);
+            mainFormTopB.Controls.Add(mainFormButtonSettings);
+            mainFormTopB.Controls.Add(mainFormButtonExit);
+            mainFormTopB.Dock = DockStyle.Top;
+            mainFormTopB.Location = new Point(0, 0);
+            mainFormTopB.Name = "mainFormTopB";
+            mainFormTopB.Size = new Size(1000, 50);
+            mainFormTopB.TabIndex = 1;
             // 
-            // panel6
+            // mainFormButtonAlerts
             // 
-            panel6.BackColor = Color.Maroon;
-            panel6.Location = new Point(0, 200);
-            panel6.Name = "panel6";
-            panel6.Size = new Size(10, 50);
-            panel6.TabIndex = 3;
+            mainFormButtonAlerts.BackColor = Color.FromArgb(89, 85, 84);
+            mainFormButtonAlerts.BackgroundImage = (Image)resources.GetObject("mainFormButtonAlerts.BackgroundImage");
+            mainFormButtonAlerts.BackgroundImageLayout = ImageLayout.Zoom;
+            mainFormButtonAlerts.FlatAppearance.BorderSize = 0;
+            mainFormButtonAlerts.FlatStyle = FlatStyle.Flat;
+            mainFormButtonAlerts.Location = new Point(881, 12);
+            mainFormButtonAlerts.Name = "mainFormButtonAlerts";
+            mainFormButtonAlerts.Size = new Size(25, 25);
+            mainFormButtonAlerts.TabIndex = 2;
+            mainFormButtonAlerts.UseVisualStyleBackColor = false;
             // 
-            // button4
+            // mainFormButtonSettings
             // 
-            button4.BackColor = Color.IndianRed;
-            button4.Dock = DockStyle.Top;
-            button4.FlatAppearance.BorderSize = 0;
-            button4.FlatStyle = FlatStyle.Flat;
-            button4.Location = new Point(0, 350);
-            button4.Name = "button4";
-            button4.Size = new Size(200, 50);
-            button4.TabIndex = 6;
-            button4.Text = "Vaccine Reports";
-            button4.UseVisualStyleBackColor = false;
+            mainFormButtonSettings.BackColor = Color.FromArgb(89, 85, 84);
+            mainFormButtonSettings.BackgroundImage = (Image)resources.GetObject("mainFormButtonSettings.BackgroundImage");
+            mainFormButtonSettings.BackgroundImageLayout = ImageLayout.Zoom;
+            mainFormButtonSettings.FlatAppearance.BorderSize = 0;
+            mainFormButtonSettings.FlatStyle = FlatStyle.Flat;
+            mainFormButtonSettings.Location = new Point(922, 12);
+            mainFormButtonSettings.Name = "mainFormButtonSettings";
+            mainFormButtonSettings.Size = new Size(25, 25);
+            mainFormButtonSettings.TabIndex = 1;
+            mainFormButtonSettings.UseVisualStyleBackColor = false;
             // 
-            // button3
+            // mainFormButtonExit
             // 
-            button3.BackColor = Color.IndianRed;
-            button3.Dock = DockStyle.Top;
-            button3.FlatAppearance.BorderSize = 0;
-            button3.FlatStyle = FlatStyle.Flat;
-            button3.Location = new Point(0, 300);
-            button3.Name = "button3";
-            button3.Size = new Size(200, 50);
-            button3.TabIndex = 5;
-            button3.Text = "Vaccine Records";
-            button3.UseVisualStyleBackColor = false;
-            // 
-            // button2
-            // 
-            button2.BackColor = Color.IndianRed;
-            button2.Dock = DockStyle.Top;
-            button2.FlatAppearance.BorderSize = 0;
-            button2.FlatStyle = FlatStyle.Flat;
-            button2.Location = new Point(0, 250);
-            button2.Name = "button2";
-            button2.Size = new Size(200, 50);
-            button2.TabIndex = 4;
-            button2.Text = "Pet Profile";
-            button2.UseVisualStyleBackColor = false;
-            // 
-            // button1
-            // 
-            button1.BackColor = Color.IndianRed;
-            button1.Dock = DockStyle.Top;
-            button1.FlatAppearance.BorderSize = 0;
-            button1.FlatStyle = FlatStyle.Flat;
-            button1.Location = new Point(0, 200);
-            button1.Name = "button1";
-            button1.Size = new Size(200, 50);
-            button1.TabIndex = 3;
-            button1.Text = "Home";
-            button1.UseVisualStyleBackColor = false;
-            // 
-            // panel5
-            // 
-            panel5.Dock = DockStyle.Top;
-            panel5.Location = new Point(0, 50);
-            panel5.Name = "panel5";
-            panel5.Size = new Size(200, 150);
-            panel5.TabIndex = 3;
-            // 
-            // panel4
-            // 
-            panel4.Dock = DockStyle.Top;
-            panel4.Location = new Point(0, 0);
-            panel4.Name = "panel4";
-            panel4.Size = new Size(200, 50);
-            panel4.TabIndex = 3;
-            // 
-            // panel2
-            // 
-            panel2.Dock = DockStyle.Top;
-            panel2.Location = new Point(200, 0);
-            panel2.Name = "panel2";
-            panel2.Size = new Size(800, 50);
-            panel2.TabIndex = 1;
+            mainFormButtonExit.BackColor = Color.FromArgb(89, 85, 84);
+            mainFormButtonExit.BackgroundImage = (Image)resources.GetObject("mainFormButtonExit.BackgroundImage");
+            mainFormButtonExit.BackgroundImageLayout = ImageLayout.Zoom;
+            mainFormButtonExit.FlatAppearance.BorderSize = 0;
+            mainFormButtonExit.FlatStyle = FlatStyle.Flat;
+            mainFormButtonExit.Location = new Point(963, 12);
+            mainFormButtonExit.Name = "mainFormButtonExit";
+            mainFormButtonExit.Size = new Size(25, 25);
+            mainFormButtonExit.TabIndex = 0;
+            mainFormButtonExit.UseVisualStyleBackColor = false;
+            mainFormButtonExit.Click += mainFormButtonExit_Click;
             // 
             // panel3
             // 
-            panel3.BackColor = Color.IndianRed;
-            panel3.Location = new Point(206, 56);
+            panel3.Controls.Add(homePanel1);
+            panel3.Controls.Add(mainFormSideB);
+            panel3.Dock = DockStyle.Bottom;
+            panel3.Location = new Point(0, 50);
             panel3.Name = "panel3";
-            panel3.Size = new Size(50, 50);
+            panel3.Size = new Size(1000, 590);
             panel3.TabIndex = 2;
             // 
-            // userControl11
+            // homePanel1
             // 
-            userControl11.Dock = DockStyle.Bottom;
-            userControl11.Location = new Point(200, 112);
-            userControl11.Name = "userControl11";
-            userControl11.Size = new Size(800, 528);
-            userControl11.TabIndex = 3;
+            homePanel1.BackColor = Color.White;
+            homePanel1.Dock = DockStyle.Fill;
+            homePanel1.Location = new Point(200, 0);
+            homePanel1.Name = "homePanel1";
+            homePanel1.Size = new Size(800, 590);
+            homePanel1.TabIndex = 1;
+            // 
+            // mainFormSideB
+            // 
+            mainFormSideB.BackColor = Color.FromArgb(249, 249, 249);
+            mainFormSideB.Controls.Add(mainFormButtonLO);
+            mainFormSideB.Controls.Add(mainFormButtonVRTS);
+            mainFormSideB.Controls.Add(mainFormSideBHighlight);
+            mainFormSideB.Controls.Add(mainFormButtonVRDS);
+            mainFormSideB.Controls.Add(mainFormButtonPetP);
+            mainFormSideB.Controls.Add(mainFormButtonH);
+            mainFormSideB.Controls.Add(mainFormUserPB);
+            mainFormSideB.Dock = DockStyle.Left;
+            mainFormSideB.Location = new Point(0, 0);
+            mainFormSideB.Name = "mainFormSideB";
+            mainFormSideB.Size = new Size(200, 590);
+            mainFormSideB.TabIndex = 0;
+            // 
+            // mainFormButtonLO
+            // 
+            mainFormButtonLO.BackColor = Color.FromArgb(89, 85, 84);
+            mainFormButtonLO.BorderColor = Color.FromArgb(220, 223, 230);
+            mainFormButtonLO.ButtonType = ReaLTaiizor.Util.HopeButtonType.Primary;
+            mainFormButtonLO.DangerColor = Color.FromArgb(245, 108, 108);
+            mainFormButtonLO.DefaultColor = Color.FromArgb(255, 255, 255);
+            mainFormButtonLO.Font = new Font("Segoe UI", 10.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            mainFormButtonLO.HoverTextColor = Color.FromArgb(48, 49, 51);
+            mainFormButtonLO.InfoColor = Color.FromArgb(144, 147, 153);
+            mainFormButtonLO.Location = new Point(38, 535);
+            mainFormButtonLO.Name = "mainFormButtonLO";
+            mainFormButtonLO.PrimaryColor = Color.FromArgb(89, 85, 84);
+            mainFormButtonLO.Size = new Size(125, 40);
+            mainFormButtonLO.SuccessColor = Color.FromArgb(103, 194, 58);
+            mainFormButtonLO.TabIndex = 5;
+            mainFormButtonLO.Text = "Log Out";
+            mainFormButtonLO.TextColor = Color.White;
+            mainFormButtonLO.WarningColor = Color.FromArgb(230, 162, 60);
+            // 
+            // mainFormButtonVRTS
+            // 
+            mainFormButtonVRTS.Dock = DockStyle.Top;
+            mainFormButtonVRTS.FlatAppearance.BorderSize = 0;
+            mainFormButtonVRTS.FlatStyle = FlatStyle.Flat;
+            mainFormButtonVRTS.Font = new Font("Segoe UI", 10.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            mainFormButtonVRTS.ForeColor = Color.FromArgb(89, 85, 84);
+            mainFormButtonVRTS.Location = new Point(0, 325);
+            mainFormButtonVRTS.Name = "mainFormButtonVRTS";
+            mainFormButtonVRTS.Size = new Size(200, 50);
+            mainFormButtonVRTS.TabIndex = 4;
+            mainFormButtonVRTS.Text = "        Vaccine Reports";
+            mainFormButtonVRTS.TextAlign = ContentAlignment.MiddleLeft;
+            mainFormButtonVRTS.UseVisualStyleBackColor = true;
+            // 
+            // mainFormSideBHighlight
+            // 
+            mainFormSideBHighlight.BackColor = Color.FromArgb(168, 130, 95);
+            mainFormSideBHighlight.Location = new Point(0, 175);
+            mainFormSideBHighlight.Name = "mainFormSideBHighlight";
+            mainFormSideBHighlight.Size = new Size(10, 50);
+            mainFormSideBHighlight.TabIndex = 2;
+            // 
+            // mainFormButtonVRDS
+            // 
+            mainFormButtonVRDS.Dock = DockStyle.Top;
+            mainFormButtonVRDS.FlatAppearance.BorderSize = 0;
+            mainFormButtonVRDS.FlatStyle = FlatStyle.Flat;
+            mainFormButtonVRDS.Font = new Font("Segoe UI", 10.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            mainFormButtonVRDS.ForeColor = Color.FromArgb(89, 85, 84);
+            mainFormButtonVRDS.Location = new Point(0, 275);
+            mainFormButtonVRDS.Name = "mainFormButtonVRDS";
+            mainFormButtonVRDS.Size = new Size(200, 50);
+            mainFormButtonVRDS.TabIndex = 3;
+            mainFormButtonVRDS.Text = "        Vaccine Records";
+            mainFormButtonVRDS.TextAlign = ContentAlignment.MiddleLeft;
+            mainFormButtonVRDS.UseVisualStyleBackColor = true;
+            // 
+            // mainFormButtonPetP
+            // 
+            mainFormButtonPetP.Dock = DockStyle.Top;
+            mainFormButtonPetP.FlatAppearance.BorderSize = 0;
+            mainFormButtonPetP.FlatStyle = FlatStyle.Flat;
+            mainFormButtonPetP.Font = new Font("Segoe UI", 10.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            mainFormButtonPetP.ForeColor = Color.FromArgb(89, 85, 84);
+            mainFormButtonPetP.Location = new Point(0, 225);
+            mainFormButtonPetP.Name = "mainFormButtonPetP";
+            mainFormButtonPetP.Size = new Size(200, 50);
+            mainFormButtonPetP.TabIndex = 2;
+            mainFormButtonPetP.Text = "        Pet Profile";
+            mainFormButtonPetP.TextAlign = ContentAlignment.MiddleLeft;
+            mainFormButtonPetP.UseVisualStyleBackColor = true;
+            // 
+            // mainFormButtonH
+            // 
+            mainFormButtonH.Dock = DockStyle.Top;
+            mainFormButtonH.FlatAppearance.BorderSize = 0;
+            mainFormButtonH.FlatStyle = FlatStyle.Flat;
+            mainFormButtonH.Font = new Font("Segoe UI", 10.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            mainFormButtonH.ForeColor = Color.FromArgb(89, 85, 84);
+            mainFormButtonH.Location = new Point(0, 175);
+            mainFormButtonH.Name = "mainFormButtonH";
+            mainFormButtonH.Size = new Size(200, 50);
+            mainFormButtonH.TabIndex = 1;
+            mainFormButtonH.Text = "        Home";
+            mainFormButtonH.TextAlign = ContentAlignment.MiddleLeft;
+            mainFormButtonH.UseVisualStyleBackColor = true;
+            // 
+            // mainFormUserPB
+            // 
+            mainFormUserPB.Controls.Add(pictureBox1);
+            mainFormUserPB.Dock = DockStyle.Top;
+            mainFormUserPB.Location = new Point(0, 0);
+            mainFormUserPB.Name = "mainFormUserPB";
+            mainFormUserPB.Size = new Size(200, 175);
+            mainFormUserPB.TabIndex = 0;
+            // 
+            // pictureBox1
+            // 
+            pictureBox1.Image = (Image)resources.GetObject("pictureBox1.Image");
+            pictureBox1.Location = new Point(25, 12);
+            pictureBox1.Name = "pictureBox1";
+            pictureBox1.Size = new Size(150, 150);
+            pictureBox1.SizeMode = PictureBoxSizeMode.Zoom;
+            pictureBox1.TabIndex = 0;
+            pictureBox1.TabStop = false;
             // 
             // MainForm
             // 
@@ -163,31 +251,40 @@
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.White;
             ClientSize = new Size(1000, 640);
-            Controls.Add(userControl11);
             Controls.Add(panel3);
-            Controls.Add(panel2);
-            Controls.Add(panel1);
+            Controls.Add(mainFormTopB);
             FormBorderStyle = FormBorderStyle.None;
             MaximizeBox = false;
             Name = "MainForm";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "MainForm";
-            panel1.ResumeLayout(false);
+            mainFormTopB.ResumeLayout(false);
+            panel3.ResumeLayout(false);
+            mainFormSideB.ResumeLayout(false);
+            mainFormUserPB.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             ResumeLayout(false);
         }
 
         #endregion
-
-        private Panel panel1;
-        private Panel panel2;
-        private Button button4;
-        private Button button3;
+        private Panel mainFormTopB;
+        private Button mainFormButtonAlerts;
+        private Panel panel3;
+        private Panel mainFormSideB;
+        private Panel mainFormSideBHighlight;
+        private Button mainFormButtonVRDS;
+        private Button mainFormButtonPetP;
+        private Button mainFormButtonH;
+        private Panel mainFormUserPB;
+        private PictureBox pictureBox1;
+        private Button mainFormButtonVRTS;
+        private homePanel homePanel1;
+        private ReaLTaiizor.Controls.HopeRoundButton mainFormButtonLO;
         private Button button2;
         private Button button1;
-        private Panel panel5;
-        private Panel panel4;
-        private Panel panel6;
-        private Panel panel3;
-        private UserControl1 userControl11;
+        private Button button3;
+        private Button button5;
+        private Button mainFormButtonSettings;
+        private Button mainFormButtonExit;
     }
 }
