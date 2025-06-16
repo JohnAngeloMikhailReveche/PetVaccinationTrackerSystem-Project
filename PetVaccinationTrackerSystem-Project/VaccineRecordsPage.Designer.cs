@@ -84,7 +84,7 @@
             pctBanner.Location = new Point(0, 0);
             pctBanner.Margin = new Padding(0);
             pctBanner.Name = "pctBanner";
-            pctBanner.Size = new Size(780, 93);
+            pctBanner.Size = new Size(780, 56);
             pctBanner.SizeMode = PictureBoxSizeMode.Zoom;
             pctBanner.TabIndex = 0;
             pctBanner.TabStop = false;
@@ -92,7 +92,7 @@
             // pctPetImage
             // 
             pctPetImage.BorderStyle = BorderStyle.Fixed3D;
-            pctPetImage.Location = new Point(12, 105);
+            pctPetImage.Location = new Point(12, 75);
             pctPetImage.Name = "pctPetImage";
             pctPetImage.Size = new Size(150, 150);
             pctPetImage.SizeMode = PictureBoxSizeMode.Zoom;
@@ -170,7 +170,7 @@
             pnlPetInfo.Controls.Add(label6, 0, 5);
             pnlPetInfo.Controls.Add(label4, 0, 3);
             pnlPetInfo.Controls.Add(label2, 0, 2);
-            pnlPetInfo.Location = new Point(171, 105);
+            pnlPetInfo.Location = new Point(171, 75);
             pnlPetInfo.Name = "pnlPetInfo";
             pnlPetInfo.RowCount = 7;
             pnlPetInfo.RowStyles.Add(new RowStyle(SizeType.Absolute, 27F));
@@ -445,7 +445,7 @@
             flpVaccines.Controls.Add(pnlVaccineCard);
             flpVaccines.Controls.Add(hopeRoundButton1);
             flpVaccines.FlowDirection = FlowDirection.TopDown;
-            flpVaccines.Location = new Point(30, 275);
+            flpVaccines.Location = new Point(30, 250);
             flpVaccines.Margin = new Padding(0);
             flpVaccines.Name = "flpVaccines";
             flpVaccines.Padding = new Padding(10, 0, 10, 10);
@@ -481,7 +481,7 @@
             hopeRoundButton2.Font = new Font("Segoe UI", 10.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
             hopeRoundButton2.HoverTextColor = Color.FromArgb(48, 49, 51);
             hopeRoundButton2.InfoColor = Color.FromArgb(144, 147, 153);
-            hopeRoundButton2.Location = new Point(489, 548);
+            hopeRoundButton2.Location = new Point(489, 540);
             hopeRoundButton2.Name = "hopeRoundButton2";
             hopeRoundButton2.PrimaryColor = Color.FromArgb(168, 130, 95);
             hopeRoundButton2.Size = new Size(122, 40);
@@ -500,7 +500,7 @@
             hopeRoundButton3.Font = new Font("Segoe UI", 10.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
             hopeRoundButton3.HoverTextColor = Color.FromArgb(48, 49, 51);
             hopeRoundButton3.InfoColor = Color.FromArgb(144, 147, 153);
-            hopeRoundButton3.Location = new Point(621, 548);
+            hopeRoundButton3.Location = new Point(621, 540);
             hopeRoundButton3.Name = "hopeRoundButton3";
             hopeRoundButton3.PrimaryColor = Color.FromArgb(89, 85, 84);
             hopeRoundButton3.Size = new Size(122, 40);
@@ -515,7 +515,7 @@
             // 
             panel1.BackColor = Color.White;
             panel1.Dock = DockStyle.Top;
-            panel1.Location = new Point(0, 93);
+            panel1.Location = new Point(0, 56);
             panel1.Name = "panel1";
             panel1.Size = new Size(780, 2);
             panel1.TabIndex = 26;

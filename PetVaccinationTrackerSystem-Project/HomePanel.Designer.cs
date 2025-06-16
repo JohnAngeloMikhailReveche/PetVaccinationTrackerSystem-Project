@@ -31,8 +31,11 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(homePanel));
             homePanelBanner = new PictureBox();
             homePanel1 = new Panel();
+            homePanelPB1 = new PictureBox();
             homePanel3 = new Panel();
+            homePanelPB3 = new PictureBox();
             homePanel2 = new Panel();
+            homePanelPB2 = new PictureBox();
             label1 = new Label();
             label2 = new Label();
             label3 = new Label();
@@ -42,16 +45,13 @@
             label7 = new Label();
             label8 = new Label();
             label9 = new Label();
-            homePanelPB1 = new PictureBox();
-            homePanelPB2 = new PictureBox();
-            homePanelPB3 = new PictureBox();
             ((System.ComponentModel.ISupportInitialize)homePanelBanner).BeginInit();
             homePanel1.SuspendLayout();
-            homePanel3.SuspendLayout();
-            homePanel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)homePanelPB1).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)homePanelPB2).BeginInit();
+            homePanel3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)homePanelPB3).BeginInit();
+            homePanel2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)homePanelPB2).BeginInit();
             SuspendLayout();
             // 
             // homePanelBanner
@@ -74,6 +74,17 @@
             homePanel1.Size = new Size(200, 100);
             homePanel1.TabIndex = 1;
             // 
+            // homePanelPB1
+            // 
+            homePanelPB1.Dock = DockStyle.Fill;
+            homePanelPB1.Image = (Image)resources.GetObject("homePanelPB1.Image");
+            homePanelPB1.Location = new Point(0, 0);
+            homePanelPB1.Name = "homePanelPB1";
+            homePanelPB1.Size = new Size(200, 100);
+            homePanelPB1.SizeMode = PictureBoxSizeMode.Zoom;
+            homePanelPB1.TabIndex = 0;
+            homePanelPB1.TabStop = false;
+            // 
             // homePanel3
             // 
             homePanel3.BackColor = Color.FromArgb(249, 249, 249);
@@ -82,6 +93,17 @@
             homePanel3.Name = "homePanel3";
             homePanel3.Size = new Size(200, 100);
             homePanel3.TabIndex = 2;
+            // 
+            // homePanelPB3
+            // 
+            homePanelPB3.Dock = DockStyle.Fill;
+            homePanelPB3.Image = (Image)resources.GetObject("homePanelPB3.Image");
+            homePanelPB3.Location = new Point(0, 0);
+            homePanelPB3.Name = "homePanelPB3";
+            homePanelPB3.Size = new Size(200, 100);
+            homePanelPB3.SizeMode = PictureBoxSizeMode.Zoom;
+            homePanelPB3.TabIndex = 0;
+            homePanelPB3.TabStop = false;
             // 
             // homePanel2
             // 
@@ -92,11 +114,22 @@
             homePanel2.Size = new Size(200, 100);
             homePanel2.TabIndex = 2;
             // 
+            // homePanelPB2
+            // 
+            homePanelPB2.Dock = DockStyle.Fill;
+            homePanelPB2.Image = (Image)resources.GetObject("homePanelPB2.Image");
+            homePanelPB2.Location = new Point(0, 0);
+            homePanelPB2.Name = "homePanelPB2";
+            homePanelPB2.Size = new Size(200, 100);
+            homePanelPB2.SizeMode = PictureBoxSizeMode.Zoom;
+            homePanelPB2.TabIndex = 0;
+            homePanelPB2.TabStop = false;
+            // 
             // label1
             // 
             label1.AutoSize = true;
             label1.Font = new Font("Segoe UI", 13.8F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label1.ForeColor = Color.FromArgb(168, 130, 95);
+            label1.ForeColor = Color.FromArgb(89, 85, 84);
             label1.Location = new Point(72, 475);
             label1.Name = "label1";
             label1.Size = new Size(152, 25);
@@ -107,7 +140,7 @@
             // 
             label2.AutoSize = true;
             label2.Font = new Font("Segoe UI", 13.8F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label2.ForeColor = Color.FromArgb(168, 130, 95);
+            label2.ForeColor = Color.FromArgb(89, 85, 84);
             label2.Location = new Point(300, 475);
             label2.Name = "label2";
             label2.Size = new Size(203, 25);
@@ -118,7 +151,7 @@
             // 
             label3.AutoSize = true;
             label3.Font = new Font("Segoe UI", 13.8F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label3.ForeColor = Color.FromArgb(168, 130, 95);
+            label3.ForeColor = Color.FromArgb(89, 85, 84);
             label3.Location = new Point(550, 475);
             label3.Name = "label3";
             label3.Size = new Size(202, 25);
@@ -191,39 +224,6 @@
             label9.TabIndex = 11;
             label9.Text = "progress and coverage.";
             // 
-            // homePanelPB1
-            // 
-            homePanelPB1.Dock = DockStyle.Fill;
-            homePanelPB1.Image = (Image)resources.GetObject("homePanelPB1.Image");
-            homePanelPB1.Location = new Point(0, 0);
-            homePanelPB1.Name = "homePanelPB1";
-            homePanelPB1.Size = new Size(200, 100);
-            homePanelPB1.SizeMode = PictureBoxSizeMode.Zoom;
-            homePanelPB1.TabIndex = 0;
-            homePanelPB1.TabStop = false;
-            // 
-            // homePanelPB2
-            // 
-            homePanelPB2.Dock = DockStyle.Fill;
-            homePanelPB2.Image = (Image)resources.GetObject("homePanelPB2.Image");
-            homePanelPB2.Location = new Point(0, 0);
-            homePanelPB2.Name = "homePanelPB2";
-            homePanelPB2.Size = new Size(200, 100);
-            homePanelPB2.SizeMode = PictureBoxSizeMode.Zoom;
-            homePanelPB2.TabIndex = 0;
-            homePanelPB2.TabStop = false;
-            // 
-            // homePanelPB3
-            // 
-            homePanelPB3.Dock = DockStyle.Fill;
-            homePanelPB3.Image = (Image)resources.GetObject("homePanelPB3.Image");
-            homePanelPB3.Location = new Point(0, 0);
-            homePanelPB3.Name = "homePanelPB3";
-            homePanelPB3.Size = new Size(200, 100);
-            homePanelPB3.SizeMode = PictureBoxSizeMode.Zoom;
-            homePanelPB3.TabIndex = 0;
-            homePanelPB3.TabStop = false;
-            // 
             // homePanel
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
@@ -246,11 +246,11 @@
             Size = new Size(800, 590);
             ((System.ComponentModel.ISupportInitialize)homePanelBanner).EndInit();
             homePanel1.ResumeLayout(false);
-            homePanel3.ResumeLayout(false);
-            homePanel2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)homePanelPB1).EndInit();
-            ((System.ComponentModel.ISupportInitialize)homePanelPB2).EndInit();
+            homePanel3.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)homePanelPB3).EndInit();
+            homePanel2.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)homePanelPB2).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }

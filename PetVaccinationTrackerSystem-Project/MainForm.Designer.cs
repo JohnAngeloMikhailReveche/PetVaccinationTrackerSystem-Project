@@ -34,14 +34,16 @@
             mainFormButtonSettings = new Button();
             mainFormButtonExit = new Button();
             panel3 = new Panel();
+            vaccineRecordsPanel1 = new vaccineRecordsPanel();
             homePanel1 = new homePanel();
             mainFormSideB = new Panel();
+            mainFormButtonAboutUs = new Button();
             mainFormButtonLO = new ReaLTaiizor.Controls.HopeRoundButton();
             mainFormButtonVRTS = new Button();
             mainFormSideBHighlight = new Panel();
             mainFormButtonVRDS = new Button();
             mainFormButtonPetP = new Button();
-            mainFormButtonH = new Button();
+            mainFormButtonHome = new Button();
             mainFormUserPB = new Panel();
             pictureBox1 = new PictureBox();
             mainFormTopB.SuspendLayout();
@@ -105,6 +107,7 @@
             // 
             // panel3
             // 
+            panel3.Controls.Add(vaccineRecordsPanel1);
             panel3.Controls.Add(homePanel1);
             panel3.Controls.Add(mainFormSideB);
             panel3.Dock = DockStyle.Bottom;
@@ -112,6 +115,15 @@
             panel3.Name = "panel3";
             panel3.Size = new Size(1000, 590);
             panel3.TabIndex = 2;
+            // 
+            // vaccineRecordsPanel1
+            // 
+            vaccineRecordsPanel1.BackColor = Color.White;
+            vaccineRecordsPanel1.Dock = DockStyle.Fill;
+            vaccineRecordsPanel1.Location = new Point(200, 0);
+            vaccineRecordsPanel1.Name = "vaccineRecordsPanel1";
+            vaccineRecordsPanel1.Size = new Size(800, 590);
+            vaccineRecordsPanel1.TabIndex = 2;
             // 
             // homePanel1
             // 
@@ -125,18 +137,34 @@
             // mainFormSideB
             // 
             mainFormSideB.BackColor = Color.FromArgb(249, 249, 249);
+            mainFormSideB.Controls.Add(mainFormButtonAboutUs);
             mainFormSideB.Controls.Add(mainFormButtonLO);
             mainFormSideB.Controls.Add(mainFormButtonVRTS);
             mainFormSideB.Controls.Add(mainFormSideBHighlight);
             mainFormSideB.Controls.Add(mainFormButtonVRDS);
             mainFormSideB.Controls.Add(mainFormButtonPetP);
-            mainFormSideB.Controls.Add(mainFormButtonH);
+            mainFormSideB.Controls.Add(mainFormButtonHome);
             mainFormSideB.Controls.Add(mainFormUserPB);
             mainFormSideB.Dock = DockStyle.Left;
             mainFormSideB.Location = new Point(0, 0);
             mainFormSideB.Name = "mainFormSideB";
             mainFormSideB.Size = new Size(200, 590);
             mainFormSideB.TabIndex = 0;
+            // 
+            // mainFormButtonAboutUs
+            // 
+            mainFormButtonAboutUs.Dock = DockStyle.Top;
+            mainFormButtonAboutUs.FlatAppearance.BorderSize = 0;
+            mainFormButtonAboutUs.FlatStyle = FlatStyle.Flat;
+            mainFormButtonAboutUs.Font = new Font("Segoe UI", 10.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            mainFormButtonAboutUs.ForeColor = Color.FromArgb(89, 85, 84);
+            mainFormButtonAboutUs.Location = new Point(0, 375);
+            mainFormButtonAboutUs.Name = "mainFormButtonAboutUs";
+            mainFormButtonAboutUs.Size = new Size(200, 50);
+            mainFormButtonAboutUs.TabIndex = 6;
+            mainFormButtonAboutUs.Text = "        About Us";
+            mainFormButtonAboutUs.TextAlign = ContentAlignment.MiddleLeft;
+            mainFormButtonAboutUs.UseVisualStyleBackColor = true;
             // 
             // mainFormButtonLO
             // 
@@ -195,6 +223,7 @@
             mainFormButtonVRDS.Text = "        Vaccine Records";
             mainFormButtonVRDS.TextAlign = ContentAlignment.MiddleLeft;
             mainFormButtonVRDS.UseVisualStyleBackColor = true;
+            mainFormButtonVRDS.Click += mainFormButtonVRDS_Click;
             // 
             // mainFormButtonPetP
             // 
@@ -211,20 +240,21 @@
             mainFormButtonPetP.TextAlign = ContentAlignment.MiddleLeft;
             mainFormButtonPetP.UseVisualStyleBackColor = true;
             // 
-            // mainFormButtonH
+            // mainFormButtonHome
             // 
-            mainFormButtonH.Dock = DockStyle.Top;
-            mainFormButtonH.FlatAppearance.BorderSize = 0;
-            mainFormButtonH.FlatStyle = FlatStyle.Flat;
-            mainFormButtonH.Font = new Font("Segoe UI", 10.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            mainFormButtonH.ForeColor = Color.FromArgb(89, 85, 84);
-            mainFormButtonH.Location = new Point(0, 175);
-            mainFormButtonH.Name = "mainFormButtonH";
-            mainFormButtonH.Size = new Size(200, 50);
-            mainFormButtonH.TabIndex = 1;
-            mainFormButtonH.Text = "        Home";
-            mainFormButtonH.TextAlign = ContentAlignment.MiddleLeft;
-            mainFormButtonH.UseVisualStyleBackColor = true;
+            mainFormButtonHome.Dock = DockStyle.Top;
+            mainFormButtonHome.FlatAppearance.BorderSize = 0;
+            mainFormButtonHome.FlatStyle = FlatStyle.Flat;
+            mainFormButtonHome.Font = new Font("Segoe UI", 10.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            mainFormButtonHome.ForeColor = Color.FromArgb(89, 85, 84);
+            mainFormButtonHome.Location = new Point(0, 175);
+            mainFormButtonHome.Name = "mainFormButtonHome";
+            mainFormButtonHome.Size = new Size(200, 50);
+            mainFormButtonHome.TabIndex = 1;
+            mainFormButtonHome.Text = "        Home";
+            mainFormButtonHome.TextAlign = ContentAlignment.MiddleLeft;
+            mainFormButtonHome.UseVisualStyleBackColor = true;
+            mainFormButtonHome.Click += mainFormButtonHome_Click;
             // 
             // mainFormUserPB
             // 
@@ -274,11 +304,10 @@
         private Panel mainFormSideBHighlight;
         private Button mainFormButtonVRDS;
         private Button mainFormButtonPetP;
-        private Button mainFormButtonH;
+        private Button mainFormButtonHome;
         private Panel mainFormUserPB;
         private PictureBox pictureBox1;
         private Button mainFormButtonVRTS;
-        private homePanel homePanel1;
         private ReaLTaiizor.Controls.HopeRoundButton mainFormButtonLO;
         private Button button2;
         private Button button1;
@@ -286,5 +315,8 @@
         private Button button5;
         private Button mainFormButtonSettings;
         private Button mainFormButtonExit;
+        private Button mainFormButtonAboutUs;
+        private homePanel homePanel1;
+        private vaccineRecordsPanel vaccineRecordsPanel1;
     }
 }
