@@ -15,11 +15,36 @@ namespace PetVaccinationTrackerSystem_Project
         public MainForm()
         {
             InitializeComponent();
+            mainFormSideBHighlight.Height = mainFormButtonHome.Height;
+            mainFormSideBHighlight.Top = mainFormButtonHome.Top;
+            homePanel1.BringToFront();
         }
 
         private void mainFormButtonExit_Click(object sender, EventArgs e)
         {
             Application.Exit();
         }
+
+        private void mainFormButtonHome_Click(object sender, EventArgs e)
+        {
+            mainFormSideBHighlight.Height = mainFormButtonHome.Height;
+            mainFormSideBHighlight.Top = mainFormButtonHome.Top;
+            homePanel1.BringToFront();
+        }
+
+        private void mainFormButtonPetP_Click(object sender, EventArgs e)
+        {
+            mainFormSideBHighlight.Height = mainFormButtonPetP.Height;
+            mainFormSideBHighlight.Top = mainFormButtonPetP.Top;
+        }
+
+        private void mainFormButtonVRDS_Click(object sender, EventArgs e)
+        {
+            mainFormSideBHighlight.Height = mainFormButtonVRDS.Height;
+            mainFormSideBHighlight.Top = mainFormButtonVRDS.Top;
+            vaccineRecordsPanel1.BringToFront();
+        }
+
     }
 }
+
