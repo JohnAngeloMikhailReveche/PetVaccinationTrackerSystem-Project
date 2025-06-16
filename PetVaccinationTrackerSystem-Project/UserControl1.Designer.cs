@@ -1,6 +1,6 @@
 ﻿namespace PetVaccinationTrackerSystem_Project
 {
-    partial class Home
+    partial class UserControl1
     {
         /// <summary> 
         /// Required designer variable.
@@ -28,9 +28,9 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Home));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(UserControl1));
             pictureBox1 = new PictureBox();
-            label2 = new Label();
+            label1 = new Label();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             SuspendLayout();
             // 
@@ -40,29 +40,28 @@
             pictureBox1.Image = (Image)resources.GetObject("pictureBox1.Image");
             pictureBox1.Location = new Point(0, 0);
             pictureBox1.Name = "pictureBox1";
-            pictureBox1.Size = new Size(784, 330);
+            pictureBox1.Size = new Size(800, 100);
             pictureBox1.SizeMode = PictureBoxSizeMode.Zoom;
             pictureBox1.TabIndex = 0;
             pictureBox1.TabStop = false;
             // 
-            // label2
+            // label1
             // 
-            label2.AutoSize = true;
-            label2.Location = new Point(32, 550);
-            label2.Name = "label2";
-            label2.Size = new Size(39, 15);
-            label2.TabIndex = 1;
-            label2.Text = "Bruno";
+            label1.AutoSize = true;
+            label1.Location = new Point(16, 499);
+            label1.Name = "label1";
+            label1.Size = new Size(39, 15);
+            label1.TabIndex = 1;
+            label1.Text = "Bruno";
             // 
-            // Home
+            // UserControl1
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            BackColor = Color.White;
-            Controls.Add(label2);
+            Controls.Add(label1);
             Controls.Add(pictureBox1);
-            Name = "Home";
-            Size = new Size(784, 601);
+            Name = "UserControl1";
+            Size = new Size(800, 528);
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             ResumeLayout(false);
             PerformLayout();
@@ -71,6 +70,6 @@
         #endregion
 
         private PictureBox pictureBox1;
-        private Label label2;
+        private Label label1;
     }
 }
