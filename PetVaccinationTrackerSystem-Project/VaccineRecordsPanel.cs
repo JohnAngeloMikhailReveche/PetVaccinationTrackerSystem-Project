@@ -10,16 +10,11 @@ using System.Windows.Forms;
 
 namespace PetVaccinationTrackerSystem_Project
 {
-    public partial class MainForm : Form
+    public partial class VaccineRecordsPanel : UserControl
     {
-        public MainForm()
+        public VaccineRecordsPanel()
         {
             InitializeComponent();
-        }
-
-        private void mainFormButtonExit_Click(object sender, EventArgs e)
-        {
-            Application.Exit();
         }
     }
 }
