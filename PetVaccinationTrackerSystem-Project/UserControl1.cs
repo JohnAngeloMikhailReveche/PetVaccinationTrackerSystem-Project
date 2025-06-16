@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace PetVaccinationTrackerSystem_Project
 {
-    public partial class Home : UserControl
+    public partial class UserControl1 : UserControl
     {
-        public Home()
+        public UserControl1()
         {
             InitializeComponent();
         }

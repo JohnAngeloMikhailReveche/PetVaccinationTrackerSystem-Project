@@ -40,7 +40,6 @@
             buttonHome = new Button();
             sidePanelPBPanel = new Panel();
             userPictureBox = new PictureBox();
-            home1 = new Home();
             sidePanelNav.SuspendLayout();
             sidePanelPBPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)userPictureBox).BeginInit();
@@ -218,22 +217,12 @@
             userPictureBox.TabIndex = 0;
             userPictureBox.TabStop = false;
             // 
-            // home1
-            // 
-            home1.BackColor = Color.White;
-            home1.Dock = DockStyle.Fill;
-            home1.Location = new Point(200, 0);
-            home1.Name = "home1";
-            home1.Size = new Size(784, 601);
-            home1.TabIndex = 1;
-            // 
             // mainMenu
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.White;
             ClientSize = new Size(984, 601);
-            Controls.Add(home1);
             Controls.Add(sidePanelNav);
             FormBorderStyle = FormBorderStyle.FixedSingle;
             Margin = new Padding(3, 2, 3, 2);
@@ -259,6 +248,5 @@
         private ReaLTaiizor.Controls.HopeRoundButton buttonLogOut;
         private Button buttonSettings;
         private Button buttonAlerts;
-        private Home home1;
     }
 }
