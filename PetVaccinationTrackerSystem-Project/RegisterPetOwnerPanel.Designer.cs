@@ -111,7 +111,7 @@
             // textBox3
             // 
             textBox3.BackColor = Color.FromArgb(249, 249, 249);
-            textBox3.Location = new Point(84, 106);
+            textBox3.Location = new Point(87, 106);
             textBox3.Name = "textBox3";
             textBox3.Size = new Size(170, 23);
             textBox3.TabIndex = 24;
@@ -119,7 +119,7 @@
             // textBox2
             // 
             textBox2.BackColor = Color.FromArgb(249, 249, 249);
-            textBox2.Location = new Point(84, 63);
+            textBox2.Location = new Point(87, 63);
             textBox2.Name = "textBox2";
             textBox2.Size = new Size(170, 23);
             textBox2.TabIndex = 23;
@@ -127,7 +127,7 @@
             // textBox1
             // 
             textBox1.BackColor = Color.FromArgb(249, 249, 249);
-            textBox1.Location = new Point(84, 16);
+            textBox1.Location = new Point(87, 16);
             textBox1.Name = "textBox1";
             textBox1.Size = new Size(170, 23);
             textBox1.TabIndex = 22;
