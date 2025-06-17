@@ -60,7 +60,6 @@
             label7 = new Label();
             pictureBox2 = new PictureBox();
             VRDSButtonClear = new Button();
-            VRDSButtonSave = new Button();
             VRDSButtonGoBack = new Button();
             VRDSPetInfoPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)VRDSPetPB).BeginInit();
@@ -413,31 +412,19 @@
             VRDSButtonClear.FlatStyle = FlatStyle.Flat;
             VRDSButtonClear.Font = new Font("Segoe UI", 10.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
             VRDSButtonClear.ForeColor = Color.FromArgb(89, 85, 84);
-            VRDSButtonClear.Location = new Point(545, 535);
+            VRDSButtonClear.Location = new Point(651, 535);
             VRDSButtonClear.Name = "VRDSButtonClear";
             VRDSButtonClear.Size = new Size(100, 40);
             VRDSButtonClear.TabIndex = 29;
             VRDSButtonClear.Text = "Clear";
             VRDSButtonClear.UseVisualStyleBackColor = true;
             // 
-            // VRDSButtonSave
-            // 
-            VRDSButtonSave.FlatStyle = FlatStyle.Flat;
-            VRDSButtonSave.Font = new Font("Segoe UI", 10.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            VRDSButtonSave.ForeColor = Color.FromArgb(89, 85, 84);
-            VRDSButtonSave.Location = new Point(651, 535);
-            VRDSButtonSave.Name = "VRDSButtonSave";
-            VRDSButtonSave.Size = new Size(100, 40);
-            VRDSButtonSave.TabIndex = 30;
-            VRDSButtonSave.Text = "Save";
-            VRDSButtonSave.UseVisualStyleBackColor = true;
-            // 
             // VRDSButtonGoBack
             // 
             VRDSButtonGoBack.FlatStyle = FlatStyle.Flat;
             VRDSButtonGoBack.Font = new Font("Segoe UI", 10.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
             VRDSButtonGoBack.ForeColor = Color.FromArgb(89, 85, 84);
-            VRDSButtonGoBack.Location = new Point(439, 535);
+            VRDSButtonGoBack.Location = new Point(539, 535);
             VRDSButtonGoBack.Name = "VRDSButtonGoBack";
             VRDSButtonGoBack.Size = new Size(100, 40);
             VRDSButtonGoBack.TabIndex = 31;
@@ -450,7 +437,6 @@
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.White;
             Controls.Add(VRDSButtonGoBack);
-            Controls.Add(VRDSButtonSave);
             Controls.Add(VRDSButtonClear);
             Controls.Add(pictureBox2);
             Controls.Add(VRDSVaccineDetailsPanel);
@@ -502,7 +488,6 @@
         private PictureBox pictureBox2;
         private Button VRDSButtonAddRecord;
         private Button VRDSButtonClear;
-        private Button VRDSButtonSave;
         private Button VRDSButtonGoBack;
     }
 }
