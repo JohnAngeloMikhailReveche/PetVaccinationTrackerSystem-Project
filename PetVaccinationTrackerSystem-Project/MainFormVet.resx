@@ -118,7 +118,7 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
-  <data name="mainFormButtonAlerts.BackgroundImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+  <data name="mainFormVButtonAlerts.BackgroundImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAAfQAAAH0CAYAAADL1t+KAAAABGdBTUEAALGPC/xhBQAAkTJJREFUeF7t
         /QecbMlZ3w+vBEhCKKAs7WqTVrva1Uq70iqhQBAW2S8gwMI2Jjlg+4NNEogkiSU4AH8bsDEYg5Ex2Jgr
@@ -743,7 +743,7 @@
         6Z6f6exs/eDAQOpNV65cebGtE+eJ/z/5KKQgKK7OzwAAAABJRU5ErkJggg==
 </value>
   </data>
-  <data name="mainFormButtonSettings.BackgroundImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+  <data name="mainFormVButtonSettings.BackgroundImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAAfQAAAH0CAYAAADL1t+KAAAABGdBTUEAALGPC/xhBQAAirRJREFUeF7t
         vQe0dFWV7f/+/9etIihJEFQUbcyY24Q555zFhAkz5pyziCKoKGLOGUEURTGgYMKEijm17TN029rt01vh
@@ -1341,7 +1341,7 @@
         gg==
 </value>
   </data>
-  <data name="mainFormButtonExit.BackgroundImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+  <data name="mainFormVButtonExit.BackgroundImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAAfQAAAH0CAYAAADL1t+KAAAABGdBTUEAALGPC/xhBQAATgFJREFUeF7t
         3QmYXVWd7/0AgqK20+tt7uXm9qXfm/a9HRXQEiGifevt62O/PApttzfXlhYaRYFAAiGA0KJ2X1vb5lWQ

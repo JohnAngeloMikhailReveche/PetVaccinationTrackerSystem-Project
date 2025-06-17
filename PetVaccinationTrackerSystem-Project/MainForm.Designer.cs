@@ -34,18 +34,20 @@
             mainFormButtonSettings = new Button();
             mainFormButtonExit = new Button();
             panel3 = new Panel();
+            petProfilePanel1 = new petProfilePanel();
             vaccineRecordsPanel1 = new vaccineRecordsPanel();
             homePanel1 = new homePanel();
             mainFormSideB = new Panel();
+            mainFormSideBHighlight = new Panel();
             mainFormButtonAboutUs = new Button();
             mainFormButtonLO = new ReaLTaiizor.Controls.HopeRoundButton();
             mainFormButtonVRTS = new Button();
-            mainFormSideBHighlight = new Panel();
             mainFormButtonVRDS = new Button();
             mainFormButtonPetP = new Button();
             mainFormButtonHome = new Button();
             mainFormUserPB = new Panel();
             pictureBox1 = new PictureBox();
+            vaccineReportsPanel1 = new vaccineReportsPanel();
             mainFormTopB.SuspendLayout();
             panel3.SuspendLayout();
             mainFormSideB.SuspendLayout();
@@ -107,6 +109,8 @@
             // 
             // panel3
             // 
+            panel3.Controls.Add(vaccineReportsPanel1);
+            panel3.Controls.Add(petProfilePanel1);
             panel3.Controls.Add(vaccineRecordsPanel1);
             panel3.Controls.Add(homePanel1);
             panel3.Controls.Add(mainFormSideB);
@@ -115,6 +119,15 @@
             panel3.Name = "panel3";
             panel3.Size = new Size(1000, 590);
             panel3.TabIndex = 2;
+            // 
+            // petProfilePanel1
+            // 
+            petProfilePanel1.BackColor = Color.White;
+            petProfilePanel1.Dock = DockStyle.Fill;
+            petProfilePanel1.Location = new Point(200, 0);
+            petProfilePanel1.Name = "petProfilePanel1";
+            petProfilePanel1.Size = new Size(800, 590);
+            petProfilePanel1.TabIndex = 3;
             // 
             // vaccineRecordsPanel1
             // 
@@ -137,10 +150,10 @@
             // mainFormSideB
             // 
             mainFormSideB.BackColor = Color.FromArgb(249, 249, 249);
+            mainFormSideB.Controls.Add(mainFormSideBHighlight);
             mainFormSideB.Controls.Add(mainFormButtonAboutUs);
             mainFormSideB.Controls.Add(mainFormButtonLO);
             mainFormSideB.Controls.Add(mainFormButtonVRTS);
-            mainFormSideB.Controls.Add(mainFormSideBHighlight);
             mainFormSideB.Controls.Add(mainFormButtonVRDS);
             mainFormSideB.Controls.Add(mainFormButtonPetP);
             mainFormSideB.Controls.Add(mainFormButtonHome);
@@ -150,6 +163,14 @@
             mainFormSideB.Name = "mainFormSideB";
             mainFormSideB.Size = new Size(200, 590);
             mainFormSideB.TabIndex = 0;
+            // 
+            // mainFormSideBHighlight
+            // 
+            mainFormSideBHighlight.BackColor = Color.FromArgb(168, 130, 95);
+            mainFormSideBHighlight.Location = new Point(0, 175);
+            mainFormSideBHighlight.Name = "mainFormSideBHighlight";
+            mainFormSideBHighlight.Size = new Size(10, 50);
+            mainFormSideBHighlight.TabIndex = 2;
             // 
             // mainFormButtonAboutUs
             // 
@@ -200,14 +221,7 @@
             mainFormButtonVRTS.Text = "        Vaccine Reports";
             mainFormButtonVRTS.TextAlign = ContentAlignment.MiddleLeft;
             mainFormButtonVRTS.UseVisualStyleBackColor = true;
-            // 
-            // mainFormSideBHighlight
-            // 
-            mainFormSideBHighlight.BackColor = Color.FromArgb(168, 130, 95);
-            mainFormSideBHighlight.Location = new Point(0, 175);
-            mainFormSideBHighlight.Name = "mainFormSideBHighlight";
-            mainFormSideBHighlight.Size = new Size(10, 50);
-            mainFormSideBHighlight.TabIndex = 2;
+            mainFormButtonVRTS.Click += mainFormButtonVRTS_Click;
             // 
             // mainFormButtonVRDS
             // 
@@ -239,6 +253,7 @@
             mainFormButtonPetP.Text = "        Pet Profile";
             mainFormButtonPetP.TextAlign = ContentAlignment.MiddleLeft;
             mainFormButtonPetP.UseVisualStyleBackColor = true;
+            mainFormButtonPetP.Click += mainFormButtonPetP_Click;
             // 
             // mainFormButtonHome
             // 
@@ -274,6 +289,15 @@
             pictureBox1.SizeMode = PictureBoxSizeMode.Zoom;
             pictureBox1.TabIndex = 0;
             pictureBox1.TabStop = false;
+            // 
+            // vaccineReportsPanel1
+            // 
+            vaccineReportsPanel1.BackColor = Color.White;
+            vaccineReportsPanel1.Dock = DockStyle.Fill;
+            vaccineReportsPanel1.Location = new Point(200, 0);
+            vaccineReportsPanel1.Name = "vaccineReportsPanel1";
+            vaccineReportsPanel1.Size = new Size(800, 590);
+            vaccineReportsPanel1.TabIndex = 4;
             // 
             // MainForm
             // 
@@ -318,5 +342,7 @@
         private Button mainFormButtonAboutUs;
         private homePanel homePanel1;
         private vaccineRecordsPanel vaccineRecordsPanel1;
+        private petProfilePanel petProfilePanel1;
+        private vaccineReportsPanel vaccineReportsPanel1;
     }
 }

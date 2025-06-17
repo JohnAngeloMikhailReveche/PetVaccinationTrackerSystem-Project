@@ -1,0 +1,41 @@
+﻿using System;
+using System.Collections.Generic;
+using System.ComponentModel;
+using System.Data;
+using System.Drawing;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using System.Windows.Forms;
+
+namespace PetVaccinationTrackerSystem_Project
+{
+    public partial class MainFormVet : Form
+    {
+        public MainFormVet()
+        {
+            InitializeComponent();
+            mainFormVSideBHighlight.Height = mainFormVButtonHome.Height;
+            mainFormVSideBHighlight.Top = mainFormVButtonHome.Top;
+            homePanel1V.BringToFront();
+        }
+        private void mainFormVButtonExit_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
+        }
+
+        private void mainFormVButtonHome_Click(object sender, EventArgs e)
+        {
+            mainFormVSideBHighlight.Height = mainFormVButtonHome.Height;
+            mainFormVSideBHighlight.Top = mainFormVButtonHome.Top;
+            homePanel1V.BringToFront();
+        }
+
+        private void mainFormVButtonRegister_Click(object sender, EventArgs e)
+        {
+            mainFormVSideBHighlight.Height = mainFormVButtonRegister.Height;
+            mainFormVSideBHighlight.Top = mainFormVButtonRegister.Top;
+            registerPetOwnerPanel1V.BringToFront();
+        }
+    }
+}
