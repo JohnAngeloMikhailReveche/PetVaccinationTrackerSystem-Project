@@ -111,55 +111,60 @@
             // textBox3
             // 
             textBox3.BackColor = Color.FromArgb(249, 249, 249);
-            textBox3.Location = new Point(87, 106);
+            textBox3.Font = new Font("Segoe UI", 10F);
+            textBox3.Location = new Point(90, 107);
             textBox3.Name = "textBox3";
-            textBox3.Size = new Size(170, 23);
+            textBox3.Size = new Size(170, 25);
             textBox3.TabIndex = 24;
             // 
             // textBox2
             // 
             textBox2.BackColor = Color.FromArgb(249, 249, 249);
-            textBox2.Location = new Point(87, 63);
+            textBox2.Font = new Font("Segoe UI", 10F);
+            textBox2.Location = new Point(90, 64);
             textBox2.Name = "textBox2";
-            textBox2.Size = new Size(170, 23);
+            textBox2.Size = new Size(170, 25);
             textBox2.TabIndex = 23;
             // 
             // textBox1
             // 
             textBox1.BackColor = Color.FromArgb(249, 249, 249);
-            textBox1.Location = new Point(87, 16);
+            textBox1.Font = new Font("Segoe UI", 10F);
+            textBox1.Location = new Point(90, 18);
             textBox1.Name = "textBox1";
-            textBox1.Size = new Size(170, 23);
+            textBox1.Size = new Size(170, 25);
             textBox1.TabIndex = 22;
             // 
             // label9
             // 
             label9.AutoSize = true;
+            label9.Font = new Font("Segoe UI", 10F);
             label9.ForeColor = Color.FromArgb(89, 85, 84);
-            label9.Location = new Point(15, 110);
+            label9.Location = new Point(10, 110);
             label9.Name = "label9";
-            label9.Size = new Size(41, 15);
+            label9.Size = new Size(49, 19);
             label9.TabIndex = 13;
             label9.Text = "Pet ID:";
             // 
             // label8
             // 
             label8.AutoSize = true;
+            label8.Font = new Font("Segoe UI", 10F);
             label8.ForeColor = Color.FromArgb(89, 85, 84);
-            label8.Location = new Point(15, 66);
+            label8.Location = new Point(10, 66);
             label8.Name = "label8";
-            label8.Size = new Size(60, 15);
+            label8.Size = new Size(70, 19);
             label8.TabIndex = 11;
             label8.Text = "Password:";
             // 
             // label7
             // 
             label7.AutoSize = true;
-            label7.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            label7.Font = new Font("Segoe UI", 10F);
             label7.ForeColor = Color.FromArgb(89, 85, 84);
-            label7.Location = new Point(15, 20);
+            label7.Location = new Point(10, 20);
             label7.Name = "label7";
-            label7.Size = new Size(63, 15);
+            label7.Size = new Size(74, 19);
             label7.TabIndex = 0;
             label7.Text = "Username:";
             // 

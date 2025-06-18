@@ -11,36 +11,38 @@ namespace PetVaccinationTrackerSystem_Project.Data.Entities
     public class Pet
     {
 
-        [Key, StringLength(15)]
-        public required string PetID { get; set; }
+        [Key]
+        public int PetID { get; set; }
 
         [StringLength(50)]
         public string PetName { get; set; }
 
         [StringLength(50)]
-        public string OwnerFirstName { get; set; }
+        
+        public string ColorAndMarkings { get; set; }
+        [StringLength(100)]
 
-        [StringLength(50)]
-        public string OwnerLastName { get; set; }
+        public int OwnerPhoneNumber { get; set; } 
 
-        [StringLength(50)]
         public string Species { get; set; }
 
         [StringLength(50)]
         public string Breed { get; set; }
-
-        public int Month { get; set; }
-
-        public int Day { get; set; }
-
-        public int Year { get; set; }
-
         [StringLength(30)]
+
         public string? Gender { get; set; }
+        public DateTime DateOfBirth { get; set; }
+
+        [StringLength(50)]
+        public string OwnerName { get; set; }
+        public string Image { get; set; } 
+
+        public string Notes { get; set; }
+        [StringLength(300)]
 
         // Foreign Key
         [ForeignKey("User")]
-        public string UserID { get; set; }
+        public int UserID { get; set; }
 
         // Navigation property to User entity
         public User User { get; set; }

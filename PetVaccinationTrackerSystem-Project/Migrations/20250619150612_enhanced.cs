@@ -6,7 +6,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 namespace PetVaccinationTrackerSystem_Project.Migrations
 {
     /// <inheritdoc />
-    public partial class InitialCreate : Migration
+    public partial class enhanced : Migration
     {
         /// <inheritdoc />
         protected override void Up(MigrationBuilder migrationBuilder)
@@ -15,7 +15,8 @@ namespace PetVaccinationTrackerSystem_Project.Migrations
                 name: "ClinicList",
                 columns: table => new
                 {
-                    ClinicID = table.Column<string>(type: "nvarchar(15)", maxLength: 15, nullable: false),
+                    ClinicID = table.Column<int>(type: "int", nullable: false)
+                        .Annotation("SqlServer:Identity", "1, 1"),
                     ClinicName = table.Column<string>(type: "nvarchar(50)", maxLength: 50, nullable: false),
                     Street = table.Column<string>(type: "nvarchar(70)", maxLength: 70, nullable: false),
                     City = table.Column<string>(type: "nvarchar(70)", maxLength: 70, nullable: false),
@@ -31,7 +32,8 @@ namespace PetVaccinationTrackerSystem_Project.Migrations
                 name: "UserList",
                 columns: table => new
                 {
-                    UserID = table.Column<string>(type: "nvarchar(15)", maxLength: 15, nullable: false),
+                    UserID = table.Column<int>(type: "int", nullable: false)
+                        .Annotation("SqlServer:Identity", "1, 1"),
                     FirstName = table.Column<string>(type: "nvarchar(50)", maxLength: 50, nullable: false),
                     LastName = table.Column<string>(type: "nvarchar(50)", maxLength: 50, nullable: false),
                     UserEmail = table.Column<string>(type: "nvarchar(50)", maxLength: 50, nullable: false),
@@ -47,10 +49,14 @@ namespace PetVaccinationTrackerSystem_Project.Migrations
                 name: "VaccinationList",
                 columns: table => new
                 {
-                    VaccinationID = table.Column<string>(type: "nvarchar(15)", maxLength: 15, nullable: false),
+                    VaccinationID = table.Column<int>(type: "int", nullable: false)
+                        .Annotation("SqlServer:Identity", "1, 1"),
                     VaccineName = table.Column<string>(type: "nvarchar(60)", maxLength: 60, nullable: false),
-                    VaccineDesc = table.Column<string>(type: "nvarchar(255)", maxLength: 255, nullable: false),
-                    Frequency = table.Column<float>(type: "real", nullable: false)
+                    AdministeredBy = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    DateAdministered = table.Column<DateTime>(type: "datetime2", maxLength: 60, nullable: false),
+                    NextDueDate = table.Column<DateTime>(type: "datetime2", nullable: false),
+                    Notes = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    BatchNo = table.Column<string>(type: "nvarchar(300)", maxLength: 300, nullable: false)
                 },
                 constraints: table =>
                 {
@@ -61,10 +67,11 @@ namespace PetVaccinationTrackerSystem_Project.Migrations
                 name: "VeterinarianList",
                 columns: table => new
                 {
-                    VetID = table.Column<string>(type: "nvarchar(15)", maxLength: 15, nullable: false),
+                    VetID = table.Column<int>(type: "int", nullable: false)
+                        .Annotation("SqlServer:Identity", "1, 1"),
                     VetName = table.Column<string>(type: "nvarchar(50)", maxLength: 50, nullable: false),
                     LicenseNumber = table.Column<string>(type: "nvarchar(50)", maxLength: 50, nullable: false),
-                    ClinicID = table.Column<string>(type: "nvarchar(15)", nullable: false)
+                    ClinicID = table.Column<int>(type: "int", nullable: false)
                 },
                 constraints: table =>
                 {
@@ -81,17 +88,16 @@ namespace PetVaccinationTrackerSystem_Project.Migrations
                 name: "PetList",
                 columns: table => new
                 {
-                    PetID = table.Column<string>(type: "nvarchar(15)", maxLength: 15, nullable: false),
+                    PetID = table.Column<int>(type: "int", nullable: false)
+                        .Annotation("SqlServer:Identity", "1, 1"),
                     PetName = table.Column<string>(type: "nvarchar(50)", maxLength: 50, nullable: false),
-                    OwnerFirstName = table.Column<string>(type: "nvarchar(50)", maxLength: 50, nullable: false),
-                    OwnerLastName = table.Column<string>(type: "nvarchar(50)", maxLength: 50, nullable: false),
                     Species = table.Column<string>(type: "nvarchar(50)", maxLength: 50, nullable: false),
                     Breed = table.Column<string>(type: "nvarchar(50)", maxLength: 50, nullable: false),
-                    Month = table.Column<int>(type: "int", nullable: false),
-                    Day = table.Column<int>(type: "int", nullable: false),
-                    Year = table.Column<int>(type: "int", nullable: false),
                     Gender = table.Column<string>(type: "nvarchar(30)", maxLength: 30, nullable: true),
-                    UserID = table.Column<string>(type: "nvarchar(15)", nullable: false)
+                    DateOfBirth = table.Column<DateTime>(type: "datetime2", nullable: false),
+                    OwnerName = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    Image = table.Column<string>(type: "nvarchar(50)", maxLength: 50, nullable: false),
+                    UserID = table.Column<int>(type: "int", nullable: false)
                 },
                 constraints: table =>
                 {
@@ -108,10 +114,11 @@ namespace PetVaccinationTrackerSystem_Project.Migrations
                 name: "UserContactList",
                 columns: table => new
                 {
-                    ContactID = table.Column<string>(type: "nvarchar(15)", maxLength: 15, nullable: false),
+                    ContactID = table.Column<int>(type: "int", nullable: false)
+                        .Annotation("SqlServer:Identity", "1, 1"),
                     ContactType = table.Column<string>(type: "nvarchar(50)", maxLength: 50, nullable: false),
                     ContactValue = table.Column<string>(type: "nvarchar(50)", maxLength: 50, nullable: false),
-                    UserID = table.Column<string>(type: "nvarchar(15)", nullable: false)
+                    UserID = table.Column<int>(type: "int", nullable: false)
                 },
                 constraints: table =>
                 {
@@ -128,14 +135,15 @@ namespace PetVaccinationTrackerSystem_Project.Migrations
                 name: "AppointmentList",
                 columns: table => new
                 {
-                    AppointmentID = table.Column<string>(type: "nvarchar(15)", maxLength: 15, nullable: false),
+                    AppointmentID = table.Column<int>(type: "int", nullable: false)
+                        .Annotation("SqlServer:Identity", "1, 1"),
                     Month = table.Column<int>(type: "int", nullable: false),
                     Day = table.Column<int>(type: "int", nullable: false),
                     Year = table.Column<int>(type: "int", nullable: false),
                     TimeOfAppointment = table.Column<TimeOnly>(type: "time", nullable: false),
                     Reason = table.Column<string>(type: "nvarchar(255)", maxLength: 255, nullable: true),
-                    PetID = table.Column<string>(type: "nvarchar(15)", nullable: false),
-                    VetID = table.Column<string>(type: "nvarchar(15)", nullable: false)
+                    PetID = table.Column<int>(type: "int", nullable: false),
+                    VetID = table.Column<int>(type: "int", nullable: false)
                 },
                 constraints: table =>
                 {
@@ -158,13 +166,14 @@ namespace PetVaccinationTrackerSystem_Project.Migrations
                 name: "PetHealthRecordsList",
                 columns: table => new
                 {
-                    RecordID = table.Column<string>(type: "nvarchar(15)", maxLength: 15, nullable: false),
+                    RecordID = table.Column<int>(type: "int", nullable: false)
+                        .Annotation("SqlServer:Identity", "1, 1"),
                     Month = table.Column<int>(type: "int", nullable: false),
                     Day = table.Column<int>(type: "int", nullable: false),
                     Year = table.Column<int>(type: "int", nullable: false),
-                    VaccinationID = table.Column<string>(type: "nvarchar(15)", nullable: false),
-                    VetID = table.Column<string>(type: "nvarchar(15)", nullable: false),
-                    PetID = table.Column<string>(type: "nvarchar(15)", nullable: false)
+                    VaccinationID = table.Column<int>(type: "int", nullable: false),
+                    VetID = table.Column<int>(type: "int", nullable: false),
+                    PetID = table.Column<int>(type: "int", nullable: false)
                 },
                 constraints: table =>
                 {

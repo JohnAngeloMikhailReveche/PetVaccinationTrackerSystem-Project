@@ -10,16 +10,23 @@ namespace PetVaccinationTrackerSystem_Project.Data.Entities
     public class Vaccination
     {
 
-        [Key, StringLength(15)]
-        public required string VaccinationID { get; set; }
+        [Key]
+        public  int VaccinationID { get; set; }
 
         [StringLength(60)]
         public string VaccineName { get; set; }
+        public string AdministeredBy { get; set; }
+        [StringLength(60)]
 
-        [StringLength(255)]
-        public string VaccineDesc { get; set; }
+        public DateTime DateAdministered { get; set; }
 
-        public float Frequency { get; set; }
+        public DateTime NextDueDate { get; set; }
+
+        public string Notes { get; set; }
+        [StringLength(300)]
+
+        public string BatchNo { get; set; }
+        [StringLength(60)]
 
         // Navigation property list
         public List<PetHealthRecords>? PetHealthRecords { get; set; }
