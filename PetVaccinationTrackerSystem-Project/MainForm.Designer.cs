@@ -34,8 +34,8 @@
             mainFormButtonSettings = new Button();
             mainFormButtonExit = new Button();
             panel3 = new Panel();
-            petProfilePanel1 = new petProfilePanel();
-            vaccineRecordsPanel1 = new vaccineRecordsPanel();
+
+            vaccineRecordsPanel1 = new VaccineRecordsPanelVet();
             homePanel1 = new homePanel();
             mainFormSideB = new Panel();
             mainFormSideBHighlight = new Panel();
@@ -110,7 +110,7 @@
             // panel3
             // 
             panel3.Controls.Add(vaccineReportsPanel1);
-            panel3.Controls.Add(petProfilePanel1);
+
             panel3.Controls.Add(vaccineRecordsPanel1);
             panel3.Controls.Add(homePanel1);
             panel3.Controls.Add(mainFormSideB);
@@ -120,15 +120,7 @@
             panel3.Size = new Size(1000, 590);
             panel3.TabIndex = 2;
             // 
-            // petProfilePanel1
-            // 
-            petProfilePanel1.BackColor = Color.White;
-            petProfilePanel1.Dock = DockStyle.Fill;
-            petProfilePanel1.Location = new Point(200, 0);
-            petProfilePanel1.Name = "petProfilePanel1";
-            petProfilePanel1.Size = new Size(800, 590);
-            petProfilePanel1.TabIndex = 3;
-            // 
+      
             // vaccineRecordsPanel1
             // 
             vaccineRecordsPanel1.BackColor = Color.White;
@@ -341,7 +333,7 @@
         private Button mainFormButtonExit;
         private Button mainFormButtonAboutUs;
         private homePanel homePanel1;
-        private vaccineRecordsPanel vaccineRecordsPanel1;
+        private VaccineRecordsPanelVet vaccineRecordsPanel1;
         private petProfilePanel petProfilePanel1;
         private vaccineReportsPanel vaccineReportsPanel1;
     }

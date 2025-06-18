@@ -46,6 +46,8 @@
             pictureBox1 = new PictureBox();
             homePanel1V = new homePanel();
             registerPetOwnerPanel1V = new registerPetOwnerPanel();
+            vaccineRecordsPanel1V = new VaccineRecordsPanelVet();
+            petProfilePanel1V = new petProfilePanelVet();
             mainFormVTopB.SuspendLayout();
             mainFormVSideB.SuspendLayout();
             mainFormVPB.SuspendLayout();
@@ -210,6 +212,7 @@
             mainFormVButtonVRDS.Text = "        Vaccine Records";
             mainFormVButtonVRDS.TextAlign = ContentAlignment.MiddleLeft;
             mainFormVButtonVRDS.UseVisualStyleBackColor = true;
+            mainFormVButtonVRDS.Click += mainFormVButtonVRDS_Click;
             // 
             // mainFormVButtonPetP
             // 
@@ -225,6 +228,7 @@
             mainFormVButtonPetP.Text = "        Pet Profiles";
             mainFormVButtonPetP.TextAlign = ContentAlignment.MiddleLeft;
             mainFormVButtonPetP.UseVisualStyleBackColor = true;
+            mainFormVButtonPetP.Click += mainFormVButtonPetP_Click;
             // 
             // mainFormVButtonHome
             // 
@@ -279,12 +283,32 @@
             registerPetOwnerPanel1V.Size = new Size(800, 590);
             registerPetOwnerPanel1V.TabIndex = 5;
             // 
+            // vaccineRecordsPanel1V
+            // 
+            vaccineRecordsPanel1V.BackColor = Color.White;
+            vaccineRecordsPanel1V.Dock = DockStyle.Fill;
+            vaccineRecordsPanel1V.Location = new Point(200, 50);
+            vaccineRecordsPanel1V.Name = "vaccineRecordsPanel1V";
+            vaccineRecordsPanel1V.Size = new Size(800, 590);
+            vaccineRecordsPanel1V.TabIndex = 6;
+            // 
+            // petProfilePanel1V
+            // 
+            petProfilePanel1V.BackColor = Color.White;
+            petProfilePanel1V.Dock = DockStyle.Fill;
+            petProfilePanel1V.Location = new Point(200, 50);
+            petProfilePanel1V.Name = "petProfilePanel1V";
+            petProfilePanel1V.Size = new Size(800, 590);
+            petProfilePanel1V.TabIndex = 7;
+            // 
             // MainFormVet
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.White;
             ClientSize = new Size(1000, 640);
+            Controls.Add(petProfilePanel1V);
+            Controls.Add(vaccineRecordsPanel1V);
             Controls.Add(registerPetOwnerPanel1V);
             Controls.Add(homePanel1V);
             Controls.Add(mainFormVSideB);
@@ -321,5 +345,7 @@
         private PictureBox pictureBox1;
         private homePanel homePanel1V;
         private registerPetOwnerPanel registerPetOwnerPanel1V;
+        private VaccineRecordsPanelVet vaccineRecordsPanel1V;
+        private petProfilePanelVet petProfilePanel1V;
     }
 }
