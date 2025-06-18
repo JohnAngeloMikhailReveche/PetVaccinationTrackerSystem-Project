@@ -153,9 +153,9 @@
             // label10
             // 
             label10.AutoSize = true;
-            label10.Font = new Font("Segoe UI", 10.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            label10.Font = new Font("Segoe UI", 10.2F);
             label10.ForeColor = Color.FromArgb(89, 85, 84);
-            label10.Location = new Point(216, 158);
+            label10.Location = new Point(216, 160);
             label10.Name = "label10";
             label10.Size = new Size(93, 19);
             label10.TabIndex = 15;
@@ -164,7 +164,7 @@
             // label9
             // 
             label9.AutoSize = true;
-            label9.Font = new Font("Segoe UI", 10.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            label9.Font = new Font("Segoe UI", 10.2F);
             label9.ForeColor = Color.FromArgb(89, 85, 84);
             label9.Location = new Point(18, 356);
             label9.Name = "label9";
@@ -175,7 +175,7 @@
             // label8
             // 
             label8.AutoSize = true;
-            label8.Font = new Font("Segoe UI", 10.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            label8.Font = new Font("Segoe UI", 10.2F);
             label8.ForeColor = Color.FromArgb(89, 85, 84);
             label8.Location = new Point(18, 293);
             label8.Name = "label8";
@@ -186,16 +186,19 @@
             // label6
             // 
             label6.AutoSize = true;
-            label6.Font = new Font("Segoe UI", 10.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            label6.Font = new Font("Segoe UI", 10.2F);
             label6.ForeColor = Color.FromArgb(89, 85, 84);
             label6.Location = new Point(18, 221);
             label6.Name = "label6";
             label6.Size = new Size(125, 19);
             label6.TabIndex = 12;
             label6.Text = "Colors / Markings: ";
+            label6.Click += label6_Click;
             // 
             // textBox11
             // 
+            textBox11.BackColor = Color.FromArgb(249, 249, 249);
+            textBox11.Font = new Font("Segoe UI", 10F);
             textBox11.Location = new Point(18, 180);
             textBox11.Multiline = true;
             textBox11.Name = "textBox11";
@@ -206,7 +209,7 @@
             // label5
             // 
             label5.AutoSize = true;
-            label5.Font = new Font("Segoe UI", 10.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            label5.Font = new Font("Segoe UI", 10.2F);
             label5.ForeColor = Color.FromArgb(89, 85, 84);
             label5.Location = new Point(18, 158);
             label5.Name = "label5";
@@ -216,6 +219,8 @@
             // 
             // textBox10
             // 
+            textBox10.BackColor = Color.FromArgb(249, 249, 249);
+            textBox10.Font = new Font("Segoe UI", 10F);
             textBox10.Location = new Point(216, 109);
             textBox10.Multiline = true;
             textBox10.Name = "textBox10";
@@ -225,7 +230,7 @@
             // label4
             // 
             label4.AutoSize = true;
-            label4.Font = new Font("Segoe UI", 10.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            label4.Font = new Font("Segoe UI", 10.2F);
             label4.ForeColor = Color.FromArgb(89, 85, 84);
             label4.Location = new Point(216, 76);
             label4.Name = "label4";
@@ -236,7 +241,7 @@
             // label3
             // 
             label3.AutoSize = true;
-            label3.Font = new Font("Segoe UI", 10.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            label3.Font = new Font("Segoe UI", 10.2F);
             label3.ForeColor = Color.FromArgb(89, 85, 84);
             label3.Location = new Point(19, 76);
             label3.Name = "label3";
@@ -247,6 +252,8 @@
             // 
             // textBox9
             // 
+            textBox9.BackColor = Color.FromArgb(249, 249, 249);
+            textBox9.Font = new Font("Segoe UI", 10F);
             textBox9.Location = new Point(19, 109);
             textBox9.Multiline = true;
             textBox9.Name = "textBox9";
@@ -255,6 +262,8 @@
             // 
             // textBox8
             // 
+            textBox8.BackColor = Color.FromArgb(249, 249, 249);
+            textBox8.Font = new Font("Segoe UI", 10F);
             textBox8.Location = new Point(18, 252);
             textBox8.Multiline = true;
             textBox8.Name = "textBox8";
@@ -263,6 +272,8 @@
             // 
             // textBox5
             // 
+            textBox5.BackColor = Color.FromArgb(249, 249, 249);
+            textBox5.Font = new Font("Segoe UI", 10F);
             textBox5.Location = new Point(18, 315);
             textBox5.Multiline = true;
             textBox5.Name = "textBox5";
@@ -271,6 +282,8 @@
             // 
             // textBox6
             // 
+            textBox6.BackColor = Color.FromArgb(249, 249, 249);
+            textBox6.Font = new Font("Segoe UI", 10F);
             textBox6.Location = new Point(18, 378);
             textBox6.Multiline = true;
             textBox6.Name = "textBox6";
@@ -279,6 +292,8 @@
             // 
             // textBox7
             // 
+            textBox7.BackColor = Color.FromArgb(249, 249, 249);
+            textBox7.Font = new Font("Segoe UI", 10F);
             textBox7.Location = new Point(18, 35);
             textBox7.Multiline = true;
             textBox7.Name = "textBox7";

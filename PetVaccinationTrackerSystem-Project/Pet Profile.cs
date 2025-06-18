@@ -76,5 +76,10 @@ namespace PetVaccinationTrackerSystem_Project
         {
 
         }
+
+        private void label6_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
