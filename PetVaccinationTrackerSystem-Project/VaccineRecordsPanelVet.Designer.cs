@@ -33,6 +33,7 @@
             VRDSButtonAddRecord = new Button();
             label14 = new Label();
             VRDSVaccineCard = new Panel();
+            dgvPetInfo = new DataGridView();
             txtNotes = new TextBox();
             label12 = new Label();
             txtBatchNo = new TextBox();
@@ -50,19 +51,20 @@
             VRDSButtonGoBack = new Button();
             VRDSPetPBPanel = new Panel();
             VRDSPetPB = new PictureBox();
+            VRDSPetInfoPanel = new TableLayoutPanel();
+            label13 = new Label();
+            txtMicrochip = new TextBox();
+            dtpDOB = new DateTimePicker();
+            label3 = new Label();
+            label5 = new Label();
+            label4 = new Label();
+            label2 = new Label();
             txtSpecies = new ComboBox();
             txtBreed = new TextBox();
-            label2 = new Label();
-            label4 = new Label();
-            label5 = new Label();
-            label3 = new Label();
-            dtpDOB = new DateTimePicker();
             comboBox1 = new ComboBox();
-            txtMicrochip = new TextBox();
-            label13 = new Label();
-            VRDSPetInfoPanel = new TableLayoutPanel();
             VRDSVaccineDetailsPanel.SuspendLayout();
             VRDSVaccineCard.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)dgvPetInfo).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox2).BeginInit();
             VRDSPetPBPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)VRDSPetPB).BeginInit();
@@ -107,6 +109,7 @@
             // 
             VRDSVaccineCard.BackColor = Color.White;
             VRDSVaccineCard.BorderStyle = BorderStyle.FixedSingle;
+            VRDSVaccineCard.Controls.Add(dgvPetInfo);
             VRDSVaccineCard.Controls.Add(txtNotes);
             VRDSVaccineCard.Controls.Add(label12);
             VRDSVaccineCard.Controls.Add(txtBatchNo);
@@ -124,6 +127,21 @@
             VRDSVaccineCard.Name = "VRDSVaccineCard";
             VRDSVaccineCard.Size = new Size(663, 191);
             VRDSVaccineCard.TabIndex = 1;
+            // 
+            // dgvPetInfo
+            // 
+            dgvPetInfo.AllowUserToAddRows = false;
+            dgvPetInfo.AllowUserToResizeColumns = false;
+            dgvPetInfo.AllowUserToResizeRows = false;
+            dgvPetInfo.BackgroundColor = Color.FromArgb(249, 249, 249);
+            dgvPetInfo.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dgvPetInfo.ColumnHeadersVisible = false;
+            dgvPetInfo.Location = new Point(61, -1);
+            dgvPetInfo.Name = "dgvPetInfo";
+            dgvPetInfo.RowHeadersVisible = false;
+            dgvPetInfo.Size = new Size(507, 160);
+            dgvPetInfo.TabIndex = 21;
+            dgvPetInfo.CellContentClick += dgvPetInfo_CellContentClick;
             // 
             // txtNotes
             // 
@@ -301,6 +319,115 @@
             VRDSPetPB.TabIndex = 0;
             VRDSPetPB.TabStop = false;
             // 
+            // VRDSPetInfoPanel
+            // 
+            VRDSPetInfoPanel.BackColor = Color.FromArgb(249, 249, 249);
+            VRDSPetInfoPanel.ColumnCount = 2;
+            VRDSPetInfoPanel.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 50F));
+            VRDSPetInfoPanel.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 50F));
+            VRDSPetInfoPanel.Controls.Add(label13, 0, 0);
+            VRDSPetInfoPanel.Controls.Add(txtMicrochip, 1, 0);
+            VRDSPetInfoPanel.Controls.Add(dtpDOB, 1, 4);
+            VRDSPetInfoPanel.Controls.Add(label3, 0, 1);
+            VRDSPetInfoPanel.Controls.Add(label5, 0, 4);
+            VRDSPetInfoPanel.Controls.Add(label4, 0, 3);
+            VRDSPetInfoPanel.Controls.Add(label2, 0, 2);
+            VRDSPetInfoPanel.Controls.Add(txtSpecies, 1, 1);
+            VRDSPetInfoPanel.Controls.Add(txtBreed, 1, 3);
+            VRDSPetInfoPanel.Controls.Add(comboBox1, 1, 2);
+            VRDSPetInfoPanel.Location = new Point(243, 90);
+            VRDSPetInfoPanel.Name = "VRDSPetInfoPanel";
+            VRDSPetInfoPanel.Padding = new Padding(10);
+            VRDSPetInfoPanel.RowCount = 5;
+            VRDSPetInfoPanel.RowStyles.Add(new RowStyle(SizeType.Absolute, 27F));
+            VRDSPetInfoPanel.RowStyles.Add(new RowStyle(SizeType.Absolute, 26F));
+            VRDSPetInfoPanel.RowStyles.Add(new RowStyle(SizeType.Absolute, 28F));
+            VRDSPetInfoPanel.RowStyles.Add(new RowStyle(SizeType.Absolute, 27F));
+            VRDSPetInfoPanel.RowStyles.Add(new RowStyle(SizeType.Absolute, 27F));
+            VRDSPetInfoPanel.Size = new Size(507, 160);
+            VRDSPetInfoPanel.TabIndex = 15;
+            // 
+            // label13
+            // 
+            label13.AutoSize = true;
+            label13.Font = new Font("Segoe UI", 10F);
+            label13.ForeColor = Color.FromArgb(89, 85, 84);
+            label13.Location = new Point(13, 10);
+            label13.Name = "label13";
+            label13.Padding = new Padding(0, 5, 0, 0);
+            label13.Size = new Size(71, 24);
+            label13.TabIndex = 28;
+            label13.Text = "Pet Name:";
+            // 
+            // txtMicrochip
+            // 
+            txtMicrochip.BackColor = Color.White;
+            txtMicrochip.Font = new Font("Segoe UI", 9F);
+            txtMicrochip.Location = new Point(256, 13);
+            txtMicrochip.Name = "txtMicrochip";
+            txtMicrochip.ReadOnly = true;
+            txtMicrochip.Size = new Size(238, 23);
+            txtMicrochip.TabIndex = 26;
+            // 
+            // dtpDOB
+            // 
+            dtpDOB.CalendarMonthBackground = Color.White;
+            dtpDOB.Enabled = false;
+            dtpDOB.Font = new Font("Segoe UI", 9F);
+            dtpDOB.Format = DateTimePickerFormat.Short;
+            dtpDOB.Location = new Point(256, 121);
+            dtpDOB.Name = "dtpDOB";
+            dtpDOB.Size = new Size(238, 23);
+            dtpDOB.TabIndex = 25;
+            // 
+            // label3
+            // 
+            label3.AutoSize = true;
+            label3.Font = new Font("Segoe UI", 10F);
+            label3.ForeColor = Color.FromArgb(89, 85, 84);
+            label3.Location = new Point(13, 37);
+            label3.Name = "label3";
+            label3.Padding = new Padding(0, 5, 0, 0);
+            label3.Size = new Size(56, 24);
+            label3.TabIndex = 17;
+            label3.Text = "Species:";
+            // 
+            // label5
+            // 
+            label5.AutoSize = true;
+            label5.Font = new Font("Segoe UI", 10F);
+            label5.ForeColor = Color.FromArgb(89, 85, 84);
+            label5.Location = new Point(13, 118);
+            label5.Name = "label5";
+            label5.Padding = new Padding(0, 5, 0, 0);
+            label5.Size = new Size(90, 24);
+            label5.TabIndex = 19;
+            label5.Text = "Date of Birth:";
+            // 
+            // label4
+            // 
+            label4.AutoSize = true;
+            label4.Font = new Font("Segoe UI", 10F);
+            label4.ForeColor = Color.FromArgb(89, 85, 84);
+            label4.Location = new Point(13, 91);
+            label4.Name = "label4";
+            label4.Padding = new Padding(0, 5, 0, 0);
+            label4.Size = new Size(57, 24);
+            label4.TabIndex = 18;
+            label4.Text = "Gender:";
+            // 
+            // label2
+            // 
+            label2.AutoSize = true;
+            label2.Font = new Font("Segoe UI", 10F);
+            label2.ForeColor = Color.FromArgb(89, 85, 84);
+            label2.Location = new Point(13, 63);
+            label2.Name = "label2";
+            label2.Padding = new Padding(0, 5, 0, 0);
+            label2.Size = new Size(47, 24);
+            label2.TabIndex = 16;
+            label2.Text = "Breed:";
+            // 
             // txtSpecies
             // 
             txtSpecies.BackColor = Color.White;
@@ -318,70 +445,11 @@
             // 
             txtBreed.BackColor = Color.White;
             txtBreed.Font = new Font("Segoe UI", 9F);
-            txtBreed.Location = new Point(256, 66);
+            txtBreed.Location = new Point(256, 94);
             txtBreed.Name = "txtBreed";
             txtBreed.ReadOnly = true;
             txtBreed.Size = new Size(238, 23);
             txtBreed.TabIndex = 21;
-            // 
-            // label2
-            // 
-            label2.AutoSize = true;
-            label2.Font = new Font("Segoe UI", 10F);
-            label2.ForeColor = Color.FromArgb(89, 85, 84);
-            label2.Location = new Point(13, 63);
-            label2.Name = "label2";
-            label2.Padding = new Padding(0, 5, 0, 0);
-            label2.Size = new Size(47, 24);
-            label2.TabIndex = 16;
-            label2.Text = "Breed:";
-            // 
-            // label4
-            // 
-            label4.AutoSize = true;
-            label4.Font = new Font("Segoe UI", 10F);
-            label4.ForeColor = Color.FromArgb(89, 85, 84);
-            label4.Location = new Point(13, 91);
-            label4.Name = "label4";
-            label4.Padding = new Padding(0, 5, 0, 0);
-            label4.Size = new Size(57, 24);
-            label4.TabIndex = 18;
-            label4.Text = "Gender:";
-            // 
-            // label5
-            // 
-            label5.AutoSize = true;
-            label5.Font = new Font("Segoe UI", 10F);
-            label5.ForeColor = Color.FromArgb(89, 85, 84);
-            label5.Location = new Point(13, 118);
-            label5.Name = "label5";
-            label5.Padding = new Padding(0, 5, 0, 0);
-            label5.Size = new Size(90, 24);
-            label5.TabIndex = 19;
-            label5.Text = "Date of Birth:";
-            // 
-            // label3
-            // 
-            label3.AutoSize = true;
-            label3.Font = new Font("Segoe UI", 10F);
-            label3.ForeColor = Color.FromArgb(89, 85, 84);
-            label3.Location = new Point(13, 37);
-            label3.Name = "label3";
-            label3.Padding = new Padding(0, 5, 0, 0);
-            label3.Size = new Size(56, 24);
-            label3.TabIndex = 17;
-            label3.Text = "Species:";
-            // 
-            // dtpDOB
-            // 
-            dtpDOB.CalendarMonthBackground = Color.White;
-            dtpDOB.Enabled = false;
-            dtpDOB.Font = new Font("Segoe UI", 9F);
-            dtpDOB.Format = DateTimePickerFormat.Short;
-            dtpDOB.Location = new Point(256, 121);
-            dtpDOB.Name = "dtpDOB";
-            dtpDOB.Size = new Size(238, 23);
-            dtpDOB.TabIndex = 25;
             // 
             // comboBox1
             // 
@@ -391,60 +459,10 @@
             comboBox1.Font = new Font("Segoe UI", 9F);
             comboBox1.FormattingEnabled = true;
             comboBox1.Items.AddRange(new object[] { "Male", "Female" });
-            comboBox1.Location = new Point(256, 94);
+            comboBox1.Location = new Point(256, 66);
             comboBox1.Name = "comboBox1";
             comboBox1.Size = new Size(238, 23);
             comboBox1.TabIndex = 27;
-            // 
-            // txtMicrochip
-            // 
-            txtMicrochip.BackColor = Color.White;
-            txtMicrochip.Font = new Font("Segoe UI", 9F);
-            txtMicrochip.Location = new Point(256, 13);
-            txtMicrochip.Name = "txtMicrochip";
-            txtMicrochip.ReadOnly = true;
-            txtMicrochip.Size = new Size(238, 23);
-            txtMicrochip.TabIndex = 26;
-            // 
-            // label13
-            // 
-            label13.AutoSize = true;
-            label13.Font = new Font("Segoe UI", 10F);
-            label13.ForeColor = Color.FromArgb(89, 85, 84);
-            label13.Location = new Point(13, 10);
-            label13.Name = "label13";
-            label13.Padding = new Padding(0, 5, 0, 0);
-            label13.Size = new Size(71, 24);
-            label13.TabIndex = 28;
-            label13.Text = "Pet Name:";
-            // 
-            // VRDSPetInfoPanel
-            // 
-            VRDSPetInfoPanel.BackColor = Color.FromArgb(249, 249, 249);
-            VRDSPetInfoPanel.ColumnCount = 2;
-            VRDSPetInfoPanel.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 50F));
-            VRDSPetInfoPanel.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 50F));
-            VRDSPetInfoPanel.Controls.Add(label13, 0, 0);
-            VRDSPetInfoPanel.Controls.Add(txtMicrochip, 1, 0);
-            VRDSPetInfoPanel.Controls.Add(comboBox1, 1, 3);
-            VRDSPetInfoPanel.Controls.Add(dtpDOB, 1, 4);
-            VRDSPetInfoPanel.Controls.Add(label3, 0, 1);
-            VRDSPetInfoPanel.Controls.Add(label5, 0, 4);
-            VRDSPetInfoPanel.Controls.Add(label4, 0, 3);
-            VRDSPetInfoPanel.Controls.Add(label2, 0, 2);
-            VRDSPetInfoPanel.Controls.Add(txtBreed, 1, 2);
-            VRDSPetInfoPanel.Controls.Add(txtSpecies, 1, 1);
-            VRDSPetInfoPanel.Location = new Point(243, 90);
-            VRDSPetInfoPanel.Name = "VRDSPetInfoPanel";
-            VRDSPetInfoPanel.Padding = new Padding(10);
-            VRDSPetInfoPanel.RowCount = 5;
-            VRDSPetInfoPanel.RowStyles.Add(new RowStyle(SizeType.Absolute, 27F));
-            VRDSPetInfoPanel.RowStyles.Add(new RowStyle(SizeType.Absolute, 26F));
-            VRDSPetInfoPanel.RowStyles.Add(new RowStyle(SizeType.Absolute, 28F));
-            VRDSPetInfoPanel.RowStyles.Add(new RowStyle(SizeType.Absolute, 27F));
-            VRDSPetInfoPanel.RowStyles.Add(new RowStyle(SizeType.Absolute, 27F));
-            VRDSPetInfoPanel.Size = new Size(507, 160);
-            VRDSPetInfoPanel.TabIndex = 15;
             // 
             // VaccineRecordsPanelVet
             // 
@@ -463,6 +481,7 @@
             VRDSVaccineDetailsPanel.PerformLayout();
             VRDSVaccineCard.ResumeLayout(false);
             VRDSVaccineCard.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)dgvPetInfo).EndInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox2).EndInit();
             VRDSPetPBPanel.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)VRDSPetPB).EndInit();
@@ -493,16 +512,17 @@
         private Button VRDSButtonGoBack;
         private Panel VRDSPetPBPanel;
         private PictureBox VRDSPetPB;
-        private ComboBox txtSpecies;
-        private TextBox txtBreed;
-        private Label label2;
-        private Label label4;
-        private Label label5;
-        private Label label3;
-        private DateTimePicker dtpDOB;
-        private ComboBox comboBox1;
-        private TextBox txtMicrochip;
-        private Label label13;
         private TableLayoutPanel VRDSPetInfoPanel;
+        private Label label13;
+        private TextBox txtMicrochip;
+        private ComboBox comboBox1;
+        private DateTimePicker dtpDOB;
+        private Label label3;
+        private Label label5;
+        private Label label4;
+        private Label label2;
+        private TextBox txtBreed;
+        private ComboBox txtSpecies;
+        private DataGridView dgvPetInfo;
     }
 }
