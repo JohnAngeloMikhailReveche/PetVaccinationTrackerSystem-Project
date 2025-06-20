@@ -11,8 +11,8 @@ namespace PetVaccinationTrackerSystem_Project.Data.Entities
     public class UserContact
     {
 
-        [Key]
-        public int ContactID { get; set; }
+        [Key, StringLength(15)]
+        public required string ContactID { get; set; }
 
         [StringLength(50)]
         public required string ContactType { get; set; }
@@ -22,7 +22,7 @@ namespace PetVaccinationTrackerSystem_Project.Data.Entities
 
         // Foreign key to User entity
         [ForeignKey("User")]
-        public int UserID { get; set; }
+        public string UserID { get; set; }
 
         // Navigation property to User entity
         public User User { get; set; }

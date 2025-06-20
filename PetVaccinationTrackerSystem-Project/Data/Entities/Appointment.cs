@@ -11,8 +11,8 @@ namespace PetVaccinationTrackerSystem_Project.Data.Entities
     public class Appointment
     {
 
-        [Key]
-        public int AppointmentID { get; set; }
+        [Key, StringLength(15)]
+        public required string AppointmentID { get; set; }
 
         public int Month { get; set; }
 
@@ -27,10 +27,10 @@ namespace PetVaccinationTrackerSystem_Project.Data.Entities
 
         // Foreign Keys
         [ForeignKey("Pet")]
-        public int PetID { get; set; }
+        public string PetID { get; set; }
 
         [ForeignKey("Vet")]
-        public int VetID { get; set; }
+        public string VetID { get; set; }
 
 
         // Navigation property to Pet entity

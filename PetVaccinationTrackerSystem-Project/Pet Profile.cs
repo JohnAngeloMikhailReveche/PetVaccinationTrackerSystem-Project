@@ -12,7 +12,6 @@ namespace PetVaccinationTrackerSystem_Project
 {
     public partial class Pet_Profile : UserControl
     {
-        
         public Pet_Profile()
         {
             InitializeComponent();
@@ -79,21 +78,6 @@ namespace PetVaccinationTrackerSystem_Project
         }
 
         private void label6_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void VRDSButtonSave_Click(object sender, EventArgs e)
-        {
-            
-        }
-
-        private void textBox9_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void textBox10_TextChanged(object sender, EventArgs e)
         {
 
         }

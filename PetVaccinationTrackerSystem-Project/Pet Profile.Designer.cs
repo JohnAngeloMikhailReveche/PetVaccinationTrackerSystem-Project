@@ -33,21 +33,21 @@
             label14 = new Label();
             VRDSVaccineCard = new Panel();
             panel2 = new Panel();
-            DOB = new DateTimePicker();
+            dateTimePicker1 = new DateTimePicker();
             label10 = new Label();
             label9 = new Label();
             label8 = new Label();
             label6 = new Label();
-            txtGender = new TextBox();
+            textBox11 = new TextBox();
             label5 = new Label();
-            textBreed = new TextBox();
+            textBox10 = new TextBox();
             label4 = new Label();
             label3 = new Label();
-            textSpecies = new TextBox();
-            txtColorMarkings = new TextBox();
-            OwnersName = new TextBox();
-            OwnerContactInfo = new TextBox();
-            PetName = new TextBox();
+            textBox9 = new TextBox();
+            textBox8 = new TextBox();
+            textBox5 = new TextBox();
+            textBox6 = new TextBox();
+            textBox7 = new TextBox();
             label2 = new Label();
             textBox4 = new TextBox();
             textBox3 = new TextBox();
@@ -57,7 +57,7 @@
             button1 = new Button();
             panel1 = new Panel();
             button2 = new Button();
-            txtNotes = new TextBox();
+            textBox1 = new TextBox();
             label1 = new Label();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             VRDSVaccineDetailsPanel.SuspendLayout();
@@ -118,21 +118,21 @@
             // 
             panel2.BackColor = Color.White;
             panel2.BorderStyle = BorderStyle.FixedSingle;
-            panel2.Controls.Add(DOB);
+            panel2.Controls.Add(dateTimePicker1);
             panel2.Controls.Add(label10);
             panel2.Controls.Add(label9);
             panel2.Controls.Add(label8);
             panel2.Controls.Add(label6);
-            panel2.Controls.Add(txtGender);
+            panel2.Controls.Add(textBox11);
             panel2.Controls.Add(label5);
-            panel2.Controls.Add(textBreed);
+            panel2.Controls.Add(textBox10);
             panel2.Controls.Add(label4);
             panel2.Controls.Add(label3);
-            panel2.Controls.Add(textSpecies);
-            panel2.Controls.Add(txtColorMarkings);
-            panel2.Controls.Add(OwnersName);
-            panel2.Controls.Add(OwnerContactInfo);
-            panel2.Controls.Add(PetName);
+            panel2.Controls.Add(textBox9);
+            panel2.Controls.Add(textBox8);
+            panel2.Controls.Add(textBox5);
+            panel2.Controls.Add(textBox6);
+            panel2.Controls.Add(textBox7);
             panel2.Controls.Add(label2);
             panel2.Location = new Point(-1, -1);
             panel2.Margin = new Padding(20, 5, 0, 0);
@@ -140,15 +140,15 @@
             panel2.Size = new Size(427, 430);
             panel2.TabIndex = 5;
             // 
-            // DOB
+            // dateTimePicker1
             // 
-            DOB.CalendarFont = new Font("Segoe UI", 13.8F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            DOB.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            DOB.Format = DateTimePickerFormat.Custom;
-            DOB.Location = new Point(216, 186);
-            DOB.Name = "DOB";
-            DOB.Size = new Size(190, 29);
-            DOB.TabIndex = 16;
+            dateTimePicker1.CalendarFont = new Font("Segoe UI", 13.8F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            dateTimePicker1.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            dateTimePicker1.Format = DateTimePickerFormat.Custom;
+            dateTimePicker1.Location = new Point(216, 186);
+            dateTimePicker1.Name = "dateTimePicker1";
+            dateTimePicker1.Size = new Size(190, 29);
+            dateTimePicker1.TabIndex = 16;
             // 
             // label10
             // 
@@ -195,16 +195,16 @@
             label6.Text = "Colors / Markings: ";
             label6.Click += label6_Click;
             // 
-            // txtGender
+            // textBox11
             // 
-            txtGender.BackColor = Color.FromArgb(249, 249, 249);
-            txtGender.Font = new Font("Segoe UI", 10F);
-            txtGender.Location = new Point(18, 180);
-            txtGender.Multiline = true;
-            txtGender.Name = "txtGender";
-            txtGender.Size = new Size(178, 38);
-            txtGender.TabIndex = 11;
-            txtGender.TextChanged += textBox11_TextChanged;
+            textBox11.BackColor = Color.FromArgb(249, 249, 249);
+            textBox11.Font = new Font("Segoe UI", 10F);
+            textBox11.Location = new Point(18, 180);
+            textBox11.Multiline = true;
+            textBox11.Name = "textBox11";
+            textBox11.Size = new Size(178, 38);
+            textBox11.TabIndex = 11;
+            textBox11.TextChanged += textBox11_TextChanged;
             // 
             // label5
             // 
@@ -217,16 +217,15 @@
             label5.TabIndex = 10;
             label5.Text = "Gender:";
             // 
-            // textBreed
+            // textBox10
             // 
-            textBreed.BackColor = Color.FromArgb(249, 249, 249);
-            textBreed.Font = new Font("Segoe UI", 10F);
-            textBreed.Location = new Point(216, 109);
-            textBreed.Multiline = true;
-            textBreed.Name = "textBreed";
-            textBreed.Size = new Size(190, 38);
-            textBreed.TabIndex = 9;
-            textBreed.TextChanged += textBox10_TextChanged;
+            textBox10.BackColor = Color.FromArgb(249, 249, 249);
+            textBox10.Font = new Font("Segoe UI", 10F);
+            textBox10.Location = new Point(216, 109);
+            textBox10.Multiline = true;
+            textBox10.Name = "textBox10";
+            textBox10.Size = new Size(190, 38);
+            textBox10.TabIndex = 9;
             // 
             // label4
             // 
@@ -251,56 +250,55 @@
             label3.Text = "Species:";
             label3.Click += label3_Click;
             // 
-            // textSpecies
+            // textBox9
             // 
-            textSpecies.BackColor = Color.FromArgb(249, 249, 249);
-            textSpecies.Font = new Font("Segoe UI", 10F);
-            textSpecies.Location = new Point(19, 109);
-            textSpecies.Multiline = true;
-            textSpecies.Name = "textSpecies";
-            textSpecies.Size = new Size(177, 38);
-            textSpecies.TabIndex = 6;
-            textSpecies.TextChanged += textBox9_TextChanged;
+            textBox9.BackColor = Color.FromArgb(249, 249, 249);
+            textBox9.Font = new Font("Segoe UI", 10F);
+            textBox9.Location = new Point(19, 109);
+            textBox9.Multiline = true;
+            textBox9.Name = "textBox9";
+            textBox9.Size = new Size(177, 38);
+            textBox9.TabIndex = 6;
             // 
-            // txtColorMarkings
+            // textBox8
             // 
-            txtColorMarkings.BackColor = Color.FromArgb(249, 249, 249);
-            txtColorMarkings.Font = new Font("Segoe UI", 10F);
-            txtColorMarkings.Location = new Point(18, 252);
-            txtColorMarkings.Multiline = true;
-            txtColorMarkings.Name = "txtColorMarkings";
-            txtColorMarkings.Size = new Size(388, 38);
-            txtColorMarkings.TabIndex = 5;
+            textBox8.BackColor = Color.FromArgb(249, 249, 249);
+            textBox8.Font = new Font("Segoe UI", 10F);
+            textBox8.Location = new Point(18, 252);
+            textBox8.Multiline = true;
+            textBox8.Name = "textBox8";
+            textBox8.Size = new Size(388, 38);
+            textBox8.TabIndex = 5;
             // 
-            // OwnersName
+            // textBox5
             // 
-            OwnersName.BackColor = Color.FromArgb(249, 249, 249);
-            OwnersName.Font = new Font("Segoe UI", 10F);
-            OwnersName.Location = new Point(18, 315);
-            OwnersName.Multiline = true;
-            OwnersName.Name = "OwnersName";
-            OwnersName.Size = new Size(388, 38);
-            OwnersName.TabIndex = 4;
+            textBox5.BackColor = Color.FromArgb(249, 249, 249);
+            textBox5.Font = new Font("Segoe UI", 10F);
+            textBox5.Location = new Point(18, 315);
+            textBox5.Multiline = true;
+            textBox5.Name = "textBox5";
+            textBox5.Size = new Size(388, 38);
+            textBox5.TabIndex = 4;
             // 
-            // OwnerContactInfo
+            // textBox6
             // 
-            OwnerContactInfo.BackColor = Color.FromArgb(249, 249, 249);
-            OwnerContactInfo.Font = new Font("Segoe UI", 10F);
-            OwnerContactInfo.Location = new Point(18, 378);
-            OwnerContactInfo.Multiline = true;
-            OwnerContactInfo.Name = "OwnerContactInfo";
-            OwnerContactInfo.Size = new Size(388, 38);
-            OwnerContactInfo.TabIndex = 3;
+            textBox6.BackColor = Color.FromArgb(249, 249, 249);
+            textBox6.Font = new Font("Segoe UI", 10F);
+            textBox6.Location = new Point(18, 378);
+            textBox6.Multiline = true;
+            textBox6.Name = "textBox6";
+            textBox6.Size = new Size(388, 38);
+            textBox6.TabIndex = 3;
             // 
-            // PetName
+            // textBox7
             // 
-            PetName.BackColor = Color.FromArgb(249, 249, 249);
-            PetName.Font = new Font("Segoe UI", 10F);
-            PetName.Location = new Point(18, 35);
-            PetName.Multiline = true;
-            PetName.Name = "PetName";
-            PetName.Size = new Size(388, 38);
-            PetName.TabIndex = 2;
+            textBox7.BackColor = Color.FromArgb(249, 249, 249);
+            textBox7.Font = new Font("Segoe UI", 10F);
+            textBox7.Location = new Point(18, 35);
+            textBox7.Multiline = true;
+            textBox7.Name = "textBox7";
+            textBox7.Size = new Size(388, 38);
+            textBox7.TabIndex = 2;
             // 
             // label2
             // 
@@ -363,7 +361,6 @@
             VRDSButtonSave.TabIndex = 31;
             VRDSButtonSave.Text = "Save";
             VRDSButtonSave.UseVisualStyleBackColor = true;
-            VRDSButtonSave.Click += VRDSButtonSave_Click;
             // 
             // button1
             // 
@@ -398,13 +395,13 @@
             button2.UseVisualStyleBackColor = true;
             button2.Click += button2_Click;
             // 
-            // txtNotes
+            // textBox1
             // 
-            txtNotes.Location = new Point(515, 339);
-            txtNotes.Multiline = true;
-            txtNotes.Name = "txtNotes";
-            txtNotes.Size = new Size(255, 186);
-            txtNotes.TabIndex = 35;
+            textBox1.Location = new Point(515, 339);
+            textBox1.Multiline = true;
+            textBox1.Name = "textBox1";
+            textBox1.Size = new Size(255, 186);
+            textBox1.TabIndex = 35;
             // 
             // label1
             // 
@@ -424,7 +421,7 @@
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.White;
             Controls.Add(label1);
-            Controls.Add(txtNotes);
+            Controls.Add(textBox1);
             Controls.Add(button2);
             Controls.Add(panel1);
             Controls.Add(button1);
@@ -454,28 +451,28 @@
         private Button button1;
         private Panel panel1;
         private Button button2;
-        private TextBox txtNotes;
+        private TextBox textBox1;
         private Label label7;
         private Label label1;
         private TextBox textBox2;
         private TextBox textBox3;
         private Panel panel2;
-        private TextBox txtGender;
+        private TextBox textBox11;
         private Label label5;
-        private TextBox textBreed;
+        private TextBox textBox10;
         private Label label4;
         private Label label3;
-        private TextBox textSpecies;
-        private TextBox txtColorMarkings;
-        private TextBox OwnersName;
-        private TextBox OwnerContactInfo;
-        private TextBox PetName;
+        private TextBox textBox9;
+        private TextBox textBox8;
+        private TextBox textBox5;
+        private TextBox textBox6;
+        private TextBox textBox7;
         private Label label2;
         private TextBox textBox4;
         private Label label10;
         private Label label9;
         private Label label8;
         private Label label6;
-        private DateTimePicker DOB;
+        private DateTimePicker dateTimePicker1;
     }
 }

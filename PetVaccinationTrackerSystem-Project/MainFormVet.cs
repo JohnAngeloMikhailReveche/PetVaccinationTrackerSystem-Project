@@ -51,10 +51,5 @@ namespace PetVaccinationTrackerSystem_Project
             mainFormVSideBHighlight.Top = mainFormVButtonPetP.Top;
             petProfilePanel1V.BringToFront();
         }
-
-        private void petProfilePanel1V_Load(object sender, EventArgs e)
-        {
-
-        }
     }
 }

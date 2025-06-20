@@ -300,7 +300,6 @@
             petProfilePanel1V.Name = "petProfilePanel1V";
             petProfilePanel1V.Size = new Size(800, 590);
             petProfilePanel1V.TabIndex = 7;
-            petProfilePanel1V.Load += petProfilePanel1V_Load;
             // 
             // MainFormVet
             // 

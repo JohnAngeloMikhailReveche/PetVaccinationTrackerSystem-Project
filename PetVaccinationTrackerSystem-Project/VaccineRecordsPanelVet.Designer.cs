@@ -93,7 +93,6 @@
             VRDSButtonAddRecord.TabIndex = 28;
             VRDSButtonAddRecord.Text = "+ Record";
             VRDSButtonAddRecord.UseVisualStyleBackColor = true;
-            VRDSButtonAddRecord.Click += VRDSButtonAddRecord_Click;
             // 
             // label14
             // 
@@ -288,7 +287,6 @@
             VRDSButtonClear.TabIndex = 29;
             VRDSButtonClear.Text = "Clear";
             VRDSButtonClear.UseVisualStyleBackColor = true;
-            VRDSButtonClear.Click += VRDSButtonClear_Click;
             // 
             // VRDSButtonGoBack
             // 
