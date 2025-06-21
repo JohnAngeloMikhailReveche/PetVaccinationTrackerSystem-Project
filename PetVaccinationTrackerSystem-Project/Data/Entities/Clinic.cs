@@ -10,8 +10,8 @@ namespace PetVaccinationTrackerSystem_Project.Data.Entities
     public class Clinic
     {
 
-        [Key, StringLength(15)]
-        public required string ClinicID { get; set; }
+        [Key]
+        public int ClinicID { get; set; }
 
         [StringLength(50)]
         public string ClinicName { get; set; }

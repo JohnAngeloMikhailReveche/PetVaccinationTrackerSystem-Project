@@ -1,4 +1,5 @@
 using PetVaccinationTrackerSystem_Project.Forms;
+using PetVaccinationTrackerSystem_Project.Forms.Auth;
 
 namespace PetVaccinationTrackerSystem_Project
 {
@@ -13,7 +14,8 @@ namespace PetVaccinationTrackerSystem_Project
             // To customize application configuration such as set high DPI settings or default font,
             // see https://aka.ms/applicationconfiguration.
             ApplicationConfiguration.Initialize();
-            Application.Run(new MainFormVet());
+            //Application.Run(new MainFormVet());
+            Application.Run(new AuthForm());
         }
     }
 }

@@ -12,8 +12,8 @@ using PetVaccinationTrackerSystem_Project.Data;
 namespace PetVaccinationTrackerSystem_Project.Migrations
 {
     [DbContext(typeof(ModelContext))]
-    [Migration("20250611132710_InitialCreate")]
-    partial class InitialCreate
+    [Migration("20250619143422_FixedLengthInHashedPassword")]
+    partial class FixedLengthInHashedPassword
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -27,9 +27,11 @@ namespace PetVaccinationTrackerSystem_Project.Migrations
 
             modelBuilder.Entity("PetVaccinationTrackerSystem_Project.Data.Entities.Appointment", b =>
                 {
-                    b.Property<string>("AppointmentID")
-                        .HasMaxLength(15)
-                        .HasColumnType("nvarchar(15)");
+                    b.Property<int>("AppointmentID")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("AppointmentID"));
 
                     b.Property<int>("Day")
                         .HasColumnType("int");
@@ -37,9 +39,8 @@ namespace PetVaccinationTrackerSystem_Project.Migrations
                     b.Property<int>("Month")
                         .HasColumnType("int");
 
-                    b.Property<string>("PetID")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(15)");
+                    b.Property<int>("PetID")
+                        .HasColumnType("int");
 
                     b.Property<string>("Reason")
                         .HasMaxLength(255)
@@ -48,9 +49,8 @@ namespace PetVaccinationTrackerSystem_Project.Migrations
                     b.Property<TimeOnly>("TimeOfAppointment")
                         .HasColumnType("time");
 
-                    b.Property<string>("VetID")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(15)");
+                    b.Property<int>("VetID")
+                        .HasColumnType("int");
 
                     b.Property<int>("Year")
                         .HasColumnType("int");
@@ -66,9 +66,11 @@ namespace PetVaccinationTrackerSystem_Project.Migrations
 
             modelBuilder.Entity("PetVaccinationTrackerSystem_Project.Data.Entities.Clinic", b =>
                 {
-                    b.Property<string>("ClinicID")
-                        .HasMaxLength(15)
-                        .HasColumnType("nvarchar(15)");
+                    b.Property<int>("ClinicID")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("ClinicID"));
 
                     b.Property<string>("City")
                         .IsRequired()
@@ -102,9 +104,11 @@ namespace PetVaccinationTrackerSystem_Project.Migrations
 
             modelBuilder.Entity("PetVaccinationTrackerSystem_Project.Data.Entities.Pet", b =>
                 {
-                    b.Property<string>("PetID")
-                        .HasMaxLength(15)
-                        .HasColumnType("nvarchar(15)");
+                    b.Property<int>("PetID")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("PetID"));
 
                     b.Property<string>("Breed")
                         .IsRequired()
@@ -141,9 +145,8 @@ namespace PetVaccinationTrackerSystem_Project.Migrations
                         .HasMaxLength(50)
                         .HasColumnType("nvarchar(50)");
 
-                    b.Property<string>("UserID")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(15)");
+                    b.Property<int>("UserID")
+                        .HasColumnType("int");
 
                     b.Property<int>("Year")
                         .HasColumnType("int");
@@ -157,9 +160,11 @@ namespace PetVaccinationTrackerSystem_Project.Migrations
 
             modelBuilder.Entity("PetVaccinationTrackerSystem_Project.Data.Entities.PetHealthRecords", b =>
                 {
-                    b.Property<string>("RecordID")
-                        .HasMaxLength(15)
-                        .HasColumnType("nvarchar(15)");
+                    b.Property<int>("RecordID")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("RecordID"));
 
                     b.Property<int>("Day")
                         .HasColumnType("int");
@@ -167,17 +172,14 @@ namespace PetVaccinationTrackerSystem_Project.Migrations
                     b.Property<int>("Month")
                         .HasColumnType("int");
 
-                    b.Property<string>("PetID")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(15)");
+                    b.Property<int>("PetID")
+                        .HasColumnType("int");
 
-                    b.Property<string>("VaccinationID")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(15)");
+                    b.Property<int>("VaccinationID")
+                        .HasColumnType("int");
 
-                    b.Property<string>("VetID")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(15)");
+                    b.Property<int>("VetID")
+                        .HasColumnType("int");
 
                     b.Property<int>("Year")
                         .HasColumnType("int");
@@ -195,9 +197,11 @@ namespace PetVaccinationTrackerSystem_Project.Migrations
 
             modelBuilder.Entity("PetVaccinationTrackerSystem_Project.Data.Entities.User", b =>
                 {
-                    b.Property<string>("UserID")
-                        .HasMaxLength(15)
-                        .HasColumnType("nvarchar(15)");
+                    b.Property<int>("UserID")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("UserID"));
 
                     b.Property<string>("FirstName")
                         .IsRequired()
@@ -211,29 +215,34 @@ namespace PetVaccinationTrackerSystem_Project.Migrations
 
                     b.Property<string>("UserEmail")
                         .IsRequired()
-                        .HasMaxLength(50)
-                        .HasColumnType("nvarchar(50)");
+                        .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("UserPassword")
                         .IsRequired()
-                        .HasMaxLength(50)
-                        .HasColumnType("nvarchar(50)");
+                        .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("UserRole")
                         .IsRequired()
                         .HasMaxLength(50)
                         .HasColumnType("nvarchar(50)");
 
+                    b.Property<int>("VetID")
+                        .HasColumnType("int");
+
                     b.HasKey("UserID");
+
+                    b.HasIndex("VetID");
 
                     b.ToTable("UserList");
                 });
 
             modelBuilder.Entity("PetVaccinationTrackerSystem_Project.Data.Entities.UserContact", b =>
                 {
-                    b.Property<string>("ContactID")
-                        .HasMaxLength(15)
-                        .HasColumnType("nvarchar(15)");
+                    b.Property<int>("ContactID")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("ContactID"));
 
                     b.Property<string>("ContactType")
                         .IsRequired()
@@ -245,9 +254,8 @@ namespace PetVaccinationTrackerSystem_Project.Migrations
                         .HasMaxLength(50)
                         .HasColumnType("nvarchar(50)");
 
-                    b.Property<string>("UserID")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(15)");
+                    b.Property<int>("UserID")
+                        .HasColumnType("int");
 
                     b.HasKey("ContactID");
 
@@ -258,9 +266,11 @@ namespace PetVaccinationTrackerSystem_Project.Migrations
 
             modelBuilder.Entity("PetVaccinationTrackerSystem_Project.Data.Entities.Vaccination", b =>
                 {
-                    b.Property<string>("VaccinationID")
-                        .HasMaxLength(15)
-                        .HasColumnType("nvarchar(15)");
+                    b.Property<int>("VaccinationID")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("VaccinationID"));
 
                     b.Property<float>("Frequency")
                         .HasColumnType("real");
@@ -282,20 +292,16 @@ namespace PetVaccinationTrackerSystem_Project.Migrations
 
             modelBuilder.Entity("PetVaccinationTrackerSystem_Project.Data.Entities.Veterinarian", b =>
                 {
-                    b.Property<string>("VetID")
-                        .HasMaxLength(15)
-                        .HasColumnType("nvarchar(15)");
+                    b.Property<int>("VetID")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
 
-                    b.Property<string>("ClinicID")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(15)");
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("VetID"));
+
+                    b.Property<int>("ClinicID")
+                        .HasColumnType("int");
 
                     b.Property<string>("LicenseNumber")
-                        .IsRequired()
-                        .HasMaxLength(50)
-                        .HasColumnType("nvarchar(50)");
-
-                    b.Property<string>("VetName")
                         .IsRequired()
                         .HasMaxLength(50)
                         .HasColumnType("nvarchar(50)");
@@ -318,7 +324,7 @@ namespace PetVaccinationTrackerSystem_Project.Migrations
                     b.HasOne("PetVaccinationTrackerSystem_Project.Data.Entities.Veterinarian", "Vet")
                         .WithMany("Appointments")
                         .HasForeignKey("VetID")
-                        .OnDelete(DeleteBehavior.Cascade)
+                        .OnDelete(DeleteBehavior.Restrict)
                         .IsRequired();
 
                     b.Navigation("Pet");
@@ -348,13 +354,13 @@ namespace PetVaccinationTrackerSystem_Project.Migrations
                     b.HasOne("PetVaccinationTrackerSystem_Project.Data.Entities.Vaccination", "Vaccination")
                         .WithMany("PetHealthRecords")
                         .HasForeignKey("VaccinationID")
-                        .OnDelete(DeleteBehavior.Cascade)
+                        .OnDelete(DeleteBehavior.Restrict)
                         .IsRequired();
 
                     b.HasOne("PetVaccinationTrackerSystem_Project.Data.Entities.Veterinarian", "Vet")
                         .WithMany("PetHealthRecords")
                         .HasForeignKey("VetID")
-                        .OnDelete(DeleteBehavior.Cascade)
+                        .OnDelete(DeleteBehavior.Restrict)
                         .IsRequired();
 
                     b.Navigation("Pet");
@@ -362,6 +368,17 @@ namespace PetVaccinationTrackerSystem_Project.Migrations
                     b.Navigation("Vaccination");
 
                     b.Navigation("Vet");
+                });
+
+            modelBuilder.Entity("PetVaccinationTrackerSystem_Project.Data.Entities.User", b =>
+                {
+                    b.HasOne("PetVaccinationTrackerSystem_Project.Data.Entities.Veterinarian", "Veterinarian")
+                        .WithMany("Users")
+                        .HasForeignKey("VetID")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("Veterinarian");
                 });
 
             modelBuilder.Entity("PetVaccinationTrackerSystem_Project.Data.Entities.UserContact", b =>
@@ -415,6 +432,8 @@ namespace PetVaccinationTrackerSystem_Project.Migrations
                     b.Navigation("Appointments");
 
                     b.Navigation("PetHealthRecords");
+
+                    b.Navigation("Users");
                 });
 #pragma warning restore 612, 618
         }

@@ -11,18 +11,19 @@ namespace PetVaccinationTrackerSystem_Project.Data.Entities
     public class Veterinarian
     {
 
-        [Key, StringLength(15)]
-        public required string VetID { get; set; }
-
-        [StringLength(50)]
-        public string VetName { get; set; }
+        [Key]
+        public int VetID { get; set; }
 
         [StringLength(50)]
         public string LicenseNumber { get; set; }
 
+
+
+
+
         // Foreign Key
         [ForeignKey("Clinic")]
-        public string ClinicID { get; set; }
+        public int ClinicID { get; set; }
 
 
         // Navigation property to Clinic entity
@@ -33,6 +34,7 @@ namespace PetVaccinationTrackerSystem_Project.Data.Entities
         public List<Appointment>? Appointments { get; set; }
 
         public List<PetHealthRecords>? PetHealthRecords { get; set; }
-        
+        public List<User>? Users { get; set; }
+
     }
 }
