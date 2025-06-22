@@ -73,8 +73,19 @@ namespace PetVaccinationTrackerSystem_Project.Forms.Admin
         {
             mainFormVSideBHighlight.Height = mainFormVButtonHome.Height;
             mainFormVSideBHighlight.Top = mainFormVButtonHome.Top;
+
+            // Load data for the home user control
             homeUserControl1V.LoadVeterinarianData();
+            homeUserControl1V.LoadClinicData();
+
             homeUserControl1V.BringToFront();
+        }
+
+        private void mainFormVButtonSettings_Click(object sender, EventArgs e)
+        {
+            AdminSettingsForm adminSettingsForm = new AdminSettingsForm();
+
+            adminSettingsForm.ShowDialog();
         }
     }
 }

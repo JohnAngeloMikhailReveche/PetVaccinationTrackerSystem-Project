@@ -20,6 +20,56 @@ namespace PetVaccinationTrackerSystem_Project.Forms.Auth
 
         private IAuthServices _authServices;
 
+        // Private fields to store the admin credentials
+        private string _fullPathToAdminConfigFile;
+        private string _adminUsername;
+        private string _adminPassword;
+
+        private string GetAdminConfigFile()
+        {
+            string baseDir = AppDomain.CurrentDomain.BaseDirectory; // Gets the base directory of the application
+            string projectRoot = Path.GetFullPath(Path.Combine(baseDir, "..", "..", "..")); // Navigate to the project root directory
+            string relativePath = Path.Combine(projectRoot, "admin", "admin_config.txt"); // Combine with the relative path to the admin config file
+            string fullPath = Path.GetFullPath(relativePath);
+
+            return fullPath;
+        }
+        private void LoadAdminConfigFile()
+        {
+            if (File.Exists(_fullPathToAdminConfigFile))
+            {
+                string[] lines = File.ReadAllLines(_fullPathToAdminConfigFile);
+
+                if (lines.Length >= 2)
+                {
+                    string username = lines[0].Trim();
+                    string password = lines[1].Trim();
+
+                    // Store the admin credentials in private fields
+                    _adminUsername = username;
+                    _adminPassword = password;
+                }
+            }
+        }
+
+        private bool CheckIfAdminLogin(string email, string password)
+        {
+
+            if(string.IsNullOrEmpty(_fullPathToAdminConfigFile))
+            {
+                _fullPathToAdminConfigFile = GetAdminConfigFile(); // Get the full path to the admin config file
+            }
+            
+            LoadAdminConfigFile(); // Load the admin config file to get the admin credentials
+
+            if (email == _adminUsername && password == _adminPassword)
+            {
+                return true;
+            }
+
+            return false;
+        }
+
         private void ShowSystemPasswordChar(bool show)
         {
             txtboxPassword.UseSystemPasswordChar = !show;
@@ -40,9 +90,9 @@ namespace PetVaccinationTrackerSystem_Project.Forms.Auth
             FormManager.SwitchForm(this, new MainFormVet());
         }
 
-        private void AdminLoginBeta()
+        private void AdminLogin()
         {
-            MessageBox.Show($"Welcome Admin! You are logged in as BETA Admin.", "Login Successful", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            MessageBox.Show($"Welcome! You are logged in as Admin.", "Login Successful", MessageBoxButtons.OK, MessageBoxIcon.Information);
             // Switch to the Dashboard/Main Winform.
             ClearTextBoxes();
             FormManager.SwitchForm(this, new AdminForm());
@@ -55,7 +105,6 @@ namespace PetVaccinationTrackerSystem_Project.Forms.Auth
             var context = new ModelContext();
             var userRepository = new UserRepository(context);
             _authServices = new AuthService(userRepository);
-
         }
 
         private void AuthForm_Shown(object sender, EventArgs e)
@@ -68,18 +117,20 @@ namespace PetVaccinationTrackerSystem_Project.Forms.Auth
             var email = txtboxEmail.Text.Trim();
             var password = txtboxPassword.Text.Trim();
 
-            // Beta Purposes - remove this in production
+            // Check if the Admin is logging in
+            if (CheckIfAdminLogin(email, password))
+            {
+                // If the user is an admin, switch to the Admin Dashboard.
+                AdminLogin();
+                return;
+            }
+
+
+            // User Beta Purposes - remove this in production
             if (email == "user" && password == "user123")
             {
                 // Bypass login for beta testing purposes
                 BypassLoginBeta();
-                return;
-            }
-
-            // Beta Purposes - remove this in production
-            if (email == "admin" && password == "admin123")
-            {
-                AdminLoginBeta();
                 return;
             }
 

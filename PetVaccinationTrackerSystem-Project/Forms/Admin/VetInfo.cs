@@ -65,6 +65,7 @@ namespace PetVaccinationTrackerSystem_Project.Forms.Admin
 
         private void VetInfo_Load(object sender, EventArgs e)
         {
+            // For Combo Box Clinic
             using (var context = new ModelContext())
             {
                 var clinics = context.ClinicList
@@ -132,7 +133,7 @@ namespace PetVaccinationTrackerSystem_Project.Forms.Admin
         private void btnDelete_Click(object sender, EventArgs e)
         {
             // Delete the Veterinarian from the Database
-            DialogResult result = MessageBox.Show("Are you sure you want to delete this veterinarian?", "Confirm Delete", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
+            DialogResult result = MessageBox.Show("Are you sure you want to delete this veterinarian data?", "Confirm Delete", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
 
             if (result == DialogResult.Yes)
             {
@@ -157,13 +158,13 @@ namespace PetVaccinationTrackerSystem_Project.Forms.Admin
                         // Save changes to the database
                         context.SaveChanges();
 
-                        MessageBox.Show("Veterinarian deleted successfully.", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        MessageBox.Show("Veterinarian Data deleted successfully.", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
                         this.Close();
                     }
                     else
                     {
-                        MessageBox.Show("Veterinarian not found.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        MessageBox.Show("Veterinarian Data not found.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     }
                 }
             }
