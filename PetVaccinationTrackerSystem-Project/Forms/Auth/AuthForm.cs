@@ -81,15 +81,6 @@ namespace PetVaccinationTrackerSystem_Project.Forms.Auth
             txtboxPassword.Clear();
         }
 
-        private void BypassLoginBeta()
-        {
-            MessageBox.Show($"Welcome User! You are logged in as BETA User.", "Login Successful", MessageBoxButtons.OK, MessageBoxIcon.Information);
-
-            // Switch to the Dashboard/Main Winform.
-            ClearTextBoxes();
-            FormManager.SwitchForm(this, new MainFormVet());
-        }
-
         private void AdminLogin()
         {
             MessageBox.Show($"Welcome! You are logged in as Admin.", "Login Successful", MessageBoxButtons.OK, MessageBoxIcon.Information);
@@ -125,26 +116,18 @@ namespace PetVaccinationTrackerSystem_Project.Forms.Auth
                 return;
             }
 
-
-            // User Beta Purposes - remove this in production
-            if (email == "user" && password == "user123")
-            {
-                // Bypass login for beta testing purposes
-                BypassLoginBeta();
-                return;
-            }
-
             // Using the AuthService to login the user
             var user = _authServices.Login(email, password);
 
             // If the user non-null value that means the user exists and the password matches.
             if (user != null)
             {
-                MessageBox.Show($"Welcome {user.FirstName}! You are logged in as {user.UserRole}.", "Login Successful", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+                MessageBox.Show($"Welcome {user.FirstName} {user.LastName}! You are logged in as {user.UserRole}.", "Login Successful", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
                 // Switch to the Dashboard/Main Winform.
                 ClearTextBoxes();
-                FormManager.SwitchForm(this, new MainFormVet());
+                FormManager.SwitchForm(this, new MainFormVet(user));
             }
             else
             {

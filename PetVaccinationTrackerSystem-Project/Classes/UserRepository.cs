@@ -1,4 +1,5 @@
-﻿using PetVaccinationTrackerSystem_Project.Classes.Interfaces;
+﻿using Microsoft.EntityFrameworkCore;
+using PetVaccinationTrackerSystem_Project.Classes.Interfaces;
 using PetVaccinationTrackerSystem_Project.Data;
 using PetVaccinationTrackerSystem_Project.Data.Entities;
 using System;
@@ -14,6 +15,17 @@ namespace PetVaccinationTrackerSystem_Project.Classes
     {
         private readonly ModelContext _context;
 
+        private bool IsVetClinicEmail(string email)
+        {
+            // Check if the email ends with "@vetclinic.com"
+            if (email.EndsWith("@vetclinic.com", StringComparison.OrdinalIgnoreCase))
+            {
+                return true;
+            }
+
+            return false;
+        }
+
         // Constructor that takes a ModelContext to interact with the database
         public UserRepository(ModelContext context)
         {
@@ -24,14 +36,34 @@ namespace PetVaccinationTrackerSystem_Project.Classes
         // Returns the User Model if the username and password match, otherwise returns null
         public User GetByEmail(string email)
         {
-            PasswordHelper passwordHelper = new PasswordHelper();
 
+            if (IsVetClinicEmail(email))
+            {
+                var match = _context.UserList
+                .Include(vet => vet.Veterinarian)
+                .ThenInclude(clinic => clinic.Clinic)
+                .FirstOrDefault(user => user.UserEmail == email);
 
-            // Check if the username and password match any user in the UserList
-            var match = _context.UserList.FirstOrDefault(u => u.UserEmail == email);
+                if (match == null)
+                    throw new Exception("User not found.");
 
-            return match;
-         
+                if (match.Veterinarian == null)
+                    throw new Exception("Veterinarian relation is null.");
+
+                if (match.Veterinarian.Clinic == null)
+                    throw new Exception("Clinic relation is null.");
+
+                
+
+                return match;
+
+            } else
+            {
+                var match = _context.UserList.FirstOrDefault(u => u.UserEmail == email);
+
+                return match;
+            }
+
         }
     }
 }
