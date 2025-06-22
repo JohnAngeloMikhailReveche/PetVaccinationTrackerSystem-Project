@@ -34,7 +34,7 @@
             mainFormButtonSettings = new Button();
             mainFormButtonExit = new Button();
             panel3 = new Panel();
-
+            vaccineReportsPanel1 = new vaccineReportsPanel();
             vaccineRecordsPanel1 = new VaccineRecordsPanelVet();
             homePanel1 = new homePanel();
             mainFormSideB = new Panel();
@@ -46,8 +46,8 @@
             mainFormButtonPetP = new Button();
             mainFormButtonHome = new Button();
             mainFormUserPB = new Panel();
+            aboutUsPanel1 = new AboutUs();
             pictureBox1 = new PictureBox();
-            vaccineReportsPanel1 = new vaccineReportsPanel();
             mainFormTopB.SuspendLayout();
             panel3.SuspendLayout();
             mainFormSideB.SuspendLayout();
@@ -110,17 +110,26 @@
             // panel3
             // 
             panel3.Controls.Add(vaccineReportsPanel1);
-
             panel3.Controls.Add(vaccineRecordsPanel1);
             panel3.Controls.Add(homePanel1);
+            panel3.Controls.Add(aboutUsPanel1);
             panel3.Controls.Add(mainFormSideB);
+            panel3.Controls.Add(aboutUsPanel1);
             panel3.Dock = DockStyle.Bottom;
             panel3.Location = new Point(0, 50);
             panel3.Name = "panel3";
             panel3.Size = new Size(1000, 590);
             panel3.TabIndex = 2;
             // 
-      
+            // vaccineReportsPanel1
+            // 
+            vaccineReportsPanel1.BackColor = Color.White;
+            vaccineReportsPanel1.Dock = DockStyle.Fill;
+            vaccineReportsPanel1.Location = new Point(200, 0);
+            vaccineReportsPanel1.Name = "vaccineReportsPanel1";
+            vaccineReportsPanel1.Size = new Size(800, 590);
+            vaccineReportsPanel1.TabIndex = 4;
+            // 
             // vaccineRecordsPanel1
             // 
             vaccineRecordsPanel1.BackColor = Color.White;
@@ -138,6 +147,13 @@
             homePanel1.Name = "homePanel1";
             homePanel1.Size = new Size(800, 590);
             homePanel1.TabIndex = 1;
+            // 
+            // aboutPanel1
+            // 
+            aboutUsPanel1.Dock = DockStyle.Fill;
+            aboutUsPanel1.BackColor = Color.White;
+            aboutUsPanel1.Name = "aboutUsPanel1";
+
             // 
             // mainFormSideB
             // 
@@ -178,6 +194,7 @@
             mainFormButtonAboutUs.Text = "        About Us";
             mainFormButtonAboutUs.TextAlign = ContentAlignment.MiddleLeft;
             mainFormButtonAboutUs.UseVisualStyleBackColor = true;
+            mainFormButtonAboutUs.Click += mainFormButtonAboutUs_Click;
             // 
             // mainFormButtonLO
             // 
@@ -282,15 +299,6 @@
             pictureBox1.TabIndex = 0;
             pictureBox1.TabStop = false;
             // 
-            // vaccineReportsPanel1
-            // 
-            vaccineReportsPanel1.BackColor = Color.White;
-            vaccineReportsPanel1.Dock = DockStyle.Fill;
-            vaccineReportsPanel1.Location = new Point(200, 0);
-            vaccineReportsPanel1.Name = "vaccineReportsPanel1";
-            vaccineReportsPanel1.Size = new Size(800, 590);
-            vaccineReportsPanel1.TabIndex = 4;
-            // 
             // MainForm
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
@@ -315,26 +323,22 @@
         #endregion
         private Panel mainFormTopB;
         private Button mainFormButtonAlerts;
+        private Button mainFormButtonSettings;
+        private Button mainFormButtonExit;
         private Panel panel3;
+        private vaccineReportsPanel vaccineReportsPanel1;
+        private VaccineRecordsPanelVet vaccineRecordsPanel1;
+        private homePanel homePanel1;
+        private AboutUs aboutUsPanel1; 
         private Panel mainFormSideB;
         private Panel mainFormSideBHighlight;
+        private Button mainFormButtonAboutUs;
+        private ReaLTaiizor.Controls.HopeRoundButton mainFormButtonLO;
+        private Button mainFormButtonVRTS;
         private Button mainFormButtonVRDS;
         private Button mainFormButtonPetP;
         private Button mainFormButtonHome;
         private Panel mainFormUserPB;
         private PictureBox pictureBox1;
-        private Button mainFormButtonVRTS;
-        private ReaLTaiizor.Controls.HopeRoundButton mainFormButtonLO;
-        private Button button2;
-        private Button button1;
-        private Button button3;
-        private Button button5;
-        private Button mainFormButtonSettings;
-        private Button mainFormButtonExit;
-        private Button mainFormButtonAboutUs;
-        private homePanel homePanel1;
-        private VaccineRecordsPanelVet vaccineRecordsPanel1;
-        private petProfilePanel petProfilePanel1;
-        private vaccineReportsPanel vaccineReportsPanel1;
     }
 }

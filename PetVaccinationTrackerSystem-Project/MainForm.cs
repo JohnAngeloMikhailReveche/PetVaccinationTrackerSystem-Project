@@ -51,6 +51,13 @@ namespace PetVaccinationTrackerSystem_Project
             mainFormSideBHighlight.Top = mainFormButtonVRTS.Top;
             vaccineReportsPanel1.BringToFront();
         }
+        private void mainFormButtonAboutUs_Click(object sender, EventArgs e)
+        {
+            mainFormSideBHighlight.Height = mainFormButtonAboutUs.Height;
+            mainFormSideBHighlight.Top = mainFormButtonAboutUs.Top;
+            aboutUsPanel1.BringToFront();
+        }
+
     }
 }
 
