@@ -40,7 +40,6 @@
             mainFormVButtonHome = new Button();
             mainFormVPB = new Panel();
             pictureBox1 = new PictureBox();
-            homeUserControl1V = new HomeUserControl();
             adminRegisterClinicUsCo1V = new AdminRegisterClinicUsCo();
             adminRegisterVetUsCo1V = new AdminRegisterVetUsCo();
             mainFormVTopB.SuspendLayout();
@@ -199,14 +198,6 @@
             pictureBox1.TabIndex = 0;
             pictureBox1.TabStop = false;
             // 
-            // homeUserControl1V
-            // 
-            homeUserControl1V.BackColor = Color.White;
-            homeUserControl1V.Location = new Point(200, 50);
-            homeUserControl1V.Name = "homeUserControl1V";
-            homeUserControl1V.Size = new Size(800, 590);
-            homeUserControl1V.TabIndex = 5;
-            // 
             // adminRegisterClinicUsCo1V
             // 
             adminRegisterClinicUsCo1V.BackColor = Color.White;
@@ -222,6 +213,7 @@
             adminRegisterVetUsCo1V.Name = "adminRegisterVetUsCo1V";
             adminRegisterVetUsCo1V.Size = new Size(800, 590);
             adminRegisterVetUsCo1V.TabIndex = 7;
+            adminRegisterVetUsCo1V.Load += adminRegisterVetUsCo1V_Load;
             // 
             // AdminForm
             // 
@@ -230,7 +222,6 @@
             ClientSize = new Size(1000, 640);
             Controls.Add(adminRegisterVetUsCo1V);
             Controls.Add(adminRegisterClinicUsCo1V);
-            Controls.Add(homeUserControl1V);
             Controls.Add(mainFormVSideB);
             Controls.Add(mainFormVTopB);
             FormBorderStyle = FormBorderStyle.None;

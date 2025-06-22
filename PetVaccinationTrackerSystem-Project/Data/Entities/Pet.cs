@@ -5,6 +5,7 @@ using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using static ReaLTaiizor.Util.RoundInt;
 
 namespace PetVaccinationTrackerSystem_Project.Data.Entities
 {
@@ -17,11 +18,8 @@ namespace PetVaccinationTrackerSystem_Project.Data.Entities
         [StringLength(50)]
         public string PetName { get; set; }
 
-        [StringLength(50)]
-        public string OwnerFirstName { get; set; }
-
-        [StringLength(50)]
-        public string OwnerLastName { get; set; }
+        [StringLength(100)]
+        public string OwnerName{ get; set; }
 
         [StringLength(50)]
         public string Species { get; set; }
@@ -29,13 +27,18 @@ namespace PetVaccinationTrackerSystem_Project.Data.Entities
         [StringLength(50)]
         public string Breed { get; set; }
 
-        public int Month { get; set; }
+        public DateTime DateOfBirth { get; set; }
 
-        public int Day { get; set; }
+        [StringLength(100)]
+        public string ColorsAndMarkings { get; set; }
+        public int OwnerPhoneNumber { get; set; }
 
-        public int Year { get; set; }
+        [StringLength(300)]
+        public string Notes { get; set; }
 
-        [StringLength(30)]
+        [StringLength(1000)]
+        public string? ImageRL { get; set; }
+
         public string? Gender { get; set; }
 
         // Foreign Key
