@@ -6,7 +6,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 namespace PetVaccinationTrackerSystem_Project.Migrations
 {
     /// <inheritdoc />
-    public partial class InitialCreate : Migration
+    public partial class UpdatedDatabase : Migration
     {
         /// <inheritdoc />
         protected override void Up(MigrationBuilder migrationBuilder)
@@ -15,7 +15,8 @@ namespace PetVaccinationTrackerSystem_Project.Migrations
                 name: "ClinicList",
                 columns: table => new
                 {
-                    ClinicID = table.Column<string>(type: "nvarchar(15)", maxLength: 15, nullable: false),
+                    ClinicID = table.Column<int>(type: "int", nullable: false)
+                        .Annotation("SqlServer:Identity", "1, 1"),
                     ClinicName = table.Column<string>(type: "nvarchar(50)", maxLength: 50, nullable: false),
                     Street = table.Column<string>(type: "nvarchar(70)", maxLength: 70, nullable: false),
                     City = table.Column<string>(type: "nvarchar(70)", maxLength: 70, nullable: false),
@@ -28,26 +29,11 @@ namespace PetVaccinationTrackerSystem_Project.Migrations
                 });
 
             migrationBuilder.CreateTable(
-                name: "UserList",
-                columns: table => new
-                {
-                    UserID = table.Column<string>(type: "nvarchar(15)", maxLength: 15, nullable: false),
-                    FirstName = table.Column<string>(type: "nvarchar(50)", maxLength: 50, nullable: false),
-                    LastName = table.Column<string>(type: "nvarchar(50)", maxLength: 50, nullable: false),
-                    UserEmail = table.Column<string>(type: "nvarchar(50)", maxLength: 50, nullable: false),
-                    UserPassword = table.Column<string>(type: "nvarchar(50)", maxLength: 50, nullable: false),
-                    UserRole = table.Column<string>(type: "nvarchar(50)", maxLength: 50, nullable: false)
-                },
-                constraints: table =>
-                {
-                    table.PrimaryKey("PK_UserList", x => x.UserID);
-                });
-
-            migrationBuilder.CreateTable(
                 name: "VaccinationList",
                 columns: table => new
                 {
-                    VaccinationID = table.Column<string>(type: "nvarchar(15)", maxLength: 15, nullable: false),
+                    VaccinationID = table.Column<int>(type: "int", nullable: false)
+                        .Annotation("SqlServer:Identity", "1, 1"),
                     VaccineName = table.Column<string>(type: "nvarchar(60)", maxLength: 60, nullable: false),
                     VaccineDesc = table.Column<string>(type: "nvarchar(255)", maxLength: 255, nullable: false),
                     Frequency = table.Column<float>(type: "real", nullable: false)
@@ -61,10 +47,10 @@ namespace PetVaccinationTrackerSystem_Project.Migrations
                 name: "VeterinarianList",
                 columns: table => new
                 {
-                    VetID = table.Column<string>(type: "nvarchar(15)", maxLength: 15, nullable: false),
-                    VetName = table.Column<string>(type: "nvarchar(50)", maxLength: 50, nullable: false),
+                    VetID = table.Column<int>(type: "int", nullable: false)
+                        .Annotation("SqlServer:Identity", "1, 1"),
                     LicenseNumber = table.Column<string>(type: "nvarchar(50)", maxLength: 50, nullable: false),
-                    ClinicID = table.Column<string>(type: "nvarchar(15)", nullable: false)
+                    ClinicID = table.Column<int>(type: "int", nullable: false)
                 },
                 constraints: table =>
                 {
@@ -78,10 +64,35 @@ namespace PetVaccinationTrackerSystem_Project.Migrations
                 });
 
             migrationBuilder.CreateTable(
+                name: "UserList",
+                columns: table => new
+                {
+                    UserID = table.Column<int>(type: "int", nullable: false)
+                        .Annotation("SqlServer:Identity", "1, 1"),
+                    FirstName = table.Column<string>(type: "nvarchar(50)", maxLength: 50, nullable: false),
+                    LastName = table.Column<string>(type: "nvarchar(50)", maxLength: 50, nullable: false),
+                    UserEmail = table.Column<string>(type: "nvarchar(50)", maxLength: 50, nullable: false),
+                    UserPassword = table.Column<string>(type: "nvarchar(50)", maxLength: 50, nullable: false),
+                    UserRole = table.Column<string>(type: "nvarchar(50)", maxLength: 50, nullable: false),
+                    VetID = table.Column<int>(type: "int", nullable: false)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_UserList", x => x.UserID);
+                    table.ForeignKey(
+                        name: "FK_UserList_VeterinarianList_VetID",
+                        column: x => x.VetID,
+                        principalTable: "VeterinarianList",
+                        principalColumn: "VetID",
+                        onDelete: ReferentialAction.Cascade);
+                });
+
+            migrationBuilder.CreateTable(
                 name: "PetList",
                 columns: table => new
                 {
-                    PetID = table.Column<string>(type: "nvarchar(15)", maxLength: 15, nullable: false),
+                    PetID = table.Column<int>(type: "int", nullable: false)
+                        .Annotation("SqlServer:Identity", "1, 1"),
                     PetName = table.Column<string>(type: "nvarchar(50)", maxLength: 50, nullable: false),
                     OwnerFirstName = table.Column<string>(type: "nvarchar(50)", maxLength: 50, nullable: false),
                     OwnerLastName = table.Column<string>(type: "nvarchar(50)", maxLength: 50, nullable: false),
@@ -91,7 +102,7 @@ namespace PetVaccinationTrackerSystem_Project.Migrations
                     Day = table.Column<int>(type: "int", nullable: false),
                     Year = table.Column<int>(type: "int", nullable: false),
                     Gender = table.Column<string>(type: "nvarchar(30)", maxLength: 30, nullable: true),
-                    UserID = table.Column<string>(type: "nvarchar(15)", nullable: false)
+                    UserID = table.Column<int>(type: "int", nullable: false)
                 },
                 constraints: table =>
                 {
@@ -108,10 +119,11 @@ namespace PetVaccinationTrackerSystem_Project.Migrations
                 name: "UserContactList",
                 columns: table => new
                 {
-                    ContactID = table.Column<string>(type: "nvarchar(15)", maxLength: 15, nullable: false),
+                    ContactID = table.Column<int>(type: "int", nullable: false)
+                        .Annotation("SqlServer:Identity", "1, 1"),
                     ContactType = table.Column<string>(type: "nvarchar(50)", maxLength: 50, nullable: false),
                     ContactValue = table.Column<string>(type: "nvarchar(50)", maxLength: 50, nullable: false),
-                    UserID = table.Column<string>(type: "nvarchar(15)", nullable: false)
+                    UserID = table.Column<int>(type: "int", nullable: false)
                 },
                 constraints: table =>
                 {
@@ -128,14 +140,15 @@ namespace PetVaccinationTrackerSystem_Project.Migrations
                 name: "AppointmentList",
                 columns: table => new
                 {
-                    AppointmentID = table.Column<string>(type: "nvarchar(15)", maxLength: 15, nullable: false),
+                    AppointmentID = table.Column<int>(type: "int", nullable: false)
+                        .Annotation("SqlServer:Identity", "1, 1"),
                     Month = table.Column<int>(type: "int", nullable: false),
                     Day = table.Column<int>(type: "int", nullable: false),
                     Year = table.Column<int>(type: "int", nullable: false),
                     TimeOfAppointment = table.Column<TimeOnly>(type: "time", nullable: false),
                     Reason = table.Column<string>(type: "nvarchar(255)", maxLength: 255, nullable: true),
-                    PetID = table.Column<string>(type: "nvarchar(15)", nullable: false),
-                    VetID = table.Column<string>(type: "nvarchar(15)", nullable: false)
+                    PetID = table.Column<int>(type: "int", nullable: false),
+                    VetID = table.Column<int>(type: "int", nullable: false)
                 },
                 constraints: table =>
                 {
@@ -151,20 +164,21 @@ namespace PetVaccinationTrackerSystem_Project.Migrations
                         column: x => x.VetID,
                         principalTable: "VeterinarianList",
                         principalColumn: "VetID",
-                        onDelete: ReferentialAction.Cascade);
+                        onDelete: ReferentialAction.Restrict);
                 });
 
             migrationBuilder.CreateTable(
                 name: "PetHealthRecordsList",
                 columns: table => new
                 {
-                    RecordID = table.Column<string>(type: "nvarchar(15)", maxLength: 15, nullable: false),
+                    RecordID = table.Column<int>(type: "int", nullable: false)
+                        .Annotation("SqlServer:Identity", "1, 1"),
                     Month = table.Column<int>(type: "int", nullable: false),
                     Day = table.Column<int>(type: "int", nullable: false),
                     Year = table.Column<int>(type: "int", nullable: false),
-                    VaccinationID = table.Column<string>(type: "nvarchar(15)", nullable: false),
-                    VetID = table.Column<string>(type: "nvarchar(15)", nullable: false),
-                    PetID = table.Column<string>(type: "nvarchar(15)", nullable: false)
+                    VaccinationID = table.Column<int>(type: "int", nullable: false),
+                    VetID = table.Column<int>(type: "int", nullable: false),
+                    PetID = table.Column<int>(type: "int", nullable: false)
                 },
                 constraints: table =>
                 {
@@ -180,13 +194,13 @@ namespace PetVaccinationTrackerSystem_Project.Migrations
                         column: x => x.VaccinationID,
                         principalTable: "VaccinationList",
                         principalColumn: "VaccinationID",
-                        onDelete: ReferentialAction.Cascade);
+                        onDelete: ReferentialAction.Restrict);
                     table.ForeignKey(
                         name: "FK_PetHealthRecordsList_VeterinarianList_VetID",
                         column: x => x.VetID,
                         principalTable: "VeterinarianList",
                         principalColumn: "VetID",
-                        onDelete: ReferentialAction.Cascade);
+                        onDelete: ReferentialAction.Restrict);
                 });
 
             migrationBuilder.CreateIndex(
@@ -225,6 +239,11 @@ namespace PetVaccinationTrackerSystem_Project.Migrations
                 column: "UserID");
 
             migrationBuilder.CreateIndex(
+                name: "IX_UserList_VetID",
+                table: "UserList",
+                column: "VetID");
+
+            migrationBuilder.CreateIndex(
                 name: "IX_VeterinarianList_ClinicID",
                 table: "VeterinarianList",
                 column: "ClinicID");
@@ -249,10 +268,10 @@ namespace PetVaccinationTrackerSystem_Project.Migrations
                 name: "VaccinationList");
 
             migrationBuilder.DropTable(
-                name: "VeterinarianList");
+                name: "UserList");
 
             migrationBuilder.DropTable(
-                name: "UserList");
+                name: "VeterinarianList");
 
             migrationBuilder.DropTable(
                 name: "ClinicList");

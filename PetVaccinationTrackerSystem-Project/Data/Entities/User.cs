@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -10,8 +11,8 @@ namespace PetVaccinationTrackerSystem_Project.Data.Entities
 {
     public class User
     {
-        [Key, StringLength(15)]
-        public required string UserID { get; set; }
+        [Key]
+        public int UserID { get; set; }
 
         [StringLength(50)]
         public string FirstName { get; set; }
@@ -19,14 +20,22 @@ namespace PetVaccinationTrackerSystem_Project.Data.Entities
         [StringLength(50)]
         public string LastName { get; set; }
 
-        [StringLength(50)]
-        public required string UserEmail { get; set; }
+        public string UserEmail { get; set; }
+
+        public string UserPassword { get; set; }
 
         [StringLength(50)]
-        public required string UserPassword { get; set; }
+        public string UserRole { get; set; }
 
-        [StringLength(50)]
-        public required string UserRole { get; set; }
+
+
+        // Foregn Key
+        [ForeignKey("Veterinarian")]
+        public int VetID { get; set; }
+
+        // Navigation property to User entity
+        public Veterinarian Veterinarian { get; set; }
+
 
 
         // Navigation properties for related entities

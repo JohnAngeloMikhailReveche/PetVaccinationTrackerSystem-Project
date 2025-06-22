@@ -1,8 +1,6 @@
-﻿using PetVaccinationTrackerSystem_Project.Forms.Admin;
-
-namespace PetVaccinationTrackerSystem_Project
+﻿namespace PetVaccinationTrackerSystem_Project.Forms.Admin
 {
-    partial class MainFormVet
+    partial class AdminForm
     {
         /// <summary>
         /// Required designer variable.
@@ -30,26 +28,22 @@ namespace PetVaccinationTrackerSystem_Project
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainFormVet));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(AdminForm));
             mainFormVTopB = new Panel();
             mainFormVButtonAlerts = new Button();
             mainFormVButtonSettings = new Button();
             mainFormVButtonExit = new Button();
             mainFormVSideB = new Panel();
-            mainFormVAboutUs = new Button();
             mainFormVSideBHighlight = new Panel();
-            mainFormVButtonRegister = new Button();
             mainFormVButtonLO = new ReaLTaiizor.Controls.HopeRoundButton();
-            mainFormVButtonVRTS = new Button();
-            mainFormVButtonVRDS = new Button();
-            mainFormVButtonPetP = new Button();
+            btnRegisterVet = new Button();
+            btnRegisterClinic = new Button();
             mainFormVButtonHome = new Button();
             mainFormVPB = new Panel();
             pictureBox1 = new PictureBox();
-            homePanel1V = new homePanel();
-            registerPetOwnerPanel1V = new registerPetOwnerPanel();
-            vaccineRecordsPanel1V = new VaccineRecordsPanelVet();
-            petProfilePanel1V = new petProfilePanelVet();
+            homeUserControl1V = new HomeUserControl();
+            adminRegisterClinicUsCo1V = new AdminRegisterClinicUsCo();
+            adminRegisterVetUsCo1V = new AdminRegisterVetUsCo();
             mainFormVTopB.SuspendLayout();
             mainFormVSideB.SuspendLayout();
             mainFormVPB.SuspendLayout();
@@ -66,7 +60,7 @@ namespace PetVaccinationTrackerSystem_Project
             mainFormVTopB.Location = new Point(0, 0);
             mainFormVTopB.Name = "mainFormVTopB";
             mainFormVTopB.Size = new Size(1000, 50);
-            mainFormVTopB.TabIndex = 2;
+            mainFormVTopB.TabIndex = 3;
             // 
             // mainFormVButtonAlerts
             // 
@@ -111,35 +105,17 @@ namespace PetVaccinationTrackerSystem_Project
             // mainFormVSideB
             // 
             mainFormVSideB.BackColor = Color.FromArgb(249, 249, 249);
-            mainFormVSideB.Controls.Add(mainFormVAboutUs);
             mainFormVSideB.Controls.Add(mainFormVSideBHighlight);
-            mainFormVSideB.Controls.Add(mainFormVButtonRegister);
             mainFormVSideB.Controls.Add(mainFormVButtonLO);
-            mainFormVSideB.Controls.Add(mainFormVButtonVRTS);
-            mainFormVSideB.Controls.Add(mainFormVButtonVRDS);
-            mainFormVSideB.Controls.Add(mainFormVButtonPetP);
+            mainFormVSideB.Controls.Add(btnRegisterVet);
+            mainFormVSideB.Controls.Add(btnRegisterClinic);
             mainFormVSideB.Controls.Add(mainFormVButtonHome);
             mainFormVSideB.Controls.Add(mainFormVPB);
             mainFormVSideB.Dock = DockStyle.Left;
             mainFormVSideB.Location = new Point(0, 50);
             mainFormVSideB.Name = "mainFormVSideB";
             mainFormVSideB.Size = new Size(200, 590);
-            mainFormVSideB.TabIndex = 3;
-            // 
-            // mainFormVAboutUs
-            // 
-            mainFormVAboutUs.Dock = DockStyle.Top;
-            mainFormVAboutUs.FlatAppearance.BorderSize = 0;
-            mainFormVAboutUs.FlatStyle = FlatStyle.Flat;
-            mainFormVAboutUs.Font = new Font("Segoe UI", 10.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            mainFormVAboutUs.ForeColor = Color.FromArgb(89, 85, 84);
-            mainFormVAboutUs.Location = new Point(0, 425);
-            mainFormVAboutUs.Name = "mainFormVAboutUs";
-            mainFormVAboutUs.Size = new Size(200, 50);
-            mainFormVAboutUs.TabIndex = 7;
-            mainFormVAboutUs.Text = "        About Us";
-            mainFormVAboutUs.TextAlign = ContentAlignment.MiddleLeft;
-            mainFormVAboutUs.UseVisualStyleBackColor = true;
+            mainFormVSideB.TabIndex = 4;
             // 
             // mainFormVSideBHighlight
             // 
@@ -148,22 +124,6 @@ namespace PetVaccinationTrackerSystem_Project
             mainFormVSideBHighlight.Name = "mainFormVSideBHighlight";
             mainFormVSideBHighlight.Size = new Size(10, 50);
             mainFormVSideBHighlight.TabIndex = 2;
-            // 
-            // mainFormVButtonRegister
-            // 
-            mainFormVButtonRegister.Dock = DockStyle.Top;
-            mainFormVButtonRegister.FlatAppearance.BorderSize = 0;
-            mainFormVButtonRegister.FlatStyle = FlatStyle.Flat;
-            mainFormVButtonRegister.Font = new Font("Segoe UI", 10.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            mainFormVButtonRegister.ForeColor = Color.FromArgb(89, 85, 84);
-            mainFormVButtonRegister.Location = new Point(0, 375);
-            mainFormVButtonRegister.Name = "mainFormVButtonRegister";
-            mainFormVButtonRegister.Size = new Size(200, 50);
-            mainFormVButtonRegister.TabIndex = 6;
-            mainFormVButtonRegister.Text = "        Register";
-            mainFormVButtonRegister.TextAlign = ContentAlignment.MiddleLeft;
-            mainFormVButtonRegister.UseVisualStyleBackColor = true;
-            mainFormVButtonRegister.Click += mainFormVButtonRegister_Click;
             // 
             // mainFormVButtonLO
             // 
@@ -186,52 +146,37 @@ namespace PetVaccinationTrackerSystem_Project
             mainFormVButtonLO.WarningColor = Color.FromArgb(230, 162, 60);
             mainFormVButtonLO.Click += mainFormVButtonLO_Click;
             // 
-            // mainFormVButtonVRTS
+            // btnRegisterVet
             // 
-            mainFormVButtonVRTS.Dock = DockStyle.Top;
-            mainFormVButtonVRTS.FlatAppearance.BorderSize = 0;
-            mainFormVButtonVRTS.FlatStyle = FlatStyle.Flat;
-            mainFormVButtonVRTS.Font = new Font("Segoe UI", 10.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            mainFormVButtonVRTS.ForeColor = Color.FromArgb(89, 85, 84);
-            mainFormVButtonVRTS.Location = new Point(0, 325);
-            mainFormVButtonVRTS.Name = "mainFormVButtonVRTS";
-            mainFormVButtonVRTS.Size = new Size(200, 50);
-            mainFormVButtonVRTS.TabIndex = 4;
-            mainFormVButtonVRTS.Text = "        Vaccine Reports";
-            mainFormVButtonVRTS.TextAlign = ContentAlignment.MiddleLeft;
-            mainFormVButtonVRTS.UseVisualStyleBackColor = true;
+            btnRegisterVet.Dock = DockStyle.Top;
+            btnRegisterVet.FlatAppearance.BorderSize = 0;
+            btnRegisterVet.FlatStyle = FlatStyle.Flat;
+            btnRegisterVet.Font = new Font("Segoe UI", 10.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            btnRegisterVet.ForeColor = Color.FromArgb(89, 85, 84);
+            btnRegisterVet.Location = new Point(0, 275);
+            btnRegisterVet.Name = "btnRegisterVet";
+            btnRegisterVet.Size = new Size(200, 50);
+            btnRegisterVet.TabIndex = 6;
+            btnRegisterVet.Text = "        Register Veterinarian";
+            btnRegisterVet.TextAlign = ContentAlignment.MiddleLeft;
+            btnRegisterVet.UseVisualStyleBackColor = true;
+            btnRegisterVet.Click += mainFormVButtonRegister_Click;
             // 
-            // mainFormVButtonVRDS
+            // btnRegisterClinic
             // 
-            mainFormVButtonVRDS.Dock = DockStyle.Top;
-            mainFormVButtonVRDS.FlatAppearance.BorderSize = 0;
-            mainFormVButtonVRDS.FlatStyle = FlatStyle.Flat;
-            mainFormVButtonVRDS.Font = new Font("Segoe UI", 10.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            mainFormVButtonVRDS.ForeColor = Color.FromArgb(89, 85, 84);
-            mainFormVButtonVRDS.Location = new Point(0, 275);
-            mainFormVButtonVRDS.Name = "mainFormVButtonVRDS";
-            mainFormVButtonVRDS.Size = new Size(200, 50);
-            mainFormVButtonVRDS.TabIndex = 3;
-            mainFormVButtonVRDS.Text = "        Vaccine Records";
-            mainFormVButtonVRDS.TextAlign = ContentAlignment.MiddleLeft;
-            mainFormVButtonVRDS.UseVisualStyleBackColor = true;
-            mainFormVButtonVRDS.Click += mainFormVButtonVRDS_Click;
-            // 
-            // mainFormVButtonPetP
-            // 
-            mainFormVButtonPetP.Dock = DockStyle.Top;
-            mainFormVButtonPetP.FlatAppearance.BorderSize = 0;
-            mainFormVButtonPetP.FlatStyle = FlatStyle.Flat;
-            mainFormVButtonPetP.Font = new Font("Segoe UI", 10.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            mainFormVButtonPetP.ForeColor = Color.FromArgb(89, 85, 84);
-            mainFormVButtonPetP.Location = new Point(0, 225);
-            mainFormVButtonPetP.Name = "mainFormVButtonPetP";
-            mainFormVButtonPetP.Size = new Size(200, 50);
-            mainFormVButtonPetP.TabIndex = 2;
-            mainFormVButtonPetP.Text = "        Pet Profiles";
-            mainFormVButtonPetP.TextAlign = ContentAlignment.MiddleLeft;
-            mainFormVButtonPetP.UseVisualStyleBackColor = true;
-            mainFormVButtonPetP.Click += mainFormVButtonPetP_Click;
+            btnRegisterClinic.Dock = DockStyle.Top;
+            btnRegisterClinic.FlatAppearance.BorderSize = 0;
+            btnRegisterClinic.FlatStyle = FlatStyle.Flat;
+            btnRegisterClinic.Font = new Font("Segoe UI", 10.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            btnRegisterClinic.ForeColor = Color.FromArgb(89, 85, 84);
+            btnRegisterClinic.Location = new Point(0, 225);
+            btnRegisterClinic.Name = "btnRegisterClinic";
+            btnRegisterClinic.Size = new Size(200, 50);
+            btnRegisterClinic.TabIndex = 7;
+            btnRegisterClinic.Text = "        Register Clinic";
+            btnRegisterClinic.TextAlign = ContentAlignment.MiddleLeft;
+            btnRegisterClinic.UseVisualStyleBackColor = true;
+            btnRegisterClinic.Click += btnRegisterClinic_Click;
             // 
             // mainFormVButtonHome
             // 
@@ -268,60 +213,41 @@ namespace PetVaccinationTrackerSystem_Project
             pictureBox1.TabIndex = 0;
             pictureBox1.TabStop = false;
             // 
-            // homePanel1V
+            // homeUserControl1V
             // 
-            homePanel1V.BackColor = Color.White;
-            homePanel1V.Dock = DockStyle.Fill;
-            homePanel1V.Location = new Point(200, 50);
-            homePanel1V.Name = "homePanel1V";
-            homePanel1V.Size = new Size(800, 590);
-            homePanel1V.TabIndex = 4;
+            homeUserControl1V.Location = new Point(200, 50);
+            homeUserControl1V.Name = "homeUserControl1V";
+            homeUserControl1V.Size = new Size(800, 590);
+            homeUserControl1V.TabIndex = 5;
             // 
-            // registerPetOwnerPanel1V
+            // adminRegisterClinicUsCo1V
             // 
-            registerPetOwnerPanel1V.BackColor = Color.White;
-            registerPetOwnerPanel1V.Dock = DockStyle.Fill;
-            registerPetOwnerPanel1V.Location = new Point(200, 50);
-            registerPetOwnerPanel1V.Name = "registerPetOwnerPanel1V";
-            registerPetOwnerPanel1V.Size = new Size(800, 590);
-            registerPetOwnerPanel1V.TabIndex = 5;
+            adminRegisterClinicUsCo1V.Location = new Point(200, 50);
+            adminRegisterClinicUsCo1V.Name = "adminRegisterClinicUsCo1V";
+            adminRegisterClinicUsCo1V.Size = new Size(800, 590);
+            adminRegisterClinicUsCo1V.TabIndex = 6;
             // 
-            // vaccineRecordsPanel1V
+            // adminRegisterVetUsCo1V
             // 
-            vaccineRecordsPanel1V.BackColor = Color.White;
-            vaccineRecordsPanel1V.Dock = DockStyle.Fill;
-            vaccineRecordsPanel1V.Location = new Point(200, 50);
-            vaccineRecordsPanel1V.Name = "vaccineRecordsPanel1V";
-            vaccineRecordsPanel1V.Size = new Size(800, 590);
-            vaccineRecordsPanel1V.TabIndex = 6;
+            adminRegisterVetUsCo1V.Location = new Point(200, 50);
+            adminRegisterVetUsCo1V.Name = "adminRegisterVetUsCo1V";
+            adminRegisterVetUsCo1V.Size = new Size(800, 590);
+            adminRegisterVetUsCo1V.TabIndex = 7;
             // 
-            // petProfilePanel1V
-            // 
-            petProfilePanel1V.BackColor = Color.White;
-            petProfilePanel1V.Dock = DockStyle.Fill;
-            petProfilePanel1V.Location = new Point(200, 50);
-            petProfilePanel1V.Name = "petProfilePanel1V";
-            petProfilePanel1V.Size = new Size(800, 590);
-            petProfilePanel1V.TabIndex = 7;
-            // 
-            // MainFormVet
+            // AdminForm
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            BackColor = Color.White;
             ClientSize = new Size(1000, 640);
-            Controls.Add(petProfilePanel1V);
-            Controls.Add(vaccineRecordsPanel1V);
-            Controls.Add(registerPetOwnerPanel1V);
-            Controls.Add(homePanel1V);
+            Controls.Add(adminRegisterVetUsCo1V);
+            Controls.Add(adminRegisterClinicUsCo1V);
+            Controls.Add(homeUserControl1V);
             Controls.Add(mainFormVSideB);
             Controls.Add(mainFormVTopB);
             FormBorderStyle = FormBorderStyle.None;
-            MaximizeBox = false;
-            MaximumSize = new Size(1000, 640);
-            Name = "MainFormVet";
+            Name = "AdminForm";
             StartPosition = FormStartPosition.CenterScreen;
-            Text = "MainFormVet";
+            Text = "AdminForm";
             mainFormVTopB.ResumeLayout(false);
             mainFormVSideB.ResumeLayout(false);
             mainFormVPB.ResumeLayout(false);
@@ -336,20 +262,15 @@ namespace PetVaccinationTrackerSystem_Project
         private Button mainFormVButtonSettings;
         private Button mainFormVButtonExit;
         private Panel mainFormVSideB;
-        private Button mainFormVAboutUs;
         private Panel mainFormVSideBHighlight;
-        private Button mainFormVButtonRegister;
+        private Button btnRegisterVet;
         private ReaLTaiizor.Controls.HopeRoundButton mainFormVButtonLO;
-        private Button mainFormVButtonVRTS;
-        private Button mainFormVButtonVRDS;
-        private Button mainFormVButtonPetP;
         private Button mainFormVButtonHome;
         private Panel mainFormVPB;
         private PictureBox pictureBox1;
-        private homePanel homePanel1V;
-        private registerPetOwnerPanel registerPetOwnerPanel1V;
-        private VaccineRecordsPanelVet vaccineRecordsPanel1V;
-        private petProfilePanelVet petProfilePanel1V;
+        private Button btnRegisterClinic;
         private HomeUserControl homeUserControl1V;
+        private AdminRegisterClinicUsCo adminRegisterClinicUsCo1V;
+        private AdminRegisterVetUsCo adminRegisterVetUsCo1V;
     }
 }

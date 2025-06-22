@@ -1,4 +1,5 @@
-﻿using PetVaccinationTrackerSystem_Project.Classes;
+﻿using Microsoft.EntityFrameworkCore;
+using PetVaccinationTrackerSystem_Project.Data;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -9,17 +10,35 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace PetVaccinationTrackerSystem_Project
+namespace PetVaccinationTrackerSystem_Project.Forms.Admin
 {
-    public partial class MainFormVet : Form
+    public partial class AdminForm : Form
     {
-        public MainFormVet()
+
+
+        public AdminForm()
         {
             InitializeComponent();
             mainFormVSideBHighlight.Height = mainFormVButtonHome.Height;
             mainFormVSideBHighlight.Top = mainFormVButtonHome.Top;
-            homePanel1V.BringToFront();
+            homeUserControl1V.BringToFront();
         }
+
+        private void btnRegisterClinic_Click(object sender, EventArgs e)
+        {
+            mainFormVSideBHighlight.Height = btnRegisterClinic.Height;
+            mainFormVSideBHighlight.Top = btnRegisterClinic.Top;
+            adminRegisterClinicUsCo1V.BringToFront();
+        }
+
+        private void mainFormVButtonRegister_Click(object sender, EventArgs e)
+        {
+            mainFormVSideBHighlight.Height = btnRegisterVet.Height;
+            mainFormVSideBHighlight.Top = btnRegisterVet.Top;
+            adminRegisterVetUsCo1V.RefreshData();
+            adminRegisterVetUsCo1V.BringToFront();
+        }
+
         private void mainFormVButtonExit_Click(object sender, EventArgs e)
         {
             DialogResult diagResult = MessageBox.Show(
@@ -33,35 +52,6 @@ namespace PetVaccinationTrackerSystem_Project
             {
                 Application.Exit();
             }
-            
-        }
-
-        private void mainFormVButtonHome_Click(object sender, EventArgs e)
-        {
-            mainFormVSideBHighlight.Height = mainFormVButtonHome.Height;
-            mainFormVSideBHighlight.Top = mainFormVButtonHome.Top;
-            homePanel1V.BringToFront();
-        }
-
-        private void mainFormVButtonRegister_Click(object sender, EventArgs e)
-        {
-            mainFormVSideBHighlight.Height = mainFormVButtonRegister.Height;
-            mainFormVSideBHighlight.Top = mainFormVButtonRegister.Top;
-            registerPetOwnerPanel1V.BringToFront();
-        }
-
-        private void mainFormVButtonVRDS_Click(object sender, EventArgs e)
-        {
-            mainFormVSideBHighlight.Height = mainFormVButtonVRDS.Height;
-            mainFormVSideBHighlight.Top = mainFormVButtonVRDS.Top;
-            vaccineRecordsPanel1V.BringToFront();
-        }
-
-        private void mainFormVButtonPetP_Click(object sender, EventArgs e)
-        {
-            mainFormVSideBHighlight.Height = mainFormVButtonPetP.Height;
-            mainFormVSideBHighlight.Top = mainFormVButtonPetP.Top;
-            petProfilePanel1V.BringToFront();
         }
 
         private void mainFormVButtonLO_Click(object sender, EventArgs e)
@@ -77,7 +67,14 @@ namespace PetVaccinationTrackerSystem_Project
             {
                 this.Close(); // Triggers the FormClosed event to switch back to the AuthForm.
             }
+        }
 
+        private void mainFormVButtonHome_Click(object sender, EventArgs e)
+        {
+            mainFormVSideBHighlight.Height = mainFormVButtonHome.Height;
+            mainFormVSideBHighlight.Top = mainFormVButtonHome.Top;
+            homeUserControl1V.LoadVeterinarianData();
+            homeUserControl1V.BringToFront();
         }
     }
 }

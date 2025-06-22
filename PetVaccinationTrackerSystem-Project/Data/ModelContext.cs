@@ -28,5 +28,42 @@ namespace PetVaccinationTrackerSystem_Project.Data
             // Configure the database connection string here
             optionsBuilder.UseSqlServer("Server=.\\SQLEXPRESS;Database=PetVaccinationTrackerSystemDB;Trusted_Connection=True;Encrypt=False");
         }
+
+        protected override void OnModelCreating(ModelBuilder modelBuilder)
+        {
+            // Fix multiple cascade path issue
+
+            // Appointments
+            modelBuilder.Entity<Appointment>()
+                .HasOne(a => a.Vet)
+                .WithMany(v => v.Appointments)
+                .HasForeignKey(a => a.VetID)
+                .OnDelete(DeleteBehavior.Restrict);
+
+            modelBuilder.Entity<Appointment>()
+                .HasOne(a => a.Pet)
+                .WithMany(p => p.Appointments)
+                .HasForeignKey(a => a.PetID)
+                .OnDelete(DeleteBehavior.Cascade);
+
+            // Pet Health Records
+            modelBuilder.Entity<PetHealthRecords>()
+                .HasOne(p => p.Vet)
+                .WithMany(v => v.PetHealthRecords)
+                .HasForeignKey(p => p.VetID)
+                .OnDelete(DeleteBehavior.Restrict);
+
+            modelBuilder.Entity<PetHealthRecords>()
+                .HasOne(p => p.Pet)
+                .WithMany(v => v.PetHealthRecords)
+                .HasForeignKey(p => p.PetID)
+                .OnDelete(DeleteBehavior.Cascade);
+
+            modelBuilder.Entity<PetHealthRecords>()
+                .HasOne(p => p.Vaccination)
+                .WithMany(v => v.PetHealthRecords)
+                .HasForeignKey(p => p.VaccinationID)
+                .OnDelete(DeleteBehavior.Restrict);
+        }
     }
 }

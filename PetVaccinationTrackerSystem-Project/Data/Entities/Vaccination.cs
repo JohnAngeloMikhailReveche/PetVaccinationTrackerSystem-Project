@@ -10,8 +10,8 @@ namespace PetVaccinationTrackerSystem_Project.Data.Entities
     public class Vaccination
     {
 
-        [Key, StringLength(15)]
-        public required string VaccinationID { get; set; }
+        [Key]
+        public int VaccinationID { get; set; }
 
         [StringLength(60)]
         public string VaccineName { get; set; }
