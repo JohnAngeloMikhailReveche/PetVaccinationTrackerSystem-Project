@@ -63,12 +63,63 @@ namespace PetVaccinationTrackerSystem_Project.Forms.Admin
             }
         }
 
+        public void LoadClinicData()
+        {
+            using (var context = new ModelContext())
+            {
+
+                dgvClinicList.DataSource = context.ClinicList.ToList();
+
+                // If we want to hide a column then:
+                // dgvClinicList.Columns["ClinicID"].Visible = false;
+
+
+                // Adjust DataGridView Properties
+                dgvClinicList.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.AllCells;
+                dgvClinicList.AutoSizeRowsMode = DataGridViewAutoSizeRowsMode.AllCells;
+
+                dgvClinicList.Columns["ClinicID"].HeaderText = "Clinic ID";
+                dgvClinicList.Columns["ClinicName"].HeaderText = "Clinic Name";
+                dgvClinicList.Columns["ZipCode"].HeaderText = "Zip Code";
+
+            }
+        }
+
+
+        public void LoadComboBoxWithData()
+        {
+            // For Filter Vet Combo Box
+            cmbboxFilterVet.Items.Add("All");
+            cmbboxFilterVet.Items.Add("First Name");
+            cmbboxFilterVet.Items.Add("Last Name");
+            cmbboxFilterVet.Items.Add("License Number");
+            cmbboxFilterVet.Items.Add("Assigned Clinic");
+            cmbboxFilterVet.SelectedIndex = 0;
+
+            // For Filter Clinic Combo Box
+            cmbboxFilterClinic.Items.Add("All");
+            cmbboxFilterClinic.Items.Add("Street");
+            cmbboxFilterClinic.Items.Add("City");
+            cmbboxFilterClinic.Items.Add("State");
+            cmbboxFilterClinic.SelectedIndex = 0;
+        }
+
+
+
         public HomeUserControl()
         {
             InitializeComponent();
 
+            // Load the data when the UserControl is initialized
             LoadVeterinarianData();
+            LoadClinicData();
+            LoadComboBoxWithData();
             dgvVetList.ScrollBars = ScrollBars.Both;
+
+        }
+
+        private void HomeUserControl_Load(object sender, EventArgs e)
+        {
         }
 
         private void dgvVetList_DoubleClick(object sender, EventArgs e)
@@ -78,9 +129,143 @@ namespace PetVaccinationTrackerSystem_Project.Forms.Admin
                 VetInfo vetInfoForm = new VetInfo(selectedVet);
 
                 // Refresh the data after closing the form
-                vetInfoForm.FormClosed += (s, args) => LoadVeterinarianData(); 
+                vetInfoForm.FormClosed += (s, args) =>
+                {
+                    LoadVeterinarianData();
+                };
 
                 vetInfoForm.ShowDialog();
+            }
+        }
+
+        private void btnSearchVet_Click(object sender, EventArgs e)
+        {
+            using (var context = new ModelContext())
+            {
+                // Read and Store in the values
+                string selectedFilterOpt = cmbboxFilterVet.SelectedItem?.ToString();
+                string txtboxSearchText = txtboxSearchVet.Text.Trim();
+
+                // Query
+                var query = context.UserList
+                    .Include(v => v.Veterinarian)
+                    .ThenInclude(c => c.Clinic)
+                    .AsQueryable();
+
+
+                if (!string.IsNullOrWhiteSpace(txtboxSearchText))
+                {
+                    switch (selectedFilterOpt)
+                    {
+                        case "First Name":
+                            query = query.Where(v => v.FirstName.Contains(txtboxSearchText));
+                            break;
+                        case "Last Name":
+                            query = query.Where(v => v.LastName.Contains(txtboxSearchText));
+                            break;
+                        case "License Number":
+                            query = query.Where(v => v.Veterinarian.LicenseNumber.Contains(txtboxSearchText));
+                            break;
+                        case "Assigned Clinic":
+                            query = query.Where(v => v.Veterinarian.Clinic.ClinicName.Contains(txtboxSearchText));
+                            break;
+                        case "All":
+                            query = query.Where(
+                                v => v.FirstName.Contains(txtboxSearchText) ||
+                                     v.LastName.Contains(txtboxSearchText) ||
+                                     v.Veterinarian.LicenseNumber.Contains(txtboxSearchText) ||
+                                     v.Veterinarian.Clinic.ClinicName.Contains(txtboxSearchText)
+                                     );
+                            break;
+
+                        default:
+                            MessageBox.Show("Please select a valid filter option.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                            return;
+                    }
+
+                }
+
+                // Select the data to display in the DataGridView
+                var results = query
+                        .Select(v => new VeterinarianViewModel
+                        {
+                            VetID = v.Veterinarian.VetID,
+                            UserID = v.UserID,
+                            FirstName = v.FirstName,
+                            LastName = v.LastName,
+                            UserEmail = v.UserEmail,
+                            LicenseNumber = v.Veterinarian.LicenseNumber,
+                            ClinicID = v.Veterinarian.ClinicID,
+                            ClinicName = v.Veterinarian.Clinic.ClinicName
+                        })
+                        .ToList();
+
+                dgvVetList.DataSource = results;
+            }
+
+        }
+
+        private void btnSearchClinic_Click(object sender, EventArgs e)
+        {
+            using (var context = new ModelContext())
+            {
+                // Read and Store in the values
+                string selectedFilterClinicOpt = cmbboxFilterClinic.SelectedItem?.ToString();
+                string txtboxSearchClinicText = txtboxSearchClinic.Text.Trim();
+
+                // Query
+                var query = context.ClinicList.AsQueryable();
+
+
+                if (!string.IsNullOrWhiteSpace(txtboxSearchClinicText))
+                {
+                    switch (selectedFilterClinicOpt)
+                    {
+                        case "Street":
+                            query = query.Where(v => v.Street.Contains(txtboxSearchClinicText));
+                            break;
+                        case "City":
+                            query = query.Where(v => v.City.Contains(txtboxSearchClinicText));
+                            break;
+                        case "State":
+                            query = query.Where(v => v.State.Contains(txtboxSearchClinicText));
+                            break;
+                        case "All":
+                            query = query.Where(
+                                v => v.Street.Contains(txtboxSearchClinicText) ||
+                                     v.City.Contains(txtboxSearchClinicText) ||
+                                     v.State.Contains(txtboxSearchClinicText)
+                                     );
+                            break;
+
+                        default:
+                            MessageBox.Show("Please select a valid filter option.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                            return;
+                    }
+
+                }
+
+                // Select the data to display in the DataGridView
+                var results = query.ToList();
+                dgvClinicList.DataSource = results;
+            }
+        }
+
+        private void dgvClinicList_DoubleClick(object sender, EventArgs e)
+        {
+            if (dgvClinicList.CurrentRow?.DataBoundItem is Clinic selectedClinic)
+            {
+                
+                // Pass the reference to the Form
+                ClinicInfo clinicInfoForm = new ClinicInfo(selectedClinic);
+
+                // Refresh the data after closing the form
+                clinicInfoForm.FormClosed += (s, args) =>
+                {
+                    LoadClinicData();
+                };
+
+                clinicInfoForm.ShowDialog();
             }
         }
     }

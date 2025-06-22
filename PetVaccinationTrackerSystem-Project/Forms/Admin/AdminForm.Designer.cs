@@ -30,7 +30,6 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(AdminForm));
             mainFormVTopB = new Panel();
-            mainFormVButtonAlerts = new Button();
             mainFormVButtonSettings = new Button();
             mainFormVButtonExit = new Button();
             mainFormVSideB = new Panel();
@@ -53,7 +52,6 @@
             // mainFormVTopB
             // 
             mainFormVTopB.BackColor = Color.FromArgb(89, 85, 84);
-            mainFormVTopB.Controls.Add(mainFormVButtonAlerts);
             mainFormVTopB.Controls.Add(mainFormVButtonSettings);
             mainFormVTopB.Controls.Add(mainFormVButtonExit);
             mainFormVTopB.Dock = DockStyle.Top;
@@ -61,19 +59,6 @@
             mainFormVTopB.Name = "mainFormVTopB";
             mainFormVTopB.Size = new Size(1000, 50);
             mainFormVTopB.TabIndex = 3;
-            // 
-            // mainFormVButtonAlerts
-            // 
-            mainFormVButtonAlerts.BackColor = Color.FromArgb(89, 85, 84);
-            mainFormVButtonAlerts.BackgroundImage = (Image)resources.GetObject("mainFormVButtonAlerts.BackgroundImage");
-            mainFormVButtonAlerts.BackgroundImageLayout = ImageLayout.Zoom;
-            mainFormVButtonAlerts.FlatAppearance.BorderSize = 0;
-            mainFormVButtonAlerts.FlatStyle = FlatStyle.Flat;
-            mainFormVButtonAlerts.Location = new Point(881, 12);
-            mainFormVButtonAlerts.Name = "mainFormVButtonAlerts";
-            mainFormVButtonAlerts.Size = new Size(25, 25);
-            mainFormVButtonAlerts.TabIndex = 2;
-            mainFormVButtonAlerts.UseVisualStyleBackColor = false;
             // 
             // mainFormVButtonSettings
             // 
@@ -87,6 +72,7 @@
             mainFormVButtonSettings.Size = new Size(25, 25);
             mainFormVButtonSettings.TabIndex = 1;
             mainFormVButtonSettings.UseVisualStyleBackColor = false;
+            mainFormVButtonSettings.Click += mainFormVButtonSettings_Click;
             // 
             // mainFormVButtonExit
             // 
@@ -261,7 +247,6 @@
         #endregion
 
         private Panel mainFormVTopB;
-        private Button mainFormVButtonAlerts;
         private Button mainFormVButtonSettings;
         private Button mainFormVButtonExit;
         private Panel mainFormVSideB;
