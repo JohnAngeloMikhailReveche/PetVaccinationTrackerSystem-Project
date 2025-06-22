@@ -171,6 +171,7 @@
             Controls.Add(label1);
             Name = "VaccinationHistory";
             Size = new Size(800, 590);
+            Load += VaccinationHistory_Load;
             ((System.ComponentModel.ISupportInitialize)dgvHistory).EndInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox2).EndInit();
             ResumeLayout(false);

@@ -16,5 +16,10 @@ namespace PetVaccinationTrackerSystem_Project
         {
             InitializeComponent();
         }
+
+        private void VaccinationHistory_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }
