@@ -1,4 +1,5 @@
 ﻿using PetVaccinationTrackerSystem_Project.Classes;
+using PetVaccinationTrackerSystem_Project.Data.Entities;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -13,12 +14,30 @@ namespace PetVaccinationTrackerSystem_Project
 {
     public partial class MainFormVet : Form
     {
-        public MainFormVet()
+        // The User object representing the current veterinarian user
+        private User _currentUser;
+
+        private void InitializeLabels()
+        {
+
+            lblClinic.Text = _currentUser?.Veterinarian?.Clinic?.ClinicName ?? "No Clinic Assigned | ERROR DATA READING FROM USERDATA";
+            lblVetName.Text = _currentUser.FirstName + " " + _currentUser.LastName;
+        }
+
+        public MainFormVet(User inUserReference)
         {
             InitializeComponent();
             mainFormVSideBHighlight.Height = mainFormVButtonHome.Height;
             mainFormVSideBHighlight.Top = mainFormVButtonHome.Top;
             homePanel1V.BringToFront();
+
+            // Used Dependency Injection for passing the current user reference
+            _currentUser = inUserReference;
+        }
+
+        private void MainFormVet_Load(object sender, EventArgs e)
+        {
+            InitializeLabels();
         }
         private void mainFormVButtonExit_Click(object sender, EventArgs e)
         {
@@ -93,5 +112,6 @@ namespace PetVaccinationTrackerSystem_Project
             mainFormVSideBHighlight.Top = mainFormVButtonVRTS.Top;
             pet_Reports1.BringToFront();
         }
+
     }
 }

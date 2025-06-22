@@ -16,6 +16,9 @@ namespace PetVaccinationTrackerSystem_Project.Classes
     {
         private readonly IUserRepository _userRepository;
 
+        private const string VeterinarianRole = "Veterinarian";
+        private const string PetOwnerRole = "PetOwner";
+
         // Constructor that takes an IUserRepository to interact with the user data
         public AuthService(IUserRepository userRepository)
         {
@@ -26,6 +29,7 @@ namespace PetVaccinationTrackerSystem_Project.Classes
         {
             // Use the user repository to get the user by username and password
             var user = _userRepository.GetByEmail(email);
+
 
             if (user == null)
             {
@@ -42,24 +46,19 @@ namespace PetVaccinationTrackerSystem_Project.Classes
             // If it has a comparison then,
             if (isValidPassword)
             {
-                // If a match is found, return the User model
-                return user.UserRole switch
+                // Simple check if the user has a user role called Veterinarian
+                if (user.UserRole == VeterinarianRole)
                 {
-                    "Vet" => new User
-                    {
-                        UserID = user.UserID,
-                        UserEmail = user.UserEmail,
-                        UserPassword = user.UserPassword,
-                        UserRole = "Vet"
-                    },
-                    "PetOwner" => new User
-                    {
-                        UserID = user.UserID,
-                        UserEmail = user.UserEmail,
-                        UserPassword = user.UserPassword,
-                        UserRole = "PetOwner"
-                    }
-                };
+                    return user;
+                } else if (user.UserRole == PetOwnerRole)
+                {
+                    return user; // If the user is a PetOwner, return the user with that role.
+                }
+                else
+                {
+                    return null; // If the user role is not recognized, return null
+                }
+
             }
             else
             {
