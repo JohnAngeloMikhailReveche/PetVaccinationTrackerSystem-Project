@@ -36,7 +36,7 @@ namespace PetVaccinationTrackerSystem_Project.Forms.Admin
             if(_currentVet.FirstName == txtboxFirstName.Text.Trim() &&
                 _currentVet.LicenseNumber == txtboxLicenseNo.Text.Trim() &&
                 _currentVet.LastName == txtboxLastName.Text.Trim() &&
-                _currentVet.UserEmail == txtboxAccountEmail.Text.Trim())
+                _currentVet.UserEmail == txtboxAccountEmail.Text.Trim() && _currentVet.ClinicID == (int)cmbboxClinic.SelectedValue)
             {
                 MessageBox.Show("No changes detected.", "Info", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
@@ -78,7 +78,6 @@ namespace PetVaccinationTrackerSystem_Project.Forms.Admin
 
                 // Set the selected value to the current veterinarian's clinic ID
                 cmbboxClinic.SelectedValue = _currentVet.ClinicID;
-
             }
         }
 
