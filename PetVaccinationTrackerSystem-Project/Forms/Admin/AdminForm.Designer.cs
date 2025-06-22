@@ -42,6 +42,7 @@
             pictureBox1 = new PictureBox();
             adminRegisterClinicUsCo1V = new AdminRegisterClinicUsCo();
             adminRegisterVetUsCo1V = new AdminRegisterVetUsCo();
+            homeUserControl1V = new HomeUserControl();
             mainFormVTopB.SuspendLayout();
             mainFormVSideB.SuspendLayout();
             mainFormVPB.SuspendLayout();
@@ -215,11 +216,20 @@
             adminRegisterVetUsCo1V.TabIndex = 7;
             adminRegisterVetUsCo1V.Load += adminRegisterVetUsCo1V_Load;
             // 
+            // homeUserControl1V
+            // 
+            homeUserControl1V.BackColor = Color.White;
+            homeUserControl1V.Location = new Point(200, 50);
+            homeUserControl1V.Name = "homeUserControl1V";
+            homeUserControl1V.Size = new Size(800, 590);
+            homeUserControl1V.TabIndex = 8;
+            // 
             // AdminForm
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(1000, 640);
+            Controls.Add(homeUserControl1V);
             Controls.Add(adminRegisterVetUsCo1V);
             Controls.Add(adminRegisterClinicUsCo1V);
             Controls.Add(mainFormVSideB);
@@ -248,8 +258,8 @@
         private Panel mainFormVPB;
         private PictureBox pictureBox1;
         private Button btnRegisterClinic;
-        private HomeUserControl homeUserControl1V;
         private AdminRegisterClinicUsCo adminRegisterClinicUsCo1V;
         private AdminRegisterVetUsCo adminRegisterVetUsCo1V;
+        private HomeUserControl homeUserControl1V;
     }
 }

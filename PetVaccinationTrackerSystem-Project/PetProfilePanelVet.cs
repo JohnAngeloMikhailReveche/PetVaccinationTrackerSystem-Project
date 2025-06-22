@@ -74,11 +74,8 @@ namespace PetVaccinationTrackerSystem_Project
                 OwnerPhoneNumber = int.Parse(txtcontact.Text),
                 Notes = txtNotes.Text,
                 ImageRL = petpicture.Image != null ? Convert.ToBase64String((byte[])new ImageConverter().ConvertTo(petpicture.Image, typeof(byte[]))) : null,
-<<<<<<< HEAD
                 UserID = 2
-=======
                 // UserID = 2 (ito yung papalitan ng userID if ever na di pa nakakapagreate ng user)
->>>>>>> 7467689 (.)
 
             };
 

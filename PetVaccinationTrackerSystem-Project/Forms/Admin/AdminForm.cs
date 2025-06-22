@@ -81,17 +81,16 @@ namespace PetVaccinationTrackerSystem_Project.Forms.Admin
             homeUserControl1V.BringToFront();
         }
 
-<<<<<<< HEAD
         private void mainFormVButtonSettings_Click(object sender, EventArgs e)
         {
             AdminSettingsForm adminSettingsForm = new AdminSettingsForm();
 
             adminSettingsForm.ShowDialog();
-=======
+        }
+
         private void adminRegisterVetUsCo1V_Load(object sender, EventArgs e)
         {
 
->>>>>>> 7467689 (.)
         }
     }
 }
