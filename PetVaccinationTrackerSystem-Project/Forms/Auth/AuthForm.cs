@@ -111,6 +111,9 @@ namespace PetVaccinationTrackerSystem_Project.Forms.Auth
             ShowSystemPasswordChar(false);
         }
 
-        
+        private void mainFormVButtonExit_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
+        }
     }
 }
