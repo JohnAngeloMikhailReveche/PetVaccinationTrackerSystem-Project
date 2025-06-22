@@ -133,7 +133,7 @@
             mainFormVButtonLO.DangerColor = Color.FromArgb(245, 108, 108);
             mainFormVButtonLO.DefaultColor = Color.FromArgb(255, 255, 255);
             mainFormVButtonLO.Font = new Font("Segoe UI", 10.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            mainFormVButtonLO.HoverTextColor = Color.FromArgb(48, 49, 51);
+            mainFormVButtonLO.HoverTextColor = Color.White;
             mainFormVButtonLO.InfoColor = Color.FromArgb(144, 147, 153);
             mainFormVButtonLO.Location = new Point(38, 535);
             mainFormVButtonLO.Name = "mainFormVButtonLO";
@@ -157,7 +157,7 @@
             btnRegisterVet.Name = "btnRegisterVet";
             btnRegisterVet.Size = new Size(200, 50);
             btnRegisterVet.TabIndex = 6;
-            btnRegisterVet.Text = "        Register Veterinarian";
+            btnRegisterVet.Text = "     Register Veterinarian";
             btnRegisterVet.TextAlign = ContentAlignment.MiddleLeft;
             btnRegisterVet.UseVisualStyleBackColor = true;
             btnRegisterVet.Click += mainFormVButtonRegister_Click;
@@ -173,7 +173,7 @@
             btnRegisterClinic.Name = "btnRegisterClinic";
             btnRegisterClinic.Size = new Size(200, 50);
             btnRegisterClinic.TabIndex = 7;
-            btnRegisterClinic.Text = "        Register Clinic";
+            btnRegisterClinic.Text = "     Register Clinic";
             btnRegisterClinic.TextAlign = ContentAlignment.MiddleLeft;
             btnRegisterClinic.UseVisualStyleBackColor = true;
             btnRegisterClinic.Click += btnRegisterClinic_Click;
@@ -189,7 +189,7 @@
             mainFormVButtonHome.Name = "mainFormVButtonHome";
             mainFormVButtonHome.Size = new Size(200, 50);
             mainFormVButtonHome.TabIndex = 1;
-            mainFormVButtonHome.Text = "        Home";
+            mainFormVButtonHome.Text = "     Home";
             mainFormVButtonHome.TextAlign = ContentAlignment.MiddleLeft;
             mainFormVButtonHome.UseVisualStyleBackColor = true;
             mainFormVButtonHome.Click += mainFormVButtonHome_Click;
@@ -215,6 +215,7 @@
             // 
             // homeUserControl1V
             // 
+            homeUserControl1V.BackColor = Color.White;
             homeUserControl1V.Location = new Point(200, 50);
             homeUserControl1V.Name = "homeUserControl1V";
             homeUserControl1V.Size = new Size(800, 590);
@@ -222,6 +223,7 @@
             // 
             // adminRegisterClinicUsCo1V
             // 
+            adminRegisterClinicUsCo1V.BackColor = Color.White;
             adminRegisterClinicUsCo1V.Location = new Point(200, 50);
             adminRegisterClinicUsCo1V.Name = "adminRegisterClinicUsCo1V";
             adminRegisterClinicUsCo1V.Size = new Size(800, 590);
@@ -229,6 +231,7 @@
             // 
             // adminRegisterVetUsCo1V
             // 
+            adminRegisterVetUsCo1V.BackColor = Color.White;
             adminRegisterVetUsCo1V.Location = new Point(200, 50);
             adminRegisterVetUsCo1V.Name = "adminRegisterVetUsCo1V";
             adminRegisterVetUsCo1V.Size = new Size(800, 590);

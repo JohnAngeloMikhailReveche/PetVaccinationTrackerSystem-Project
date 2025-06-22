@@ -35,6 +35,7 @@
             // dgvVetList
             // 
             dgvVetList.AllowUserToAddRows = false;
+            dgvVetList.BackgroundColor = Color.White;
             dgvVetList.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             dgvVetList.Location = new Point(26, 29);
             dgvVetList.MultiSelect = false;
@@ -48,6 +49,7 @@
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
+            BackColor = Color.White;
             Controls.Add(dgvVetList);
             Name = "HomeUserControl";
             Size = new Size(800, 590);

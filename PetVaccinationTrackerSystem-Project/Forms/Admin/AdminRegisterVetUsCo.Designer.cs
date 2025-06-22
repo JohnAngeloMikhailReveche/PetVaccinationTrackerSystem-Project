@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            grpboxVet = new GroupBox();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(AdminRegisterVetUsCo));
             cmbboxClinic = new ComboBox();
             btnRegisterVet = new Button();
             txtboxAccountPassword = new TextBox();
@@ -42,159 +42,235 @@
             label2 = new Label();
             label6 = new Label();
             label1 = new Label();
-            grpboxVet.SuspendLayout();
+            pictureBox1 = new PictureBox();
+            registerPORegisterPanel = new Panel();
+            panel1 = new Panel();
+            label7 = new Label();
+            label14 = new Label();
+            ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
+            registerPORegisterPanel.SuspendLayout();
+            panel1.SuspendLayout();
             SuspendLayout();
-            // 
-            // grpboxVet
-            // 
-            grpboxVet.Controls.Add(cmbboxClinic);
-            grpboxVet.Controls.Add(btnRegisterVet);
-            grpboxVet.Controls.Add(txtboxAccountPassword);
-            grpboxVet.Controls.Add(txtboxAccountUsername);
-            grpboxVet.Controls.Add(txtboxLicenseNo);
-            grpboxVet.Controls.Add(txtboxLastName);
-            grpboxVet.Controls.Add(txtboxName);
-            grpboxVet.Controls.Add(label5);
-            grpboxVet.Controls.Add(label4);
-            grpboxVet.Controls.Add(label3);
-            grpboxVet.Controls.Add(label2);
-            grpboxVet.Controls.Add(label6);
-            grpboxVet.Controls.Add(label1);
-            grpboxVet.Font = new Font("Segoe UI", 20F);
-            grpboxVet.Location = new Point(48, 25);
-            grpboxVet.Name = "grpboxVet";
-            grpboxVet.Size = new Size(704, 536);
-            grpboxVet.TabIndex = 1;
-            grpboxVet.TabStop = false;
-            grpboxVet.Text = "Veterinarian";
             // 
             // cmbboxClinic
             // 
+            cmbboxClinic.BackColor = Color.White;
             cmbboxClinic.DropDownStyle = ComboBoxStyle.DropDownList;
+            cmbboxClinic.Font = new Font("Segoe UI", 10F);
+            cmbboxClinic.ForeColor = Color.FromArgb(89, 85, 84);
             cmbboxClinic.FormattingEnabled = true;
-            cmbboxClinic.Location = new Point(206, 376);
+            cmbboxClinic.Location = new Point(244, 107);
             cmbboxClinic.Name = "cmbboxClinic";
-            cmbboxClinic.Size = new Size(471, 45);
+            cmbboxClinic.Size = new Size(200, 25);
             cmbboxClinic.TabIndex = 3;
             // 
             // btnRegisterVet
             // 
-            btnRegisterVet.Location = new Point(206, 443);
+            btnRegisterVet.FlatStyle = FlatStyle.Flat;
+            btnRegisterVet.Font = new Font("Segoe UI", 10.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            btnRegisterVet.ForeColor = Color.FromArgb(89, 85, 84);
+            btnRegisterVet.Location = new Point(391, 300);
             btnRegisterVet.Name = "btnRegisterVet";
-            btnRegisterVet.Size = new Size(283, 58);
+            btnRegisterVet.Size = new Size(100, 40);
             btnRegisterVet.TabIndex = 2;
-            btnRegisterVet.Text = "Register Veterinarian";
+            btnRegisterVet.Text = "Register";
             btnRegisterVet.UseVisualStyleBackColor = true;
             btnRegisterVet.Click += btnRegisterVet_Click;
             // 
             // txtboxAccountPassword
             // 
-            txtboxAccountPassword.Location = new Point(206, 288);
+            txtboxAccountPassword.BackColor = Color.White;
+            txtboxAccountPassword.Font = new Font("Segoe UI", 10F);
+            txtboxAccountPassword.Location = new Point(244, 170);
             txtboxAccountPassword.Name = "txtboxAccountPassword";
-            txtboxAccountPassword.Size = new Size(471, 43);
+            txtboxAccountPassword.Size = new Size(200, 25);
             txtboxAccountPassword.TabIndex = 1;
             // 
             // txtboxAccountUsername
             // 
-            txtboxAccountUsername.Location = new Point(206, 228);
+            txtboxAccountUsername.BackColor = Color.White;
+            txtboxAccountUsername.Font = new Font("Segoe UI", 10F);
+            txtboxAccountUsername.Location = new Point(22, 170);
             txtboxAccountUsername.Name = "txtboxAccountUsername";
-            txtboxAccountUsername.Size = new Size(471, 43);
+            txtboxAccountUsername.Size = new Size(200, 25);
             txtboxAccountUsername.TabIndex = 1;
             // 
             // txtboxLicenseNo
             // 
-            txtboxLicenseNo.Location = new Point(206, 168);
+            txtboxLicenseNo.BackColor = Color.White;
+            txtboxLicenseNo.Font = new Font("Segoe UI", 10F);
+            txtboxLicenseNo.Location = new Point(22, 107);
             txtboxLicenseNo.Name = "txtboxLicenseNo";
-            txtboxLicenseNo.Size = new Size(471, 43);
+            txtboxLicenseNo.Size = new Size(200, 25);
             txtboxLicenseNo.TabIndex = 1;
             // 
             // txtboxLastName
             // 
-            txtboxLastName.Location = new Point(206, 107);
+            txtboxLastName.BackColor = Color.White;
+            txtboxLastName.Font = new Font("Segoe UI", 10F);
+            txtboxLastName.Location = new Point(244, 44);
             txtboxLastName.Name = "txtboxLastName";
-            txtboxLastName.Size = new Size(471, 43);
+            txtboxLastName.Size = new Size(200, 25);
             txtboxLastName.TabIndex = 1;
             // 
             // txtboxName
             // 
-            txtboxName.Location = new Point(206, 52);
+            txtboxName.BackColor = Color.White;
+            txtboxName.Font = new Font("Segoe UI", 10F);
+            txtboxName.Location = new Point(22, 44);
             txtboxName.Name = "txtboxName";
-            txtboxName.Size = new Size(471, 43);
+            txtboxName.Size = new Size(200, 25);
             txtboxName.TabIndex = 1;
             // 
             // label5
             // 
             label5.AutoSize = true;
-            label5.Location = new Point(28, 376);
+            label5.Font = new Font("Segoe UI", 10F);
+            label5.ForeColor = Color.FromArgb(89, 85, 84);
+            label5.Location = new Point(244, 85);
             label5.Name = "label5";
-            label5.Size = new Size(133, 37);
+            label5.Size = new Size(70, 19);
             label5.TabIndex = 0;
-            label5.Text = "Clinic Site";
+            label5.Text = "Clinic Site:";
             // 
             // label4
             // 
             label4.AutoSize = true;
-            label4.Font = new Font("Segoe UI", 15F);
-            label4.Location = new Point(28, 298);
+            label4.Font = new Font("Segoe UI", 10F);
+            label4.ForeColor = Color.FromArgb(89, 85, 84);
+            label4.Location = new Point(244, 148);
             label4.Name = "label4";
-            label4.Size = new Size(170, 28);
+            label4.Size = new Size(124, 19);
             label4.TabIndex = 0;
-            label4.Text = "Account Password";
+            label4.Text = "Account Password:";
             // 
             // label3
             // 
             label3.AutoSize = true;
-            label3.Font = new Font("Segoe UI", 15F);
-            label3.Location = new Point(22, 238);
+            label3.Font = new Font("Segoe UI", 10F);
+            label3.ForeColor = Color.FromArgb(89, 85, 84);
+            label3.Location = new Point(22, 148);
             label3.Name = "label3";
-            label3.Size = new Size(176, 28);
+            label3.Size = new Size(128, 19);
             label3.TabIndex = 0;
-            label3.Text = "Account Username";
+            label3.Text = "Account Username:";
             // 
             // label2
             // 
             label2.AutoSize = true;
-            label2.Font = new Font("Segoe UI", 15F);
-            label2.Location = new Point(28, 178);
+            label2.Font = new Font("Segoe UI", 10F);
+            label2.ForeColor = Color.FromArgb(89, 85, 84);
+            label2.Location = new Point(22, 85);
             label2.Name = "label2";
-            label2.Size = new Size(151, 28);
+            label2.Size = new Size(110, 19);
             label2.TabIndex = 0;
-            label2.Text = "License Number";
+            label2.Text = "License Number:";
             // 
             // label6
             // 
             label6.AutoSize = true;
-            label6.Location = new Point(28, 107);
+            label6.Font = new Font("Segoe UI", 10F);
+            label6.ForeColor = Color.FromArgb(89, 85, 84);
+            label6.Location = new Point(244, 22);
             label6.Name = "label6";
-            label6.Size = new Size(142, 37);
+            label6.Size = new Size(77, 19);
             label6.TabIndex = 0;
-            label6.Text = "Last Name";
+            label6.Text = "Last Name:";
             // 
             // label1
             // 
             label1.AutoSize = true;
-            label1.Location = new Point(28, 52);
+            label1.Font = new Font("Segoe UI", 10F);
+            label1.ForeColor = Color.FromArgb(89, 85, 84);
+            label1.Location = new Point(22, 22);
             label1.Name = "label1";
-            label1.Size = new Size(144, 37);
+            label1.Size = new Size(78, 19);
             label1.TabIndex = 0;
-            label1.Text = "First Name";
+            label1.Text = "First Name:";
+            // 
+            // pictureBox1
+            // 
+            pictureBox1.Image = (Image)resources.GetObject("pictureBox1.Image");
+            pictureBox1.Location = new Point(227, 15);
+            pictureBox1.Name = "pictureBox1";
+            pictureBox1.Size = new Size(350, 200);
+            pictureBox1.SizeMode = PictureBoxSizeMode.Zoom;
+            pictureBox1.TabIndex = 2;
+            pictureBox1.TabStop = false;
+            // 
+            // registerPORegisterPanel
+            // 
+            registerPORegisterPanel.BackColor = Color.White;
+            registerPORegisterPanel.Controls.Add(cmbboxClinic);
+            registerPORegisterPanel.Controls.Add(txtboxAccountPassword);
+            registerPORegisterPanel.Controls.Add(label4);
+            registerPORegisterPanel.Controls.Add(txtboxAccountUsername);
+            registerPORegisterPanel.Controls.Add(label1);
+            registerPORegisterPanel.Controls.Add(txtboxName);
+            registerPORegisterPanel.Controls.Add(label3);
+            registerPORegisterPanel.Controls.Add(label6);
+            registerPORegisterPanel.Controls.Add(txtboxLicenseNo);
+            registerPORegisterPanel.Controls.Add(label5);
+            registerPORegisterPanel.Controls.Add(txtboxLastName);
+            registerPORegisterPanel.Controls.Add(label2);
+            registerPORegisterPanel.Location = new Point(19, 65);
+            registerPORegisterPanel.Name = "registerPORegisterPanel";
+            registerPORegisterPanel.Size = new Size(472, 223);
+            registerPORegisterPanel.TabIndex = 19;
+            // 
+            // panel1
+            // 
+            panel1.BackColor = Color.FromArgb(249, 249, 249);
+            panel1.Controls.Add(label7);
+            panel1.Controls.Add(btnRegisterVet);
+            panel1.Controls.Add(label14);
+            panel1.Controls.Add(registerPORegisterPanel);
+            panel1.Location = new Point(148, 190);
+            panel1.Name = "panel1";
+            panel1.Size = new Size(509, 355);
+            panel1.TabIndex = 20;
+            // 
+            // label7
+            // 
+            label7.AutoSize = true;
+            label7.Font = new Font("Segoe UI", 10.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            label7.ForeColor = Color.FromArgb(89, 85, 84);
+            label7.Location = new Point(19, 39);
+            label7.Name = "label7";
+            label7.Size = new Size(283, 19);
+            label7.TabIndex = 25;
+            label7.Text = "Please provide valid veterinarian information.";
+            // 
+            // label14
+            // 
+            label14.AutoSize = true;
+            label14.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label14.ForeColor = Color.FromArgb(89, 85, 84);
+            label14.Location = new Point(19, 14);
+            label14.Name = "label14";
+            label14.Size = new Size(130, 21);
+            label14.TabIndex = 2;
+            label14.Text = "Account Details";
             // 
             // AdminRegisterVetUsCo
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            Controls.Add(grpboxVet);
+            BackColor = Color.White;
+            Controls.Add(panel1);
+            Controls.Add(pictureBox1);
             Name = "AdminRegisterVetUsCo";
             Size = new Size(800, 590);
             Load += AdminRegisterVetUsCo_Load;
-            grpboxVet.ResumeLayout(false);
-            grpboxVet.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
+            registerPORegisterPanel.ResumeLayout(false);
+            registerPORegisterPanel.PerformLayout();
+            panel1.ResumeLayout(false);
+            panel1.PerformLayout();
             ResumeLayout(false);
         }
 
         #endregion
-
-        private GroupBox grpboxVet;
         private Button btnRegisterVet;
         private TextBox txtboxLicenseNo;
         private TextBox txtboxName;
@@ -208,5 +284,10 @@
         private Label label3;
         private TextBox txtboxLastName;
         private Label label6;
+        private PictureBox pictureBox1;
+        private Panel registerPORegisterPanel;
+        private Panel panel1;
+        private Label label7;
+        private Label label14;
     }
 }

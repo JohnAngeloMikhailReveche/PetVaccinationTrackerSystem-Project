@@ -173,7 +173,7 @@ namespace PetVaccinationTrackerSystem_Project
             mainFormVButtonLO.DangerColor = Color.FromArgb(245, 108, 108);
             mainFormVButtonLO.DefaultColor = Color.FromArgb(255, 255, 255);
             mainFormVButtonLO.Font = new Font("Segoe UI", 10.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            mainFormVButtonLO.HoverTextColor = Color.FromArgb(48, 49, 51);
+            mainFormVButtonLO.HoverTextColor = Color.White;
             mainFormVButtonLO.InfoColor = Color.FromArgb(144, 147, 153);
             mainFormVButtonLO.Location = new Point(38, 535);
             mainFormVButtonLO.Name = "mainFormVButtonLO";

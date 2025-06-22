@@ -33,12 +33,12 @@
             txtboxEmail = new TextBox();
             label3 = new Label();
             txtboxPassword = new TextBox();
-            btnLogin = new Button();
             btnShowPassword = new Button();
             panel1 = new Panel();
             mainFormVButtonExit = new Button();
             panel2 = new Panel();
             pictureBox1 = new PictureBox();
+            btnLogin = new ReaLTaiizor.Controls.HopeRoundButton();
             panel1.SuspendLayout();
             panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
@@ -49,7 +49,7 @@
             label2.AutoSize = true;
             label2.Font = new Font("Segoe UI", 10F);
             label2.ForeColor = Color.FromArgb(89, 85, 84);
-            label2.Location = new Point(45, 210);
+            label2.Location = new Point(45, 213);
             label2.Name = "label2";
             label2.Size = new Size(163, 19);
             label2.TabIndex = 1;
@@ -57,9 +57,9 @@
             // 
             // txtboxEmail
             // 
-            txtboxEmail.BackColor = Color.FromArgb(249, 249, 249);
+            txtboxEmail.BackColor = Color.White;
             txtboxEmail.Font = new Font("Segoe UI", 10F);
-            txtboxEmail.Location = new Point(45, 232);
+            txtboxEmail.Location = new Point(45, 235);
             txtboxEmail.Name = "txtboxEmail";
             txtboxEmail.Size = new Size(310, 25);
             txtboxEmail.TabIndex = 2;
@@ -69,7 +69,7 @@
             label3.AutoSize = true;
             label3.Font = new Font("Segoe UI", 10F);
             label3.ForeColor = Color.FromArgb(89, 85, 84);
-            label3.Location = new Point(45, 285);
+            label3.Location = new Point(45, 288);
             label3.Name = "label3";
             label3.Size = new Size(138, 19);
             label3.TabIndex = 1;
@@ -77,37 +77,22 @@
             // 
             // txtboxPassword
             // 
-            txtboxPassword.BackColor = Color.FromArgb(249, 249, 249);
+            txtboxPassword.BackColor = Color.White;
             txtboxPassword.Font = new Font("Segoe UI", 10F);
-            txtboxPassword.Location = new Point(45, 307);
+            txtboxPassword.Location = new Point(45, 310);
             txtboxPassword.Name = "txtboxPassword";
             txtboxPassword.Size = new Size(310, 25);
             txtboxPassword.TabIndex = 2;
             txtboxPassword.UseSystemPasswordChar = true;
             // 
-            // btnLogin
-            // 
-            btnLogin.BackColor = Color.FromArgb(89, 85, 84);
-            btnLogin.FlatAppearance.BorderSize = 0;
-            btnLogin.FlatStyle = FlatStyle.Flat;
-            btnLogin.Font = new Font("Segoe UI", 10.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            btnLogin.ForeColor = Color.White;
-            btnLogin.Location = new Point(150, 387);
-            btnLogin.Name = "btnLogin";
-            btnLogin.Size = new Size(100, 40);
-            btnLogin.TabIndex = 3;
-            btnLogin.Text = "Login";
-            btnLogin.UseVisualStyleBackColor = false;
-            btnLogin.Click += btnLogin_Click;
-            // 
             // btnShowPassword
             // 
-            btnShowPassword.BackColor = Color.FromArgb(249, 249, 249);
+            btnShowPassword.BackColor = Color.White;
             btnShowPassword.BackgroundImage = (Image)resources.GetObject("btnShowPassword.BackgroundImage");
             btnShowPassword.BackgroundImageLayout = ImageLayout.Zoom;
             btnShowPassword.FlatAppearance.BorderSize = 0;
             btnShowPassword.FlatStyle = FlatStyle.Flat;
-            btnShowPassword.Location = new Point(330, 309);
+            btnShowPassword.Location = new Point(330, 312);
             btnShowPassword.Name = "btnShowPassword";
             btnShowPassword.Size = new Size(18, 18);
             btnShowPassword.TabIndex = 4;
@@ -159,16 +144,38 @@
             pictureBox1.TabIndex = 0;
             pictureBox1.TabStop = false;
             // 
+            // btnLogin
+            // 
+            btnLogin.BackColor = Color.FromArgb(89, 85, 84);
+            btnLogin.BorderColor = Color.FromArgb(220, 223, 230);
+            btnLogin.ButtonType = ReaLTaiizor.Util.HopeButtonType.Primary;
+            btnLogin.DangerColor = Color.FromArgb(245, 108, 108);
+            btnLogin.DefaultColor = Color.FromArgb(255, 255, 255);
+            btnLogin.Font = new Font("Segoe UI", 10.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            btnLogin.ForeColor = Color.White;
+            btnLogin.HoverTextColor = Color.White;
+            btnLogin.InfoColor = Color.FromArgb(144, 147, 153);
+            btnLogin.Location = new Point(137, 385);
+            btnLogin.Name = "btnLogin";
+            btnLogin.PrimaryColor = Color.FromArgb(89, 85, 84);
+            btnLogin.Size = new Size(125, 40);
+            btnLogin.SuccessColor = Color.FromArgb(103, 194, 58);
+            btnLogin.TabIndex = 7;
+            btnLogin.Text = "Login";
+            btnLogin.TextColor = Color.White;
+            btnLogin.WarningColor = Color.FromArgb(230, 162, 60);
+            btnLogin.Click += btnLogin_Click;
+            // 
             // AuthForm
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.White;
             ClientSize = new Size(400, 450);
+            Controls.Add(btnLogin);
             Controls.Add(panel2);
             Controls.Add(panel1);
             Controls.Add(btnShowPassword);
-            Controls.Add(btnLogin);
             Controls.Add(txtboxPassword);
             Controls.Add(txtboxEmail);
             Controls.Add(label3);
@@ -191,11 +198,11 @@
         private TextBox txtboxEmail;
         private Label label3;
         private TextBox txtboxPassword;
-        private Button btnLogin;
         private Button btnShowPassword;
         private Panel panel1;
         private Panel panel2;
         private Button mainFormVButtonExit;
         private PictureBox pictureBox1;
+        private ReaLTaiizor.Controls.HopeRoundButton btnLogin;
     }
 }

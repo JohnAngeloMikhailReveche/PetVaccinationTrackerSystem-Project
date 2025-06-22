@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            grpboxClinic = new GroupBox();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(AdminRegisterClinicUsCo));
             btnRegisterClinic = new Button();
             txtboxZipCode = new TextBox();
             txtboxState = new TextBox();
@@ -40,135 +40,204 @@
             label3 = new Label();
             label2 = new Label();
             label1 = new Label();
-            grpboxClinic.SuspendLayout();
+            pictureBox1 = new PictureBox();
+            panel1 = new Panel();
+            label7 = new Label();
+            label14 = new Label();
+            registerPORegisterPanel = new Panel();
+            ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
+            panel1.SuspendLayout();
+            registerPORegisterPanel.SuspendLayout();
             SuspendLayout();
-            // 
-            // grpboxClinic
-            // 
-            grpboxClinic.Controls.Add(btnRegisterClinic);
-            grpboxClinic.Controls.Add(txtboxZipCode);
-            grpboxClinic.Controls.Add(txtboxState);
-            grpboxClinic.Controls.Add(txtboxCity);
-            grpboxClinic.Controls.Add(txtboxStreet);
-            grpboxClinic.Controls.Add(txtboxClinicName);
-            grpboxClinic.Controls.Add(label5);
-            grpboxClinic.Controls.Add(label4);
-            grpboxClinic.Controls.Add(label3);
-            grpboxClinic.Controls.Add(label2);
-            grpboxClinic.Controls.Add(label1);
-            grpboxClinic.Font = new Font("Segoe UI", 20F);
-            grpboxClinic.Location = new Point(40, 25);
-            grpboxClinic.Name = "grpboxClinic";
-            grpboxClinic.Size = new Size(704, 541);
-            grpboxClinic.TabIndex = 0;
-            grpboxClinic.TabStop = false;
-            grpboxClinic.Text = "Clinic";
             // 
             // btnRegisterClinic
             // 
-            btnRegisterClinic.Location = new Point(259, 433);
+            btnRegisterClinic.FlatStyle = FlatStyle.Flat;
+            btnRegisterClinic.Font = new Font("Segoe UI", 10.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            btnRegisterClinic.ForeColor = Color.FromArgb(89, 85, 84);
+            btnRegisterClinic.Location = new Point(239, 323);
             btnRegisterClinic.Name = "btnRegisterClinic";
-            btnRegisterClinic.Size = new Size(207, 58);
+            btnRegisterClinic.Size = new Size(100, 40);
             btnRegisterClinic.TabIndex = 2;
-            btnRegisterClinic.Text = "Register Clinic";
+            btnRegisterClinic.Text = "Register";
             btnRegisterClinic.UseVisualStyleBackColor = true;
             btnRegisterClinic.Click += btnRegisterClinic_Click;
             // 
             // txtboxZipCode
             // 
-            txtboxZipCode.Location = new Point(206, 352);
+            txtboxZipCode.Font = new Font("Segoe UI", 10F);
+            txtboxZipCode.Location = new Point(192, 211);
             txtboxZipCode.Name = "txtboxZipCode";
-            txtboxZipCode.Size = new Size(471, 43);
+            txtboxZipCode.Size = new Size(113, 25);
             txtboxZipCode.TabIndex = 1;
             // 
             // txtboxState
             // 
-            txtboxState.Location = new Point(206, 285);
+            txtboxState.Font = new Font("Segoe UI", 10F);
+            txtboxState.Location = new Point(13, 211);
             txtboxState.Name = "txtboxState";
-            txtboxState.Size = new Size(471, 43);
+            txtboxState.Size = new Size(164, 25);
             txtboxState.TabIndex = 1;
             // 
             // txtboxCity
             // 
-            txtboxCity.Location = new Point(206, 217);
+            txtboxCity.Font = new Font("Segoe UI", 10F);
+            txtboxCity.Location = new Point(13, 150);
             txtboxCity.Name = "txtboxCity";
-            txtboxCity.Size = new Size(471, 43);
+            txtboxCity.Size = new Size(292, 25);
             txtboxCity.TabIndex = 1;
             // 
             // txtboxStreet
             // 
-            txtboxStreet.Location = new Point(206, 150);
+            txtboxStreet.Font = new Font("Segoe UI", 10F);
+            txtboxStreet.Location = new Point(13, 89);
             txtboxStreet.Name = "txtboxStreet";
-            txtboxStreet.Size = new Size(471, 43);
+            txtboxStreet.Size = new Size(292, 25);
             txtboxStreet.TabIndex = 1;
             // 
             // txtboxClinicName
             // 
-            txtboxClinicName.Location = new Point(206, 72);
+            txtboxClinicName.Font = new Font("Segoe UI", 10F);
+            txtboxClinicName.Location = new Point(13, 33);
             txtboxClinicName.Name = "txtboxClinicName";
-            txtboxClinicName.Size = new Size(471, 43);
+            txtboxClinicName.Size = new Size(292, 25);
             txtboxClinicName.TabIndex = 1;
             // 
             // label5
             // 
             label5.AutoSize = true;
-            label5.Location = new Point(28, 352);
+            label5.Font = new Font("Segoe UI", 10F);
+            label5.ForeColor = Color.FromArgb(89, 85, 84);
+            label5.Location = new Point(192, 189);
             label5.Name = "label5";
-            label5.Size = new Size(125, 37);
+            label5.Size = new Size(67, 19);
             label5.TabIndex = 0;
-            label5.Text = "Zip Code";
+            label5.Text = "Zip Code:";
             // 
             // label4
             // 
             label4.AutoSize = true;
-            label4.Location = new Point(28, 285);
+            label4.Font = new Font("Segoe UI", 10F);
+            label4.ForeColor = Color.FromArgb(89, 85, 84);
+            label4.Location = new Point(13, 189);
             label4.Name = "label4";
-            label4.Size = new Size(76, 37);
+            label4.Size = new Size(43, 19);
             label4.TabIndex = 0;
-            label4.Text = "State";
+            label4.Text = "State:";
             // 
             // label3
             // 
             label3.AutoSize = true;
-            label3.Location = new Point(28, 217);
+            label3.Font = new Font("Segoe UI", 10F);
+            label3.ForeColor = Color.FromArgb(89, 85, 84);
+            label3.Location = new Point(13, 128);
             label3.Name = "label3";
-            label3.Size = new Size(63, 37);
+            label3.Size = new Size(36, 19);
             label3.TabIndex = 0;
-            label3.Text = "City";
+            label3.Text = "City:";
             // 
             // label2
             // 
             label2.AutoSize = true;
-            label2.Location = new Point(28, 150);
+            label2.Font = new Font("Segoe UI", 10F);
+            label2.ForeColor = Color.FromArgb(89, 85, 84);
+            label2.Location = new Point(13, 67);
             label2.Name = "label2";
-            label2.Size = new Size(85, 37);
+            label2.Size = new Size(48, 19);
             label2.TabIndex = 0;
-            label2.Text = "Street";
+            label2.Text = "Street:";
             // 
             // label1
             // 
             label1.AutoSize = true;
-            label1.Location = new Point(28, 72);
+            label1.Font = new Font("Segoe UI", 10F);
+            label1.ForeColor = Color.FromArgb(89, 85, 84);
+            label1.Location = new Point(13, 11);
             label1.Name = "label1";
-            label1.Size = new Size(160, 37);
+            label1.Size = new Size(84, 19);
             label1.TabIndex = 0;
-            label1.Text = "Clinic Name";
+            label1.Text = "Clinic Name:";
+            // 
+            // pictureBox1
+            // 
+            pictureBox1.Image = (Image)resources.GetObject("pictureBox1.Image");
+            pictureBox1.Location = new Point(232, 5);
+            pictureBox1.Name = "pictureBox1";
+            pictureBox1.Size = new Size(350, 200);
+            pictureBox1.SizeMode = PictureBoxSizeMode.Zoom;
+            pictureBox1.TabIndex = 3;
+            pictureBox1.TabStop = false;
+            // 
+            // panel1
+            // 
+            panel1.BackColor = Color.FromArgb(249, 249, 249);
+            panel1.Controls.Add(btnRegisterClinic);
+            panel1.Controls.Add(label7);
+            panel1.Controls.Add(label14);
+            panel1.Controls.Add(registerPORegisterPanel);
+            panel1.Location = new Point(226, 188);
+            panel1.Name = "panel1";
+            panel1.Size = new Size(362, 375);
+            panel1.TabIndex = 21;
+            // 
+            // label7
+            // 
+            label7.AutoSize = true;
+            label7.Font = new Font("Segoe UI", 10.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            label7.ForeColor = Color.FromArgb(89, 85, 84);
+            label7.Location = new Point(19, 31);
+            label7.Name = "label7";
+            label7.Size = new Size(305, 19);
+            label7.TabIndex = 25;
+            label7.Text = "Please provide valid veterinary clinic information.";
+            // 
+            // label14
+            // 
+            label14.AutoSize = true;
+            label14.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label14.ForeColor = Color.FromArgb(89, 85, 84);
+            label14.Location = new Point(19, 9);
+            label14.Name = "label14";
+            label14.Size = new Size(110, 21);
+            label14.TabIndex = 2;
+            label14.Text = "Clinic Details";
+            // 
+            // registerPORegisterPanel
+            // 
+            registerPORegisterPanel.BackColor = Color.White;
+            registerPORegisterPanel.Controls.Add(txtboxClinicName);
+            registerPORegisterPanel.Controls.Add(txtboxZipCode);
+            registerPORegisterPanel.Controls.Add(label1);
+            registerPORegisterPanel.Controls.Add(txtboxState);
+            registerPORegisterPanel.Controls.Add(label2);
+            registerPORegisterPanel.Controls.Add(label5);
+            registerPORegisterPanel.Controls.Add(txtboxCity);
+            registerPORegisterPanel.Controls.Add(label4);
+            registerPORegisterPanel.Controls.Add(txtboxStreet);
+            registerPORegisterPanel.Controls.Add(label3);
+            registerPORegisterPanel.Location = new Point(23, 59);
+            registerPORegisterPanel.Name = "registerPORegisterPanel";
+            registerPORegisterPanel.Size = new Size(316, 255);
+            registerPORegisterPanel.TabIndex = 19;
             // 
             // AdminRegisterClinicUsCo
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            Controls.Add(grpboxClinic);
+            BackColor = Color.White;
+            Controls.Add(panel1);
+            Controls.Add(pictureBox1);
             Name = "AdminRegisterClinicUsCo";
             Size = new Size(800, 590);
-            grpboxClinic.ResumeLayout(false);
-            grpboxClinic.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
+            panel1.ResumeLayout(false);
+            panel1.PerformLayout();
+            registerPORegisterPanel.ResumeLayout(false);
+            registerPORegisterPanel.PerformLayout();
             ResumeLayout(false);
         }
 
         #endregion
-
-        private GroupBox grpboxClinic;
         private TextBox txtboxClinicName;
         private Label label1;
         private TextBox txtboxZipCode;
@@ -180,5 +249,10 @@
         private Label label3;
         private Label label2;
         private Button btnRegisterClinic;
+        private PictureBox pictureBox1;
+        private Panel panel1;
+        private Label label7;
+        private Label label14;
+        private Panel registerPORegisterPanel;
     }
 }
