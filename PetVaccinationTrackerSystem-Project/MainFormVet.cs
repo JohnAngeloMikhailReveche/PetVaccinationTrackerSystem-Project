@@ -33,7 +33,7 @@ namespace PetVaccinationTrackerSystem_Project
             {
                 Application.Exit();
             }
-            
+
         }
 
         private void mainFormVButtonHome_Click(object sender, EventArgs e)
@@ -78,6 +78,20 @@ namespace PetVaccinationTrackerSystem_Project
                 this.Close(); // Triggers the FormClosed event to switch back to the AuthForm.
             }
 
+        }
+
+        private void mainFormVButtonVH_Click(object sender, EventArgs e)
+        {
+            mainFormVSideBHighlight.Height = mainFormVButtonVH.Height;
+            mainFormVSideBHighlight.Top = mainFormVButtonVH.Top;
+            vaccinationHistory1.BringToFront();
+        }
+
+        private void mainFormVButtonVRTS_Click(object sender, EventArgs e)
+        {
+            mainFormVSideBHighlight.Height = mainFormVButtonVRTS.Height;
+            mainFormVSideBHighlight.Top = mainFormVButtonVRTS.Top;
+            pet_Reports1.BringToFront();
         }
     }
 }
