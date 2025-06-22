@@ -34,35 +34,35 @@
             PetProfilePanelVButtonSave = new Button();
             PetProfilePanelVButtonGoBack = new Button();
             PetProfilePanelVPetInfoCard = new Panel();
-            comboBox2 = new ComboBox();
-            dateTimePicker1 = new DateTimePicker();
-            comboBox1 = new ComboBox();
+            textBox1 = new TextBox();
+            label7 = new Label();
+            cmbGender = new ComboBox();
+            cmbDOB = new DateTimePicker();
+            cmbSpecies = new ComboBox();
             label10 = new Label();
             label4 = new Label();
             label9 = new Label();
             label8 = new Label();
             label6 = new Label();
-            textBox11 = new TextBox();
+            txtBreed = new TextBox();
             label5 = new Label();
             label3 = new Label();
-            textBox8 = new TextBox();
-            textBox5 = new TextBox();
-            textBox6 = new TextBox();
-            textBox7 = new TextBox();
+            txtColorMarkings = new TextBox();
+            txtOwnerName = new TextBox();
+            txtcontact = new TextBox();
+            txtPetName = new TextBox();
             label2 = new Label();
             label14 = new Label();
             PetProfilePanelVPBPanel = new Panel();
-            pictureBox2 = new PictureBox();
+            petpicture = new PictureBox();
             PetProfilePanelVButtonUpdatePB = new Button();
             txtNotes = new TextBox();
             label1 = new Label();
-            label7 = new Label();
-            textBox1 = new TextBox();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             PetProfilePanelVPetInfoP.SuspendLayout();
             PetProfilePanelVPetInfoCard.SuspendLayout();
             PetProfilePanelVPBPanel.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)pictureBox2).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)petpicture).BeginInit();
             SuspendLayout();
             // 
             // pictureBox1
@@ -99,6 +99,7 @@
             PetProfilePanelVButtonSave.TabIndex = 33;
             PetProfilePanelVButtonSave.Text = "Save";
             PetProfilePanelVButtonSave.UseVisualStyleBackColor = true;
+            PetProfilePanelVButtonSave.Click += PetProfilePanelVButtonSave_Click_1;
             // 
             // PetProfilePanelVButtonGoBack
             // 
@@ -118,21 +119,21 @@
             PetProfilePanelVPetInfoCard.BorderStyle = BorderStyle.FixedSingle;
             PetProfilePanelVPetInfoCard.Controls.Add(textBox1);
             PetProfilePanelVPetInfoCard.Controls.Add(label7);
-            PetProfilePanelVPetInfoCard.Controls.Add(comboBox2);
-            PetProfilePanelVPetInfoCard.Controls.Add(dateTimePicker1);
-            PetProfilePanelVPetInfoCard.Controls.Add(comboBox1);
+            PetProfilePanelVPetInfoCard.Controls.Add(cmbGender);
+            PetProfilePanelVPetInfoCard.Controls.Add(cmbDOB);
+            PetProfilePanelVPetInfoCard.Controls.Add(cmbSpecies);
             PetProfilePanelVPetInfoCard.Controls.Add(label10);
             PetProfilePanelVPetInfoCard.Controls.Add(label4);
             PetProfilePanelVPetInfoCard.Controls.Add(label9);
             PetProfilePanelVPetInfoCard.Controls.Add(label8);
             PetProfilePanelVPetInfoCard.Controls.Add(label6);
-            PetProfilePanelVPetInfoCard.Controls.Add(textBox11);
+            PetProfilePanelVPetInfoCard.Controls.Add(txtBreed);
             PetProfilePanelVPetInfoCard.Controls.Add(label5);
             PetProfilePanelVPetInfoCard.Controls.Add(label3);
-            PetProfilePanelVPetInfoCard.Controls.Add(textBox8);
-            PetProfilePanelVPetInfoCard.Controls.Add(textBox5);
-            PetProfilePanelVPetInfoCard.Controls.Add(textBox6);
-            PetProfilePanelVPetInfoCard.Controls.Add(textBox7);
+            PetProfilePanelVPetInfoCard.Controls.Add(txtColorMarkings);
+            PetProfilePanelVPetInfoCard.Controls.Add(txtOwnerName);
+            PetProfilePanelVPetInfoCard.Controls.Add(txtcontact);
+            PetProfilePanelVPetInfoCard.Controls.Add(txtPetName);
             PetProfilePanelVPetInfoCard.Controls.Add(label2);
             PetProfilePanelVPetInfoCard.Location = new Point(23, 45);
             PetProfilePanelVPetInfoCard.Margin = new Padding(20, 5, 0, 0);
@@ -140,37 +141,58 @@
             PetProfilePanelVPetInfoCard.Size = new Size(427, 367);
             PetProfilePanelVPetInfoCard.TabIndex = 5;
             // 
-            // comboBox2
+            // textBox1
             // 
-            comboBox2.DropDownStyle = ComboBoxStyle.DropDownList;
-            comboBox2.Font = new Font("Segoe UI", 10F);
-            comboBox2.FormattingEnabled = true;
-            comboBox2.Items.AddRange(new object[] { "Male", "Female" });
-            comboBox2.Location = new Point(112, 106);
-            comboBox2.Name = "comboBox2";
-            comboBox2.Size = new Size(90, 25);
-            comboBox2.TabIndex = 22;
+            textBox1.BackColor = Color.FromArgb(249, 249, 249);
+            textBox1.Font = new Font("Segoe UI", 10F);
+            textBox1.Location = new Point(218, 36);
+            textBox1.Multiline = true;
+            textBox1.Name = "textBox1";
+            textBox1.Size = new Size(192, 29);
+            textBox1.TabIndex = 24;
             // 
-            // dateTimePicker1
+            // label7
             // 
-            dateTimePicker1.CalendarFont = new Font("Segoe UI", 13.8F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            dateTimePicker1.Font = new Font("Segoe UI", 10F);
-            dateTimePicker1.Format = DateTimePickerFormat.Custom;
-            dateTimePicker1.Location = new Point(218, 106);
-            dateTimePicker1.Name = "dateTimePicker1";
-            dateTimePicker1.Size = new Size(192, 25);
-            dateTimePicker1.TabIndex = 16;
+            label7.AutoSize = true;
+            label7.Font = new Font("Segoe UI", 10F);
+            label7.ForeColor = Color.FromArgb(89, 85, 84);
+            label7.Location = new Point(219, 15);
+            label7.Name = "label7";
+            label7.Size = new Size(49, 19);
+            label7.TabIndex = 23;
+            label7.Text = "Pet ID:";
             // 
-            // comboBox1
+            // cmbGender
             // 
-            comboBox1.DropDownStyle = ComboBoxStyle.DropDownList;
-            comboBox1.Font = new Font("Segoe UI", 10F);
-            comboBox1.FormattingEnabled = true;
-            comboBox1.Items.AddRange(new object[] { "Dog", "Cat" });
-            comboBox1.Location = new Point(15, 106);
-            comboBox1.Name = "comboBox1";
-            comboBox1.Size = new Size(80, 25);
-            comboBox1.TabIndex = 21;
+            cmbGender.DropDownStyle = ComboBoxStyle.DropDownList;
+            cmbGender.Font = new Font("Segoe UI", 10F);
+            cmbGender.FormattingEnabled = true;
+            cmbGender.Items.AddRange(new object[] { "Male", "Female" });
+            cmbGender.Location = new Point(112, 106);
+            cmbGender.Name = "cmbGender";
+            cmbGender.Size = new Size(90, 25);
+            cmbGender.TabIndex = 22;
+            // 
+            // cmbDOB
+            // 
+            cmbDOB.CalendarFont = new Font("Segoe UI", 13.8F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            cmbDOB.Font = new Font("Segoe UI", 10F);
+            cmbDOB.Format = DateTimePickerFormat.Custom;
+            cmbDOB.Location = new Point(218, 106);
+            cmbDOB.Name = "cmbDOB";
+            cmbDOB.Size = new Size(192, 25);
+            cmbDOB.TabIndex = 16;
+            // 
+            // cmbSpecies
+            // 
+            cmbSpecies.DropDownStyle = ComboBoxStyle.DropDownList;
+            cmbSpecies.Font = new Font("Segoe UI", 10F);
+            cmbSpecies.FormattingEnabled = true;
+            cmbSpecies.Items.AddRange(new object[] { "Dog", "Cat" });
+            cmbSpecies.Location = new Point(15, 106);
+            cmbSpecies.Name = "cmbSpecies";
+            cmbSpecies.Size = new Size(80, 25);
+            cmbSpecies.TabIndex = 21;
             // 
             // label10
             // 
@@ -227,15 +249,15 @@
             label6.TabIndex = 12;
             label6.Text = "Colors / Markings: ";
             // 
-            // textBox11
+            // txtBreed
             // 
-            textBox11.BackColor = Color.FromArgb(249, 249, 249);
-            textBox11.Font = new Font("Segoe UI", 10F);
-            textBox11.Location = new Point(15, 177);
-            textBox11.Multiline = true;
-            textBox11.Name = "textBox11";
-            textBox11.Size = new Size(187, 29);
-            textBox11.TabIndex = 11;
+            txtBreed.BackColor = Color.FromArgb(249, 249, 249);
+            txtBreed.Font = new Font("Segoe UI", 10F);
+            txtBreed.Location = new Point(15, 177);
+            txtBreed.Multiline = true;
+            txtBreed.Name = "txtBreed";
+            txtBreed.Size = new Size(187, 29);
+            txtBreed.TabIndex = 11;
             // 
             // label5
             // 
@@ -259,44 +281,44 @@
             label3.TabIndex = 7;
             label3.Text = "Species:";
             // 
-            // textBox8
+            // txtColorMarkings
             // 
-            textBox8.BackColor = Color.FromArgb(249, 249, 249);
-            textBox8.Font = new Font("Segoe UI", 10F);
-            textBox8.Location = new Point(218, 177);
-            textBox8.Multiline = true;
-            textBox8.Name = "textBox8";
-            textBox8.Size = new Size(192, 29);
-            textBox8.TabIndex = 5;
+            txtColorMarkings.BackColor = Color.FromArgb(249, 249, 249);
+            txtColorMarkings.Font = new Font("Segoe UI", 10F);
+            txtColorMarkings.Location = new Point(218, 177);
+            txtColorMarkings.Multiline = true;
+            txtColorMarkings.Name = "txtColorMarkings";
+            txtColorMarkings.Size = new Size(192, 29);
+            txtColorMarkings.TabIndex = 5;
             // 
-            // textBox5
+            // txtOwnerName
             // 
-            textBox5.BackColor = Color.FromArgb(249, 249, 249);
-            textBox5.Font = new Font("Segoe UI", 10F);
-            textBox5.Location = new Point(15, 246);
-            textBox5.Multiline = true;
-            textBox5.Name = "textBox5";
-            textBox5.Size = new Size(395, 30);
-            textBox5.TabIndex = 4;
+            txtOwnerName.BackColor = Color.FromArgb(249, 249, 249);
+            txtOwnerName.Font = new Font("Segoe UI", 10F);
+            txtOwnerName.Location = new Point(15, 246);
+            txtOwnerName.Multiline = true;
+            txtOwnerName.Name = "txtOwnerName";
+            txtOwnerName.Size = new Size(395, 30);
+            txtOwnerName.TabIndex = 4;
             // 
-            // textBox6
+            // txtcontact
             // 
-            textBox6.BackColor = Color.FromArgb(249, 249, 249);
-            textBox6.Location = new Point(15, 316);
-            textBox6.Multiline = true;
-            textBox6.Name = "textBox6";
-            textBox6.Size = new Size(395, 30);
-            textBox6.TabIndex = 3;
+            txtcontact.BackColor = Color.FromArgb(249, 249, 249);
+            txtcontact.Location = new Point(15, 316);
+            txtcontact.Multiline = true;
+            txtcontact.Name = "txtcontact";
+            txtcontact.Size = new Size(395, 30);
+            txtcontact.TabIndex = 3;
             // 
-            // textBox7
+            // txtPetName
             // 
-            textBox7.BackColor = Color.FromArgb(249, 249, 249);
-            textBox7.Font = new Font("Segoe UI", 10F);
-            textBox7.Location = new Point(15, 36);
-            textBox7.Multiline = true;
-            textBox7.Name = "textBox7";
-            textBox7.Size = new Size(187, 29);
-            textBox7.TabIndex = 2;
+            txtPetName.BackColor = Color.FromArgb(249, 249, 249);
+            txtPetName.Font = new Font("Segoe UI", 10F);
+            txtPetName.Location = new Point(15, 36);
+            txtPetName.Multiline = true;
+            txtPetName.Name = "txtPetName";
+            txtPetName.Size = new Size(187, 29);
+            txtPetName.TabIndex = 2;
             // 
             // label2
             // 
@@ -322,22 +344,23 @@
             // 
             // PetProfilePanelVPBPanel
             // 
-            PetProfilePanelVPBPanel.Controls.Add(pictureBox2);
+            PetProfilePanelVPBPanel.Controls.Add(petpicture);
             PetProfilePanelVPBPanel.Location = new Point(522, 85);
             PetProfilePanelVPBPanel.Name = "PetProfilePanelVPBPanel";
             PetProfilePanelVPBPanel.Size = new Size(250, 250);
             PetProfilePanelVPBPanel.TabIndex = 20;
             // 
-            // pictureBox2
+            // petpicture
             // 
-            pictureBox2.Dock = DockStyle.Fill;
-            pictureBox2.Image = (Image)resources.GetObject("pictureBox2.Image");
-            pictureBox2.Location = new Point(0, 0);
-            pictureBox2.Name = "pictureBox2";
-            pictureBox2.Size = new Size(250, 250);
-            pictureBox2.SizeMode = PictureBoxSizeMode.Zoom;
-            pictureBox2.TabIndex = 0;
-            pictureBox2.TabStop = false;
+            petpicture.Dock = DockStyle.Fill;
+            petpicture.Image = (Image)resources.GetObject("petpicture.Image");
+            petpicture.Location = new Point(0, 0);
+            petpicture.Name = "petpicture";
+            petpicture.Size = new Size(250, 250);
+            petpicture.SizeMode = PictureBoxSizeMode.Zoom;
+            petpicture.TabIndex = 0;
+            petpicture.TabStop = false;
+            petpicture.Click += pictureBox2_Click;
             // 
             // PetProfilePanelVButtonUpdatePB
             // 
@@ -350,6 +373,7 @@
             PetProfilePanelVButtonUpdatePB.TabIndex = 33;
             PetProfilePanelVButtonUpdatePB.Text = "Update";
             PetProfilePanelVButtonUpdatePB.UseVisualStyleBackColor = true;
+            PetProfilePanelVButtonUpdatePB.Click += PetProfilePanelVButtonUpdatePB_Click;
             // 
             // txtNotes
             // 
@@ -372,27 +396,6 @@
             label1.TabIndex = 37;
             label1.Text = "Notes:";
             // 
-            // label7
-            // 
-            label7.AutoSize = true;
-            label7.Font = new Font("Segoe UI", 10F);
-            label7.ForeColor = Color.FromArgb(89, 85, 84);
-            label7.Location = new Point(219, 15);
-            label7.Name = "label7";
-            label7.Size = new Size(49, 19);
-            label7.TabIndex = 23;
-            label7.Text = "Pet ID:";
-            // 
-            // textBox1
-            // 
-            textBox1.BackColor = Color.FromArgb(249, 249, 249);
-            textBox1.Font = new Font("Segoe UI", 10F);
-            textBox1.Location = new Point(218, 36);
-            textBox1.Multiline = true;
-            textBox1.Name = "textBox1";
-            textBox1.Size = new Size(192, 29);
-            textBox1.TabIndex = 24;
-            // 
             // petProfilePanelVet
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
@@ -412,7 +415,7 @@
             PetProfilePanelVPetInfoCard.ResumeLayout(false);
             PetProfilePanelVPetInfoCard.PerformLayout();
             PetProfilePanelVPBPanel.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)pictureBox2).EndInit();
+            ((System.ComponentModel.ISupportInitialize)petpicture).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -423,29 +426,29 @@
         private Panel PetProfilePanelVPetInfoP;
         private Label label14;
         private Panel PetProfilePanelVPetInfoCard;
-        private DateTimePicker dateTimePicker1;
+        private DateTimePicker cmbDOB;
         private Label label10;
         private Label label9;
         private Label label8;
         private Label label6;
-        private TextBox textBox11;
+        private TextBox txtBreed;
         private Label label5;
         private Label label4;
         private Label label3;
-        private TextBox textBox8;
-        private TextBox textBox5;
-        private TextBox textBox6;
-        private TextBox textBox7;
+        private TextBox txtColorMarkings;
+        private TextBox txtOwnerName;
+        private TextBox txtcontact;
+        private TextBox txtPetName;
         private Label label2;
         private Panel PetProfilePanelVPBPanel;
-        private ComboBox comboBox1;
-        private ComboBox comboBox2;
+        private ComboBox cmbSpecies;
+        private ComboBox cmbGender;
         private Button PetProfilePanelVButtonGoBack;
         private Button PetProfilePanelVButtonUpdatePB;
         private TextBox txtNotes;
         private Button PetProfilePanelVButtonSave;
         private Label label1;
-        private PictureBox pictureBox2;
+        private PictureBox petpicture;
         private TextBox textBox1;
         private Label label7;
     }
