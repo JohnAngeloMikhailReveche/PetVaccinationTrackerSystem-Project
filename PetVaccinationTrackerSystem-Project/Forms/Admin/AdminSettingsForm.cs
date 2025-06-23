@@ -67,7 +67,7 @@ namespace PetVaccinationTrackerSystem_Project.Forms.Admin
             string updatedPassword = txtboxPassword.Text.Trim();
 
             // Replaces 1st line with username and 2nd line with password
-            string[] updatedLines = {updatedUsername, updatedPassword};
+            string[] updatedLines = { updatedUsername, updatedPassword };
 
             // Overwrites the file with the new content
             File.WriteAllLines(_fullPathToAdminConfigFile, updatedLines);
@@ -75,6 +75,11 @@ namespace PetVaccinationTrackerSystem_Project.Forms.Admin
             MessageBox.Show("Changes saved successfully.", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
             LoadConfigFile(); // Reload the config file to reflect changes in the UI
+        }
+
+        private void mainFormVButtonExit_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
 }

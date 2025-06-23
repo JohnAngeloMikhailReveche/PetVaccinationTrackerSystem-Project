@@ -33,7 +33,7 @@ namespace PetVaccinationTrackerSystem_Project.Forms.Admin
             }
 
             // Check if the values are still the same
-            if(_currentVet.FirstName == txtboxFirstName.Text.Trim() &&
+            if (_currentVet.FirstName == txtboxFirstName.Text.Trim() &&
                 _currentVet.LicenseNumber == txtboxLicenseNo.Text.Trim() &&
                 _currentVet.LastName == txtboxLastName.Text.Trim() &&
                 _currentVet.UserEmail == txtboxAccountEmail.Text.Trim() && _currentVet.ClinicID == (int)cmbboxClinic.SelectedValue)
@@ -147,7 +147,7 @@ namespace PetVaccinationTrackerSystem_Project.Forms.Admin
                     {
                         // Remove the veterinarian from the context
                         context.VeterinarianList.Remove(vetToDelete);
-                        
+
                         // Save changes to the database
                         context.SaveChanges();
 
@@ -167,6 +167,11 @@ namespace PetVaccinationTrackerSystem_Project.Forms.Admin
                     }
                 }
             }
+        }
+
+        private void mainFormVButtonExit_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
 }
