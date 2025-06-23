@@ -361,6 +361,7 @@
             VRDSButtonSave.TabIndex = 31;
             VRDSButtonSave.Text = "Save";
             VRDSButtonSave.UseVisualStyleBackColor = true;
+            VRDSButtonSave.Click += VRDSButtonSave_Click;
             // 
             // button1
             // 

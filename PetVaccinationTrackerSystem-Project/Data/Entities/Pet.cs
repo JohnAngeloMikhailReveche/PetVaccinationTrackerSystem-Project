@@ -45,6 +45,8 @@ namespace PetVaccinationTrackerSystem_Project.Data.Entities
         [ForeignKey("User")]
         public int UserID { get; set; }
 
+        
+
         // Navigation property to User entity
         public User User { get; set; }
 
@@ -53,5 +55,7 @@ namespace PetVaccinationTrackerSystem_Project.Data.Entities
         public List<Appointment>? Appointments { get; set; }
 
         public List<PetHealthRecords>? PetHealthRecords { get; set; }
+        public List<Vaccination> Vaccinations { get; set; }
+
     }
 }

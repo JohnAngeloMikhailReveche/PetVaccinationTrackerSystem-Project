@@ -13,9 +13,11 @@ using System.Windows.Forms;
 namespace PetVaccinationTrackerSystem_Project
 {
     public partial class petProfilePanelVet : UserControl
+
     {
         public petProfilePanelVet()
         {
+
             InitializeComponent();
         }
 
@@ -74,20 +76,33 @@ namespace PetVaccinationTrackerSystem_Project
                 OwnerPhoneNumber = int.Parse(txtcontact.Text),
                 Notes = txtNotes.Text,
                 ImageRL = petpicture.Image != null ? Convert.ToBase64String((byte[])new ImageConverter().ConvertTo(petpicture.Image, typeof(byte[]))) : null,
-                UserID = 2
-                // UserID = 2 (ito yung papalitan ng userID if ever na di pa nakakapagreate ng user)
+              
 
             };
 
             using (var context = new ModelContext())
             {
-                context.PetList.Add(pet);
-                context.SaveChanges();
+                var existingUser = context.UserList.Find(pet.UserID);
 
-                int newPetID = pet.PetID;
-                MessageBox.Show("Pet saved successfully with ID: " + newPetID);
+                if (existingUser != null)
+                {
+                    context.PetList.Add(pet);
+                    context.SaveChanges();
 
+                    int newPetID = pet.PetID;
+                    MessageBox.Show("Pet saved successfully with ID: " + newPetID);
+                }
+                else
+                {
+                    MessageBox.Show("Error: User does not exist. Please create the user first.",
+                                    "Validation Error",
+                                    MessageBoxButtons.OK,
+                                    MessageBoxIcon.Error);
+                }
             }
+
+
+
 
         }
 

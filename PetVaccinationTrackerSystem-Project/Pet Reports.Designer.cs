@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            components = new System.ComponentModel.Container();
             pictureBox1 = new PictureBox();
             VRDSVaccineCard = new Panel();
             cartesianChart1 = new LiveChartsCore.SkiaSharpView.WinForms.CartesianChart();
@@ -35,12 +36,14 @@
             pieChart1 = new LiveChartsCore.SkiaSharpView.WinForms.PieChart();
             dateTimePicker1 = new DateTimePicker();
             button1 = new Button();
-            comboBox3 = new ComboBox();
-            comboBox2 = new ComboBox();
-            comboBox1 = new ComboBox();
+            cmbPetGender = new ComboBox();
+            cmbVaccinenName = new ComboBox();
+            cmbPettype = new ComboBox();
             label7 = new Label();
+            petBindingSource = new BindingSource(components);
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             VRDSVaccineCard.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)petBindingSource).BeginInit();
             SuspendLayout();
             // 
             // pictureBox1
@@ -63,9 +66,9 @@
             VRDSVaccineCard.Controls.Add(pieChart1);
             VRDSVaccineCard.Controls.Add(dateTimePicker1);
             VRDSVaccineCard.Controls.Add(button1);
-            VRDSVaccineCard.Controls.Add(comboBox3);
-            VRDSVaccineCard.Controls.Add(comboBox2);
-            VRDSVaccineCard.Controls.Add(comboBox1);
+            VRDSVaccineCard.Controls.Add(cmbPetGender);
+            VRDSVaccineCard.Controls.Add(cmbVaccinenName);
+            VRDSVaccineCard.Controls.Add(cmbPettype);
             VRDSVaccineCard.Controls.Add(label7);
             VRDSVaccineCard.Location = new Point(9, 78);
             VRDSVaccineCard.Margin = new Padding(20, 5, 0, 0);
@@ -81,6 +84,7 @@
             cartesianChart1.Name = "cartesianChart1";
             cartesianChart1.Size = new Size(342, 390);
             cartesianChart1.TabIndex = 39;
+            cartesianChart1.Load += cartesianChart1_Load;
             // 
             // label1
             // 
@@ -105,6 +109,7 @@
             pieChart1.Name = "pieChart1";
             pieChart1.Size = new Size(356, 389);
             pieChart1.TabIndex = 36;
+            pieChart1.Load += pieChart1_Load;
             // 
             // dateTimePicker1
             // 
@@ -128,34 +133,40 @@
             button1.TabIndex = 33;
             button1.Text = "Filters";
             button1.UseVisualStyleBackColor = true;
+            button1.Click += button1_Click;
             // 
-            // comboBox3
+            // cmbPetGender
             // 
-            comboBox3.BackColor = Color.FromArgb(249, 249, 249);
-            comboBox3.FormattingEnabled = true;
-            comboBox3.Location = new Point(140, 36);
-            comboBox3.Name = "comboBox3";
-            comboBox3.Size = new Size(121, 23);
-            comboBox3.TabIndex = 4;
+            cmbPetGender.BackColor = Color.FromArgb(249, 249, 249);
+            cmbPetGender.FormattingEnabled = true;
+            cmbPetGender.Items.AddRange(new object[] { "Male", "Female" });
+            cmbPetGender.Location = new Point(140, 36);
+            cmbPetGender.Name = "cmbPetGender";
+            cmbPetGender.Size = new Size(121, 23);
+            cmbPetGender.TabIndex = 4;
             // 
-            // comboBox2
+            // cmbVaccinenName
             // 
-            comboBox2.BackColor = Color.FromArgb(249, 249, 249);
-            comboBox2.FormattingEnabled = true;
-            comboBox2.Location = new Point(267, 36);
-            comboBox2.Name = "comboBox2";
-            comboBox2.Size = new Size(121, 23);
-            comboBox2.TabIndex = 3;
+            cmbVaccinenName.AllowDrop = true;
+            cmbVaccinenName.BackColor = Color.FromArgb(249, 249, 249);
+            cmbVaccinenName.FormattingEnabled = true;
+            cmbVaccinenName.Items.AddRange(new object[] { "Rabies", "DHPP", "5-in-1", "6-in-1", "Canine Parvovirus", "Canine Distemper", "Canine Hepatitis", "Leptospirosis", "Bordetella", "Canine Influenza", "Lyme Disease", "Coronavirus (CCV)", "FVRCP", "FVR", "Calicivirus", "Panleukopenia", "FeLV (Feline Leukemia)", "FIV (Feline Immunodeficiency Virus)", "Chlamydia", "Myxomatosis (Rabbit)", "RHDV1 (Rabbit)", "RHDV2 (Rabbit)" });
+            cmbVaccinenName.Location = new Point(267, 36);
+            cmbVaccinenName.Name = "cmbVaccinenName";
+            cmbVaccinenName.Size = new Size(121, 23);
+            cmbVaccinenName.TabIndex = 3;
             // 
-            // comboBox1
+            // cmbPettype
             // 
-            comboBox1.BackColor = Color.FromArgb(249, 249, 249);
-            comboBox1.ForeColor = Color.FromArgb(249, 249, 249);
-            comboBox1.FormattingEnabled = true;
-            comboBox1.Location = new Point(13, 36);
-            comboBox1.Name = "comboBox1";
-            comboBox1.Size = new Size(121, 23);
-            comboBox1.TabIndex = 2;
+            cmbPettype.AllowDrop = true;
+            cmbPettype.BackColor = Color.FromArgb(249, 249, 249);
+            cmbPettype.ForeColor = Color.Black;
+            cmbPettype.FormattingEnabled = true;
+            cmbPettype.Items.AddRange(new object[] { "Cat", "Dog" });
+            cmbPettype.Location = new Point(13, 36);
+            cmbPettype.Name = "cmbPettype";
+            cmbPettype.Size = new Size(121, 23);
+            cmbPettype.TabIndex = 2;
             // 
             // label7
             // 
@@ -168,6 +179,10 @@
             label7.TabIndex = 1;
             label7.Text = "Filters";
             // 
+            // petBindingSource
+            // 
+            petBindingSource.DataSource = typeof(Data.Entities.Pet);
+            // 
             // Pet_Reports
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
@@ -177,9 +192,11 @@
             Controls.Add(pictureBox1);
             Name = "Pet_Reports";
             Size = new Size(800, 590);
+            Load += Pet_Reports_Load;
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             VRDSVaccineCard.ResumeLayout(false);
             VRDSVaccineCard.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)petBindingSource).EndInit();
             ResumeLayout(false);
         }
 
@@ -192,9 +209,10 @@
         private LiveChartsCore.SkiaSharpView.WinForms.PieChart pieChart1;
         private DateTimePicker dateTimePicker1;
         private Button button1;
-        private ComboBox comboBox3;
-        private ComboBox comboBox2;
-        private ComboBox comboBox1;
+        private ComboBox cmbPetGender;
+        private ComboBox cmbVaccinenName;
+        private ComboBox cmbPettype;
         private Label label7;
+        private BindingSource petBindingSource;
     }
 }

@@ -136,7 +136,7 @@
             dgvPetInfo.BackgroundColor = Color.FromArgb(249, 249, 249);
             dgvPetInfo.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             dgvPetInfo.ColumnHeadersVisible = false;
-            dgvPetInfo.Location = new Point(61, -1);
+            dgvPetInfo.Location = new Point(89, 76);
             dgvPetInfo.Name = "dgvPetInfo";
             dgvPetInfo.RowHeadersVisible = false;
             dgvPetInfo.Size = new Size(507, 160);
