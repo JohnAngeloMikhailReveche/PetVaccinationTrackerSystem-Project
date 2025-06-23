@@ -17,17 +17,56 @@ namespace PetVaccinationTrackerSystem_Project
     {
         public petProfilePanelVet()
         {
-
             InitializeComponent();
+            _currentUserRole = "Unknown"; 
         }
-
-        private void PetProfilePanelVButtonSave_Click(object sender, EventArgs e)
+           
+        private string _currentUserRole;
+        public petProfilePanelVet(string userRole)
         {
-
+            InitializeComponent();
+            _currentUserRole = userRole;
         }
 
+       
+
+        private void petProfilePanelVet_Load(object sender, EventArgs e)
+        {
+            if (_currentUserRole == "PetOwner")
+            {
+                // Disable all textboxes and comboboxes
+                foreach (Control ctrl in this.Controls)
+                {
+                    if (ctrl is TextBox || ctrl is ComboBox || ctrl is DateTimePicker)
+                        ctrl.Enabled = false;
+                }
+
+                // Disable image button and Save button
+                PetProfilePanelVButtonSave.Enabled = false;
+                PetProfilePanelVButtonUpdatePB.Enabled = false;
+
+                // Optional label feedback
+                Label lblNotice = new Label
+                {
+                    Text = "PetOwners cannot modify or add records.",
+                    AutoSize = true,
+                    ForeColor = Color.Red,
+                    Location = new Point(10, 10)
+                };
+                this.Controls.Add(lblNotice);
+            }
+        }
         private void PetProfilePanelVButtonSave_Click_1(object sender, EventArgs e)
         {
+            //Validation for User Role
+            if (_currentUserRole == "PetOwner")
+            {
+                MessageBox.Show("You are not authorized to add records.", "Access Denied", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+
+
+            //Validations
             string errorMessage = "";
 
             if (string.IsNullOrWhiteSpace(txtPetName.Text))
@@ -76,7 +115,6 @@ namespace PetVaccinationTrackerSystem_Project
                 OwnerPhoneNumber = int.Parse(txtcontact.Text),
                 Notes = txtNotes.Text,
                 ImageRL = petpicture.Image != null ? Convert.ToBase64String((byte[])new ImageConverter().ConvertTo(petpicture.Image, typeof(byte[]))) : null,
-              
 
             };
 
