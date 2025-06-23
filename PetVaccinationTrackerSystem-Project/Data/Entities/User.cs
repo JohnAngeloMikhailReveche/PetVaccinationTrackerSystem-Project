@@ -31,7 +31,7 @@ namespace PetVaccinationTrackerSystem_Project.Data.Entities
 
         // Foregn Key
         [ForeignKey("Veterinarian")]
-        public int VetID { get; set; }
+        public int? VetID { get; set; }
 
         // Navigation property to User entity
         public Veterinarian Veterinarian { get; set; }

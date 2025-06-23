@@ -31,16 +31,19 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(registerPetOwnerPanel));
             registerPORegisterPanel = new Panel();
             label1 = new Label();
-            registerPOPanelButton = new Button();
             label14 = new Label();
             registerPOAccountDetsCard = new Panel();
-            textBox3 = new TextBox();
-            textBox2 = new TextBox();
-            textBox1 = new TextBox();
-            label9 = new Label();
+            registerPOPanelButton = new Button();
+            txtboxPassword = new TextBox();
+            txtboxLastName = new TextBox();
+            txtboxFirstName = new TextBox();
+            txtboxUsername = new TextBox();
+            label3 = new Label();
             label8 = new Label();
+            label2 = new Label();
             label7 = new Label();
             registerPOPanelBanner = new PictureBox();
+            label4 = new Label();
             registerPORegisterPanel.SuspendLayout();
             registerPOAccountDetsCard.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)registerPOPanelBanner).BeginInit();
@@ -50,12 +53,11 @@
             // 
             registerPORegisterPanel.BackColor = Color.FromArgb(249, 249, 249);
             registerPORegisterPanel.Controls.Add(label1);
-            registerPORegisterPanel.Controls.Add(registerPOPanelButton);
             registerPORegisterPanel.Controls.Add(label14);
             registerPORegisterPanel.Controls.Add(registerPOAccountDetsCard);
-            registerPORegisterPanel.Location = new Point(225, 215);
+            registerPORegisterPanel.Location = new Point(190, 216);
             registerPORegisterPanel.Name = "registerPORegisterPanel";
-            registerPORegisterPanel.Size = new Size(325, 325);
+            registerPORegisterPanel.Size = new Size(406, 322);
             registerPORegisterPanel.TabIndex = 18;
             // 
             // label1
@@ -69,100 +71,128 @@
             label1.TabIndex = 25;
             label1.Text = "Please provide valid owner information.";
             // 
-            // registerPOPanelButton
-            // 
-            registerPOPanelButton.FlatStyle = FlatStyle.Flat;
-            registerPOPanelButton.Font = new Font("Segoe UI", 10.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            registerPOPanelButton.ForeColor = Color.FromArgb(89, 85, 84);
-            registerPOPanelButton.Location = new Point(202, 275);
-            registerPOPanelButton.Name = "registerPOPanelButton";
-            registerPOPanelButton.Size = new Size(100, 40);
-            registerPOPanelButton.TabIndex = 28;
-            registerPOPanelButton.Text = "Register";
-            registerPOPanelButton.UseVisualStyleBackColor = true;
-            // 
             // label14
             // 
             label14.AutoSize = true;
             label14.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
             label14.ForeColor = Color.FromArgb(89, 85, 84);
-            label14.Location = new Point(19, 10);
+            label14.Location = new Point(22, 12);
             label14.Name = "label14";
             label14.Size = new Size(130, 21);
             label14.TabIndex = 2;
             label14.Text = "Account Details";
+            label14.TextAlign = ContentAlignment.TopCenter;
             // 
             // registerPOAccountDetsCard
             // 
             registerPOAccountDetsCard.BackColor = Color.White;
             registerPOAccountDetsCard.BorderStyle = BorderStyle.FixedSingle;
-            registerPOAccountDetsCard.Controls.Add(textBox3);
-            registerPOAccountDetsCard.Controls.Add(textBox2);
-            registerPOAccountDetsCard.Controls.Add(textBox1);
-            registerPOAccountDetsCard.Controls.Add(label9);
+            registerPOAccountDetsCard.Controls.Add(registerPOPanelButton);
+            registerPOAccountDetsCard.Controls.Add(txtboxPassword);
+            registerPOAccountDetsCard.Controls.Add(txtboxLastName);
+            registerPOAccountDetsCard.Controls.Add(txtboxFirstName);
+            registerPOAccountDetsCard.Controls.Add(txtboxUsername);
+            registerPOAccountDetsCard.Controls.Add(label3);
             registerPOAccountDetsCard.Controls.Add(label8);
+            registerPOAccountDetsCard.Controls.Add(label2);
+            registerPOAccountDetsCard.Controls.Add(label4);
             registerPOAccountDetsCard.Controls.Add(label7);
-            registerPOAccountDetsCard.Location = new Point(22, 59);
+            registerPOAccountDetsCard.Location = new Point(22, 55);
             registerPOAccountDetsCard.Margin = new Padding(20, 5, 0, 0);
             registerPOAccountDetsCard.Name = "registerPOAccountDetsCard";
-            registerPOAccountDetsCard.Size = new Size(280, 208);
+            registerPOAccountDetsCard.Size = new Size(361, 244);
             registerPOAccountDetsCard.TabIndex = 1;
             // 
-            // textBox3
+            // registerPOPanelButton
             // 
-            textBox3.BackColor = Color.White;
-            textBox3.Font = new Font("Segoe UI", 10F);
-            textBox3.Location = new Point(14, 160);
-            textBox3.Name = "textBox3";
-            textBox3.Size = new Size(250, 25);
-            textBox3.TabIndex = 24;
+            registerPOPanelButton.FlatStyle = FlatStyle.Flat;
+            registerPOPanelButton.Font = new Font("Segoe UI", 10.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            registerPOPanelButton.ForeColor = Color.FromArgb(89, 85, 84);
+            registerPOPanelButton.Location = new Point(132, 180);
+            registerPOPanelButton.Name = "registerPOPanelButton";
+            registerPOPanelButton.Size = new Size(100, 40);
+            registerPOPanelButton.TabIndex = 28;
+            registerPOPanelButton.Text = "Register";
+            registerPOPanelButton.UseVisualStyleBackColor = true;
+            registerPOPanelButton.Click += registerPOPanelButton_Click;
             // 
-            // textBox2
+            // txtboxPassword
             // 
-            textBox2.BackColor = Color.White;
-            textBox2.Font = new Font("Segoe UI", 10F);
-            textBox2.Location = new Point(14, 97);
-            textBox2.Name = "textBox2";
-            textBox2.Size = new Size(250, 25);
-            textBox2.TabIndex = 23;
+            txtboxPassword.BackColor = Color.White;
+            txtboxPassword.Font = new Font("Segoe UI", 10F);
+            txtboxPassword.Location = new Point(14, 140);
+            txtboxPassword.Name = "txtboxPassword";
+            txtboxPassword.Size = new Size(250, 25);
+            txtboxPassword.TabIndex = 23;
             // 
-            // textBox1
+            // txtboxLastName
             // 
-            textBox1.BackColor = Color.White;
-            textBox1.Font = new Font("Segoe UI", 10F);
-            textBox1.Location = new Point(14, 33);
-            textBox1.Name = "textBox1";
-            textBox1.Size = new Size(250, 25);
-            textBox1.TabIndex = 22;
+            txtboxLastName.BackColor = Color.White;
+            txtboxLastName.Font = new Font("Segoe UI", 10F);
+            txtboxLastName.Location = new Point(181, 23);
+            txtboxLastName.Name = "txtboxLastName";
+            txtboxLastName.Size = new Size(140, 25);
+            txtboxLastName.TabIndex = 22;
+            txtboxLastName.TextChanged += txtboxLastName_TextChanged;
             // 
-            // label9
+            // txtboxFirstName
             // 
-            label9.AutoSize = true;
-            label9.Font = new Font("Segoe UI", 10F);
-            label9.ForeColor = Color.FromArgb(89, 85, 84);
-            label9.Location = new Point(14, 138);
-            label9.Name = "label9";
-            label9.Size = new Size(49, 19);
-            label9.TabIndex = 13;
-            label9.Text = "Pet ID:";
+            txtboxFirstName.BackColor = Color.White;
+            txtboxFirstName.Font = new Font("Segoe UI", 10F);
+            txtboxFirstName.Location = new Point(14, 24);
+            txtboxFirstName.Name = "txtboxFirstName";
+            txtboxFirstName.Size = new Size(140, 25);
+            txtboxFirstName.TabIndex = 22;
+            txtboxFirstName.TextChanged += txtboxFirstName_TextChanged;
+            // 
+            // txtboxUsername
+            // 
+            txtboxUsername.BackColor = Color.White;
+            txtboxUsername.Font = new Font("Segoe UI", 10F);
+            txtboxUsername.Location = new Point(14, 80);
+            txtboxUsername.Name = "txtboxUsername";
+            txtboxUsername.Size = new Size(174, 25);
+            txtboxUsername.TabIndex = 22;
+            // 
+            // label3
+            // 
+            label3.AutoSize = true;
+            label3.Font = new Font("Segoe UI", 10F);
+            label3.ForeColor = Color.FromArgb(89, 85, 84);
+            label3.Location = new Point(181, 1);
+            label3.Name = "label3";
+            label3.Size = new Size(77, 19);
+            label3.TabIndex = 0;
+            label3.Text = "Last Name:";
             // 
             // label8
             // 
             label8.AutoSize = true;
             label8.Font = new Font("Segoe UI", 10F);
             label8.ForeColor = Color.FromArgb(89, 85, 84);
-            label8.Location = new Point(14, 75);
+            label8.Location = new Point(14, 118);
             label8.Name = "label8";
             label8.Size = new Size(70, 19);
             label8.TabIndex = 11;
             label8.Text = "Password:";
+            // 
+            // label2
+            // 
+            label2.AutoSize = true;
+            label2.Font = new Font("Segoe UI", 10F);
+            label2.ForeColor = Color.FromArgb(89, 85, 84);
+            label2.Location = new Point(14, 2);
+            label2.Name = "label2";
+            label2.Size = new Size(78, 19);
+            label2.TabIndex = 0;
+            label2.Text = "First Name:";
             // 
             // label7
             // 
             label7.AutoSize = true;
             label7.Font = new Font("Segoe UI", 10F);
             label7.ForeColor = Color.FromArgb(89, 85, 84);
-            label7.Location = new Point(14, 11);
+            label7.Location = new Point(14, 58);
             label7.Name = "label7";
             label7.Size = new Size(74, 19);
             label7.TabIndex = 0;
@@ -177,6 +207,17 @@
             registerPOPanelBanner.SizeMode = PictureBoxSizeMode.Zoom;
             registerPOPanelBanner.TabIndex = 19;
             registerPOPanelBanner.TabStop = false;
+            // 
+            // label4
+            // 
+            label4.AutoSize = true;
+            label4.Font = new Font("Segoe UI", 10F);
+            label4.ForeColor = Color.FromArgb(89, 85, 84);
+            label4.Location = new Point(190, 82);
+            label4.Name = "label4";
+            label4.Size = new Size(138, 19);
+            label4.TabIndex = 0;
+            label4.Text = "@petownerclinic.com";
             // 
             // registerPetOwnerPanel
             // 
@@ -201,13 +242,16 @@
         private Button registerPOPanelButton;
         private Label label14;
         private Panel registerPOAccountDetsCard;
-        private TextBox textBox3;
-        private TextBox textBox2;
-        private TextBox textBox1;
-        private Label label9;
+        private TextBox txtboxPassword;
+        private TextBox txtboxUsername;
         private Label label8;
         private Label label7;
         private PictureBox registerPOPanelBanner;
         private Label label1;
+        private TextBox txtboxLastName;
+        private TextBox txtboxFirstName;
+        private Label label3;
+        private Label label2;
+        private Label label4;
     }
 }

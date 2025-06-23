@@ -53,8 +53,6 @@ namespace PetVaccinationTrackerSystem_Project.Classes
                 if (match.Veterinarian.Clinic == null)
                     throw new Exception("Clinic relation is null.");
 
-                
-
                 return match;
 
             } else
