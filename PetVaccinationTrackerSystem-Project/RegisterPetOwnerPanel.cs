@@ -40,8 +40,8 @@ namespace PetVaccinationTrackerSystem_Project
 
         private void UpdateUsername()
         {
-            string firstName = txtboxFirstName.Text.Trim().ToLower();
-            string lastName = txtboxLastName.Text.Trim().ToLower();
+            string firstName = txtboxFirstName.Text.Replace(" ", "").Trim().ToLower();
+            string lastName = txtboxLastName.Text.Replace(" ", "").Trim().ToLower();
             string username = firstName + lastName;
             txtboxUsername.Text = username;
         }
