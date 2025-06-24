@@ -62,7 +62,6 @@ namespace PetVaccinationTrackerSystem_Project
                 var passwordHelper = new PasswordHelper();
                 string hashedPassword = passwordHelper.HashPassword(txtboxPassword.Text);
 
-
                 var user = new User
                 {
                     FirstName = txtboxFirstName.Text,
@@ -77,6 +76,7 @@ namespace PetVaccinationTrackerSystem_Project
                 MessageBox.Show($"Pet Owner {user.FirstName} {user.LastName} is registered successfully! \n\n Details: \n Account User ID: {user.UserID} \n\n Account Email: {user.UserEmail} \n\n Account Password: {txtboxPassword.Text}", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
                 ClearFields();
+
             }
         }
 

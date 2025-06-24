@@ -15,44 +15,40 @@ namespace PetVaccinationTrackerSystem_Project
     public partial class petProfilePanelVet : UserControl
 
     {
-        public petProfilePanelVet()
-        {
-            InitializeComponent();
-            _currentUserRole = "Unknown"; 
-        }
-           
         private string _currentUserRole;
+
         public petProfilePanelVet(string userRole)
         {
             InitializeComponent();
             _currentUserRole = userRole;
         }
+<<<<<<< HEAD
+=======
+
+        private void DisableInputs(Control parent)
+        {
+            foreach (Control ctrl in parent.Controls)
+            {
+                if (ctrl.HasChildren)
+                    DisableInputs(ctrl);
+
+                if (ctrl is TextBoxBase || ctrl is ComboBox || ctrl is DateTimePicker)
+                    ctrl.Enabled = false;
+            }
+        }
+
+>>>>>>> ba8837d (Working pet profile but has logical errors)
         private void petProfilePanelVet_Load(object sender, EventArgs e)
         {
             if (_currentUserRole == "PetOwner")
             {
-                // Disable all textboxes and comboboxes
-                foreach (Control ctrl in this.Controls)
-                {
-                    if (ctrl is TextBox || ctrl is ComboBox || ctrl is DateTimePicker)
-                        ctrl.Enabled = false;
-                }
+                DisableInputs(this);
 
-                // Disable image button and Save button
                 PetProfilePanelVButtonSave.Enabled = false;
                 PetProfilePanelVButtonUpdatePB.Enabled = false;
-
-                // Optional label feedback
-                Label lblNotice = new Label
-                {
-                    Text = "PetOwners cannot modify or add records.",
-                    AutoSize = true,
-                    ForeColor = Color.Red,
-                    Location = new Point(10, 10)
-                };
-                this.Controls.Add(lblNotice);
             }
         }
+
         private void PetProfilePanelVButtonSave_Click_1(object sender, EventArgs e)
         {
             //Validation for User Role
@@ -112,20 +108,29 @@ namespace PetVaccinationTrackerSystem_Project
                 OwnerPhoneNumber = int.Parse(txtcontact.Text),
                 Notes = txtNotes.Text,
                 ImageRL = petpicture.Image != null ? Convert.ToBase64String((byte[])new ImageConverter().ConvertTo(petpicture.Image, typeof(byte[]))) : null,
-
+                UserID = int.Parse(txtUserID.Text)
             };
 
             using (var context = new ModelContext())
             {
-                var existingUser = context.UserList.Find(pet.UserID);
+                if (!int.TryParse(txtUserID.Text.Trim(), out int userId))
+                {
+                    MessageBox.Show("Please enter a valid numeric User ID.",
+                                    "Validation Error",
+                                    MessageBoxButtons.OK,
+                                    MessageBoxIcon.Error);
+                    return;
+                }
+
+                var existingUser = context.UserList.Find(userId);
 
                 if (existingUser != null)
                 {
+                    pet.UserID = existingUser.UserID;
                     context.PetList.Add(pet);
                     context.SaveChanges();
 
-                    int newPetID = pet.PetID;
-                    MessageBox.Show("Pet saved successfully with ID: " + newPetID);
+                    MessageBox.Show("Pet saved successfully with ID: " + pet.PetID);
                 }
                 else
                 {
@@ -135,7 +140,10 @@ namespace PetVaccinationTrackerSystem_Project
                                     MessageBoxIcon.Error);
                 }
             }
+<<<<<<< HEAD
 
+=======
+>>>>>>> ba8837d (Working pet profile but has logical errors)
         }
 
         private void PetProfilePanelVButtonUpdatePB_Click(object sender, EventArgs e)

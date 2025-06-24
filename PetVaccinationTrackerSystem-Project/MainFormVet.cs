@@ -26,7 +26,8 @@ namespace PetVaccinationTrackerSystem_Project
 
         public MainFormVet(User inUserReference)
         {
-            InitializeComponent();
+            string userRole = null;
+            InitializeComponent(userRole);
             mainFormVSideBHighlight.Height = mainFormVButtonHome.Height;
             mainFormVSideBHighlight.Top = mainFormVButtonHome.Top;
             homePanel1V.BringToFront();

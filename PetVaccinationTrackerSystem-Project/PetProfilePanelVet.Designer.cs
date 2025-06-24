@@ -34,7 +34,7 @@
             PetProfilePanelVButtonSave = new Button();
             PetProfilePanelVButtonGoBack = new Button();
             PetProfilePanelVPetInfoCard = new Panel();
-            textBox1 = new TextBox();
+            txtUserID = new TextBox();
             label7 = new Label();
             cmbGender = new ComboBox();
             cmbDOB = new DateTimePicker();
@@ -117,7 +117,7 @@
             // 
             PetProfilePanelVPetInfoCard.BackColor = Color.White;
             PetProfilePanelVPetInfoCard.BorderStyle = BorderStyle.FixedSingle;
-            PetProfilePanelVPetInfoCard.Controls.Add(textBox1);
+            PetProfilePanelVPetInfoCard.Controls.Add(txtUserID);
             PetProfilePanelVPetInfoCard.Controls.Add(label7);
             PetProfilePanelVPetInfoCard.Controls.Add(cmbGender);
             PetProfilePanelVPetInfoCard.Controls.Add(cmbDOB);
@@ -141,15 +141,15 @@
             PetProfilePanelVPetInfoCard.Size = new Size(427, 367);
             PetProfilePanelVPetInfoCard.TabIndex = 5;
             // 
-            // textBox1
+            // txtUserID
             // 
-            textBox1.BackColor = Color.FromArgb(249, 249, 249);
-            textBox1.Font = new Font("Segoe UI", 10F);
-            textBox1.Location = new Point(218, 36);
-            textBox1.Multiline = true;
-            textBox1.Name = "textBox1";
-            textBox1.Size = new Size(192, 29);
-            textBox1.TabIndex = 24;
+            txtUserID.BackColor = Color.FromArgb(249, 249, 249);
+            txtUserID.Font = new Font("Segoe UI", 10F);
+            txtUserID.Location = new Point(218, 36);
+            txtUserID.Multiline = true;
+            txtUserID.Name = "txtUserID";
+            txtUserID.Size = new Size(192, 29);
+            txtUserID.TabIndex = 24;
             // 
             // label7
             // 
@@ -158,9 +158,9 @@
             label7.ForeColor = Color.FromArgb(89, 85, 84);
             label7.Location = new Point(219, 15);
             label7.Name = "label7";
-            label7.Size = new Size(49, 19);
+            label7.Size = new Size(94, 19);
             label7.TabIndex = 23;
-            label7.Text = "Pet ID:";
+            label7.Text = "Pet Owner ID:";
             // 
             // cmbGender
             // 
@@ -409,6 +409,7 @@
             Controls.Add(pictureBox1);
             Name = "petProfilePanelVet";
             Size = new Size(800, 590);
+            Load += petProfilePanelVet_Load;
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             PetProfilePanelVPetInfoP.ResumeLayout(false);
             PetProfilePanelVPetInfoP.PerformLayout();
@@ -449,7 +450,7 @@
         private Button PetProfilePanelVButtonSave;
         private Label label1;
         private PictureBox petpicture;
-        private TextBox textBox1;
+        private TextBox txtUserID;
         private Label label7;
     }
 }
