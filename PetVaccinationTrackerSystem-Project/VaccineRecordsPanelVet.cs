@@ -32,31 +32,23 @@ namespace PetVaccinationTrackerSystem_Project
             petTable.Rows.Add("Gender", "");
             petTable.Rows.Add("Date of Birth", "");
 
-            dgvPetInfo.DataSource = petTable;
-
             // ComboBox for Gender
             DataGridViewComboBoxCell genderCombo = new DataGridViewComboBoxCell();
             genderCombo.Items.AddRange("Male", "Female", "Other");
-            dgvPetInfo.Rows[3].Cells[1] = genderCombo;
 
             // DatePicker for Date of Birth
             DateTimePicker dtp = new DateTimePicker();
             dtp.Format = DateTimePickerFormat.Short;
             dtp.Visible = false;
-            dgvPetInfo.Controls.Add(dtp);
+            groupBox1.Controls.Add(dtp);
 
-            dgvPetInfo.CellClick += (s, e) =>
             {
                 if (e.RowIndex == 4 && e.ColumnIndex == 1)
                 {
-                    Rectangle rect = dgvPetInfo.GetCellDisplayRectangle(e.ColumnIndex, e.RowIndex, true);
-                    dtp.Location = new Point(rect.X, rect.Y);
-                    dtp.Size = new Size(rect.Width, rect.Height);
                     dtp.Visible = true;
 
                     dtp.ValueChanged += (sender2, ev) =>
                     {
-                        dgvPetInfo.Rows[4].Cells[1].Value = dtp.Value.ToShortDateString();
                     };
                 }
                 else

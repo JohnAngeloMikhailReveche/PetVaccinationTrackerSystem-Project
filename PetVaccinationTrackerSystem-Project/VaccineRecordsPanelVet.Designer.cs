@@ -49,16 +49,16 @@
             VRDSButtonClear = new Button();
             VRDSButtonGoBack = new Button();
             groupBox1 = new GroupBox();
-            label1 = new Label();
-            label2 = new Label();
-            label3 = new Label();
-            label4 = new Label();
-            label5 = new Label();
-            textBox1 = new TextBox();
-            textBox2 = new TextBox();
-            textBox3 = new TextBox();
-            textBox4 = new TextBox();
             textBox5 = new TextBox();
+            textBox4 = new TextBox();
+            textBox3 = new TextBox();
+            textBox2 = new TextBox();
+            textBox1 = new TextBox();
+            label5 = new Label();
+            label4 = new Label();
+            label3 = new Label();
+            label2 = new Label();
+            label1 = new Label();
             VRDSVaccineDetailsPanel.SuspendLayout();
             VRDSVaccineCard.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox2).BeginInit();
@@ -300,45 +300,45 @@
             groupBox1.TabStop = false;
             groupBox1.Text = "Pet Information";
             // 
-            // label1
+            // textBox5
             // 
-            label1.AutoSize = true;
-            label1.Font = new Font("Segoe UI", 10F);
-            label1.Location = new Point(27, 40);
-            label1.Name = "label1";
-            label1.Size = new Size(46, 19);
-            label1.TabIndex = 0;
-            label1.Text = "Pet ID";
+            textBox5.BorderStyle = BorderStyle.FixedSingle;
+            textBox5.Location = new Point(540, 83);
+            textBox5.Name = "textBox5";
+            textBox5.Size = new Size(130, 29);
+            textBox5.TabIndex = 9;
             // 
-            // label2
+            // textBox4
             // 
-            label2.AutoSize = true;
-            label2.Font = new Font("Segoe UI", 10F);
-            label2.Location = new Point(330, 40);
-            label2.Name = "label2";
-            label2.Size = new Size(68, 19);
-            label2.TabIndex = 1;
-            label2.Text = "Pet Name";
+            textBox4.BorderStyle = BorderStyle.FixedSingle;
+            textBox4.Location = new Point(320, 83);
+            textBox4.Name = "textBox4";
+            textBox4.Size = new Size(130, 29);
+            textBox4.TabIndex = 8;
             // 
-            // label3
+            // textBox3
             // 
-            label3.AutoSize = true;
-            label3.Font = new Font("Segoe UI", 10F);
-            label3.Location = new Point(27, 85);
-            label3.Name = "label3";
-            label3.Size = new Size(54, 19);
-            label3.TabIndex = 2;
-            label3.Text = "Gender";
+            textBox3.BorderStyle = BorderStyle.FixedSingle;
+            textBox3.Location = new Point(100, 83);
+            textBox3.Name = "textBox3";
+            textBox3.Size = new Size(130, 29);
+            textBox3.TabIndex = 7;
             // 
-            // label4
+            // textBox2
             // 
-            label4.AutoSize = true;
-            label4.Font = new Font("Segoe UI", 10F);
-            label4.Location = new Point(250, 85);
-            label4.Name = "label4";
-            label4.Size = new Size(53, 19);
-            label4.TabIndex = 3;
-            label4.Text = "Species";
+            textBox2.BorderStyle = BorderStyle.FixedSingle;
+            textBox2.Location = new Point(410, 38);
+            textBox2.Name = "textBox2";
+            textBox2.Size = new Size(180, 29);
+            textBox2.TabIndex = 6;
+            // 
+            // textBox1
+            // 
+            textBox1.BorderStyle = BorderStyle.FixedSingle;
+            textBox1.Location = new Point(100, 38);
+            textBox1.Name = "textBox1";
+            textBox1.Size = new Size(180, 29);
+            textBox1.TabIndex = 5;
             // 
             // label5
             // 
@@ -350,45 +350,45 @@
             label5.TabIndex = 4;
             label5.Text = "Breed";
             // 
-            // textBox1
+            // label4
             // 
-            textBox1.BorderStyle = BorderStyle.FixedSingle;
-            textBox1.Location = new Point(100, 38);
-            textBox1.Name = "textBox1";
-            textBox1.Size = new Size(180, 29);
-            textBox1.TabIndex = 5;
+            label4.AutoSize = true;
+            label4.Font = new Font("Segoe UI", 10F);
+            label4.Location = new Point(250, 85);
+            label4.Name = "label4";
+            label4.Size = new Size(53, 19);
+            label4.TabIndex = 3;
+            label4.Text = "Species";
             // 
-            // textBox2
+            // label3
             // 
-            textBox2.BorderStyle = BorderStyle.FixedSingle;
-            textBox2.Location = new Point(410, 38);
-            textBox2.Name = "textBox2";
-            textBox2.Size = new Size(180, 29);
-            textBox2.TabIndex = 6;
+            label3.AutoSize = true;
+            label3.Font = new Font("Segoe UI", 10F);
+            label3.Location = new Point(27, 85);
+            label3.Name = "label3";
+            label3.Size = new Size(54, 19);
+            label3.TabIndex = 2;
+            label3.Text = "Gender";
             // 
-            // textBox3
+            // label2
             // 
-            textBox3.BorderStyle = BorderStyle.FixedSingle;
-            textBox3.Location = new Point(100, 83);
-            textBox3.Name = "textBox3";
-            textBox3.Size = new Size(130, 29);
-            textBox3.TabIndex = 7;
+            label2.AutoSize = true;
+            label2.Font = new Font("Segoe UI", 10F);
+            label2.Location = new Point(330, 40);
+            label2.Name = "label2";
+            label2.Size = new Size(68, 19);
+            label2.TabIndex = 1;
+            label2.Text = "Pet Name";
             // 
-            // textBox4
+            // label1
             // 
-            textBox4.BorderStyle = BorderStyle.FixedSingle;
-            textBox4.Location = new Point(320, 83);
-            textBox4.Name = "textBox4";
-            textBox4.Size = new Size(130, 29);
-            textBox4.TabIndex = 8;
-            // 
-            // textBox5
-            // 
-            textBox5.BorderStyle = BorderStyle.FixedSingle;
-            textBox5.Location = new Point(540, 83);
-            textBox5.Name = "textBox5";
-            textBox5.Size = new Size(130, 29);
-            textBox5.TabIndex = 9;
+            label1.AutoSize = true;
+            label1.Font = new Font("Segoe UI", 10F);
+            label1.Location = new Point(27, 40);
+            label1.Name = "label1";
+            label1.Size = new Size(46, 19);
+            label1.TabIndex = 0;
+            label1.Text = "Pet ID";
             // 
             // VaccineRecordsPanelVet
             // 
