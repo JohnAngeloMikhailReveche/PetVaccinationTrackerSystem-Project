@@ -26,14 +26,14 @@ namespace PetVaccinationTrackerSystem_Project
 
         public MainFormVet(User inUserReference)
         {
-            string userRole = null;
-            InitializeComponent(userRole);
-            mainFormVSideBHighlight.Height = mainFormVButtonHome.Height;
-            mainFormVSideBHighlight.Top = mainFormVButtonHome.Top;
-            homePanel1V.BringToFront();
+            InitializeComponent();
 
             // Used Dependency Injection for passing the current user reference
             _currentUser = inUserReference;
+            mainFormVSideBHighlight.Height = mainFormVButtonHome.Height;
+            mainFormVSideBHighlight.Top = mainFormVButtonHome.Top;
+            homePanel1V.BringToFront();
+            
         }
 
         private void MainFormVet_Load(object sender, EventArgs e)
