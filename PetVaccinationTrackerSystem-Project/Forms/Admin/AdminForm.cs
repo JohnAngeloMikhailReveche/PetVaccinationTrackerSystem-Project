@@ -74,10 +74,6 @@ namespace PetVaccinationTrackerSystem_Project.Forms.Admin
             mainFormVSideBHighlight.Height = mainFormVButtonHome.Height;
             mainFormVSideBHighlight.Top = mainFormVButtonHome.Top;
 
-            // Load data for the home user control
-            homeUserControl1V.LoadVeterinarianData();
-            homeUserControl1V.LoadClinicData();
-
             homeUserControl1V.BringToFront();
         }
 
@@ -91,6 +87,28 @@ namespace PetVaccinationTrackerSystem_Project.Forms.Admin
         private void adminRegisterVetUsCo1V_Load(object sender, EventArgs e)
         {
 
+        }
+
+        private void btnClinicList_Click(object sender, EventArgs e)
+        {
+            mainFormVSideBHighlight.Height = btnClinicList.Height;
+            mainFormVSideBHighlight.Top = btnClinicList.Top;
+
+            // Load data for the home user control
+            registeredClinicPanel1V.LoadClinicData();
+
+            registeredClinicPanel1V.BringToFront();
+        }
+
+        private void btnVeterinarianList_Click(object sender, EventArgs e)
+        {
+            mainFormVSideBHighlight.Height = btnVeterinarianList.Height;
+            mainFormVSideBHighlight.Top = btnVeterinarianList.Top;
+
+            // Load data for the home user control
+            registeredVetPanel1V.LoadVeterinarianData();
+
+            registeredVetPanel1V.BringToFront();
         }
     }
 }

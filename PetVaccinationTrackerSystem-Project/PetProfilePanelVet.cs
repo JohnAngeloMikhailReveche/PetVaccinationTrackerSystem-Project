@@ -49,6 +49,11 @@ namespace PetVaccinationTrackerSystem_Project
             }
         }
 
+        private void DisableInputs(petProfilePanelVet petProfilePanelVet)
+        {
+            throw new NotImplementedException();
+        }
+
         private void PetProfilePanelVButtonSave_Click_1(object sender, EventArgs e)
         {
             //Validation for User Role
@@ -140,10 +145,7 @@ namespace PetVaccinationTrackerSystem_Project
                                     MessageBoxIcon.Error);
                 }
             }
-<<<<<<< HEAD
 
-=======
->>>>>>> ba8837d (Working pet profile but has logical errors)
         }
 
         private void PetProfilePanelVButtonUpdatePB_Click(object sender, EventArgs e)
