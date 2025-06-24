@@ -32,9 +32,7 @@ namespace PetVaccinationTrackerSystem_Project
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainFormVet));
             mainFormVTopB = new Panel();
-            lblClinic = new Label();
             lblVetName = new Label();
-            label2 = new Label();
             label1 = new Label();
             mainFormVButtonAlerts = new Button();
             mainFormVButtonSettings = new Button();
@@ -56,6 +54,8 @@ namespace PetVaccinationTrackerSystem_Project
             petProfilePanel1V = new petProfilePanelVet();
             vaccinationHistory1 = new VaccinationHistory();
             pet_Reports1 = new Pet_Reports();
+            label2 = new Label();
+            lblClinic = new Label();
             mainFormVTopB.SuspendLayout();
             mainFormVSideB.SuspendLayout();
             mainFormVPB.SuspendLayout();
@@ -78,17 +78,6 @@ namespace PetVaccinationTrackerSystem_Project
             mainFormVTopB.Size = new Size(1000, 50);
             mainFormVTopB.TabIndex = 2;
             // 
-            // lblClinic
-            // 
-            lblClinic.AutoSize = true;
-            lblClinic.Font = new Font("Segoe UI", 12F);
-            lblClinic.ForeColor = SystemColors.Control;
-            lblClinic.Location = new Point(139, 4);
-            lblClinic.Name = "lblClinic";
-            lblClinic.Size = new Size(62, 21);
-            lblClinic.TabIndex = 3;
-            lblClinic.Text = "Clinic A";
-            // 
             // lblVetName
             // 
             lblVetName.AutoSize = true;
@@ -99,17 +88,6 @@ namespace PetVaccinationTrackerSystem_Project
             lblVetName.Size = new Size(73, 21);
             lblVetName.TabIndex = 3;
             lblVetName.Text = "Jane Doe";
-            // 
-            // label2
-            // 
-            label2.AutoSize = true;
-            label2.Font = new Font("Segoe UI", 12F, FontStyle.Bold);
-            label2.ForeColor = SystemColors.Control;
-            label2.Location = new Point(12, 4);
-            label2.Name = "label2";
-            label2.Size = new Size(57, 21);
-            label2.TabIndex = 3;
-            label2.Text = "Clinic:";
             // 
             // label1
             // 
@@ -378,6 +356,28 @@ namespace PetVaccinationTrackerSystem_Project
             pet_Reports1.Size = new Size(800, 590);
             pet_Reports1.TabIndex = 9;
             // 
+            // label2
+            // 
+            label2.AutoSize = true;
+            label2.Font = new Font("Segoe UI", 12F, FontStyle.Bold);
+            label2.ForeColor = SystemColors.Control;
+            label2.Location = new Point(12, 4);
+            label2.Name = "label2";
+            label2.Size = new Size(57, 21);
+            label2.TabIndex = 3;
+            label2.Text = "Clinic:";
+            // 
+            // lblClinic
+            // 
+            lblClinic.AutoSize = true;
+            lblClinic.Font = new Font("Segoe UI", 12F);
+            lblClinic.ForeColor = SystemColors.Control;
+            lblClinic.Location = new Point(139, 4);
+            lblClinic.Name = "lblClinic";
+            lblClinic.Size = new Size(62, 21);
+            lblClinic.TabIndex = 3;
+            lblClinic.Text = "Clinic A";
+            // 
             // MainFormVet
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
@@ -430,10 +430,10 @@ namespace PetVaccinationTrackerSystem_Project
         private HomeUserControl homeUserControl1V;
         private Label lblVetName;
         private Label label1;
-        private Label lblClinic;
-        private Label label2;
         private Button mainFormVButtonVH;
         private VaccinationHistory vaccinationHistory1;
         private Pet_Reports pet_Reports1;
+        private Label lblClinic;
+        private Label label2;
     }
 }

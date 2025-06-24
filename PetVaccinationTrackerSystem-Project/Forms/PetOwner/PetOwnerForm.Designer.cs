@@ -30,9 +30,7 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(PetOwnerForm));
             mainFormVTopB = new Panel();
-            lblClinicAssigned = new Label();
             lblPetOwnerName = new Label();
-            label2 = new Label();
             label1 = new Label();
             btnInbox = new Button();
             btnSettings = new Button();
@@ -56,9 +54,7 @@
             // mainFormVTopB
             // 
             mainFormVTopB.BackColor = Color.FromArgb(89, 85, 84);
-            mainFormVTopB.Controls.Add(lblClinicAssigned);
             mainFormVTopB.Controls.Add(lblPetOwnerName);
-            mainFormVTopB.Controls.Add(label2);
             mainFormVTopB.Controls.Add(label1);
             mainFormVTopB.Controls.Add(btnInbox);
             mainFormVTopB.Controls.Add(btnSettings);
@@ -69,45 +65,23 @@
             mainFormVTopB.Size = new Size(1000, 50);
             mainFormVTopB.TabIndex = 3;
             // 
-            // lblClinicAssigned
-            // 
-            lblClinicAssigned.AutoSize = true;
-            lblClinicAssigned.Font = new Font("Segoe UI", 12F);
-            lblClinicAssigned.ForeColor = SystemColors.Control;
-            lblClinicAssigned.Location = new Point(150, 4);
-            lblClinicAssigned.Name = "lblClinicAssigned";
-            lblClinicAssigned.Size = new Size(62, 21);
-            lblClinicAssigned.TabIndex = 3;
-            lblClinicAssigned.Text = "Clinic A";
-            // 
             // lblPetOwnerName
             // 
             lblPetOwnerName.AutoSize = true;
             lblPetOwnerName.Font = new Font("Segoe UI", 12F);
             lblPetOwnerName.ForeColor = SystemColors.Control;
-            lblPetOwnerName.Location = new Point(150, 25);
+            lblPetOwnerName.Location = new Point(150, 14);
             lblPetOwnerName.Name = "lblPetOwnerName";
             lblPetOwnerName.Size = new Size(73, 21);
             lblPetOwnerName.TabIndex = 3;
             lblPetOwnerName.Text = "Jane Doe";
-            // 
-            // label2
-            // 
-            label2.AutoSize = true;
-            label2.Font = new Font("Segoe UI", 12F, FontStyle.Bold);
-            label2.ForeColor = SystemColors.Control;
-            label2.Location = new Point(12, 4);
-            label2.Name = "label2";
-            label2.Size = new Size(130, 21);
-            label2.TabIndex = 3;
-            label2.Text = "Clinic Assigned:";
             // 
             // label1
             // 
             label1.AutoSize = true;
             label1.Font = new Font("Segoe UI", 12F, FontStyle.Bold);
             label1.ForeColor = SystemColors.Control;
-            label1.Location = new Point(12, 25);
+            label1.Location = new Point(12, 14);
             label1.Name = "label1";
             label1.Size = new Size(112, 21);
             label1.TabIndex = 3;
@@ -151,13 +125,14 @@
             btnExit.Size = new Size(25, 25);
             btnExit.TabIndex = 0;
             btnExit.UseVisualStyleBackColor = false;
+            btnExit.Click += btnExit_Click;
             // 
             // mainFormVSideB
             // 
             mainFormVSideB.BackColor = Color.FromArgb(249, 249, 249);
-            mainFormVSideB.Controls.Add(btnAboutUs);
             mainFormVSideB.Controls.Add(mainFormVSideBHighlight);
             mainFormVSideB.Controls.Add(btnLogOut);
+            mainFormVSideB.Controls.Add(btnAboutUs);
             mainFormVSideB.Controls.Add(btnPetRecords);
             mainFormVSideB.Controls.Add(btnPetProfiles);
             mainFormVSideB.Controls.Add(btnHome);
@@ -182,6 +157,7 @@
             btnAboutUs.Text = "        About Us";
             btnAboutUs.TextAlign = ContentAlignment.MiddleLeft;
             btnAboutUs.UseVisualStyleBackColor = true;
+            btnAboutUs.Click += btnAboutUs_Click;
             // 
             // mainFormVSideBHighlight
             // 
@@ -210,6 +186,7 @@
             btnLogOut.Text = "Log Out";
             btnLogOut.TextColor = Color.White;
             btnLogOut.WarningColor = Color.FromArgb(230, 162, 60);
+            btnLogOut.Click += btnLogOut_Click;
             // 
             // btnPetRecords
             // 
@@ -225,6 +202,7 @@
             btnPetRecords.Text = "        Pet Records";
             btnPetRecords.TextAlign = ContentAlignment.MiddleLeft;
             btnPetRecords.UseVisualStyleBackColor = true;
+            btnPetRecords.Click += btnPetRecords_Click;
             // 
             // btnPetProfiles
             // 
@@ -256,6 +234,7 @@
             btnHome.Text = "        Home";
             btnHome.TextAlign = ContentAlignment.MiddleLeft;
             btnHome.UseVisualStyleBackColor = true;
+            btnHome.Click += btnHome_Click;
             // 
             // mainFormVPB
             // 
@@ -308,9 +287,7 @@
         #endregion
 
         private Panel mainFormVTopB;
-        private Label lblClinicAssigned;
         private Label lblPetOwnerName;
-        private Label label2;
         private Label label1;
         private Button btnInbox;
         private Button btnSettings;

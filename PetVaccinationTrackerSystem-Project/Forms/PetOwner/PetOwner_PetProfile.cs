@@ -30,9 +30,33 @@ namespace PetVaccinationTrackerSystem_Project.Forms.PetOwner
 
                 dgvRegisteredPet.DataSource = petList;
 
+                dgvRegisteredPet.CellFormatting += (s, e) =>
+                {
+                    if (dgvRegisteredPet.Columns[e.ColumnIndex].Name == "DateOfBirth" && e.Value is DateTime dt)
+                    {
+                        e.Value = dt.ToString("MM-dd-yyyy");
+                        e.FormattingApplied = true;
+                    }
+                };
+
                 // Adjust DataGridView Properties
                 dgvRegisteredPet.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.AllCells;
                 dgvRegisteredPet.AutoSizeRowsMode = DataGridViewAutoSizeRowsMode.AllCells;
+
+                // Hide Unnecessary ID Columns
+                dgvRegisteredPet.Columns["ImageRL"].Visible = false;
+                dgvRegisteredPet.Columns["User"].Visible = false;
+                dgvRegisteredPet.Columns["Notes"].Visible = false;
+                dgvRegisteredPet.Columns["OwnerPhoneNumber"].Visible = false;
+                dgvRegisteredPet.Columns["OwnerName"].Visible = false;
+                dgvRegisteredPet.Columns["UserID"].Visible = false;
+
+                // Rename columns for better readability
+                dgvRegisteredPet.Columns["PetID"].HeaderText = "ID";
+                dgvRegisteredPet.Columns["PetName"].HeaderText = "Pet Name";
+                dgvRegisteredPet.Columns["DateOfBirth"].HeaderText = "Date of Birth";
+                dgvRegisteredPet.Columns["ColorsAndMarkings"].HeaderText = "Colors and Markings";
+
             }
         }
 

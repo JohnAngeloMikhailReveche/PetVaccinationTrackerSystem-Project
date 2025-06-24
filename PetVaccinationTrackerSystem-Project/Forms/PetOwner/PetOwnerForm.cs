@@ -17,11 +17,9 @@ namespace PetVaccinationTrackerSystem_Project.Forms.PetOwner
 
         private User _currentUser;
 
-        private void InitializeUserControls()
+        private void InitializeLabels()
         {
-            PetOwner_PetProfile petOwnerPetProfile = new PetOwner_PetProfile(_currentUser);
-            petOwnerPetProfile.Visible = true;
-            mainPanel.Controls.Add(petOwnerPetProfile);
+            lblPetOwnerName.Text = _currentUser.FirstName + " " + _currentUser.LastName;
         }
 
         public PetOwnerForm(User inUserReference)
@@ -35,12 +33,85 @@ namespace PetVaccinationTrackerSystem_Project.Forms.PetOwner
         {
             mainFormVSideBHighlight.Height = btnPetProfiles.Height;
             mainFormVSideBHighlight.Top = btnPetProfiles.Top;
-            //adminRegisterClinicUsCo1V.BringToFront();
+
+            mainPanel.Controls.Clear(); // Clear the current controls in the main panel
+            PetOwner_PetProfile petOwnerPetProfile = new PetOwner_PetProfile(_currentUser);
+            petOwnerPetProfile.Visible = true;
+            mainPanel.Controls.Add(petOwnerPetProfile);
         }
 
         private void PetOwnerForm_Load(object sender, EventArgs e)
         {
-            InitializeUserControls();
+            InitializeLabels();
+        }
+
+        private void btnExit_Click(object sender, EventArgs e)
+        {
+            DialogResult diagResult = MessageBox.Show(
+               "Are you sure you want to exit?",
+               "Log Out Confirmation",
+               MessageBoxButtons.YesNo,
+               MessageBoxIcon.Question
+               );
+
+            if (diagResult == DialogResult.Yes)
+            {
+                Application.Exit();
+            }
+        }
+
+        private void btnLogOut_Click(object sender, EventArgs e)
+        {
+            DialogResult diagResult = MessageBox.Show(
+             "Are you sure you want to log out?",
+             "Log Out Confirmation",
+             MessageBoxButtons.YesNo,
+             MessageBoxIcon.Question
+             );
+
+            if (diagResult == DialogResult.Yes)
+            {
+                this.Close(); // Triggers the FormClosed event to switch back to the AuthForm.
+            }
+        }
+
+        private void btnHome_Click(object sender, EventArgs e)
+        {
+            mainFormVSideBHighlight.Height = btnHome.Height;
+            mainFormVSideBHighlight.Top = btnHome.Top;
+
+            mainPanel.Controls.Clear(); // Clear the current controls in the main panel
+
+            // Add the Home Dashboard here and make the logic as follows:
+            // PetOwner_PetProfile petOwnerPetProfile = new PetOwner_PetProfile(_currentUser);
+            // petOwnerPetProfile.Visible = true;
+            // mainPanel.Controls.Add(petOwnerPetProfile);
+        }
+
+        private void btnPetRecords_Click(object sender, EventArgs e)
+        {
+            mainFormVSideBHighlight.Height = btnPetRecords.Height;
+            mainFormVSideBHighlight.Top = btnPetRecords.Top;
+
+            mainPanel.Controls.Clear(); // Clear the current controls in the main panel
+
+            // Add the Home Dashboard here and make the logic as follows:
+            // PetOwner_PetProfile petOwnerPetProfile = new PetOwner_PetProfile(_currentUser);
+            // petOwnerPetProfile.Visible = true;
+            // mainPanel.Controls.Add(petOwnerPetProfile);
+        }
+
+        private void btnAboutUs_Click(object sender, EventArgs e)
+        {
+            mainFormVSideBHighlight.Height = btnAboutUs.Height;
+            mainFormVSideBHighlight.Top = btnAboutUs.Top;
+
+            mainPanel.Controls.Clear(); // Clear the current controls in the main panel
+
+            // Add the Home Dashboard here and make the logic as follows:
+            // PetOwner_PetProfile petOwnerPetProfile = new PetOwner_PetProfile(_currentUser);
+            // petOwnerPetProfile.Visible = true;
+            // mainPanel.Controls.Add(petOwnerPetProfile);
         }
     }
 }

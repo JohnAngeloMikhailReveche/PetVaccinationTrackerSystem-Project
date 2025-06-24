@@ -71,6 +71,7 @@
             btnBack.TabIndex = 1;
             btnBack.Text = "BACK";
             btnBack.UseVisualStyleBackColor = true;
+            btnBack.Click += btnBack_Click;
             // 
             // pictureBox1
             // 
@@ -371,10 +372,11 @@
             Controls.Add(PetProfilePanelVPetInfoP);
             Controls.Add(btnBack);
             Controls.Add(pictureBox1);
-            FormBorderStyle = FormBorderStyle.FixedSingle;
+            FormBorderStyle = FormBorderStyle.None;
             Name = "PetOwner_PetProfileInstance";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "PetOwner_PetProfileInstance";
+            Load += PetOwner_PetProfileInstance_Load;
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             PetProfilePanelVPetInfoP.ResumeLayout(false);
             PetProfilePanelVPetInfoP.PerformLayout();

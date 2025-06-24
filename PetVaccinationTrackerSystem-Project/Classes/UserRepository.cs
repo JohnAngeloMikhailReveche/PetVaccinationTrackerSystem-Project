@@ -44,15 +44,6 @@ namespace PetVaccinationTrackerSystem_Project.Classes
                 .ThenInclude(clinic => clinic.Clinic)
                 .FirstOrDefault(user => user.UserEmail == email);
 
-                if (match == null)
-                    throw new Exception("User not found.");
-
-                if (match.Veterinarian == null)
-                    throw new Exception("Veterinarian relation is null.");
-
-                if (match.Veterinarian.Clinic == null)
-                    throw new Exception("Clinic relation is null.");
-
                 return match;
 
             } else
