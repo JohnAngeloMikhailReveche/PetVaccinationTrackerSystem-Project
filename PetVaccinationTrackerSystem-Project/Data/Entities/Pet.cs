@@ -36,7 +36,6 @@ namespace PetVaccinationTrackerSystem_Project.Data.Entities
         [StringLength(300)]
         public string Notes { get; set; }
 
-        [StringLength(1000)]
         public string? ImageRL { get; set; }
 
         public string? Gender { get; set; }

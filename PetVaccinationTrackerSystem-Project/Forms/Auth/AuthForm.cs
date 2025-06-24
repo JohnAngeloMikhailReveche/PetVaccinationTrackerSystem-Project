@@ -2,6 +2,7 @@
 using PetVaccinationTrackerSystem_Project.Classes.Interfaces;
 using PetVaccinationTrackerSystem_Project.Data;
 using PetVaccinationTrackerSystem_Project.Forms.Admin;
+using PetVaccinationTrackerSystem_Project.Forms.PetOwner;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -125,9 +126,16 @@ namespace PetVaccinationTrackerSystem_Project.Forms.Auth
 
                 MessageBox.Show($"Welcome {user.FirstName} {user.LastName}! You are logged in as {user.UserRole}.", "Login Successful", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
-                // Switch to the Dashboard/Main Winform.
-                ClearTextBoxes();
-                FormManager.SwitchForm(this, new MainFormVet(user));
+                if(user.UserRole == "Veterinarian")
+                {
+                    FormManager.SwitchForm(this, new MainFormVet(user));
+                } else
+                {
+                    FormManager.SwitchForm(this, new PetOwnerForm(user));
+                }
+
+                    ClearTextBoxes();
+                
             }
             else
             {
