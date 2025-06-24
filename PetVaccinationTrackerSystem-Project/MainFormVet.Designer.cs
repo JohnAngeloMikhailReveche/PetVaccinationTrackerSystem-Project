@@ -28,7 +28,7 @@ namespace PetVaccinationTrackerSystem_Project
         /// Required method for Designer support - do not modify
         /// the contents of this method with the code editor.
         /// </summary>
-        private void InitializeComponent()
+        private void InitializeComponent(string userRole)
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainFormVet));
             mainFormVTopB = new Panel();
@@ -53,7 +53,7 @@ namespace PetVaccinationTrackerSystem_Project
             homePanel1V = new homePanel();
             registerPetOwnerPanel1V = new registerPetOwnerPanel();
             vaccineRecordsPanel1V = new VaccineRecordsPanelVet();
-            petProfilePanel1V = new petProfilePanelVet();
+            petProfilePanel1V = new petProfilePanelVet(userRole);
             vaccinationHistory1 = new VaccinationHistory();
             pet_Reports1 = new Pet_Reports();
             mainFormVTopB.SuspendLayout();
