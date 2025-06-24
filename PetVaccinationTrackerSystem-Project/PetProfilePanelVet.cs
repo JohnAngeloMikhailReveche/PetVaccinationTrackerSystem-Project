@@ -61,8 +61,8 @@ namespace PetVaccinationTrackerSystem_Project
             }
 
 
-            long parsedPhone = 0;
-            long.TryParse(txtcontact.Text.Trim(), out parsedPhone);
+                long parsedPhone = 0;
+                long.TryParse(txtcontact.Text.Trim(), out parsedPhone);
 
             var pet = new Pet
             {
