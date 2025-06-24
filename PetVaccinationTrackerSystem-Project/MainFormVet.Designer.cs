@@ -53,7 +53,7 @@ namespace PetVaccinationTrackerSystem_Project
             homePanel1V = new homePanel();
             registerPetOwnerPanel1V = new registerPetOwnerPanel();
             vaccineRecordsPanel1V = new VaccineRecordsPanelVet();
-            petProfilePanel1V = new petProfilePanelVet(userRole);
+            petProfilePanel1V = new petProfilePanelVet();
             vaccinationHistory1 = new VaccinationHistory();
             pet_Reports1 = new Pet_Reports();
             mainFormVTopB.SuspendLayout();

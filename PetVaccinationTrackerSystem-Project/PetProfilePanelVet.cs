@@ -15,54 +15,13 @@ namespace PetVaccinationTrackerSystem_Project
     public partial class petProfilePanelVet : UserControl
 
     {
-        private string _currentUserRole;
-
-        public petProfilePanelVet(string userRole)
+        public petProfilePanelVet()
         {
             InitializeComponent();
-            _currentUserRole = userRole;
+           
         }
-<<<<<<< HEAD
-=======
-
-        private void DisableInputs(Control parent)
-        {
-            foreach (Control ctrl in parent.Controls)
-            {
-                if (ctrl.HasChildren)
-                    DisableInputs(ctrl);
-
-                if (ctrl is TextBoxBase || ctrl is ComboBox || ctrl is DateTimePicker)
-                    ctrl.Enabled = false;
-            }
-        }
-
->>>>>>> ba8837d (Working pet profile but has logical errors)
-        private void petProfilePanelVet_Load(object sender, EventArgs e)
-        {
-            if (_currentUserRole == "PetOwner")
-            {
-                DisableInputs(this);
-
-                PetProfilePanelVButtonSave.Enabled = false;
-                PetProfilePanelVButtonUpdatePB.Enabled = false;
-            }
-        }
-
-        private void DisableInputs(petProfilePanelVet petProfilePanelVet)
-        {
-            throw new NotImplementedException();
-        }
-
         private void PetProfilePanelVButtonSave_Click_1(object sender, EventArgs e)
         {
-            //Validation for User Role
-            if (_currentUserRole == "PetOwner")
-            {
-                MessageBox.Show("You are not authorized to add records.", "Access Denied", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                return;
-            }
-
 
             //Validations
             string errorMessage = "";
@@ -145,6 +104,7 @@ namespace PetVaccinationTrackerSystem_Project
                                     MessageBoxIcon.Error);
                 }
             }
+
 
         }
 

@@ -409,7 +409,6 @@
             Controls.Add(pictureBox1);
             Name = "petProfilePanelVet";
             Size = new Size(800, 590);
-            Load += petProfilePanelVet_Load;
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             PetProfilePanelVPetInfoP.ResumeLayout(false);
             PetProfilePanelVPetInfoP.PerformLayout();
