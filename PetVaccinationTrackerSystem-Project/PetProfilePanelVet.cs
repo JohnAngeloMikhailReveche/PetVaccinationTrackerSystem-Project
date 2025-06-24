@@ -47,9 +47,9 @@ namespace PetVaccinationTrackerSystem_Project
             if (string.IsNullOrWhiteSpace(txtOwnerName.Text))
                 errorMessage += "Owner's name is required.\n";
 
-            if (!int.TryParse(txtcontact.Text, out int phone))
+            if (!long.TryParse(txtcontact.Text.Trim(), out long phone))
                 errorMessage += "Owner phone number must be numeric.\n";
-
+            
             if (petpicture.Image == null)
                 errorMessage += "A pet image is required.\n";
 
@@ -60,6 +60,10 @@ namespace PetVaccinationTrackerSystem_Project
                 return;
             }
 
+
+                long parsedPhone = 0;
+                long.TryParse(txtcontact.Text.Trim(), out parsedPhone);
+
             var pet = new Pet
             {
                 PetName = txtPetName.Text,
@@ -69,7 +73,7 @@ namespace PetVaccinationTrackerSystem_Project
                 DateOfBirth = cmbDOB.Value,
                 ColorsAndMarkings = txtColorMarkings.Text,
                 OwnerName = txtOwnerName.Text,
-                OwnerPhoneNumber = int.Parse(txtcontact.Text),
+                OwnerPhoneNumber = (int)parsedPhone,
                 Notes = txtNotes.Text,
                 ImageRL = petpicture.Image != null ? Convert.ToBase64String((byte[])new ImageConverter().ConvertTo(petpicture.Image, typeof(byte[]))) : null,
                 UserID = int.Parse(txtUserID.Text)

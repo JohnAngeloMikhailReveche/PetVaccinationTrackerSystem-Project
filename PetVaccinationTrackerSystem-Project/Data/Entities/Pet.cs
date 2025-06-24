@@ -31,12 +31,11 @@ namespace PetVaccinationTrackerSystem_Project.Data.Entities
 
         [StringLength(100)]
         public string ColorsAndMarkings { get; set; }
-        public int OwnerPhoneNumber { get; set; }
+        public long OwnerPhoneNumber { get; set; }
 
         [StringLength(300)]
         public string Notes { get; set; }
 
-        [StringLength(1000)]
         public string? ImageRL { get; set; }
 
         public string? Gender { get; set; }
