@@ -129,6 +129,7 @@
             txtboxDOB.Location = new Point(219, 105);
             txtboxDOB.Multiline = true;
             txtboxDOB.Name = "txtboxDOB";
+            txtboxDOB.ReadOnly = true;
             txtboxDOB.Size = new Size(192, 29);
             txtboxDOB.TabIndex = 24;
             // 
@@ -139,6 +140,7 @@
             txtboxPetID.Location = new Point(218, 36);
             txtboxPetID.Multiline = true;
             txtboxPetID.Name = "txtboxPetID";
+            txtboxPetID.ReadOnly = true;
             txtboxPetID.Size = new Size(192, 29);
             txtboxPetID.TabIndex = 24;
             // 
@@ -215,6 +217,7 @@
             txtBreed.Location = new Point(15, 177);
             txtBreed.Multiline = true;
             txtBreed.Name = "txtBreed";
+            txtBreed.ReadOnly = true;
             txtBreed.Size = new Size(187, 29);
             txtBreed.TabIndex = 11;
             // 
@@ -247,6 +250,7 @@
             txtColorMarkings.Location = new Point(218, 177);
             txtColorMarkings.Multiline = true;
             txtColorMarkings.Name = "txtColorMarkings";
+            txtColorMarkings.ReadOnly = true;
             txtColorMarkings.Size = new Size(192, 29);
             txtColorMarkings.TabIndex = 5;
             // 
@@ -257,6 +261,7 @@
             txtOwnerName.Location = new Point(15, 246);
             txtOwnerName.Multiline = true;
             txtOwnerName.Name = "txtOwnerName";
+            txtOwnerName.ReadOnly = true;
             txtOwnerName.Size = new Size(395, 30);
             txtOwnerName.TabIndex = 4;
             // 
@@ -266,6 +271,7 @@
             txtcontact.Location = new Point(15, 316);
             txtcontact.Multiline = true;
             txtcontact.Name = "txtcontact";
+            txtcontact.ReadOnly = true;
             txtcontact.Size = new Size(395, 30);
             txtcontact.TabIndex = 3;
             // 
@@ -276,6 +282,7 @@
             txtboxGender.Location = new Point(113, 104);
             txtboxGender.Multiline = true;
             txtboxGender.Name = "txtboxGender";
+            txtboxGender.ReadOnly = true;
             txtboxGender.Size = new Size(90, 29);
             txtboxGender.TabIndex = 2;
             // 
@@ -286,6 +293,7 @@
             txtboxSpecies.Location = new Point(13, 104);
             txtboxSpecies.Multiline = true;
             txtboxSpecies.Name = "txtboxSpecies";
+            txtboxSpecies.ReadOnly = true;
             txtboxSpecies.Size = new Size(84, 29);
             txtboxSpecies.TabIndex = 2;
             // 
@@ -296,6 +304,7 @@
             txtPetName.Location = new Point(15, 36);
             txtPetName.Multiline = true;
             txtPetName.Name = "txtPetName";
+            txtPetName.ReadOnly = true;
             txtPetName.Size = new Size(187, 29);
             txtPetName.TabIndex = 2;
             // 
@@ -357,6 +366,7 @@
             txtNotes.Location = new Point(519, 383);
             txtNotes.Multiline = true;
             txtNotes.Name = "txtNotes";
+            txtNotes.ReadOnly = true;
             txtNotes.ScrollBars = ScrollBars.Vertical;
             txtNotes.Size = new Size(250, 120);
             txtNotes.TabIndex = 40;

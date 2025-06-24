@@ -26,6 +26,21 @@ namespace PetVaccinationTrackerSystem_Project.Forms.PetOwner.InnerRecords
             }
         }
 
+        private void SetAllTextboxToReadOnly()
+        {
+            // Set all textboxes to read-only
+            txtPetName.ReadOnly = true;
+            txtboxPetID.ReadOnly = true;
+            txtboxSpecies.ReadOnly = true;
+            txtboxGender.ReadOnly = true;
+            txtboxDOB.ReadOnly = true;
+            txtBreed.ReadOnly = true;
+            txtColorMarkings.ReadOnly = true;
+            txtOwnerName.ReadOnly = true;
+            txtcontact.ReadOnly = true;
+            txtNotes.ReadOnly = true;
+        }
+
         private void LoadDataToForm()
         {
 
@@ -66,6 +81,7 @@ namespace PetVaccinationTrackerSystem_Project.Forms.PetOwner.InnerRecords
             }
 
             // Load the pet's data into the form controls
+            SetAllTextboxToReadOnly();
             LoadDataToForm();
         }
 
