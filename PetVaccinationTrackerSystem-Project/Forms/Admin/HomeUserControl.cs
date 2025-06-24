@@ -25,6 +25,7 @@ namespace PetVaccinationTrackerSystem_Project.Forms.Admin
                 var vetData = context.UserList
                     .Include(v => v.Veterinarian) // Join the Veterinarian Table
                     .ThenInclude(c => c.Clinic) // Join the Clinic Table
+                    .Where(v => v.Veterinarian != null && v.Veterinarian.Clinic != null) // Prevent null references filter respective users
                     .Select(v => new VeterinarianViewModel // Use a ViewModel to simplify the data binding
                     {
                         VetID = v.Veterinarian.VetID,
@@ -150,6 +151,7 @@ namespace PetVaccinationTrackerSystem_Project.Forms.Admin
                 var query = context.UserList
                     .Include(v => v.Veterinarian)
                     .ThenInclude(c => c.Clinic)
+                    .Where(v => v.Veterinarian != null && v.Veterinarian.Clinic != null) // Prevent null references and filter respective users
                     .AsQueryable();
 
 

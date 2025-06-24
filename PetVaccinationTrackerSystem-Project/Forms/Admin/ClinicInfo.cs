@@ -132,14 +132,9 @@ namespace PetVaccinationTrackerSystem_Project.Forms.Admin
 
         }
 
-
-
-
-
-
-
-
-
-
+        private void mainFormVButtonExit_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
     }
 }
