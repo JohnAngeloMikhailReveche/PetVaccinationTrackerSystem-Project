@@ -100,6 +100,8 @@ namespace PetVaccinationTrackerSystem_Project.Forms.Admin
                 UserEmail = $"{txtboxAccountUsername.Text.Trim().ToLower()}@vetclinic.com",
                 UserPassword = hashedPassword,
                 UserRole = "Veterinarian",
+                SentPasswordRequest = false,
+                IsActive = true,
 
                 VetID = veterinarian.VetID // Associate the user with the veterinarian
             };

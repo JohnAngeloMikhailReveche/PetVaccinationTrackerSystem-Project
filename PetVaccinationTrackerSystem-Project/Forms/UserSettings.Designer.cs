@@ -202,6 +202,7 @@
             Name = "UserSettings";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "Settings";
+            Load += UserSettings_Load;
             groupBox1.ResumeLayout(false);
             groupBox1.PerformLayout();
             groupBox2.ResumeLayout(false);

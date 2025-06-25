@@ -35,6 +35,7 @@
             mainFormVSideB = new Panel();
             mainFormVSideBHighlight = new Panel();
             mainFormVButtonLO = new ReaLTaiizor.Controls.HopeRoundButton();
+            btnPasswordRequest = new Button();
             btnRegisterVet = new Button();
             btnRegisterClinic = new Button();
             btnVeterinarianList = new Button();
@@ -47,6 +48,7 @@
             homeUserControl1V = new HomeUserControl();
             registeredClinicPanel1V = new RegisteredClinicPanel();
             registeredVetPanel1V = new RegisteredVetPanel();
+            passwordRequestsForm1V = new PasswordRequestsForm();
             mainFormVTopB.SuspendLayout();
             mainFormVSideB.SuspendLayout();
             mainFormVPB.SuspendLayout();
@@ -97,6 +99,7 @@
             mainFormVSideB.BackColor = Color.White;
             mainFormVSideB.Controls.Add(mainFormVSideBHighlight);
             mainFormVSideB.Controls.Add(mainFormVButtonLO);
+            mainFormVSideB.Controls.Add(btnPasswordRequest);
             mainFormVSideB.Controls.Add(btnRegisterVet);
             mainFormVSideB.Controls.Add(btnRegisterClinic);
             mainFormVSideB.Controls.Add(btnVeterinarianList);
@@ -137,6 +140,22 @@
             mainFormVButtonLO.TextColor = Color.White;
             mainFormVButtonLO.WarningColor = Color.FromArgb(230, 162, 60);
             mainFormVButtonLO.Click += mainFormVButtonLO_Click;
+            // 
+            // btnPasswordRequest
+            // 
+            btnPasswordRequest.Dock = DockStyle.Top;
+            btnPasswordRequest.FlatAppearance.BorderSize = 0;
+            btnPasswordRequest.FlatStyle = FlatStyle.Flat;
+            btnPasswordRequest.Font = new Font("Segoe UI", 10.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            btnPasswordRequest.ForeColor = Color.FromArgb(89, 85, 84);
+            btnPasswordRequest.Location = new Point(0, 400);
+            btnPasswordRequest.Name = "btnPasswordRequest";
+            btnPasswordRequest.Size = new Size(200, 50);
+            btnPasswordRequest.TabIndex = 10;
+            btnPasswordRequest.Text = "     Password Requests";
+            btnPasswordRequest.TextAlign = ContentAlignment.MiddleLeft;
+            btnPasswordRequest.UseVisualStyleBackColor = true;
+            btnPasswordRequest.Click += btnPasswordRequest_Click;
             // 
             // btnRegisterVet
             // 
@@ -278,11 +297,19 @@
             registeredVetPanel1V.Size = new Size(800, 590);
             registeredVetPanel1V.TabIndex = 10;
             // 
+            // passwordRequestsForm1V
+            // 
+            passwordRequestsForm1V.Location = new Point(200, 50);
+            passwordRequestsForm1V.Name = "passwordRequestsForm1V";
+            passwordRequestsForm1V.Size = new Size(800, 590);
+            passwordRequestsForm1V.TabIndex = 11;
+            // 
             // AdminForm
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(1000, 640);
+            Controls.Add(passwordRequestsForm1V);
             Controls.Add(registeredVetPanel1V);
             Controls.Add(registeredClinicPanel1V);
             Controls.Add(homeUserControl1V);
@@ -321,5 +348,7 @@
         private Button btnClinicList;
         private RegisteredClinicPanel registeredClinicPanel1V;
         private RegisteredVetPanel registeredVetPanel1V;
+        private Button btnPasswordRequest;
+        private PasswordRequestsForm passwordRequestsForm1V;
     }
 }

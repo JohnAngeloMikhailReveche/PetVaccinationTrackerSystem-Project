@@ -139,6 +139,7 @@ namespace PetVaccinationTrackerSystem_Project
             mainFormVButtonAlerts.Size = new Size(25, 25);
             mainFormVButtonAlerts.TabIndex = 2;
             mainFormVButtonAlerts.UseVisualStyleBackColor = false;
+            mainFormVButtonAlerts.Click += mainFormVButtonAlerts_Click;
             // 
             // mainFormVButtonSettings
             // 

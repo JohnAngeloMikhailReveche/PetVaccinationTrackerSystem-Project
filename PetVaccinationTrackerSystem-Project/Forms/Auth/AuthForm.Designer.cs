@@ -39,6 +39,7 @@
             panel2 = new Panel();
             pictureBox1 = new PictureBox();
             btnLogin = new ReaLTaiizor.Controls.HopeRoundButton();
+            linklblResetPassword = new LinkLabel();
             panel1.SuspendLayout();
             panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
@@ -166,12 +167,24 @@
             btnLogin.WarningColor = Color.FromArgb(230, 162, 60);
             btnLogin.Click += btnLogin_Click;
             // 
+            // linklblResetPassword
+            // 
+            linklblResetPassword.AutoSize = true;
+            linklblResetPassword.Location = new Point(132, 349);
+            linklblResetPassword.Name = "linklblResetPassword";
+            linklblResetPassword.Size = new Size(147, 15);
+            linklblResetPassword.TabIndex = 8;
+            linklblResetPassword.TabStop = true;
+            linklblResetPassword.Text = "Request to Reset Password";
+            linklblResetPassword.LinkClicked += linklblResetPassword_LinkClicked;
+            // 
             // AuthForm
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.White;
             ClientSize = new Size(400, 450);
+            Controls.Add(linklblResetPassword);
             Controls.Add(btnLogin);
             Controls.Add(panel2);
             Controls.Add(panel1);
@@ -204,5 +217,6 @@
         private Button mainFormVButtonExit;
         private PictureBox pictureBox1;
         private ReaLTaiizor.Controls.HopeRoundButton btnLogin;
+        private LinkLabel linklblResetPassword;
     }
 }
