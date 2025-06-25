@@ -53,11 +53,11 @@ namespace PetVaccinationTrackerSystem_Project
             pictureBox1 = new PictureBox();
             panel1 = new Panel();
             pet_Reports1 = new Pet_Reports();
-            vaccineRecordsPanelVet1 = new VaccineRecordsPanelVet();
-            vaccinationHistory1 = new VaccinationHistory();
+            tablePetRecords1 = new TablePetRecords();
             petProfilePanelVet1 = new petProfilePanelVet();
             tablePetProfile1 = new TablePetProfile();
             homePanel1 = new homePanel();
+            vaccineRecordsPanelVet1 = new VaccineRecordsPanelVet();
             mainFormVTopB.SuspendLayout();
             mainFormVSideB.SuspendLayout();
             mainFormVPB.SuspendLayout();
@@ -346,9 +346,9 @@ namespace PetVaccinationTrackerSystem_Project
             // 
             // panel1
             // 
-            panel1.Controls.Add(pet_Reports1);
             panel1.Controls.Add(vaccineRecordsPanelVet1);
-            panel1.Controls.Add(vaccinationHistory1);
+            panel1.Controls.Add(pet_Reports1);
+            panel1.Controls.Add(tablePetRecords1);
             panel1.Controls.Add(petProfilePanelVet1);
             panel1.Controls.Add(tablePetProfile1);
             panel1.Controls.Add(homePanel1);
@@ -365,28 +365,16 @@ namespace PetVaccinationTrackerSystem_Project
             pet_Reports1.Location = new Point(0, 0);
             pet_Reports1.Name = "pet_Reports1";
             pet_Reports1.Size = new Size(800, 590);
-            pet_Reports1.TabIndex = 5;
-            pet_Reports1.Click += btnVaccineReports_Click;
+            pet_Reports1.TabIndex = 4;
             // 
-            // vaccineRecordsPanelVet1
+            // tablePetRecords1
             // 
-            vaccineRecordsPanelVet1.BackColor = Color.White;
-            vaccineRecordsPanelVet1.Dock = DockStyle.Fill;
-            vaccineRecordsPanelVet1.Location = new Point(0, 0);
-            vaccineRecordsPanelVet1.Name = "vaccineRecordsPanelVet1";
-            vaccineRecordsPanelVet1.Size = new Size(800, 590);
-            vaccineRecordsPanelVet1.TabIndex = 4;
-            vaccineRecordsPanelVet1.Click += btnAddVaccineRecord_Click;
-            // 
-            // vaccinationHistory1
-            // 
-            vaccinationHistory1.BackColor = Color.White;
-            vaccinationHistory1.Dock = DockStyle.Fill;
-            vaccinationHistory1.Location = new Point(0, 0);
-            vaccinationHistory1.Name = "vaccinationHistory1";
-            vaccinationHistory1.Size = new Size(800, 590);
-            vaccinationHistory1.TabIndex = 3;
-            vaccinationHistory1.Click += btnVaccineRecords_Click;
+            tablePetRecords1.BackColor = Color.White;
+            tablePetRecords1.Dock = DockStyle.Fill;
+            tablePetRecords1.Location = new Point(0, 0);
+            tablePetRecords1.Name = "tablePetRecords1";
+            tablePetRecords1.Size = new Size(800, 590);
+            tablePetRecords1.TabIndex = 3;
             // 
             // petProfilePanelVet1
             // 
@@ -400,6 +388,7 @@ namespace PetVaccinationTrackerSystem_Project
             // 
             // tablePetProfile1
             // 
+            tablePetProfile1.BackColor = Color.White;
             tablePetProfile1.Dock = DockStyle.Fill;
             tablePetProfile1.Location = new Point(0, 0);
             tablePetProfile1.Name = "tablePetProfile1";
@@ -415,6 +404,15 @@ namespace PetVaccinationTrackerSystem_Project
             homePanel1.Name = "homePanel1";
             homePanel1.Size = new Size(800, 590);
             homePanel1.TabIndex = 0;
+            // 
+            // vaccineRecordsPanelVet1
+            // 
+            vaccineRecordsPanelVet1.BackColor = Color.White;
+            vaccineRecordsPanelVet1.Dock = DockStyle.Fill;
+            vaccineRecordsPanelVet1.Location = new Point(0, 0);
+            vaccineRecordsPanelVet1.Name = "vaccineRecordsPanelVet1";
+            vaccineRecordsPanelVet1.Size = new Size(800, 590);
+            vaccineRecordsPanelVet1.TabIndex = 5;
             // 
             // MainFormVet
             // 
@@ -467,9 +465,9 @@ namespace PetVaccinationTrackerSystem_Project
         private Panel panel1;
         private TablePetProfile tablePetProfile1;
         private homePanel homePanel1;
-        private Pet_Reports pet_Reports1;
-        private VaccineRecordsPanelVet vaccineRecordsPanelVet1;
-        private VaccinationHistory vaccinationHistory1;
         private petProfilePanelVet petProfilePanelVet1;
+        private Pet_Reports pet_Reports1;
+        private TablePetRecords tablePetRecords1;
+        private VaccineRecordsPanelVet vaccineRecordsPanelVet1;
     }
 }

@@ -81,7 +81,7 @@ namespace PetVaccinationTrackerSystem_Project
         {
             mainFormVSideBHighlight.Height = btnVaccineRecords.Height;
             mainFormVSideBHighlight.Top = btnVaccineRecords.Top;
-            vaccinationHistory1.BringToFront();
+            tablePetRecords1.BringToFront();
         }
 
         private void btnAddVaccineRecord_Click(object sender, EventArgs e)
