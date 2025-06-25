@@ -61,9 +61,9 @@ namespace PetVaccinationTrackerSystem_Project.Data
 
             modelBuilder.Entity<PetHealthRecords>()
                 .HasOne(p => p.Vaccination)
-                .WithMany(v => v.PetHealthRecords)
+                .WithMany() 
                 .HasForeignKey(p => p.VaccinationID)
-                .OnDelete(DeleteBehavior.Restrict);
-        }
+                .OnDelete(DeleteBehavior.Restrict); 
+        }           
     }
 }

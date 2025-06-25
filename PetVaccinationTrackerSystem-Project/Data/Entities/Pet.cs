@@ -44,9 +44,11 @@ namespace PetVaccinationTrackerSystem_Project.Data.Entities
         [ForeignKey("User")]
         public int UserID { get; set; }
 
+        [ForeignKey("Record")]
+        public int RecordID { get; set; }
+
         // Navigation property to User entity
         public User User { get; set; }
-
 
         // Navigation property for Appointment
         public List<Appointment>? Appointments { get; set; }
