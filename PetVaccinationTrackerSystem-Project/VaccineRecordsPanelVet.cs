@@ -40,7 +40,7 @@ namespace PetVaccinationTrackerSystem_Project
             DateTimePicker dtp = new DateTimePicker();
             dtp.Format = DateTimePickerFormat.Short;
             dtp.Visible = false;
-            groupBox1.Controls.Add(dtp);
+            panel1.Controls.Add(dtp);
 
             {
                 if (e.RowIndex == 4 && e.ColumnIndex == 1)

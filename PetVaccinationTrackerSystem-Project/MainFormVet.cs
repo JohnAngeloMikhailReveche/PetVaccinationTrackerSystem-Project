@@ -98,10 +98,11 @@ namespace PetVaccinationTrackerSystem_Project
             pet_Reports1.BringToFront();
         }
 
-        private void btnAboutUs_Click(object sender, EventArgs e)
+        private void btnRegisterPetOwner_Click(object sender, EventArgs e)
         {
-            mainFormVSideBHighlight.Height = btnAboutUs.Height;
-            mainFormVSideBHighlight.Top = btnAboutUs.Top;
+            mainFormVSideBHighlight.Height = btnRegisterPetOwner.Height;
+            mainFormVSideBHighlight.Top = btnRegisterPetOwner.Top;
+            registerPetOwnerPanel1.BringToFront();
         }
 
         private void mainFormVButtonLO_Click(object sender, EventArgs e)
@@ -120,6 +121,5 @@ namespace PetVaccinationTrackerSystem_Project
 
         }
 
-   
     }
 }

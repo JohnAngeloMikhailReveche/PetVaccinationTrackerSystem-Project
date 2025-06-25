@@ -41,7 +41,7 @@ namespace PetVaccinationTrackerSystem_Project
             mainFormVButtonExit = new Button();
             mainFormVSideB = new Panel();
             mainFormVSideBHighlight = new Panel();
-            btnAboutUs = new Button();
+            btnRegisterPetOwner = new Button();
             btnVaccineReports = new Button();
             btnAddVaccineRecord = new Button();
             mainFormVButtonLO = new ReaLTaiizor.Controls.HopeRoundButton();
@@ -52,12 +52,14 @@ namespace PetVaccinationTrackerSystem_Project
             mainFormVPB = new Panel();
             pictureBox1 = new PictureBox();
             panel1 = new Panel();
+            registerPetOwnerPanel1 = new registerPetOwnerPanel();
+            vaccineRecordsPanelVet1 = new VaccineRecordsPanelVet();
             pet_Reports1 = new Pet_Reports();
             tablePetRecords1 = new TablePetRecords();
             petProfilePanelVet1 = new petProfilePanelVet();
             tablePetProfile1 = new TablePetProfile();
             homePanel1 = new homePanel();
-            vaccineRecordsPanelVet1 = new VaccineRecordsPanelVet();
+            button1 = new Button();
             mainFormVTopB.SuspendLayout();
             mainFormVSideB.SuspendLayout();
             mainFormVPB.SuspendLayout();
@@ -169,7 +171,8 @@ namespace PetVaccinationTrackerSystem_Project
             // 
             mainFormVSideB.BackColor = Color.White;
             mainFormVSideB.Controls.Add(mainFormVSideBHighlight);
-            mainFormVSideB.Controls.Add(btnAboutUs);
+            mainFormVSideB.Controls.Add(button1);
+            mainFormVSideB.Controls.Add(btnRegisterPetOwner);
             mainFormVSideB.Controls.Add(btnVaccineReports);
             mainFormVSideB.Controls.Add(btnAddVaccineRecord);
             mainFormVSideB.Controls.Add(mainFormVButtonLO);
@@ -187,26 +190,26 @@ namespace PetVaccinationTrackerSystem_Project
             // mainFormVSideBHighlight
             // 
             mainFormVSideBHighlight.BackColor = Color.FromArgb(168, 130, 95);
-            mainFormVSideBHighlight.Location = new Point(0, 150);
+            mainFormVSideBHighlight.Location = new Point(0, 145);
             mainFormVSideBHighlight.Name = "mainFormVSideBHighlight";
-            mainFormVSideBHighlight.Size = new Size(10, 50);
+            mainFormVSideBHighlight.Size = new Size(10, 45);
             mainFormVSideBHighlight.TabIndex = 2;
             // 
-            // btnAboutUs
+            // btnRegisterPetOwner
             // 
-            btnAboutUs.Dock = DockStyle.Top;
-            btnAboutUs.FlatAppearance.BorderSize = 0;
-            btnAboutUs.FlatStyle = FlatStyle.Flat;
-            btnAboutUs.Font = new Font("Segoe UI", 10.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            btnAboutUs.ForeColor = Color.FromArgb(89, 85, 84);
-            btnAboutUs.Location = new Point(0, 450);
-            btnAboutUs.Name = "btnAboutUs";
-            btnAboutUs.Size = new Size(200, 50);
-            btnAboutUs.TabIndex = 8;
-            btnAboutUs.Text = "        About Us";
-            btnAboutUs.TextAlign = ContentAlignment.MiddleLeft;
-            btnAboutUs.UseVisualStyleBackColor = true;
-            btnAboutUs.Click += btnAboutUs_Click;
+            btnRegisterPetOwner.Dock = DockStyle.Top;
+            btnRegisterPetOwner.FlatAppearance.BorderSize = 0;
+            btnRegisterPetOwner.FlatStyle = FlatStyle.Flat;
+            btnRegisterPetOwner.Font = new Font("Segoe UI", 10.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            btnRegisterPetOwner.ForeColor = Color.FromArgb(89, 85, 84);
+            btnRegisterPetOwner.Location = new Point(0, 415);
+            btnRegisterPetOwner.Name = "btnRegisterPetOwner";
+            btnRegisterPetOwner.Size = new Size(200, 45);
+            btnRegisterPetOwner.TabIndex = 8;
+            btnRegisterPetOwner.Text = "        Register Pet Owner";
+            btnRegisterPetOwner.TextAlign = ContentAlignment.MiddleLeft;
+            btnRegisterPetOwner.UseVisualStyleBackColor = true;
+            btnRegisterPetOwner.Click += btnRegisterPetOwner_Click;
             // 
             // btnVaccineReports
             // 
@@ -215,9 +218,9 @@ namespace PetVaccinationTrackerSystem_Project
             btnVaccineReports.FlatStyle = FlatStyle.Flat;
             btnVaccineReports.Font = new Font("Segoe UI", 10.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
             btnVaccineReports.ForeColor = Color.FromArgb(89, 85, 84);
-            btnVaccineReports.Location = new Point(0, 400);
+            btnVaccineReports.Location = new Point(0, 370);
             btnVaccineReports.Name = "btnVaccineReports";
-            btnVaccineReports.Size = new Size(200, 50);
+            btnVaccineReports.Size = new Size(200, 45);
             btnVaccineReports.TabIndex = 7;
             btnVaccineReports.Text = "        Vaccine Reports";
             btnVaccineReports.TextAlign = ContentAlignment.MiddleLeft;
@@ -231,9 +234,9 @@ namespace PetVaccinationTrackerSystem_Project
             btnAddVaccineRecord.FlatStyle = FlatStyle.Flat;
             btnAddVaccineRecord.Font = new Font("Segoe UI", 10.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
             btnAddVaccineRecord.ForeColor = Color.FromArgb(89, 85, 84);
-            btnAddVaccineRecord.Location = new Point(0, 350);
+            btnAddVaccineRecord.Location = new Point(0, 325);
             btnAddVaccineRecord.Name = "btnAddVaccineRecord";
-            btnAddVaccineRecord.Size = new Size(200, 50);
+            btnAddVaccineRecord.Size = new Size(200, 45);
             btnAddVaccineRecord.TabIndex = 6;
             btnAddVaccineRecord.Text = "        Add Vaccine Record";
             btnAddVaccineRecord.TextAlign = ContentAlignment.MiddleLeft;
@@ -250,7 +253,7 @@ namespace PetVaccinationTrackerSystem_Project
             mainFormVButtonLO.Font = new Font("Segoe UI", 10.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
             mainFormVButtonLO.HoverTextColor = Color.White;
             mainFormVButtonLO.InfoColor = Color.FromArgb(144, 147, 153);
-            mainFormVButtonLO.Location = new Point(38, 530);
+            mainFormVButtonLO.Location = new Point(38, 535);
             mainFormVButtonLO.Name = "mainFormVButtonLO";
             mainFormVButtonLO.PrimaryColor = Color.FromArgb(89, 85, 84);
             mainFormVButtonLO.Size = new Size(125, 40);
@@ -268,9 +271,9 @@ namespace PetVaccinationTrackerSystem_Project
             btnVaccineRecords.FlatStyle = FlatStyle.Flat;
             btnVaccineRecords.Font = new Font("Segoe UI", 10.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
             btnVaccineRecords.ForeColor = Color.FromArgb(89, 85, 84);
-            btnVaccineRecords.Location = new Point(0, 300);
+            btnVaccineRecords.Location = new Point(0, 280);
             btnVaccineRecords.Name = "btnVaccineRecords";
-            btnVaccineRecords.Size = new Size(200, 50);
+            btnVaccineRecords.Size = new Size(200, 45);
             btnVaccineRecords.TabIndex = 4;
             btnVaccineRecords.Text = "        Vaccine Records";
             btnVaccineRecords.TextAlign = ContentAlignment.MiddleLeft;
@@ -284,9 +287,9 @@ namespace PetVaccinationTrackerSystem_Project
             btnAddPetProfile.FlatStyle = FlatStyle.Flat;
             btnAddPetProfile.Font = new Font("Segoe UI", 10.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
             btnAddPetProfile.ForeColor = Color.FromArgb(89, 85, 84);
-            btnAddPetProfile.Location = new Point(0, 250);
+            btnAddPetProfile.Location = new Point(0, 235);
             btnAddPetProfile.Name = "btnAddPetProfile";
-            btnAddPetProfile.Size = new Size(200, 50);
+            btnAddPetProfile.Size = new Size(200, 45);
             btnAddPetProfile.TabIndex = 3;
             btnAddPetProfile.Text = "        Add Pet Profile";
             btnAddPetProfile.TextAlign = ContentAlignment.MiddleLeft;
@@ -300,9 +303,9 @@ namespace PetVaccinationTrackerSystem_Project
             btnPetProfiles.FlatStyle = FlatStyle.Flat;
             btnPetProfiles.Font = new Font("Segoe UI", 10.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
             btnPetProfiles.ForeColor = Color.FromArgb(89, 85, 84);
-            btnPetProfiles.Location = new Point(0, 200);
+            btnPetProfiles.Location = new Point(0, 190);
             btnPetProfiles.Name = "btnPetProfiles";
-            btnPetProfiles.Size = new Size(200, 50);
+            btnPetProfiles.Size = new Size(200, 45);
             btnPetProfiles.TabIndex = 2;
             btnPetProfiles.Text = "        Pet Profiles";
             btnPetProfiles.TextAlign = ContentAlignment.MiddleLeft;
@@ -316,9 +319,9 @@ namespace PetVaccinationTrackerSystem_Project
             btnHome.FlatStyle = FlatStyle.Flat;
             btnHome.Font = new Font("Segoe UI", 10.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
             btnHome.ForeColor = Color.FromArgb(89, 85, 84);
-            btnHome.Location = new Point(0, 150);
+            btnHome.Location = new Point(0, 145);
             btnHome.Name = "btnHome";
-            btnHome.Size = new Size(200, 50);
+            btnHome.Size = new Size(200, 45);
             btnHome.TabIndex = 1;
             btnHome.Text = "        Home";
             btnHome.TextAlign = ContentAlignment.MiddleLeft;
@@ -331,21 +334,22 @@ namespace PetVaccinationTrackerSystem_Project
             mainFormVPB.Dock = DockStyle.Top;
             mainFormVPB.Location = new Point(0, 0);
             mainFormVPB.Name = "mainFormVPB";
-            mainFormVPB.Size = new Size(200, 150);
+            mainFormVPB.Size = new Size(200, 145);
             mainFormVPB.TabIndex = 0;
             // 
             // pictureBox1
             // 
             pictureBox1.Image = (Image)resources.GetObject("pictureBox1.Image");
-            pictureBox1.Location = new Point(38, 12);
+            pictureBox1.Location = new Point(27, 2);
             pictureBox1.Name = "pictureBox1";
-            pictureBox1.Size = new Size(125, 125);
+            pictureBox1.Size = new Size(145, 140);
             pictureBox1.SizeMode = PictureBoxSizeMode.Zoom;
             pictureBox1.TabIndex = 0;
             pictureBox1.TabStop = false;
             // 
             // panel1
             // 
+            panel1.Controls.Add(registerPetOwnerPanel1);
             panel1.Controls.Add(vaccineRecordsPanelVet1);
             panel1.Controls.Add(pet_Reports1);
             panel1.Controls.Add(tablePetRecords1);
@@ -357,6 +361,24 @@ namespace PetVaccinationTrackerSystem_Project
             panel1.Name = "panel1";
             panel1.Size = new Size(800, 590);
             panel1.TabIndex = 4;
+            // 
+            // registerPetOwnerPanel1
+            // 
+            registerPetOwnerPanel1.BackColor = Color.White;
+            registerPetOwnerPanel1.Dock = DockStyle.Fill;
+            registerPetOwnerPanel1.Location = new Point(0, 0);
+            registerPetOwnerPanel1.Name = "registerPetOwnerPanel1";
+            registerPetOwnerPanel1.Size = new Size(800, 590);
+            registerPetOwnerPanel1.TabIndex = 6;
+            // 
+            // vaccineRecordsPanelVet1
+            // 
+            vaccineRecordsPanelVet1.BackColor = Color.White;
+            vaccineRecordsPanelVet1.Dock = DockStyle.Fill;
+            vaccineRecordsPanelVet1.Location = new Point(0, 0);
+            vaccineRecordsPanelVet1.Name = "vaccineRecordsPanelVet1";
+            vaccineRecordsPanelVet1.Size = new Size(800, 590);
+            vaccineRecordsPanelVet1.TabIndex = 5;
             // 
             // pet_Reports1
             // 
@@ -405,14 +427,20 @@ namespace PetVaccinationTrackerSystem_Project
             homePanel1.Size = new Size(800, 590);
             homePanel1.TabIndex = 0;
             // 
-            // vaccineRecordsPanelVet1
+            // button1
             // 
-            vaccineRecordsPanelVet1.BackColor = Color.White;
-            vaccineRecordsPanelVet1.Dock = DockStyle.Fill;
-            vaccineRecordsPanelVet1.Location = new Point(0, 0);
-            vaccineRecordsPanelVet1.Name = "vaccineRecordsPanelVet1";
-            vaccineRecordsPanelVet1.Size = new Size(800, 590);
-            vaccineRecordsPanelVet1.TabIndex = 5;
+            button1.Dock = DockStyle.Top;
+            button1.FlatAppearance.BorderSize = 0;
+            button1.FlatStyle = FlatStyle.Flat;
+            button1.Font = new Font("Segoe UI", 10.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            button1.ForeColor = Color.FromArgb(89, 85, 84);
+            button1.Location = new Point(0, 460);
+            button1.Name = "button1";
+            button1.Size = new Size(200, 45);
+            button1.TabIndex = 9;
+            button1.Text = "        About Us";
+            button1.TextAlign = ContentAlignment.MiddleLeft;
+            button1.UseVisualStyleBackColor = true;
             // 
             // MainFormVet
             // 
@@ -461,7 +489,7 @@ namespace PetVaccinationTrackerSystem_Project
         private Button btnVaccineReports;
         private Label lblClinic;
         private Label label2;
-        private Button btnAboutUs;
+        private Button btnRegisterPetOwner;
         private Panel panel1;
         private TablePetProfile tablePetProfile1;
         private homePanel homePanel1;
@@ -469,5 +497,7 @@ namespace PetVaccinationTrackerSystem_Project
         private Pet_Reports pet_Reports1;
         private TablePetRecords tablePetRecords1;
         private VaccineRecordsPanelVet vaccineRecordsPanelVet1;
+        private registerPetOwnerPanel registerPetOwnerPanel1;
+        private Button button1;
     }
 }
