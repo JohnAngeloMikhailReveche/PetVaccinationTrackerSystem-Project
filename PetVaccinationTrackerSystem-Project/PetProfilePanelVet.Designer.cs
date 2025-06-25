@@ -31,8 +31,7 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(petProfilePanelVet));
             pictureBox1 = new PictureBox();
             PetProfilePanelVPetInfoP = new Panel();
-            PetProfilePanelVButtonSave = new Button();
-            PetProfilePanelVButtonGoBack = new Button();
+            PetProfilePanelVButtonSave = new ReaLTaiizor.Controls.HopeRoundButton();
             PetProfilePanelVPetInfoCard = new Panel();
             txtUserID = new TextBox();
             label7 = new Label();
@@ -55,9 +54,9 @@
             label14 = new Label();
             PetProfilePanelVPBPanel = new Panel();
             petpicture = new PictureBox();
-            PetProfilePanelVButtonUpdatePB = new Button();
             txtNotes = new TextBox();
             label1 = new Label();
+            PetProfilePanelVButtonUpdatePB = new ReaLTaiizor.Controls.HopeRoundButton();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             PetProfilePanelVPetInfoP.SuspendLayout();
             PetProfilePanelVPetInfoCard.SuspendLayout();
@@ -80,7 +79,6 @@
             // 
             PetProfilePanelVPetInfoP.BackColor = Color.FromArgb(249, 249, 249);
             PetProfilePanelVPetInfoP.Controls.Add(PetProfilePanelVButtonSave);
-            PetProfilePanelVPetInfoP.Controls.Add(PetProfilePanelVButtonGoBack);
             PetProfilePanelVPetInfoP.Controls.Add(PetProfilePanelVPetInfoCard);
             PetProfilePanelVPetInfoP.Controls.Add(label14);
             PetProfilePanelVPetInfoP.Location = new Point(28, 85);
@@ -90,28 +88,25 @@
             // 
             // PetProfilePanelVButtonSave
             // 
-            PetProfilePanelVButtonSave.FlatStyle = FlatStyle.Flat;
+            PetProfilePanelVButtonSave.BackColor = Color.FromArgb(63, 59, 58);
+            PetProfilePanelVButtonSave.BorderColor = Color.FromArgb(220, 223, 230);
+            PetProfilePanelVButtonSave.ButtonType = ReaLTaiizor.Util.HopeButtonType.Primary;
+            PetProfilePanelVButtonSave.DangerColor = Color.FromArgb(245, 108, 108);
+            PetProfilePanelVButtonSave.DefaultColor = Color.FromArgb(255, 255, 255);
             PetProfilePanelVButtonSave.Font = new Font("Segoe UI", 10.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            PetProfilePanelVButtonSave.ForeColor = Color.FromArgb(89, 85, 84);
+            PetProfilePanelVButtonSave.ForeColor = Color.White;
+            PetProfilePanelVButtonSave.HoverTextColor = Color.White;
+            PetProfilePanelVButtonSave.InfoColor = Color.FromArgb(144, 147, 153);
             PetProfilePanelVButtonSave.Location = new Point(350, 426);
             PetProfilePanelVButtonSave.Name = "PetProfilePanelVButtonSave";
+            PetProfilePanelVButtonSave.PrimaryColor = Color.FromArgb(63, 59, 58);
             PetProfilePanelVButtonSave.Size = new Size(100, 40);
-            PetProfilePanelVButtonSave.TabIndex = 33;
+            PetProfilePanelVButtonSave.SuccessColor = Color.FromArgb(103, 194, 58);
+            PetProfilePanelVButtonSave.TabIndex = 34;
             PetProfilePanelVButtonSave.Text = "Save";
-            PetProfilePanelVButtonSave.UseVisualStyleBackColor = true;
+            PetProfilePanelVButtonSave.TextColor = Color.White;
+            PetProfilePanelVButtonSave.WarningColor = Color.FromArgb(230, 162, 60);
             PetProfilePanelVButtonSave.Click += PetProfilePanelVButtonSave_Click_1;
-            // 
-            // PetProfilePanelVButtonGoBack
-            // 
-            PetProfilePanelVButtonGoBack.FlatStyle = FlatStyle.Flat;
-            PetProfilePanelVButtonGoBack.Font = new Font("Segoe UI", 10.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            PetProfilePanelVButtonGoBack.ForeColor = Color.FromArgb(89, 85, 84);
-            PetProfilePanelVButtonGoBack.Location = new Point(23, 426);
-            PetProfilePanelVButtonGoBack.Name = "PetProfilePanelVButtonGoBack";
-            PetProfilePanelVButtonGoBack.Size = new Size(100, 40);
-            PetProfilePanelVButtonGoBack.TabIndex = 32;
-            PetProfilePanelVButtonGoBack.Text = "Go Back";
-            PetProfilePanelVButtonGoBack.UseVisualStyleBackColor = true;
             // 
             // PetProfilePanelVPetInfoCard
             // 
@@ -365,19 +360,6 @@
             petpicture.TabStop = false;
             petpicture.Click += pictureBox2_Click;
             // 
-            // PetProfilePanelVButtonUpdatePB
-            // 
-            PetProfilePanelVButtonUpdatePB.FlatStyle = FlatStyle.Flat;
-            PetProfilePanelVButtonUpdatePB.Font = new Font("Segoe UI", 10.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            PetProfilePanelVButtonUpdatePB.ForeColor = Color.FromArgb(89, 85, 84);
-            PetProfilePanelVButtonUpdatePB.Location = new Point(596, 341);
-            PetProfilePanelVButtonUpdatePB.Name = "PetProfilePanelVButtonUpdatePB";
-            PetProfilePanelVButtonUpdatePB.Size = new Size(100, 40);
-            PetProfilePanelVButtonUpdatePB.TabIndex = 33;
-            PetProfilePanelVButtonUpdatePB.Text = "Update";
-            PetProfilePanelVButtonUpdatePB.UseVisualStyleBackColor = true;
-            PetProfilePanelVButtonUpdatePB.Click += PetProfilePanelVButtonUpdatePB_Click;
-            // 
             // txtNotes
             // 
             txtNotes.BackColor = Color.FromArgb(249, 249, 249);
@@ -399,14 +381,36 @@
             label1.TabIndex = 37;
             label1.Text = "Notes:";
             // 
+            // PetProfilePanelVButtonUpdatePB
+            // 
+            PetProfilePanelVButtonUpdatePB.BackColor = Color.FromArgb(63, 59, 58);
+            PetProfilePanelVButtonUpdatePB.BorderColor = Color.FromArgb(220, 223, 230);
+            PetProfilePanelVButtonUpdatePB.ButtonType = ReaLTaiizor.Util.HopeButtonType.Primary;
+            PetProfilePanelVButtonUpdatePB.DangerColor = Color.FromArgb(245, 108, 108);
+            PetProfilePanelVButtonUpdatePB.DefaultColor = Color.FromArgb(255, 255, 255);
+            PetProfilePanelVButtonUpdatePB.Font = new Font("Segoe UI", 10.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            PetProfilePanelVButtonUpdatePB.ForeColor = Color.White;
+            PetProfilePanelVButtonUpdatePB.HoverTextColor = Color.White;
+            PetProfilePanelVButtonUpdatePB.InfoColor = Color.FromArgb(144, 147, 153);
+            PetProfilePanelVButtonUpdatePB.Location = new Point(593, 340);
+            PetProfilePanelVButtonUpdatePB.Name = "PetProfilePanelVButtonUpdatePB";
+            PetProfilePanelVButtonUpdatePB.PrimaryColor = Color.FromArgb(63, 59, 58);
+            PetProfilePanelVButtonUpdatePB.Size = new Size(110, 40);
+            PetProfilePanelVButtonUpdatePB.SuccessColor = Color.FromArgb(103, 194, 58);
+            PetProfilePanelVButtonUpdatePB.TabIndex = 35;
+            PetProfilePanelVButtonUpdatePB.Text = "Update";
+            PetProfilePanelVButtonUpdatePB.TextColor = Color.White;
+            PetProfilePanelVButtonUpdatePB.WarningColor = Color.FromArgb(230, 162, 60);
+            PetProfilePanelVButtonUpdatePB.Click += PetProfilePanelVButtonUpdatePB_Click;
+            // 
             // petProfilePanelVet
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.White;
+            Controls.Add(PetProfilePanelVButtonUpdatePB);
             Controls.Add(label1);
             Controls.Add(txtNotes);
-            Controls.Add(PetProfilePanelVButtonUpdatePB);
             Controls.Add(PetProfilePanelVPBPanel);
             Controls.Add(PetProfilePanelVPetInfoP);
             Controls.Add(pictureBox1);
@@ -447,12 +451,13 @@
         private ComboBox cmbSpecies;
         private ComboBox cmbGender;
         private Button PetProfilePanelVButtonGoBack;
-        private Button PetProfilePanelVButtonUpdatePB;
         private TextBox txtNotes;
-        private Button PetProfilePanelVButtonSave;
+        private Button PetProf1ilePanelVButtonSave;
         private Label label1;
         private PictureBox petpicture;
         private TextBox txtUserID;
         private Label label7;
+        private ReaLTaiizor.Controls.HopeRoundButton PetProfilePanelVButtonSave;
+        private ReaLTaiizor.Controls.HopeRoundButton PetProfilePanelVButtonUpdatePB;
     }
 }

@@ -147,7 +147,7 @@
             // 
             // btnLogin
             // 
-            btnLogin.BackColor = Color.FromArgb(89, 85, 84);
+            btnLogin.BackColor = Color.FromArgb(63, 59, 58);
             btnLogin.BorderColor = Color.FromArgb(220, 223, 230);
             btnLogin.ButtonType = ReaLTaiizor.Util.HopeButtonType.Primary;
             btnLogin.DangerColor = Color.FromArgb(245, 108, 108);
@@ -158,7 +158,7 @@
             btnLogin.InfoColor = Color.FromArgb(144, 147, 153);
             btnLogin.Location = new Point(135, 375);
             btnLogin.Name = "btnLogin";
-            btnLogin.PrimaryColor = Color.FromArgb(89, 85, 84);
+            btnLogin.PrimaryColor = Color.FromArgb(63, 59, 58);
             btnLogin.Size = new Size(125, 40);
             btnLogin.SuccessColor = Color.FromArgb(103, 194, 58);
             btnLogin.TabIndex = 7;

@@ -54,7 +54,7 @@
             // 
             // mainFormVTopB
             // 
-            mainFormVTopB.BackColor = Color.FromArgb(89, 85, 84);
+            mainFormVTopB.BackColor = Color.FromArgb(63, 59, 58);
             mainFormVTopB.Controls.Add(lblPetOwnerName);
             mainFormVTopB.Controls.Add(label1);
             mainFormVTopB.Controls.Add(btnInbox);
@@ -69,28 +69,28 @@
             // lblPetOwnerName
             // 
             lblPetOwnerName.AutoSize = true;
-            lblPetOwnerName.Font = new Font("Segoe UI", 12F);
+            lblPetOwnerName.Font = new Font("Segoe UI", 10F);
             lblPetOwnerName.ForeColor = SystemColors.Control;
             lblPetOwnerName.Location = new Point(150, 14);
             lblPetOwnerName.Name = "lblPetOwnerName";
-            lblPetOwnerName.Size = new Size(73, 21);
+            lblPetOwnerName.Size = new Size(65, 19);
             lblPetOwnerName.TabIndex = 3;
             lblPetOwnerName.Text = "Jane Doe";
             // 
             // label1
             // 
             label1.AutoSize = true;
-            label1.Font = new Font("Segoe UI", 12F, FontStyle.Bold);
+            label1.Font = new Font("Segoe UI", 10.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
             label1.ForeColor = SystemColors.Control;
             label1.Location = new Point(12, 14);
             label1.Name = "label1";
-            label1.Size = new Size(112, 21);
+            label1.Size = new Size(100, 19);
             label1.TabIndex = 3;
             label1.Text = "Logged In As:";
             // 
             // btnInbox
             // 
-            btnInbox.BackColor = Color.FromArgb(89, 85, 84);
+            btnInbox.BackColor = Color.FromArgb(63, 59, 58);
             btnInbox.BackgroundImage = (Image)resources.GetObject("btnInbox.BackgroundImage");
             btnInbox.BackgroundImageLayout = ImageLayout.Zoom;
             btnInbox.FlatAppearance.BorderSize = 0;
@@ -104,7 +104,7 @@
             // 
             // btnSettings
             // 
-            btnSettings.BackColor = Color.FromArgb(89, 85, 84);
+            btnSettings.BackColor = Color.FromArgb(63, 59, 58);
             btnSettings.BackgroundImage = (Image)resources.GetObject("btnSettings.BackgroundImage");
             btnSettings.BackgroundImageLayout = ImageLayout.Zoom;
             btnSettings.FlatAppearance.BorderSize = 0;
@@ -118,7 +118,7 @@
             // 
             // btnExit
             // 
-            btnExit.BackColor = Color.FromArgb(89, 85, 84);
+            btnExit.BackColor = Color.FromArgb(63, 59, 58);
             btnExit.BackgroundImage = (Image)resources.GetObject("btnExit.BackgroundImage");
             btnExit.BackgroundImageLayout = ImageLayout.Zoom;
             btnExit.FlatAppearance.BorderSize = 0;
@@ -136,15 +136,15 @@
             mainFormVPB.Dock = DockStyle.Top;
             mainFormVPB.Location = new Point(0, 0);
             mainFormVPB.Name = "mainFormVPB";
-            mainFormVPB.Size = new Size(200, 150);
+            mainFormVPB.Size = new Size(200, 145);
             mainFormVPB.TabIndex = 0;
             // 
             // pictureBox1
             // 
             pictureBox1.Image = (Image)resources.GetObject("pictureBox1.Image");
-            pictureBox1.Location = new Point(38, 12);
+            pictureBox1.Location = new Point(30, 2);
             pictureBox1.Name = "pictureBox1";
-            pictureBox1.Size = new Size(125, 125);
+            pictureBox1.Size = new Size(140, 140);
             pictureBox1.SizeMode = PictureBoxSizeMode.Zoom;
             pictureBox1.TabIndex = 0;
             pictureBox1.TabStop = false;
@@ -156,7 +156,7 @@
             btnHome.FlatStyle = FlatStyle.Flat;
             btnHome.Font = new Font("Segoe UI", 10.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
             btnHome.ForeColor = Color.FromArgb(89, 85, 84);
-            btnHome.Location = new Point(0, 150);
+            btnHome.Location = new Point(0, 145);
             btnHome.Name = "btnHome";
             btnHome.Size = new Size(200, 50);
             btnHome.TabIndex = 1;
@@ -172,7 +172,7 @@
             btnPetProfiles.FlatStyle = FlatStyle.Flat;
             btnPetProfiles.Font = new Font("Segoe UI", 10.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
             btnPetProfiles.ForeColor = Color.FromArgb(89, 85, 84);
-            btnPetProfiles.Location = new Point(0, 200);
+            btnPetProfiles.Location = new Point(0, 195);
             btnPetProfiles.Name = "btnPetProfiles";
             btnPetProfiles.Size = new Size(200, 50);
             btnPetProfiles.TabIndex = 2;
@@ -188,7 +188,7 @@
             btnAboutUs.FlatStyle = FlatStyle.Flat;
             btnAboutUs.Font = new Font("Segoe UI", 10.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
             btnAboutUs.ForeColor = Color.FromArgb(89, 85, 84);
-            btnAboutUs.Location = new Point(0, 250);
+            btnAboutUs.Location = new Point(0, 245);
             btnAboutUs.Name = "btnAboutUs";
             btnAboutUs.Size = new Size(200, 50);
             btnAboutUs.TabIndex = 6;
@@ -199,7 +199,7 @@
             // 
             // btnLogOut
             // 
-            btnLogOut.BackColor = Color.FromArgb(89, 85, 84);
+            btnLogOut.BackColor = Color.FromArgb(63, 59, 58);
             btnLogOut.BorderColor = Color.FromArgb(220, 223, 230);
             btnLogOut.ButtonType = ReaLTaiizor.Util.HopeButtonType.Primary;
             btnLogOut.DangerColor = Color.FromArgb(245, 108, 108);
@@ -207,9 +207,9 @@
             btnLogOut.Font = new Font("Segoe UI", 10.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
             btnLogOut.HoverTextColor = Color.White;
             btnLogOut.InfoColor = Color.FromArgb(144, 147, 153);
-            btnLogOut.Location = new Point(40, 538);
+            btnLogOut.Location = new Point(38, 532);
             btnLogOut.Name = "btnLogOut";
-            btnLogOut.PrimaryColor = Color.FromArgb(89, 85, 84);
+            btnLogOut.PrimaryColor = Color.FromArgb(63, 59, 58);
             btnLogOut.Size = new Size(125, 40);
             btnLogOut.SuccessColor = Color.FromArgb(103, 194, 58);
             btnLogOut.TabIndex = 5;
@@ -221,7 +221,7 @@
             // mainFormVSideBHighlight
             // 
             mainFormVSideBHighlight.BackColor = Color.FromArgb(168, 130, 95);
-            mainFormVSideBHighlight.Location = new Point(0, 150);
+            mainFormVSideBHighlight.Location = new Point(0, 145);
             mainFormVSideBHighlight.Name = "mainFormVSideBHighlight";
             mainFormVSideBHighlight.Size = new Size(10, 50);
             mainFormVSideBHighlight.TabIndex = 2;

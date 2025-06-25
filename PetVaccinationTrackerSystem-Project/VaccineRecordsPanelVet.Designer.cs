@@ -81,6 +81,7 @@
             // 
             // btnClear
             // 
+            btnClear.BackColor = Color.FromArgb(63, 59, 58);
             btnClear.BorderColor = Color.FromArgb(220, 223, 230);
             btnClear.ButtonType = ReaLTaiizor.Util.HopeButtonType.Primary;
             btnClear.DangerColor = Color.FromArgb(245, 108, 108);
@@ -90,7 +91,7 @@
             btnClear.InfoColor = Color.FromArgb(144, 147, 153);
             btnClear.Location = new Point(560, 424);
             btnClear.Name = "btnClear";
-            btnClear.PrimaryColor = Color.FromArgb(89, 85, 84);
+            btnClear.PrimaryColor = Color.FromArgb(63, 59, 58);
             btnClear.Size = new Size(120, 40);
             btnClear.SuccessColor = Color.FromArgb(103, 194, 58);
             btnClear.TabIndex = 33;
@@ -100,6 +101,7 @@
             // 
             // btnAddRecord
             // 
+            btnAddRecord.BackColor = Color.FromArgb(63, 59, 58);
             btnAddRecord.BorderColor = Color.FromArgb(220, 223, 230);
             btnAddRecord.ButtonType = ReaLTaiizor.Util.HopeButtonType.Primary;
             btnAddRecord.DangerColor = Color.FromArgb(245, 108, 108);
@@ -109,7 +111,7 @@
             btnAddRecord.InfoColor = Color.FromArgb(144, 147, 153);
             btnAddRecord.Location = new Point(414, 424);
             btnAddRecord.Name = "btnAddRecord";
-            btnAddRecord.PrimaryColor = Color.FromArgb(89, 85, 84);
+            btnAddRecord.PrimaryColor = Color.FromArgb(63, 59, 58);
             btnAddRecord.Size = new Size(140, 40);
             btnAddRecord.SuccessColor = Color.FromArgb(103, 194, 58);
             btnAddRecord.TabIndex = 32;
@@ -171,7 +173,7 @@
             // 
             // textBox5
             // 
-            textBox5.BackColor = Color.FromArgb(249, 249, 249);
+            textBox5.BackColor = Color.White;
             textBox5.Font = new Font("Segoe UI", 10F);
             textBox5.Location = new Point(360, 97);
             textBox5.Name = "textBox5";
@@ -191,7 +193,7 @@
             // 
             // textBox2
             // 
-            textBox2.BackColor = Color.FromArgb(249, 249, 249);
+            textBox2.BackColor = Color.White;
             textBox2.Font = new Font("Segoe UI", 10F);
             textBox2.Location = new Point(17, 36);
             textBox2.Name = "textBox2";
@@ -200,7 +202,7 @@
             // 
             // textBox4
             // 
-            textBox4.BackColor = Color.FromArgb(249, 249, 249);
+            textBox4.BackColor = Color.White;
             textBox4.Font = new Font("Segoe UI", 10F);
             textBox4.Location = new Point(190, 97);
             textBox4.Name = "textBox4";
@@ -220,7 +222,7 @@
             // 
             // textBox1
             // 
-            textBox1.BackColor = Color.FromArgb(249, 249, 249);
+            textBox1.BackColor = Color.White;
             textBox1.Font = new Font("Segoe UI", 10F);
             textBox1.Location = new Point(360, 36);
             textBox1.Name = "textBox1";
@@ -229,7 +231,7 @@
             // 
             // textBox3
             // 
-            textBox3.BackColor = Color.FromArgb(249, 249, 249);
+            textBox3.BackColor = Color.White;
             textBox3.Font = new Font("Segoe UI", 10F);
             textBox3.Location = new Point(17, 97);
             textBox3.Name = "textBox3";
@@ -303,7 +305,7 @@
             // 
             // txtBatchNo
             // 
-            txtBatchNo.BackColor = Color.FromArgb(249, 249, 249);
+            txtBatchNo.BackColor = Color.White;
             txtBatchNo.Font = new Font("Segoe UI", 10F);
             txtBatchNo.Location = new Point(484, 47);
             txtBatchNo.Name = "txtBatchNo";
@@ -323,7 +325,7 @@
             // 
             // txtAdministeredBy
             // 
-            txtAdministeredBy.BackColor = Color.FromArgb(249, 249, 249);
+            txtAdministeredBy.BackColor = Color.White;
             txtAdministeredBy.Font = new Font("Segoe UI", 10F);
             txtAdministeredBy.Location = new Point(484, 12);
             txtAdministeredBy.Name = "txtAdministeredBy";
@@ -345,7 +347,7 @@
             // 
             dtpNextDue.CalendarMonthBackground = Color.White;
             dtpNextDue.Format = DateTimePickerFormat.Short;
-            dtpNextDue.Location = new Point(146, 82);
+            dtpNextDue.Location = new Point(152, 82);
             dtpNextDue.Name = "dtpNextDue";
             dtpNextDue.Size = new Size(200, 23);
             dtpNextDue.TabIndex = 14;
@@ -365,7 +367,7 @@
             // 
             dtpDateGiven.CalendarMonthBackground = Color.White;
             dtpDateGiven.Format = DateTimePickerFormat.Short;
-            dtpDateGiven.Location = new Point(146, 47);
+            dtpDateGiven.Location = new Point(152, 47);
             dtpDateGiven.Name = "dtpDateGiven";
             dtpDateGiven.Size = new Size(200, 23);
             dtpDateGiven.TabIndex = 12;
@@ -388,7 +390,7 @@
             cmbVaccineName.Font = new Font("Segoe UI", 10F);
             cmbVaccineName.FormattingEnabled = true;
             cmbVaccineName.Items.AddRange(new object[] { "Rabies", "DHPP", "5-in-1", "6-in-1", "Canine Parvovirus", "Canine Distemper", "Canine Hepatitis", "Leptospirosis", "Bordetella", "Canine Influenza", "Lyme Disease", "Coronavirus (CCV)", "FVRCP", "FVR", "Calicivirus", "Panleukopenia", "FeLV (Feline Leukemia)", "FIV (Feline Immunodeficiency Virus)", "Chlamydia", "Myxomatosis (Rabbit)", "RHDV1 (Rabbit)", "RHDV2 (Rabbit)" });
-            cmbVaccineName.Location = new Point(146, 12);
+            cmbVaccineName.Location = new Point(152, 12);
             cmbVaccineName.Name = "cmbVaccineName";
             cmbVaccineName.Size = new Size(200, 25);
             cmbVaccineName.TabIndex = 10;

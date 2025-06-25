@@ -69,7 +69,7 @@ namespace PetVaccinationTrackerSystem_Project
             // 
             // mainFormVTopB
             // 
-            mainFormVTopB.BackColor = Color.FromArgb(89, 85, 84);
+            mainFormVTopB.BackColor = Color.FromArgb(63, 59, 58);
             mainFormVTopB.Controls.Add(lblClinic);
             mainFormVTopB.Controls.Add(lblVetName);
             mainFormVTopB.Controls.Add(label2);
@@ -86,50 +86,50 @@ namespace PetVaccinationTrackerSystem_Project
             // lblClinic
             // 
             lblClinic.AutoSize = true;
-            lblClinic.Font = new Font("Segoe UI", 12F);
+            lblClinic.Font = new Font("Segoe UI", 10F);
             lblClinic.ForeColor = SystemColors.Control;
             lblClinic.Location = new Point(139, 4);
             lblClinic.Name = "lblClinic";
-            lblClinic.Size = new Size(62, 21);
+            lblClinic.Size = new Size(54, 19);
             lblClinic.TabIndex = 3;
             lblClinic.Text = "Clinic A";
             // 
             // lblVetName
             // 
             lblVetName.AutoSize = true;
-            lblVetName.Font = new Font("Segoe UI", 12F);
+            lblVetName.Font = new Font("Segoe UI", 10F);
             lblVetName.ForeColor = SystemColors.Control;
             lblVetName.Location = new Point(139, 25);
             lblVetName.Name = "lblVetName";
-            lblVetName.Size = new Size(73, 21);
+            lblVetName.Size = new Size(65, 19);
             lblVetName.TabIndex = 3;
             lblVetName.Text = "Jane Doe";
             // 
             // label2
             // 
             label2.AutoSize = true;
-            label2.Font = new Font("Segoe UI", 12F, FontStyle.Bold);
+            label2.Font = new Font("Segoe UI", 10.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
             label2.ForeColor = SystemColors.Control;
             label2.Location = new Point(12, 4);
             label2.Name = "label2";
-            label2.Size = new Size(57, 21);
+            label2.Size = new Size(49, 19);
             label2.TabIndex = 3;
             label2.Text = "Clinic:";
             // 
             // label1
             // 
             label1.AutoSize = true;
-            label1.Font = new Font("Segoe UI", 12F, FontStyle.Bold);
+            label1.Font = new Font("Segoe UI", 10.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
             label1.ForeColor = SystemColors.Control;
             label1.Location = new Point(12, 25);
             label1.Name = "label1";
-            label1.Size = new Size(112, 21);
+            label1.Size = new Size(100, 19);
             label1.TabIndex = 3;
             label1.Text = "Logged In As:";
             // 
             // mainFormVButtonAlerts
             // 
-            mainFormVButtonAlerts.BackColor = Color.FromArgb(89, 85, 84);
+            mainFormVButtonAlerts.BackColor = Color.FromArgb(63, 59, 58);
             mainFormVButtonAlerts.BackgroundImage = (Image)resources.GetObject("mainFormVButtonAlerts.BackgroundImage");
             mainFormVButtonAlerts.BackgroundImageLayout = ImageLayout.Zoom;
             mainFormVButtonAlerts.FlatAppearance.BorderSize = 0;
@@ -143,7 +143,7 @@ namespace PetVaccinationTrackerSystem_Project
             // 
             // mainFormVButtonSettings
             // 
-            mainFormVButtonSettings.BackColor = Color.FromArgb(89, 85, 84);
+            mainFormVButtonSettings.BackColor = Color.FromArgb(63, 59, 58);
             mainFormVButtonSettings.BackgroundImage = (Image)resources.GetObject("mainFormVButtonSettings.BackgroundImage");
             mainFormVButtonSettings.BackgroundImageLayout = ImageLayout.Zoom;
             mainFormVButtonSettings.FlatAppearance.BorderSize = 0;
@@ -157,7 +157,7 @@ namespace PetVaccinationTrackerSystem_Project
             // 
             // mainFormVButtonExit
             // 
-            mainFormVButtonExit.BackColor = Color.FromArgb(89, 85, 84);
+            mainFormVButtonExit.BackColor = Color.FromArgb(63, 59, 58);
             mainFormVButtonExit.BackgroundImage = (Image)resources.GetObject("mainFormVButtonExit.BackgroundImage");
             mainFormVButtonExit.BackgroundImageLayout = ImageLayout.Zoom;
             mainFormVButtonExit.FlatAppearance.BorderSize = 0;
@@ -262,7 +262,7 @@ namespace PetVaccinationTrackerSystem_Project
             // 
             // mainFormVButtonLO
             // 
-            mainFormVButtonLO.BackColor = Color.FromArgb(89, 85, 84);
+            mainFormVButtonLO.BackColor = Color.FromArgb(63, 59, 58);
             mainFormVButtonLO.BorderColor = Color.FromArgb(220, 223, 230);
             mainFormVButtonLO.ButtonType = ReaLTaiizor.Util.HopeButtonType.Primary;
             mainFormVButtonLO.DangerColor = Color.FromArgb(245, 108, 108);
@@ -270,9 +270,9 @@ namespace PetVaccinationTrackerSystem_Project
             mainFormVButtonLO.Font = new Font("Segoe UI", 10.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
             mainFormVButtonLO.HoverTextColor = Color.White;
             mainFormVButtonLO.InfoColor = Color.FromArgb(144, 147, 153);
-            mainFormVButtonLO.Location = new Point(38, 535);
+            mainFormVButtonLO.Location = new Point(38, 532);
             mainFormVButtonLO.Name = "mainFormVButtonLO";
-            mainFormVButtonLO.PrimaryColor = Color.FromArgb(89, 85, 84);
+            mainFormVButtonLO.PrimaryColor = Color.FromArgb(63, 59, 58);
             mainFormVButtonLO.Size = new Size(125, 40);
             mainFormVButtonLO.SuccessColor = Color.FromArgb(103, 194, 58);
             mainFormVButtonLO.TabIndex = 5;
@@ -357,9 +357,9 @@ namespace PetVaccinationTrackerSystem_Project
             // pictureBox1
             // 
             pictureBox1.Image = (Image)resources.GetObject("pictureBox1.Image");
-            pictureBox1.Location = new Point(27, 2);
+            pictureBox1.Location = new Point(30, 2);
             pictureBox1.Name = "pictureBox1";
-            pictureBox1.Size = new Size(145, 140);
+            pictureBox1.Size = new Size(140, 140);
             pictureBox1.SizeMode = PictureBoxSizeMode.Zoom;
             pictureBox1.TabIndex = 0;
             pictureBox1.TabStop = false;

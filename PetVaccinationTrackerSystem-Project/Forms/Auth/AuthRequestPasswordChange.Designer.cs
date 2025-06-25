@@ -72,7 +72,7 @@
             // 
             // panel1
             // 
-            panel1.BackColor = Color.FromArgb(89, 85, 84);
+            panel1.BackColor = Color.FromArgb(63, 59, 58);
             panel1.Controls.Add(mainFormVButtonExit);
             panel1.Dock = DockStyle.Top;
             panel1.Location = new Point(0, 0);
@@ -82,7 +82,7 @@
             // 
             // mainFormVButtonExit
             // 
-            mainFormVButtonExit.BackColor = Color.FromArgb(89, 85, 84);
+            mainFormVButtonExit.BackColor = Color.FromArgb(63, 59, 58);
             mainFormVButtonExit.BackgroundImage = (Image)resources.GetObject("mainFormVButtonExit.BackgroundImage");
             mainFormVButtonExit.BackgroundImageLayout = ImageLayout.Zoom;
             mainFormVButtonExit.FlatAppearance.BorderSize = 0;
@@ -96,7 +96,7 @@
             // 
             // btnRequest
             // 
-            btnRequest.BackColor = Color.FromArgb(89, 85, 84);
+            btnRequest.BackColor = Color.FromArgb(63, 59, 58);
             btnRequest.BorderColor = Color.FromArgb(220, 223, 230);
             btnRequest.ButtonType = ReaLTaiizor.Util.HopeButtonType.Primary;
             btnRequest.DangerColor = Color.FromArgb(245, 108, 108);
@@ -107,7 +107,7 @@
             btnRequest.InfoColor = Color.FromArgb(144, 147, 153);
             btnRequest.Location = new Point(83, 265);
             btnRequest.Name = "btnRequest";
-            btnRequest.PrimaryColor = Color.FromArgb(89, 85, 84);
+            btnRequest.PrimaryColor = Color.FromArgb(63, 59, 58);
             btnRequest.Size = new Size(170, 40);
             btnRequest.SuccessColor = Color.FromArgb(103, 194, 58);
             btnRequest.TabIndex = 8;
