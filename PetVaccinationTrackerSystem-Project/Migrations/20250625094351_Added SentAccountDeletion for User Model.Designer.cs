@@ -3,6 +3,7 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using PetVaccinationTrackerSystem_Project.Data;
 
@@ -11,9 +12,11 @@ using PetVaccinationTrackerSystem_Project.Data;
 namespace PetVaccinationTrackerSystem_Project.Migrations
 {
     [DbContext(typeof(ModelContext))]
-    partial class ModelContextModelSnapshot : ModelSnapshot
+    [Migration("20250625094351_Added SentAccountDeletion for User Model")]
+    partial class AddedSentAccountDeletionforUserModel
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -165,6 +168,9 @@ namespace PetVaccinationTrackerSystem_Project.Migrations
                     b.Property<string>("ImageRL")
                         .HasColumnType("nvarchar(max)");
 
+                    b.Property<bool?>("IsActive")
+                        .HasColumnType("bit");
+
                     b.Property<string>("Notes")
                         .IsRequired()
                         .HasMaxLength(300)
@@ -252,6 +258,9 @@ namespace PetVaccinationTrackerSystem_Project.Migrations
                         .IsRequired()
                         .HasMaxLength(50)
                         .HasColumnType("nvarchar(50)");
+
+                    b.Property<bool?>("IsActive")
+                        .HasColumnType("bit");
 
                     b.Property<string>("LastName")
                         .IsRequired()

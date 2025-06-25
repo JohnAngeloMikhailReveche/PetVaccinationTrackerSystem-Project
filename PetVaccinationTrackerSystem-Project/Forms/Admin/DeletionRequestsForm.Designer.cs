@@ -1,6 +1,6 @@
 ﻿namespace PetVaccinationTrackerSystem_Project.Forms.Admin
 {
-    partial class PasswordRequestsForm
+    partial class DeletionRequestsForm
     {
         /// <summary> 
         /// Required designer variable.
@@ -28,43 +28,42 @@
         /// </summary>
         private void InitializeComponent()
         {
-            dgvUserList = new DataGridView();
             label1 = new Label();
+            dgvUserList = new DataGridView();
             ((System.ComponentModel.ISupportInitialize)dgvUserList).BeginInit();
             SuspendLayout();
+            // 
+            // label1
+            // 
+            label1.AutoSize = true;
+            label1.Font = new Font("Segoe UI", 20F, FontStyle.Bold);
+            label1.Location = new Point(32, 80);
+            label1.Name = "label1";
+            label1.Size = new Size(361, 37);
+            label1.TabIndex = 8;
+            label1.Text = "Account Deletion Requests";
             // 
             // dgvUserList
             // 
             dgvUserList.AllowUserToAddRows = false;
             dgvUserList.BackgroundColor = Color.White;
             dgvUserList.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dgvUserList.Location = new Point(23, 123);
+            dgvUserList.Location = new Point(18, 133);
             dgvUserList.MultiSelect = false;
             dgvUserList.Name = "dgvUserList";
             dgvUserList.ReadOnly = true;
             dgvUserList.Size = new Size(754, 380);
-            dgvUserList.TabIndex = 6;
-            dgvUserList.DoubleClick += dgvVetList_DoubleClick;
+            dgvUserList.TabIndex = 9;
+            dgvUserList.DoubleClick += dgvUserList_DoubleClick;
             // 
-            // label1
-            // 
-            label1.AutoSize = true;
-            label1.Font = new Font("Segoe UI", 20F, FontStyle.Bold);
-            label1.Location = new Point(23, 68);
-            label1.Name = "label1";
-            label1.Size = new Size(516, 37);
-            label1.TabIndex = 7;
-            label1.Text = "Accounts Requesting Password Default";
-            // 
-            // PasswordRequestsForm
+            // DeletionRequestsForm
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            Controls.Add(label1);
             Controls.Add(dgvUserList);
-            Name = "PasswordRequestsForm";
+            Controls.Add(label1);
+            Name = "DeletionRequestsForm";
             Size = new Size(800, 590);
-            Load += PasswordRequestsForm_Load;
             ((System.ComponentModel.ISupportInitialize)dgvUserList).EndInit();
             ResumeLayout(false);
             PerformLayout();
@@ -72,7 +71,7 @@
 
         #endregion
 
-        private DataGridView dgvUserList;
         private Label label1;
+        private DataGridView dgvUserList;
     }
 }

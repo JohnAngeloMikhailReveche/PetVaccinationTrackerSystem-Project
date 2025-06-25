@@ -101,7 +101,7 @@ namespace PetVaccinationTrackerSystem_Project.Forms.Admin
                 UserPassword = hashedPassword,
                 UserRole = "Veterinarian",
                 SentPasswordRequest = false,
-                IsActive = true,
+                SentAccountDeletion = false,
 
                 VetID = veterinarian.VetID // Associate the user with the veterinarian
             };

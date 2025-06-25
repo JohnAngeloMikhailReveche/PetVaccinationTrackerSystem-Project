@@ -29,7 +29,7 @@ namespace PetVaccinationTrackerSystem_Project.Data.Entities
 
         public bool? SentPasswordRequest { get; set; }
 
-        public bool? IsActive { get; set; }
+        public bool? SentAccountDeletion { get; set; }
 
 
 
