@@ -94,7 +94,7 @@
             // 
             // mainFormVSideB
             // 
-            mainFormVSideB.BackColor = Color.FromArgb(249, 249, 249);
+            mainFormVSideB.BackColor = Color.White;
             mainFormVSideB.Controls.Add(mainFormVSideBHighlight);
             mainFormVSideB.Controls.Add(mainFormVButtonLO);
             mainFormVSideB.Controls.Add(btnRegisterVet);
@@ -112,7 +112,7 @@
             // mainFormVSideBHighlight
             // 
             mainFormVSideBHighlight.BackColor = Color.FromArgb(168, 130, 95);
-            mainFormVSideBHighlight.Location = new Point(0, 175);
+            mainFormVSideBHighlight.Location = new Point(0, 150);
             mainFormVSideBHighlight.Name = "mainFormVSideBHighlight";
             mainFormVSideBHighlight.Size = new Size(10, 50);
             mainFormVSideBHighlight.TabIndex = 2;
@@ -145,7 +145,7 @@
             btnRegisterVet.FlatStyle = FlatStyle.Flat;
             btnRegisterVet.Font = new Font("Segoe UI", 10.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
             btnRegisterVet.ForeColor = Color.FromArgb(89, 85, 84);
-            btnRegisterVet.Location = new Point(0, 375);
+            btnRegisterVet.Location = new Point(0, 350);
             btnRegisterVet.Name = "btnRegisterVet";
             btnRegisterVet.Size = new Size(200, 50);
             btnRegisterVet.TabIndex = 6;
@@ -161,7 +161,7 @@
             btnRegisterClinic.FlatStyle = FlatStyle.Flat;
             btnRegisterClinic.Font = new Font("Segoe UI", 10.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
             btnRegisterClinic.ForeColor = Color.FromArgb(89, 85, 84);
-            btnRegisterClinic.Location = new Point(0, 325);
+            btnRegisterClinic.Location = new Point(0, 300);
             btnRegisterClinic.Name = "btnRegisterClinic";
             btnRegisterClinic.Size = new Size(200, 50);
             btnRegisterClinic.TabIndex = 7;
@@ -177,7 +177,7 @@
             btnVeterinarianList.FlatStyle = FlatStyle.Flat;
             btnVeterinarianList.Font = new Font("Segoe UI", 10.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
             btnVeterinarianList.ForeColor = Color.FromArgb(89, 85, 84);
-            btnVeterinarianList.Location = new Point(0, 275);
+            btnVeterinarianList.Location = new Point(0, 250);
             btnVeterinarianList.Name = "btnVeterinarianList";
             btnVeterinarianList.Size = new Size(200, 50);
             btnVeterinarianList.TabIndex = 8;
@@ -193,7 +193,7 @@
             btnClinicList.FlatStyle = FlatStyle.Flat;
             btnClinicList.Font = new Font("Segoe UI", 10.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
             btnClinicList.ForeColor = Color.FromArgb(89, 85, 84);
-            btnClinicList.Location = new Point(0, 225);
+            btnClinicList.Location = new Point(0, 200);
             btnClinicList.Name = "btnClinicList";
             btnClinicList.Size = new Size(200, 50);
             btnClinicList.TabIndex = 9;
@@ -209,7 +209,7 @@
             mainFormVButtonHome.FlatStyle = FlatStyle.Flat;
             mainFormVButtonHome.Font = new Font("Segoe UI", 10.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
             mainFormVButtonHome.ForeColor = Color.FromArgb(89, 85, 84);
-            mainFormVButtonHome.Location = new Point(0, 175);
+            mainFormVButtonHome.Location = new Point(0, 150);
             mainFormVButtonHome.Name = "mainFormVButtonHome";
             mainFormVButtonHome.Size = new Size(200, 50);
             mainFormVButtonHome.TabIndex = 1;
@@ -224,15 +224,15 @@
             mainFormVPB.Dock = DockStyle.Top;
             mainFormVPB.Location = new Point(0, 0);
             mainFormVPB.Name = "mainFormVPB";
-            mainFormVPB.Size = new Size(200, 175);
+            mainFormVPB.Size = new Size(200, 150);
             mainFormVPB.TabIndex = 0;
             // 
             // pictureBox1
             // 
             pictureBox1.Image = (Image)resources.GetObject("pictureBox1.Image");
-            pictureBox1.Location = new Point(25, 12);
+            pictureBox1.Location = new Point(38, 12);
             pictureBox1.Name = "pictureBox1";
-            pictureBox1.Size = new Size(150, 150);
+            pictureBox1.Size = new Size(125, 125);
             pictureBox1.SizeMode = PictureBoxSizeMode.Zoom;
             pictureBox1.TabIndex = 0;
             pictureBox1.TabStop = false;
@@ -264,6 +264,7 @@
             // 
             // registeredClinicPanel1V
             // 
+            registeredClinicPanel1V.BackColor = Color.White;
             registeredClinicPanel1V.Location = new Point(200, 50);
             registeredClinicPanel1V.Name = "registeredClinicPanel1V";
             registeredClinicPanel1V.Size = new Size(800, 590);
@@ -271,6 +272,7 @@
             // 
             // registeredVetPanel1V
             // 
+            registeredVetPanel1V.BackColor = Color.White;
             registeredVetPanel1V.Location = new Point(200, 50);
             registeredVetPanel1V.Name = "registeredVetPanel1V";
             registeredVetPanel1V.Size = new Size(800, 590);

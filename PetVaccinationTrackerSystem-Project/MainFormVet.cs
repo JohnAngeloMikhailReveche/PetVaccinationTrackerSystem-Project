@@ -30,10 +30,10 @@ namespace PetVaccinationTrackerSystem_Project
 
             // Used Dependency Injection for passing the current user reference
             _currentUser = inUserReference;
-            mainFormVSideBHighlight.Height = mainFormVButtonHome.Height;
-            mainFormVSideBHighlight.Top = mainFormVButtonHome.Top;
-            homePanel1V.BringToFront();
-            
+            mainFormVSideBHighlight.Height = btnHome.Height;
+            mainFormVSideBHighlight.Top = btnHome.Top;
+            homePanel1.BringToFront();
+
         }
 
         private void MainFormVet_Load(object sender, EventArgs e)
@@ -56,32 +56,52 @@ namespace PetVaccinationTrackerSystem_Project
 
         }
 
-        private void mainFormVButtonHome_Click(object sender, EventArgs e)
+        private void btnHome_Click(object sender, EventArgs e)
         {
-            mainFormVSideBHighlight.Height = mainFormVButtonHome.Height;
-            mainFormVSideBHighlight.Top = mainFormVButtonHome.Top;
-            homePanel1V.BringToFront();
+            mainFormVSideBHighlight.Height = btnHome.Height;
+            mainFormVSideBHighlight.Top = btnHome.Top;
+            homePanel1.BringToFront();
         }
 
-        private void mainFormVButtonRegister_Click(object sender, EventArgs e)
+        private void btnPetProfiles_Click(object sender, EventArgs e)
         {
-            mainFormVSideBHighlight.Height = mainFormVButtonRegister.Height;
-            mainFormVSideBHighlight.Top = mainFormVButtonRegister.Top;
-            registerPetOwnerPanel1V.BringToFront();
+            mainFormVSideBHighlight.Height = btnPetProfiles.Height;
+            mainFormVSideBHighlight.Top = btnPetProfiles.Top;
+            tablePetProfile1.BringToFront();
         }
 
-        private void mainFormVButtonVRDS_Click(object sender, EventArgs e)
+        private void btnAddPetProfile_Click(object sender, EventArgs e)
         {
-            mainFormVSideBHighlight.Height = mainFormVButtonVRDS.Height;
-            mainFormVSideBHighlight.Top = mainFormVButtonVRDS.Top;
-            vaccineRecordsPanel1V.BringToFront();
+            mainFormVSideBHighlight.Height = btnAddPetProfile.Height;
+            mainFormVSideBHighlight.Top = btnAddPetProfile.Top;
+            petProfilePanelVet1.BringToFront();
         }
 
-        private void mainFormVButtonPetP_Click(object sender, EventArgs e)
+        private void btnVaccineRecords_Click(object sender, EventArgs e)
         {
-            mainFormVSideBHighlight.Height = mainFormVButtonPetP.Height;
-            mainFormVSideBHighlight.Top = mainFormVButtonPetP.Top;
-            petProfilePanel1V.BringToFront();
+            mainFormVSideBHighlight.Height = btnVaccineRecords.Height;
+            mainFormVSideBHighlight.Top = btnVaccineRecords.Top;
+            vaccinationHistory1.BringToFront();
+        }
+
+        private void btnAddVaccineRecord_Click(object sender, EventArgs e)
+        {
+            mainFormVSideBHighlight.Height = btnAddVaccineRecord.Height;
+            mainFormVSideBHighlight.Top = btnAddVaccineRecord.Top;
+            vaccineRecordsPanelVet1.BringToFront();
+        }
+
+        private void btnVaccineReports_Click(object sender, EventArgs e)
+        {
+            mainFormVSideBHighlight.Height = btnVaccineReports.Height;
+            mainFormVSideBHighlight.Top = btnVaccineReports.Top;
+            pet_Reports1.BringToFront();
+        }
+
+        private void btnAboutUs_Click(object sender, EventArgs e)
+        {
+            mainFormVSideBHighlight.Height = btnAboutUs.Height;
+            mainFormVSideBHighlight.Top = btnAboutUs.Top;
         }
 
         private void mainFormVButtonLO_Click(object sender, EventArgs e)
@@ -100,19 +120,6 @@ namespace PetVaccinationTrackerSystem_Project
 
         }
 
-        private void mainFormVButtonVH_Click(object sender, EventArgs e)
-        {
-            mainFormVSideBHighlight.Height = mainFormVButtonVH.Height;
-            mainFormVSideBHighlight.Top = mainFormVButtonVH.Top;
-            vaccinationHistory1.BringToFront();
-        }
-
-        private void mainFormVButtonVRTS_Click(object sender, EventArgs e)
-        {
-            mainFormVSideBHighlight.Height = mainFormVButtonVRTS.Height;
-            mainFormVSideBHighlight.Top = mainFormVButtonVRTS.Top;
-            pet_Reports1.BringToFront();
-        }
-
+   
     }
 }
