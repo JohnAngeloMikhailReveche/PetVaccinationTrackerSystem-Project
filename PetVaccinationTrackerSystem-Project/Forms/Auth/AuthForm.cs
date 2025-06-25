@@ -56,11 +56,11 @@ namespace PetVaccinationTrackerSystem_Project.Forms.Auth
         private bool CheckIfAdminLogin(string email, string password)
         {
 
-            if(string.IsNullOrEmpty(_fullPathToAdminConfigFile))
+            if (string.IsNullOrEmpty(_fullPathToAdminConfigFile))
             {
                 _fullPathToAdminConfigFile = GetAdminConfigFile(); // Get the full path to the admin config file
             }
-            
+
             LoadAdminConfigFile(); // Load the admin config file to get the admin credentials
 
             if (email == _adminUsername && password == _adminPassword)
@@ -95,8 +95,6 @@ namespace PetVaccinationTrackerSystem_Project.Forms.Auth
             InitializeComponent();
 
             var context = new ModelContext();
-            var userRepository = new UserRepository(context);
-            _authServices = new AuthService(userRepository);
         }
 
         private void AuthForm_Shown(object sender, EventArgs e)
@@ -117,30 +115,39 @@ namespace PetVaccinationTrackerSystem_Project.Forms.Auth
                 return;
             }
 
-            // Using the AuthService to login the user
-            var user = _authServices.Login(email, password);
-
-            // If the user non-null value that means the user exists and the password matches.
-            if (user != null)
+            // Forceload the Context to ensure the database is updated
+            using (var context = new ModelContext())
             {
+                var userRepository = new UserRepository(context);
+                _authServices = new AuthService(userRepository);
 
-                MessageBox.Show($"Welcome {user.FirstName} {user.LastName}! You are logged in as {user.UserRole}.", "Login Successful", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                // Using the AuthService to login the user
+                var user = _authServices.Login(email, password);
 
-                if(user.UserRole == "Veterinarian")
+                // If the user non-null value that means the user exists and the password matches.
+                if (user != null)
                 {
-                    FormManager.SwitchForm(this, new MainFormVet(user));
-                } else
-                {
-                    FormManager.SwitchForm(this, new PetOwnerForm(user));
-                }
+
+                    MessageBox.Show($"Welcome {user.FirstName} {user.LastName}! You are logged in as {user.UserRole}.", "Login Successful", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+                    if (user.UserRole == "Veterinarian")
+                    {
+                        FormManager.SwitchForm(this, new MainFormVet(user));
+                    }
+                    else
+                    {
+                        FormManager.SwitchForm(this, new PetOwnerForm(user));
+                    }
 
                     ClearTextBoxes();
-                
+
+                }
+                else
+                {
+                    MessageBox.Show("Invalid username or password. Please try again.", "Login Failed", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
             }
-            else
-            {
-                MessageBox.Show("Invalid username or password. Please try again.", "Login Failed", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
+
         }
 
         private void btnShowPassword_MouseDown(object sender, MouseEventArgs e)
@@ -156,6 +163,12 @@ namespace PetVaccinationTrackerSystem_Project.Forms.Auth
         private void mainFormVButtonExit_Click(object sender, EventArgs e)
         {
             Application.Exit();
+        }
+
+        private void linklblResetPassword_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            AuthRequestPasswordChange authRequestPasswordChange = new AuthRequestPasswordChange();
+            authRequestPasswordChange.ShowDialog(); // Show the password change request form as a dialog
         }
     }
 }

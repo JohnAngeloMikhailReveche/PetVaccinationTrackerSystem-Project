@@ -39,7 +39,6 @@
             mainFormVSideBHighlight = new Panel();
             btnLogOut = new ReaLTaiizor.Controls.HopeRoundButton();
             btnAboutUs = new Button();
-            btnPetRecords = new Button();
             btnPetProfiles = new Button();
             btnHome = new Button();
             mainFormVPB = new Panel();
@@ -99,6 +98,7 @@
             btnInbox.Size = new Size(25, 25);
             btnInbox.TabIndex = 2;
             btnInbox.UseVisualStyleBackColor = false;
+            btnInbox.Click += btnInbox_Click;
             // 
             // btnSettings
             // 
@@ -134,7 +134,6 @@
             mainFormVSideB.Controls.Add(mainFormVSideBHighlight);
             mainFormVSideB.Controls.Add(btnLogOut);
             mainFormVSideB.Controls.Add(btnAboutUs);
-            mainFormVSideB.Controls.Add(btnPetRecords);
             mainFormVSideB.Controls.Add(btnPetProfiles);
             mainFormVSideB.Controls.Add(btnHome);
             mainFormVSideB.Controls.Add(mainFormVPB);
@@ -180,7 +179,7 @@
             btnAboutUs.FlatStyle = FlatStyle.Flat;
             btnAboutUs.Font = new Font("Segoe UI", 10.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
             btnAboutUs.ForeColor = Color.FromArgb(89, 85, 84);
-            btnAboutUs.Location = new Point(0, 300);
+            btnAboutUs.Location = new Point(0, 250);
             btnAboutUs.Name = "btnAboutUs";
             btnAboutUs.Size = new Size(200, 50);
             btnAboutUs.TabIndex = 6;
@@ -188,22 +187,6 @@
             btnAboutUs.TextAlign = ContentAlignment.MiddleLeft;
             btnAboutUs.UseVisualStyleBackColor = true;
             btnAboutUs.Click += btnAboutUs_Click;
-            // 
-            // btnPetRecords
-            // 
-            btnPetRecords.Dock = DockStyle.Top;
-            btnPetRecords.FlatAppearance.BorderSize = 0;
-            btnPetRecords.FlatStyle = FlatStyle.Flat;
-            btnPetRecords.Font = new Font("Segoe UI", 10.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            btnPetRecords.ForeColor = Color.FromArgb(89, 85, 84);
-            btnPetRecords.Location = new Point(0, 250);
-            btnPetRecords.Name = "btnPetRecords";
-            btnPetRecords.Size = new Size(200, 50);
-            btnPetRecords.TabIndex = 4;
-            btnPetRecords.Text = "        Pet Records";
-            btnPetRecords.TextAlign = ContentAlignment.MiddleLeft;
-            btnPetRecords.UseVisualStyleBackColor = true;
-            btnPetRecords.Click += btnPetRecords_Click;
             // 
             // btnPetProfiles
             // 
@@ -297,7 +280,6 @@
         private Panel mainFormVSideB;
         private Panel mainFormVSideBHighlight;
         private ReaLTaiizor.Controls.HopeRoundButton btnLogOut;
-        private Button btnPetRecords;
         private Button btnPetProfiles;
         private Button btnHome;
         private Panel mainFormVPB;

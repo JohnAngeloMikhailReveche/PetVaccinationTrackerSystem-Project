@@ -1,6 +1,7 @@
 ﻿using PetVaccinationTrackerSystem_Project.Classes;
 using PetVaccinationTrackerSystem_Project.Data;
 using PetVaccinationTrackerSystem_Project.Data.Entities;
+using PetVaccinationTrackerSystem_Project.Forms.Auth;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -124,10 +125,15 @@ namespace PetVaccinationTrackerSystem_Project.Forms
             if (_userRef.VetID != null)
             {
                 MessageBox.Show($"{_userRef.VetID} referred");
-            } else
+            }
+            else
             {
                 MessageBox.Show("You are a Pet Owner");
             }
+
+        }
+        private void UserSettings_Load(object sender, EventArgs e)
+        {
 
         }
     }

@@ -1,4 +1,5 @@
-﻿using PetVaccinationTrackerSystem_Project.Data.Entities;
+﻿using PetVaccinationTrackerSystem_Project.Classes;
+using PetVaccinationTrackerSystem_Project.Data.Entities;
 using PetVaccinationTrackerSystem_Project.Forms.Admin;
 using System;
 using System.Collections.Generic;
@@ -43,6 +44,7 @@ namespace PetVaccinationTrackerSystem_Project.Forms.PetOwner
         private void PetOwnerForm_Load(object sender, EventArgs e)
         {
             InitializeLabels();
+            DefaultPasswordMessage.CheckIfUserPasswordIsDefault(_currentUser);
         }
 
         private void btnExit_Click(object sender, EventArgs e)
@@ -87,20 +89,6 @@ namespace PetVaccinationTrackerSystem_Project.Forms.PetOwner
             // petOwnerPetProfile.Visible = true;
             // mainPanel.Controls.Add(petOwnerPetProfile);
         }
-
-        private void btnPetRecords_Click(object sender, EventArgs e)
-        {
-            mainFormVSideBHighlight.Height = btnPetRecords.Height;
-            mainFormVSideBHighlight.Top = btnPetRecords.Top;
-
-            mainPanel.Controls.Clear(); // Clear the current controls in the main panel
-
-            // Add the Pet Records Dashboard here and make the logic as follows:
-            // PetOwner_PetProfile petOwnerPetProfile = new PetOwner_PetProfile(_currentUser);
-            // petOwnerPetProfile.Visible = true;
-            // mainPanel.Controls.Add(petOwnerPetProfile);
-        }
-
         private void btnAboutUs_Click(object sender, EventArgs e)
         {
             mainFormVSideBHighlight.Height = btnAboutUs.Height;
@@ -118,6 +106,12 @@ namespace PetVaccinationTrackerSystem_Project.Forms.PetOwner
         {
             UserSettings userSettings = new UserSettings(_currentUser);
             userSettings.ShowDialog();
+        }
+
+        private void btnInbox_Click(object sender, EventArgs e)
+        {
+            InboxForm inboxForm = new InboxForm(_currentUser);
+            inboxForm.ShowDialog();
         }
     }
 }

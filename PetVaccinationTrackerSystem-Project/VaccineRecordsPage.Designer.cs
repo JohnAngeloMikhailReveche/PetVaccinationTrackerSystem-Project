@@ -380,7 +380,7 @@
             label9.ForeColor = Color.FromArgb(89, 85, 84);
             label9.Location = new Point(15, 85);
             label9.Name = "label9";
-            label9.Size = new Size(85, 15);
+            label9.Size = new Size(86, 15);
             label9.TabIndex = 13;
             label9.Text = "Next Due Date:";
             // 
