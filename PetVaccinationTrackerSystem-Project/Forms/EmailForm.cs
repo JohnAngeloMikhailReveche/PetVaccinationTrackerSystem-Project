@@ -16,6 +16,7 @@ namespace PetVaccinationTrackerSystem_Project.Forms
     {
 
         private Email _currentEmail;
+        private User _currentUser;
 
         private void LoadData()
         {
@@ -31,20 +32,30 @@ namespace PetVaccinationTrackerSystem_Project.Forms
 
         private void SetReadButton(bool read)
         {
-            if(read == false)
+            if (read == false)
             {
                 btnRead.Text = "Unread"; // Change button text to "Mark as Unread"
-            } else
+            }
+            else
             {
                 btnRead.Text = "Read"; // Change button text to "Mark as Read"
             }
         }
 
-        public EmailForm(Email inEmailRef)
+        private void CheckIfVeterinarian()
+        {
+            if (_currentUser == null) return;
+
+            btnRead.Enabled = false;
+            btnRead.Visible = false;
+        }
+
+        public EmailForm(Email inEmailRef, User inUserRef)
         {
             InitializeComponent();
 
             _currentEmail = inEmailRef;
+            _currentUser = inUserRef;
 
             if (_currentEmail == null)
             {
@@ -54,12 +65,13 @@ namespace PetVaccinationTrackerSystem_Project.Forms
             }
 
             LoadData();
+            CheckIfVeterinarian(); // Disable Read Button if the viewer is the Veterinarian (Sender)
         }
 
         private void btnRead_Click(object sender, EventArgs e)
         {
 
-            if(_currentEmail.IsRead == false)
+            if (_currentEmail.IsRead == false)
             {
                 _currentEmail.IsRead = true; // Mark the email as read
 
@@ -71,7 +83,8 @@ namespace PetVaccinationTrackerSystem_Project.Forms
 
                 MessageBox.Show("Email marked as read.", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 SetReadButton(false);
-            } else
+            }
+            else
             {
                 _currentEmail.IsRead = false; // Mark the email as unread
 
@@ -86,5 +99,43 @@ namespace PetVaccinationTrackerSystem_Project.Forms
             }
 
         }
+
+        private void btnDelete_Click(object sender, EventArgs e)
+        {
+            var diagResult = MessageBox.Show("Are you sure you want to delete this email?\n\n You will not see the email once you accept its deletion.", "Delete Confirmation", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
+
+            if(_currentUser.VetID != null)
+            {
+                if (diagResult == DialogResult.Yes)
+                {
+                    using (var context = new ModelContext())
+                    {
+                        context.EmailList.Remove(_currentEmail);
+                        context.SaveChanges();
+
+                        MessageBox.Show("The Email is deleted Successfully!", "Email Deleted", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        this.Close();
+                    }
+                }
+            } else
+            {
+                if (diagResult == DialogResult.Yes)
+                {
+                    using (var context = new ModelContext())
+                    {
+                        _currentEmail.IsDeleted = true;
+
+                        context.EmailList.Update(_currentEmail);
+                        context.SaveChanges();
+
+                        MessageBox.Show("The Email is deleted Successfully!", "Email Deleted", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        this.Close();
+                    }
+                }
+            }
+            
+        }
+
+
     }
 }
