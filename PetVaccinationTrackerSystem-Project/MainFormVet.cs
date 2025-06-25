@@ -20,6 +20,23 @@ namespace PetVaccinationTrackerSystem_Project
         // The User object representing the current veterinarian user
         private User? _currentUser;
 
+        private void RefreshCurrentUser()
+        {
+            using (var context = new ModelContext())
+            {
+                var updatedUser = context.UserList
+                    .Include(v => v.Veterinarian)
+                    .ThenInclude(c => c.Clinic)
+                    .FirstOrDefault(u => u.UserID == _currentUser.UserID);
+
+                if (updatedUser != null)
+                {
+                    _currentUser = updatedUser;
+                    InitializeLabels();
+                }
+            }
+        }
+
         private void InitializeLabels()
         {
             lblClinic.Text = _currentUser.Veterinarian.Clinic.ClinicName ?? "No Clinic Assigned | ERROR DATA READING FROM USERDATA";
@@ -144,6 +161,12 @@ namespace PetVaccinationTrackerSystem_Project
         private void mainFormVButtonSettings_Click(object sender, EventArgs e)
         {
             UserSettings userSettings = new UserSettings(_currentUser);
+
+            userSettings.FormClosed += (s, args) =>
+            {
+                RefreshCurrentUser();
+            };
+
             userSettings.ShowDialog();
         }
 
