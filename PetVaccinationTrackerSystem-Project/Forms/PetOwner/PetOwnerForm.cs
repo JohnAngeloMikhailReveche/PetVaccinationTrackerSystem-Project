@@ -1,4 +1,5 @@
 ﻿using PetVaccinationTrackerSystem_Project.Classes;
+using PetVaccinationTrackerSystem_Project.Data;
 using PetVaccinationTrackerSystem_Project.Data.Entities;
 using PetVaccinationTrackerSystem_Project.Forms.Admin;
 using System;
@@ -17,6 +18,22 @@ namespace PetVaccinationTrackerSystem_Project.Forms.PetOwner
     {
 
         private User _currentUser;
+
+        private void RefreshCurrentUser()
+        {
+            using(var context = new ModelContext())
+            {
+                // Get the User again from the Context
+                var updatedUser = context.UserList.FirstOrDefault(u => u.UserID == _currentUser.UserID);
+            
+                // Check if the user is valid
+                if (updatedUser != null)
+                {
+                    _currentUser = updatedUser;
+                    InitializeLabels();
+                }
+            }
+        }
 
         private void InitializeLabels()
         {
@@ -105,6 +122,12 @@ namespace PetVaccinationTrackerSystem_Project.Forms.PetOwner
         private void btnSettings_Click(object sender, EventArgs e)
         {
             UserSettings userSettings = new UserSettings(_currentUser);
+
+            userSettings.FormClosed += (s, args) =>
+            {
+                RefreshCurrentUser();
+            };
+            
             userSettings.ShowDialog();
         }
 

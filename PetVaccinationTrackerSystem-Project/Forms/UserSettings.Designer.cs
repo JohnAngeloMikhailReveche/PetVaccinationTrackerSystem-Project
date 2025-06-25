@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             groupBox1 = new GroupBox();
+            btnSave = new Button();
             txtLastName = new TextBox();
             txtFirstName = new TextBox();
             label2 = new Label();
@@ -50,22 +51,32 @@
             // 
             // groupBox1
             // 
+            groupBox1.Controls.Add(btnSave);
             groupBox1.Controls.Add(txtLastName);
             groupBox1.Controls.Add(txtFirstName);
             groupBox1.Controls.Add(label2);
             groupBox1.Controls.Add(label1);
             groupBox1.Location = new Point(12, 12);
             groupBox1.Name = "groupBox1";
-            groupBox1.Size = new Size(279, 110);
+            groupBox1.Size = new Size(279, 155);
             groupBox1.TabIndex = 0;
             groupBox1.TabStop = false;
             groupBox1.Text = "Personal Information";
+            // 
+            // btnSave
+            // 
+            btnSave.Location = new Point(136, 103);
+            btnSave.Name = "btnSave";
+            btnSave.Size = new Size(110, 35);
+            btnSave.TabIndex = 1;
+            btnSave.Text = "Save";
+            btnSave.UseVisualStyleBackColor = true;
+            btnSave.Click += btnSave_Click;
             // 
             // txtLastName
             // 
             txtLastName.Location = new Point(90, 61);
             txtLastName.Name = "txtLastName";
-            txtLastName.ReadOnly = true;
             txtLastName.Size = new Size(156, 23);
             txtLastName.TabIndex = 1;
             // 
@@ -73,7 +84,6 @@
             // 
             txtFirstName.Location = new Point(90, 31);
             txtFirstName.Name = "txtFirstName";
-            txtFirstName.ReadOnly = true;
             txtFirstName.Size = new Size(156, 23);
             txtFirstName.TabIndex = 1;
             // 
@@ -115,9 +125,9 @@
             // 
             groupBox2.Controls.Add(btnRequestAccDelete);
             groupBox2.Controls.Add(label4);
-            groupBox2.Location = new Point(12, 128);
+            groupBox2.Location = new Point(305, 190);
             groupBox2.Name = "groupBox2";
-            groupBox2.Size = new Size(279, 121);
+            groupBox2.Size = new Size(300, 121);
             groupBox2.TabIndex = 1;
             groupBox2.TabStop = false;
             groupBox2.Text = "Account Deletion";
@@ -195,7 +205,7 @@
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(632, 273);
+            ClientSize = new Size(632, 336);
             Controls.Add(groupBox3);
             Controls.Add(groupBox2);
             Controls.Add(groupBox1);
@@ -229,5 +239,6 @@
         private Label label5;
         private Label label6;
         private Button btnChangePass;
+        private Button btnSave;
     }
 }

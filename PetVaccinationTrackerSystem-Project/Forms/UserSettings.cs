@@ -121,7 +121,7 @@ namespace PetVaccinationTrackerSystem_Project.Forms
         {
             // Send a notification to the vetclinic requesting account deletion
 
-            if(_userRef.SentAccountDeletion == false)
+            if (_userRef.SentAccountDeletion == false)
             {
                 var diagResult = MessageBox.Show("Are you sure that you want to request for account deletion? If your account gets deleted you wont be able to return it. \n\nYou can still cancel the request within 24 hours.", "Request Account Deletion Confirmation", MessageBoxButtons.OKCancel, MessageBoxIcon.Exclamation);
 
@@ -136,36 +136,47 @@ namespace PetVaccinationTrackerSystem_Project.Forms
 
                     btnRequestAccDelete.Text = "Cancel Request";
                 }
-            } else
+            }
+            else
             {
-                    using (var context = new ModelContext())
-                    {
-                        _userRef.SentAccountDeletion = false;
-                        context.UserList.Update(_userRef);
-                        context.SaveChanges();
-                    }
+                using (var context = new ModelContext())
+                {
+                    _userRef.SentAccountDeletion = false;
+                    context.UserList.Update(_userRef);
+                    context.SaveChanges();
+                }
 
                 MessageBox.Show("You cancelled the deletion for your account.", "Cancelled Deletion", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 btnRequestAccDelete.Text = "Request Deletion";
             }
 
-            
+
 
         }
         private void UserSettings_Load(object sender, EventArgs e)
         {
-            if(_userRef.SentAccountDeletion == false)
+            if (_userRef.SentAccountDeletion == false)
             {
                 btnRequestAccDelete.Text = "Request Deletion";
-            } else
+            }
+            else
             {
                 btnRequestAccDelete.Text = "Cancel Request";
             }
         }
 
+        private void btnSave_Click(object sender, EventArgs e)
+        {
+            using (var context = new ModelContext())
+            {
+                _userRef.FirstName = txtFirstName.Text.Trim();
+                _userRef.LastName = txtLastName.Text.Trim();
 
+                context.UserList.Update(_userRef);
+                context.SaveChanges();
 
-
-
+                MessageBox.Show("Your account has been updated!", "Account Update", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+        }
     }
 }
