@@ -105,6 +105,7 @@
             // 
             // btnSearchClinic
             // 
+            btnSearchClinic.BackColor = Color.FromArgb(63, 59, 58);
             btnSearchClinic.BorderColor = Color.FromArgb(220, 223, 230);
             btnSearchClinic.ButtonType = ReaLTaiizor.Util.HopeButtonType.Primary;
             btnSearchClinic.DangerColor = Color.FromArgb(245, 108, 108);
@@ -114,7 +115,7 @@
             btnSearchClinic.InfoColor = Color.FromArgb(144, 147, 153);
             btnSearchClinic.Location = new Point(688, 153);
             btnSearchClinic.Name = "btnSearchClinic";
-            btnSearchClinic.PrimaryColor = Color.FromArgb(89, 85, 84);
+            btnSearchClinic.PrimaryColor = Color.FromArgb(63, 59, 58);
             btnSearchClinic.Size = new Size(90, 30);
             btnSearchClinic.SuccessColor = Color.FromArgb(103, 194, 58);
             btnSearchClinic.TabIndex = 11;

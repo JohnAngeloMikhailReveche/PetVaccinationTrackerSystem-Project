@@ -105,6 +105,7 @@
             // 
             // btnSearchVet
             // 
+            btnSearchVet.BackColor = Color.FromArgb(63, 59, 58);
             btnSearchVet.BorderColor = Color.FromArgb(220, 223, 230);
             btnSearchVet.ButtonType = ReaLTaiizor.Util.HopeButtonType.Primary;
             btnSearchVet.DangerColor = Color.FromArgb(245, 108, 108);
@@ -114,7 +115,7 @@
             btnSearchVet.InfoColor = Color.FromArgb(144, 147, 153);
             btnSearchVet.Location = new Point(688, 153);
             btnSearchVet.Name = "btnSearchVet";
-            btnSearchVet.PrimaryColor = Color.FromArgb(89, 85, 84);
+            btnSearchVet.PrimaryColor = Color.FromArgb(63, 59, 58);
             btnSearchVet.Size = new Size(90, 30);
             btnSearchVet.SuccessColor = Color.FromArgb(103, 194, 58);
             btnSearchVet.TabIndex = 11;
