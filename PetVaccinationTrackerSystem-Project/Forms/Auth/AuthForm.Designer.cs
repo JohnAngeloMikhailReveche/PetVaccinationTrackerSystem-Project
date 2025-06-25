@@ -50,7 +50,7 @@
             label2.AutoSize = true;
             label2.Font = new Font("Segoe UI", 10F);
             label2.ForeColor = Color.FromArgb(89, 85, 84);
-            label2.Location = new Point(45, 213);
+            label2.Location = new Point(45, 218);
             label2.Name = "label2";
             label2.Size = new Size(163, 19);
             label2.TabIndex = 1;
@@ -60,7 +60,7 @@
             // 
             txtboxEmail.BackColor = Color.White;
             txtboxEmail.Font = new Font("Segoe UI", 10F);
-            txtboxEmail.Location = new Point(45, 235);
+            txtboxEmail.Location = new Point(45, 240);
             txtboxEmail.Name = "txtboxEmail";
             txtboxEmail.Size = new Size(310, 25);
             txtboxEmail.TabIndex = 2;
@@ -156,7 +156,7 @@
             btnLogin.ForeColor = Color.White;
             btnLogin.HoverTextColor = Color.White;
             btnLogin.InfoColor = Color.FromArgb(144, 147, 153);
-            btnLogin.Location = new Point(137, 385);
+            btnLogin.Location = new Point(135, 375);
             btnLogin.Name = "btnLogin";
             btnLogin.PrimaryColor = Color.FromArgb(89, 85, 84);
             btnLogin.Size = new Size(125, 40);
@@ -170,12 +170,15 @@
             // linklblResetPassword
             // 
             linklblResetPassword.AutoSize = true;
-            linklblResetPassword.Location = new Point(132, 349);
+            linklblResetPassword.Font = new Font("Segoe UI", 8F);
+            linklblResetPassword.LinkColor = Color.FromArgb(89, 85, 84);
+            linklblResetPassword.Location = new Point(121, 445);
             linklblResetPassword.Name = "linklblResetPassword";
-            linklblResetPassword.Size = new Size(147, 15);
+            linklblResetPassword.Size = new Size(146, 13);
             linklblResetPassword.TabIndex = 8;
             linklblResetPassword.TabStop = true;
             linklblResetPassword.Text = "Request to Reset Password";
+            linklblResetPassword.VisitedLinkColor = Color.FromArgb(168, 130, 95);
             linklblResetPassword.LinkClicked += linklblResetPassword_LinkClicked;
             // 
             // AuthForm
@@ -183,7 +186,7 @@
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.White;
-            ClientSize = new Size(400, 450);
+            ClientSize = new Size(400, 480);
             Controls.Add(linklblResetPassword);
             Controls.Add(btnLogin);
             Controls.Add(panel2);
@@ -194,7 +197,7 @@
             Controls.Add(label3);
             Controls.Add(label2);
             FormBorderStyle = FormBorderStyle.None;
-            MaximumSize = new Size(400, 480);
+            MaximumSize = new Size(400, 500);
             Name = "AuthForm";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "AuthForm";

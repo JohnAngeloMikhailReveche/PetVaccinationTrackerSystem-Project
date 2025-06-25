@@ -28,50 +28,66 @@
         /// </summary>
         private void InitializeComponent()
         {
-            label1 = new Label();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(DeletionRequestsForm));
             dgvUserList = new DataGridView();
+            panel1 = new Panel();
+            pictureBox1 = new PictureBox();
             ((System.ComponentModel.ISupportInitialize)dgvUserList).BeginInit();
+            panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             SuspendLayout();
-            // 
-            // label1
-            // 
-            label1.AutoSize = true;
-            label1.Font = new Font("Segoe UI", 20F, FontStyle.Bold);
-            label1.Location = new Point(32, 80);
-            label1.Name = "label1";
-            label1.Size = new Size(361, 37);
-            label1.TabIndex = 8;
-            label1.Text = "Account Deletion Requests";
             // 
             // dgvUserList
             // 
             dgvUserList.AllowUserToAddRows = false;
             dgvUserList.BackgroundColor = Color.White;
             dgvUserList.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dgvUserList.Location = new Point(18, 133);
+            dgvUserList.Location = new Point(20, 156);
             dgvUserList.MultiSelect = false;
             dgvUserList.Name = "dgvUserList";
             dgvUserList.ReadOnly = true;
-            dgvUserList.Size = new Size(754, 380);
+            dgvUserList.Size = new Size(760, 412);
             dgvUserList.TabIndex = 9;
             dgvUserList.DoubleClick += dgvUserList_DoubleClick;
+            // 
+            // panel1
+            // 
+            panel1.Controls.Add(pictureBox1);
+            panel1.Dock = DockStyle.Top;
+            panel1.Location = new Point(0, 0);
+            panel1.Name = "panel1";
+            panel1.Size = new Size(800, 150);
+            panel1.TabIndex = 10;
+            // 
+            // pictureBox1
+            // 
+            pictureBox1.Dock = DockStyle.Fill;
+            pictureBox1.Image = (Image)resources.GetObject("pictureBox1.Image");
+            pictureBox1.Location = new Point(0, 0);
+            pictureBox1.Name = "pictureBox1";
+            pictureBox1.Size = new Size(800, 150);
+            pictureBox1.SizeMode = PictureBoxSizeMode.Zoom;
+            pictureBox1.TabIndex = 0;
+            pictureBox1.TabStop = false;
             // 
             // DeletionRequestsForm
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
+            BackColor = Color.White;
+            Controls.Add(panel1);
             Controls.Add(dgvUserList);
-            Controls.Add(label1);
             Name = "DeletionRequestsForm";
             Size = new Size(800, 590);
             ((System.ComponentModel.ISupportInitialize)dgvUserList).EndInit();
+            panel1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             ResumeLayout(false);
-            PerformLayout();
         }
 
         #endregion
-
-        private Label label1;
         private DataGridView dgvUserList;
+        private Panel panel1;
+        private PictureBox pictureBox1;
     }
 }

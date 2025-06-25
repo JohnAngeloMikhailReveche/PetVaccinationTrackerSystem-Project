@@ -28,9 +28,13 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(PasswordRequestsForm));
             dgvUserList = new DataGridView();
-            label1 = new Label();
+            panel1 = new Panel();
+            pictureBox1 = new PictureBox();
             ((System.ComponentModel.ISupportInitialize)dgvUserList).BeginInit();
+            panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             SuspendLayout();
             // 
             // dgvUserList
@@ -38,41 +42,54 @@
             dgvUserList.AllowUserToAddRows = false;
             dgvUserList.BackgroundColor = Color.White;
             dgvUserList.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dgvUserList.Location = new Point(23, 123);
+            dgvUserList.Location = new Point(20, 156);
             dgvUserList.MultiSelect = false;
             dgvUserList.Name = "dgvUserList";
             dgvUserList.ReadOnly = true;
-            dgvUserList.Size = new Size(754, 380);
+            dgvUserList.Size = new Size(760, 412);
             dgvUserList.TabIndex = 6;
             dgvUserList.DoubleClick += dgvVetList_DoubleClick;
             // 
-            // label1
+            // panel1
             // 
-            label1.AutoSize = true;
-            label1.Font = new Font("Segoe UI", 20F, FontStyle.Bold);
-            label1.Location = new Point(23, 68);
-            label1.Name = "label1";
-            label1.Size = new Size(516, 37);
-            label1.TabIndex = 7;
-            label1.Text = "Accounts Requesting Password Default";
+            panel1.Controls.Add(pictureBox1);
+            panel1.Dock = DockStyle.Top;
+            panel1.Location = new Point(0, 0);
+            panel1.Name = "panel1";
+            panel1.Size = new Size(800, 150);
+            panel1.TabIndex = 8;
+            // 
+            // pictureBox1
+            // 
+            pictureBox1.Dock = DockStyle.Fill;
+            pictureBox1.Image = (Image)resources.GetObject("pictureBox1.Image");
+            pictureBox1.Location = new Point(0, 0);
+            pictureBox1.Name = "pictureBox1";
+            pictureBox1.Size = new Size(800, 150);
+            pictureBox1.SizeMode = PictureBoxSizeMode.Zoom;
+            pictureBox1.TabIndex = 0;
+            pictureBox1.TabStop = false;
             // 
             // PasswordRequestsForm
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            Controls.Add(label1);
+            BackColor = Color.White;
+            Controls.Add(panel1);
             Controls.Add(dgvUserList);
             Name = "PasswordRequestsForm";
             Size = new Size(800, 590);
             Load += PasswordRequestsForm_Load;
             ((System.ComponentModel.ISupportInitialize)dgvUserList).EndInit();
+            panel1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             ResumeLayout(false);
-            PerformLayout();
         }
 
         #endregion
 
         private DataGridView dgvUserList;
-        private Label label1;
+        private Panel panel1;
+        private PictureBox pictureBox1;
     }
 }

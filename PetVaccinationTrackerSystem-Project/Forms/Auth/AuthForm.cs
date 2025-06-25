@@ -170,5 +170,6 @@ namespace PetVaccinationTrackerSystem_Project.Forms.Auth
             AuthRequestPasswordChange authRequestPasswordChange = new AuthRequestPasswordChange();
             authRequestPasswordChange.ShowDialog(); // Show the password change request form as a dialog
         }
+
     }
 }

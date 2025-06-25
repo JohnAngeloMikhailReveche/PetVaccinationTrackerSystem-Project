@@ -54,13 +54,17 @@ namespace PetVaccinationTrackerSystem_Project.Forms.Auth
 
                     }
                 }
-            } else
+            }
+            else
             {
                 MessageBox.Show("Please enter a valid email address ending with @vetclinic.com (If you are a Veterinarian) or @petownerclinic.com (If you are a Pet Owner).", "Invalid Email", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
             }
         }
 
-
+        private void mainFormVButtonExit_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
     }
 }
