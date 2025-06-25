@@ -35,19 +35,21 @@
             btnInbox = new Button();
             btnSettings = new Button();
             btnExit = new Button();
-            mainFormVSideB = new Panel();
-            mainFormVSideBHighlight = new Panel();
-            btnLogOut = new ReaLTaiizor.Controls.HopeRoundButton();
-            btnAboutUs = new Button();
-            btnPetProfiles = new Button();
-            btnHome = new Button();
             mainFormVPB = new Panel();
             pictureBox1 = new PictureBox();
+            btnHome = new Button();
+            btnPetProfiles = new Button();
+            btnAboutUs = new Button();
+            btnLogOut = new ReaLTaiizor.Controls.HopeRoundButton();
+            mainFormVSideBHighlight = new Panel();
+            mainFormVSideB = new Panel();
             mainPanel = new Panel();
+            homePanel1 = new homePanel();
             mainFormVTopB.SuspendLayout();
-            mainFormVSideB.SuspendLayout();
             mainFormVPB.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
+            mainFormVSideB.SuspendLayout();
+            mainPanel.SuspendLayout();
             SuspendLayout();
             // 
             // mainFormVTopB
@@ -128,28 +130,72 @@
             btnExit.UseVisualStyleBackColor = false;
             btnExit.Click += btnExit_Click;
             // 
-            // mainFormVSideB
+            // mainFormVPB
             // 
-            mainFormVSideB.BackColor = Color.White;
-            mainFormVSideB.Controls.Add(mainFormVSideBHighlight);
-            mainFormVSideB.Controls.Add(btnLogOut);
-            mainFormVSideB.Controls.Add(btnAboutUs);
-            mainFormVSideB.Controls.Add(btnPetProfiles);
-            mainFormVSideB.Controls.Add(btnHome);
-            mainFormVSideB.Controls.Add(mainFormVPB);
-            mainFormVSideB.Dock = DockStyle.Left;
-            mainFormVSideB.Location = new Point(0, 50);
-            mainFormVSideB.Name = "mainFormVSideB";
-            mainFormVSideB.Size = new Size(200, 590);
-            mainFormVSideB.TabIndex = 4;
+            mainFormVPB.Controls.Add(pictureBox1);
+            mainFormVPB.Dock = DockStyle.Top;
+            mainFormVPB.Location = new Point(0, 0);
+            mainFormVPB.Name = "mainFormVPB";
+            mainFormVPB.Size = new Size(200, 150);
+            mainFormVPB.TabIndex = 0;
             // 
-            // mainFormVSideBHighlight
+            // pictureBox1
             // 
-            mainFormVSideBHighlight.BackColor = Color.FromArgb(168, 130, 95);
-            mainFormVSideBHighlight.Location = new Point(0, 150);
-            mainFormVSideBHighlight.Name = "mainFormVSideBHighlight";
-            mainFormVSideBHighlight.Size = new Size(10, 50);
-            mainFormVSideBHighlight.TabIndex = 2;
+            pictureBox1.Image = (Image)resources.GetObject("pictureBox1.Image");
+            pictureBox1.Location = new Point(38, 12);
+            pictureBox1.Name = "pictureBox1";
+            pictureBox1.Size = new Size(125, 125);
+            pictureBox1.SizeMode = PictureBoxSizeMode.Zoom;
+            pictureBox1.TabIndex = 0;
+            pictureBox1.TabStop = false;
+            // 
+            // btnHome
+            // 
+            btnHome.Dock = DockStyle.Top;
+            btnHome.FlatAppearance.BorderSize = 0;
+            btnHome.FlatStyle = FlatStyle.Flat;
+            btnHome.Font = new Font("Segoe UI", 10.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            btnHome.ForeColor = Color.FromArgb(89, 85, 84);
+            btnHome.Location = new Point(0, 150);
+            btnHome.Name = "btnHome";
+            btnHome.Size = new Size(200, 50);
+            btnHome.TabIndex = 1;
+            btnHome.Text = "        Home";
+            btnHome.TextAlign = ContentAlignment.MiddleLeft;
+            btnHome.UseVisualStyleBackColor = true;
+            btnHome.Click += btnHome_Click;
+            // 
+            // btnPetProfiles
+            // 
+            btnPetProfiles.Dock = DockStyle.Top;
+            btnPetProfiles.FlatAppearance.BorderSize = 0;
+            btnPetProfiles.FlatStyle = FlatStyle.Flat;
+            btnPetProfiles.Font = new Font("Segoe UI", 10.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            btnPetProfiles.ForeColor = Color.FromArgb(89, 85, 84);
+            btnPetProfiles.Location = new Point(0, 200);
+            btnPetProfiles.Name = "btnPetProfiles";
+            btnPetProfiles.Size = new Size(200, 50);
+            btnPetProfiles.TabIndex = 2;
+            btnPetProfiles.Text = "        Pet Profiles";
+            btnPetProfiles.TextAlign = ContentAlignment.MiddleLeft;
+            btnPetProfiles.UseVisualStyleBackColor = true;
+            btnPetProfiles.Click += btnPetProfiles_Click;
+            // 
+            // btnAboutUs
+            // 
+            btnAboutUs.Dock = DockStyle.Top;
+            btnAboutUs.FlatAppearance.BorderSize = 0;
+            btnAboutUs.FlatStyle = FlatStyle.Flat;
+            btnAboutUs.Font = new Font("Segoe UI", 10.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            btnAboutUs.ForeColor = Color.FromArgb(89, 85, 84);
+            btnAboutUs.Location = new Point(0, 250);
+            btnAboutUs.Name = "btnAboutUs";
+            btnAboutUs.Size = new Size(200, 50);
+            btnAboutUs.TabIndex = 6;
+            btnAboutUs.Text = "        About Us";
+            btnAboutUs.TextAlign = ContentAlignment.MiddleLeft;
+            btnAboutUs.UseVisualStyleBackColor = true;
+            btnAboutUs.Click += btnAboutUs_Click;
             // 
             // btnLogOut
             // 
@@ -172,81 +218,47 @@
             btnLogOut.WarningColor = Color.FromArgb(230, 162, 60);
             btnLogOut.Click += btnLogOut_Click;
             // 
-            // btnAboutUs
+            // mainFormVSideBHighlight
             // 
-            btnAboutUs.Dock = DockStyle.Top;
-            btnAboutUs.FlatAppearance.BorderSize = 0;
-            btnAboutUs.FlatStyle = FlatStyle.Flat;
-            btnAboutUs.Font = new Font("Segoe UI", 10.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            btnAboutUs.ForeColor = Color.FromArgb(89, 85, 84);
-            btnAboutUs.Location = new Point(0, 250);
-            btnAboutUs.Name = "btnAboutUs";
-            btnAboutUs.Size = new Size(200, 50);
-            btnAboutUs.TabIndex = 6;
-            btnAboutUs.Text = "        About Us";
-            btnAboutUs.TextAlign = ContentAlignment.MiddleLeft;
-            btnAboutUs.UseVisualStyleBackColor = true;
-            btnAboutUs.Click += btnAboutUs_Click;
+            mainFormVSideBHighlight.BackColor = Color.FromArgb(168, 130, 95);
+            mainFormVSideBHighlight.Location = new Point(0, 150);
+            mainFormVSideBHighlight.Name = "mainFormVSideBHighlight";
+            mainFormVSideBHighlight.Size = new Size(10, 50);
+            mainFormVSideBHighlight.TabIndex = 2;
             // 
-            // btnPetProfiles
+            // mainFormVSideB
             // 
-            btnPetProfiles.Dock = DockStyle.Top;
-            btnPetProfiles.FlatAppearance.BorderSize = 0;
-            btnPetProfiles.FlatStyle = FlatStyle.Flat;
-            btnPetProfiles.Font = new Font("Segoe UI", 10.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            btnPetProfiles.ForeColor = Color.FromArgb(89, 85, 84);
-            btnPetProfiles.Location = new Point(0, 200);
-            btnPetProfiles.Name = "btnPetProfiles";
-            btnPetProfiles.Size = new Size(200, 50);
-            btnPetProfiles.TabIndex = 2;
-            btnPetProfiles.Text = "        Pet Profiles";
-            btnPetProfiles.TextAlign = ContentAlignment.MiddleLeft;
-            btnPetProfiles.UseVisualStyleBackColor = true;
-            btnPetProfiles.Click += btnPetProfiles_Click;
-            // 
-            // btnHome
-            // 
-            btnHome.Dock = DockStyle.Top;
-            btnHome.FlatAppearance.BorderSize = 0;
-            btnHome.FlatStyle = FlatStyle.Flat;
-            btnHome.Font = new Font("Segoe UI", 10.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            btnHome.ForeColor = Color.FromArgb(89, 85, 84);
-            btnHome.Location = new Point(0, 150);
-            btnHome.Name = "btnHome";
-            btnHome.Size = new Size(200, 50);
-            btnHome.TabIndex = 1;
-            btnHome.Text = "        Home";
-            btnHome.TextAlign = ContentAlignment.MiddleLeft;
-            btnHome.UseVisualStyleBackColor = true;
-            btnHome.Click += btnHome_Click;
-            // 
-            // mainFormVPB
-            // 
-            mainFormVPB.Controls.Add(pictureBox1);
-            mainFormVPB.Dock = DockStyle.Top;
-            mainFormVPB.Location = new Point(0, 0);
-            mainFormVPB.Name = "mainFormVPB";
-            mainFormVPB.Size = new Size(200, 150);
-            mainFormVPB.TabIndex = 0;
-            // 
-            // pictureBox1
-            // 
-            pictureBox1.Image = (Image)resources.GetObject("pictureBox1.Image");
-            pictureBox1.Location = new Point(38, 12);
-            pictureBox1.Name = "pictureBox1";
-            pictureBox1.Size = new Size(125, 125);
-            pictureBox1.SizeMode = PictureBoxSizeMode.Zoom;
-            pictureBox1.TabIndex = 0;
-            pictureBox1.TabStop = false;
+            mainFormVSideB.BackColor = Color.White;
+            mainFormVSideB.Controls.Add(mainFormVSideBHighlight);
+            mainFormVSideB.Controls.Add(btnLogOut);
+            mainFormVSideB.Controls.Add(btnAboutUs);
+            mainFormVSideB.Controls.Add(btnPetProfiles);
+            mainFormVSideB.Controls.Add(btnHome);
+            mainFormVSideB.Controls.Add(mainFormVPB);
+            mainFormVSideB.Dock = DockStyle.Left;
+            mainFormVSideB.Location = new Point(0, 50);
+            mainFormVSideB.Name = "mainFormVSideB";
+            mainFormVSideB.Size = new Size(200, 590);
+            mainFormVSideB.TabIndex = 4;
             // 
             // mainPanel
             // 
             mainPanel.BackColor = Color.White;
+            mainPanel.Controls.Add(homePanel1);
             mainPanel.Dock = DockStyle.Fill;
             mainPanel.Location = new Point(200, 50);
             mainPanel.Name = "mainPanel";
             mainPanel.Size = new Size(800, 590);
             mainPanel.TabIndex = 5;
+            // 
+            // homePanel1
+            // 
+            homePanel1.BackColor = Color.White;
+            homePanel1.Dock = DockStyle.Fill;
+            homePanel1.Location = new Point(0, 0);
+            homePanel1.Name = "homePanel1";
+            homePanel1.Size = new Size(800, 590);
+            homePanel1.TabIndex = 0;
             // 
             // PetOwnerForm
             // 
@@ -263,9 +275,10 @@
             Load += PetOwnerForm_Load;
             mainFormVTopB.ResumeLayout(false);
             mainFormVTopB.PerformLayout();
-            mainFormVSideB.ResumeLayout(false);
             mainFormVPB.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
+            mainFormVSideB.ResumeLayout(false);
+            mainPanel.ResumeLayout(false);
             ResumeLayout(false);
         }
 
@@ -277,14 +290,15 @@
         private Button btnInbox;
         private Button btnSettings;
         private Button btnExit;
-        private Panel mainFormVSideB;
-        private Panel mainFormVSideBHighlight;
-        private ReaLTaiizor.Controls.HopeRoundButton btnLogOut;
-        private Button btnPetProfiles;
-        private Button btnHome;
         private Panel mainFormVPB;
         private PictureBox pictureBox1;
+        private Button btnHome;
+        private Button btnPetProfiles;
         private Button btnAboutUs;
+        private ReaLTaiizor.Controls.HopeRoundButton btnLogOut;
+        private Panel mainFormVSideBHighlight;
+        private Panel mainFormVSideB;
         private Panel mainPanel;
+        private homePanel homePanel1;
     }
 }
