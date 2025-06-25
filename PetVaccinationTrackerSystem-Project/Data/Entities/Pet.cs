@@ -40,6 +40,7 @@ namespace PetVaccinationTrackerSystem_Project.Data.Entities
 
         public string? Gender { get; set; }
 
+
         // Foreign Key
         [ForeignKey("User")]
         public int UserID { get; set; }

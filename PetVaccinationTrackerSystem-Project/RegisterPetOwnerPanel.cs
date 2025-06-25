@@ -70,7 +70,7 @@ namespace PetVaccinationTrackerSystem_Project
                     UserPassword = hashedPassword,
                     UserRole = "PetOwner",
                     SentPasswordRequest = false,
-                    IsActive = true
+                    SentAccountDeletion = false
                 };
                 context.UserList.Add(user);
                 context.SaveChanges();

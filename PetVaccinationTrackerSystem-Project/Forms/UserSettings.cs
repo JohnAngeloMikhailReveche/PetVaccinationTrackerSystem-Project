@@ -119,22 +119,53 @@ namespace PetVaccinationTrackerSystem_Project.Forms
 
         private void btnRequestAccDelete_Click(object sender, EventArgs e)
         {
-            // Send an email to the vetclinic requesting account deletion
+            // Send a notification to the vetclinic requesting account deletion
 
-            // Testing
-            if (_userRef.VetID != null)
+            if(_userRef.SentAccountDeletion == false)
             {
-                MessageBox.Show($"{_userRef.VetID} referred");
-            }
-            else
+                var diagResult = MessageBox.Show("Are you sure that you want to request for account deletion? If your account gets deleted you wont be able to return it. \n\nYou can still cancel the request within 24 hours.", "Request Account Deletion Confirmation", MessageBoxButtons.OKCancel, MessageBoxIcon.Exclamation);
+
+                if (diagResult == DialogResult.OK)
+                {
+                    using (var context = new ModelContext())
+                    {
+                        _userRef.SentAccountDeletion = true;
+                        context.UserList.Update(_userRef);
+                        context.SaveChanges();
+                    }
+
+                    btnRequestAccDelete.Text = "Cancel Request";
+                }
+            } else
             {
-                MessageBox.Show("You are a Pet Owner");
+                    using (var context = new ModelContext())
+                    {
+                        _userRef.SentAccountDeletion = false;
+                        context.UserList.Update(_userRef);
+                        context.SaveChanges();
+                    }
+
+                MessageBox.Show("You cancelled the deletion for your account.", "Cancelled Deletion", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                btnRequestAccDelete.Text = "Request Deletion";
             }
+
+            
 
         }
         private void UserSettings_Load(object sender, EventArgs e)
         {
-
+            if(_userRef.SentAccountDeletion == false)
+            {
+                btnRequestAccDelete.Text = "Request Deletion";
+            } else
+            {
+                btnRequestAccDelete.Text = "Cancel Request";
+            }
         }
+
+
+
+
+
     }
 }

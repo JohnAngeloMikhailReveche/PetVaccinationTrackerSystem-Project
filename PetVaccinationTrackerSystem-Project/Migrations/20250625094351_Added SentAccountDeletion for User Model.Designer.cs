@@ -3,6 +3,7 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using PetVaccinationTrackerSystem_Project.Data;
 
@@ -11,9 +12,11 @@ using PetVaccinationTrackerSystem_Project.Data;
 namespace PetVaccinationTrackerSystem_Project.Migrations
 {
     [DbContext(typeof(ModelContext))]
-    partial class ModelContextModelSnapshot : ModelSnapshot
+    [Migration("20250625094351_Added SentAccountDeletion for User Model")]
+    partial class AddedSentAccountDeletionforUserModel
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -165,6 +168,9 @@ namespace PetVaccinationTrackerSystem_Project.Migrations
                     b.Property<string>("ImageRL")
                         .HasColumnType("nvarchar(max)");
 
+                    b.Property<bool?>("IsActive")
+                        .HasColumnType("bit");
+
                     b.Property<string>("Notes")
                         .IsRequired()
                         .HasMaxLength(300)
@@ -183,9 +189,6 @@ namespace PetVaccinationTrackerSystem_Project.Migrations
                         .HasMaxLength(50)
                         .HasColumnType("nvarchar(50)");
 
-                    b.Property<int>("RecordID")
-                        .HasColumnType("int");
-
                     b.Property<string>("Species")
                         .IsRequired()
                         .HasMaxLength(50)
@@ -194,9 +197,14 @@ namespace PetVaccinationTrackerSystem_Project.Migrations
                     b.Property<int>("UserID")
                         .HasColumnType("int");
 
+                    b.Property<int?>("VaccinationID")
+                        .HasColumnType("int");
+
                     b.HasKey("PetID");
 
                     b.HasIndex("UserID");
+
+                    b.HasIndex("VaccinationID");
 
                     b.ToTable("PetList");
                 });
@@ -209,59 +217,22 @@ namespace PetVaccinationTrackerSystem_Project.Migrations
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("RecordID"));
 
-                    b.Property<string>("AdministeredBy")
-                        .IsRequired()
-                        .HasMaxLength(255)
-                        .HasColumnType("nvarchar(255)");
+                    b.Property<int>("Day")
+                        .HasColumnType("int");
 
-                    b.Property<string>("BatchNo")
-                        .IsRequired()
-                        .HasMaxLength(200)
-                        .HasColumnType("nvarchar(200)");
-
-                    b.Property<string>("Breed")
-                        .IsRequired()
-                        .HasMaxLength(100)
-                        .HasColumnType("nvarchar(100)");
-
-                    b.Property<DateTime>("DateAdministered")
-                        .HasColumnType("datetime2");
-
-                    b.Property<string>("Gender")
-                        .IsRequired()
-                        .HasMaxLength(50)
-                        .HasColumnType("nvarchar(50)");
-
-                    b.Property<DateTime>("NextDueDate")
-                        .HasColumnType("datetime2");
-
-                    b.Property<string>("Notes")
-                        .IsRequired()
-                        .HasMaxLength(300)
-                        .HasColumnType("nvarchar(300)");
+                    b.Property<int>("Month")
+                        .HasColumnType("int");
 
                     b.Property<int>("PetID")
                         .HasColumnType("int");
 
-                    b.Property<string>("PetName")
-                        .IsRequired()
-                        .HasMaxLength(100)
-                        .HasColumnType("nvarchar(100)");
-
-                    b.Property<string>("Species")
-                        .IsRequired()
-                        .HasMaxLength(100)
-                        .HasColumnType("nvarchar(100)");
-
-                    b.Property<int?>("VaccinationID")
+                    b.Property<int>("VaccinationID")
                         .HasColumnType("int");
 
-                    b.Property<string>("VaccineName")
-                        .IsRequired()
-                        .HasMaxLength(60)
-                        .HasColumnType("nvarchar(60)");
-
                     b.Property<int>("VetID")
+                        .HasColumnType("int");
+
+                    b.Property<int>("Year")
                         .HasColumnType("int");
 
                     b.HasKey("RecordID");
@@ -287,6 +258,9 @@ namespace PetVaccinationTrackerSystem_Project.Migrations
                         .IsRequired()
                         .HasMaxLength(50)
                         .HasColumnType("nvarchar(50)");
+
+                    b.Property<bool?>("IsActive")
+                        .HasColumnType("bit");
 
                     b.Property<string>("LastName")
                         .IsRequired()
@@ -358,35 +332,29 @@ namespace PetVaccinationTrackerSystem_Project.Migrations
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("VaccinationID"));
 
-                    b.Property<string>("ApplicableSpecies")
+                    b.Property<string>("AdministeredBy")
                         .IsRequired()
-                        .HasMaxLength(100)
-                        .HasColumnType("nvarchar(100)");
+                        .HasMaxLength(255)
+                        .HasColumnType("nvarchar(255)");
 
-                    b.Property<int>("BatchNumber")
-                        .HasMaxLength(300)
-                        .HasColumnType("int");
+                    b.Property<string>("BatchNo")
+                        .IsRequired()
+                        .HasMaxLength(200)
+                        .HasColumnType("nvarchar(200)");
 
-                    b.Property<DateTime>("ExpiryDate")
+                    b.Property<DateTime>("DateAdministered")
                         .HasColumnType("datetime2");
 
-                    b.Property<DateTime>("ManufactureDate")
+                    b.Property<DateTime>("NextDueDate")
                         .HasColumnType("datetime2");
-
-                    b.Property<string>("Manufacturer")
-                        .IsRequired()
-                        .HasMaxLength(100)
-                        .HasColumnType("nvarchar(100)");
 
                     b.Property<string>("Notes")
                         .IsRequired()
                         .HasMaxLength(300)
                         .HasColumnType("nvarchar(300)");
 
-                    b.Property<string>("VaccineDescription")
-                        .IsRequired()
-                        .HasMaxLength(60)
-                        .HasColumnType("nvarchar(60)");
+                    b.Property<int>("PetID")
+                        .HasColumnType("int");
 
                     b.Property<string>("VaccineName")
                         .IsRequired()
@@ -394,6 +362,8 @@ namespace PetVaccinationTrackerSystem_Project.Migrations
                         .HasColumnType("nvarchar(60)");
 
                     b.HasKey("VaccinationID");
+
+                    b.HasIndex("PetID");
 
                     b.ToTable("VaccinationList");
                 });
@@ -459,6 +429,10 @@ namespace PetVaccinationTrackerSystem_Project.Migrations
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
+                    b.HasOne("PetVaccinationTrackerSystem_Project.Data.Entities.Vaccination", null)
+                        .WithMany("Pets")
+                        .HasForeignKey("VaccinationID");
+
                     b.Navigation("User");
                 });
 
@@ -471,9 +445,10 @@ namespace PetVaccinationTrackerSystem_Project.Migrations
                         .IsRequired();
 
                     b.HasOne("PetVaccinationTrackerSystem_Project.Data.Entities.Vaccination", "Vaccination")
-                        .WithMany()
+                        .WithMany("PetHealthRecords")
                         .HasForeignKey("VaccinationID")
-                        .OnDelete(DeleteBehavior.Restrict);
+                        .OnDelete(DeleteBehavior.Restrict)
+                        .IsRequired();
 
                     b.HasOne("PetVaccinationTrackerSystem_Project.Data.Entities.Veterinarian", "Vet")
                         .WithMany("PetHealthRecords")
@@ -508,6 +483,17 @@ namespace PetVaccinationTrackerSystem_Project.Migrations
                     b.Navigation("User");
                 });
 
+            modelBuilder.Entity("PetVaccinationTrackerSystem_Project.Data.Entities.Vaccination", b =>
+                {
+                    b.HasOne("PetVaccinationTrackerSystem_Project.Data.Entities.Pet", "Pet")
+                        .WithMany()
+                        .HasForeignKey("PetID")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("Pet");
+                });
+
             modelBuilder.Entity("PetVaccinationTrackerSystem_Project.Data.Entities.Veterinarian", b =>
                 {
                     b.HasOne("PetVaccinationTrackerSystem_Project.Data.Entities.Clinic", "Clinic")
@@ -538,6 +524,13 @@ namespace PetVaccinationTrackerSystem_Project.Migrations
                     b.Navigation("Pets");
 
                     b.Navigation("UserContacts");
+                });
+
+            modelBuilder.Entity("PetVaccinationTrackerSystem_Project.Data.Entities.Vaccination", b =>
+                {
+                    b.Navigation("PetHealthRecords");
+
+                    b.Navigation("Pets");
                 });
 
             modelBuilder.Entity("PetVaccinationTrackerSystem_Project.Data.Entities.Veterinarian", b =>

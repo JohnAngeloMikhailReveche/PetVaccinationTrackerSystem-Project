@@ -33,6 +33,7 @@
             mainFormVButtonSettings = new Button();
             mainFormVButtonExit = new Button();
             mainFormVSideB = new Panel();
+            btnDeleteRequest = new Button();
             mainFormVSideBHighlight = new Panel();
             mainFormVButtonLO = new ReaLTaiizor.Controls.HopeRoundButton();
             btnPasswordRequest = new Button();
@@ -49,6 +50,7 @@
             registeredClinicPanel1V = new RegisteredClinicPanel();
             registeredVetPanel1V = new RegisteredVetPanel();
             passwordRequestsForm1V = new PasswordRequestsForm();
+            deletionRequestsForm1V = new DeletionRequestsForm();
             mainFormVTopB.SuspendLayout();
             mainFormVSideB.SuspendLayout();
             mainFormVPB.SuspendLayout();
@@ -99,6 +101,7 @@
             mainFormVSideB.BackColor = Color.White;
             mainFormVSideB.Controls.Add(mainFormVSideBHighlight);
             mainFormVSideB.Controls.Add(mainFormVButtonLO);
+            mainFormVSideB.Controls.Add(btnDeleteRequest);
             mainFormVSideB.Controls.Add(btnPasswordRequest);
             mainFormVSideB.Controls.Add(btnRegisterVet);
             mainFormVSideB.Controls.Add(btnRegisterClinic);
@@ -111,6 +114,22 @@
             mainFormVSideB.Name = "mainFormVSideB";
             mainFormVSideB.Size = new Size(200, 590);
             mainFormVSideB.TabIndex = 4;
+            // 
+            // btnDeleteRequest
+            // 
+            btnDeleteRequest.Dock = DockStyle.Top;
+            btnDeleteRequest.FlatAppearance.BorderSize = 0;
+            btnDeleteRequest.FlatStyle = FlatStyle.Flat;
+            btnDeleteRequest.Font = new Font("Segoe UI", 10.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            btnDeleteRequest.ForeColor = Color.FromArgb(89, 85, 84);
+            btnDeleteRequest.Location = new Point(0, 450);
+            btnDeleteRequest.Name = "btnDeleteRequest";
+            btnDeleteRequest.Size = new Size(200, 50);
+            btnDeleteRequest.TabIndex = 11;
+            btnDeleteRequest.Text = "     Deletion Requests";
+            btnDeleteRequest.TextAlign = ContentAlignment.MiddleLeft;
+            btnDeleteRequest.UseVisualStyleBackColor = true;
+            btnDeleteRequest.Click += btnDeleteRequest_Click;
             // 
             // mainFormVSideBHighlight
             // 
@@ -304,11 +323,19 @@
             passwordRequestsForm1V.Size = new Size(800, 590);
             passwordRequestsForm1V.TabIndex = 11;
             // 
+            // deletionRequestsForm1V
+            // 
+            deletionRequestsForm1V.Location = new Point(200, 50);
+            deletionRequestsForm1V.Name = "deletionRequestsForm1V";
+            deletionRequestsForm1V.Size = new Size(800, 590);
+            deletionRequestsForm1V.TabIndex = 12;
+            // 
             // AdminForm
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(1000, 640);
+            Controls.Add(deletionRequestsForm1V);
             Controls.Add(passwordRequestsForm1V);
             Controls.Add(registeredVetPanel1V);
             Controls.Add(registeredClinicPanel1V);
@@ -350,5 +377,7 @@
         private RegisteredVetPanel registeredVetPanel1V;
         private Button btnPasswordRequest;
         private PasswordRequestsForm passwordRequestsForm1V;
+        private Button btnDeleteRequest;
+        private DeletionRequestsForm deletionRequestsForm1V;
     }
 }
