@@ -1,5 +1,8 @@
-﻿using PetVaccinationTrackerSystem_Project.Classes;
+﻿using Microsoft.EntityFrameworkCore;
+using PetVaccinationTrackerSystem_Project.Classes;
+using PetVaccinationTrackerSystem_Project.Data;
 using PetVaccinationTrackerSystem_Project.Data.Entities;
+using PetVaccinationTrackerSystem_Project.Forms;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -15,12 +18,11 @@ namespace PetVaccinationTrackerSystem_Project
     public partial class MainFormVet : Form
     {
         // The User object representing the current veterinarian user
-        private User _currentUser;
+        private User? _currentUser;
 
         private void InitializeLabels()
         {
-
-            lblClinic.Text = _currentUser?.Veterinarian?.Clinic?.ClinicName ?? "No Clinic Assigned | ERROR DATA READING FROM USERDATA";
+            lblClinic.Text = _currentUser.Veterinarian.Clinic.ClinicName ?? "No Clinic Assigned | ERROR DATA READING FROM USERDATA";
             lblVetName.Text = _currentUser.FirstName + " " + _currentUser.LastName;
         }
 
@@ -28,8 +30,26 @@ namespace PetVaccinationTrackerSystem_Project
         {
             InitializeComponent();
 
-            // Used Dependency Injection for passing the current user reference
-            _currentUser = inUserReference;
+
+            // Force Loading of the current user from the database to ensure all related entities are loaded
+            if (inUserReference != null)
+            {
+                using (var context = new ModelContext())
+                {
+                    _currentUser = context.UserList
+                        .Include(v => v.Veterinarian)
+                        .ThenInclude(c => c.Clinic)
+                        .FirstOrDefault(u => u.UserID == inUserReference.UserID);
+                }
+            }
+            else
+            {
+                MessageBox.Show("No user reference provided. Please log in again.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                this.Close(); // Close the form if no user reference is provided
+                return;
+            }
+            
+
             mainFormVSideBHighlight.Height = btnHome.Height;
             mainFormVSideBHighlight.Top = btnHome.Top;
             homePanel1.BringToFront();
@@ -121,5 +141,10 @@ namespace PetVaccinationTrackerSystem_Project
 
         }
 
+        private void mainFormVButtonSettings_Click(object sender, EventArgs e)
+        {
+            UserSettings userSettings = new UserSettings(_currentUser);
+            userSettings.ShowDialog();
+        }
     }
 }

@@ -89,5 +89,12 @@ namespace PetVaccinationTrackerSystem_Project.Forms.PetOwner.InnerRecords
         {
             this.Close(); // Close the current form to return to the previous one
         }
+
+        private void btnRecords_Click(object sender, EventArgs e)
+        {
+            PetOwner_VaccinationRecordInstance petOwnerVaccinationRecords = new PetOwner_VaccinationRecordInstance(_selectedPet);
+            petOwnerVaccinationRecords.ShowDialog();
+        }
     }
+
 }

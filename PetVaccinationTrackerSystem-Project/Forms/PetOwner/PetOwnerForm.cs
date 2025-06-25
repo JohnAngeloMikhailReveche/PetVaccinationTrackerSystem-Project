@@ -95,7 +95,7 @@ namespace PetVaccinationTrackerSystem_Project.Forms.PetOwner
 
             mainPanel.Controls.Clear(); // Clear the current controls in the main panel
 
-            // Add the Home Dashboard here and make the logic as follows:
+            // Add the Pet Records Dashboard here and make the logic as follows:
             // PetOwner_PetProfile petOwnerPetProfile = new PetOwner_PetProfile(_currentUser);
             // petOwnerPetProfile.Visible = true;
             // mainPanel.Controls.Add(petOwnerPetProfile);
@@ -108,10 +108,16 @@ namespace PetVaccinationTrackerSystem_Project.Forms.PetOwner
 
             mainPanel.Controls.Clear(); // Clear the current controls in the main panel
 
-            // Add the Home Dashboard here and make the logic as follows:
-            // PetOwner_PetProfile petOwnerPetProfile = new PetOwner_PetProfile(_currentUser);
-            // petOwnerPetProfile.Visible = true;
-            // mainPanel.Controls.Add(petOwnerPetProfile);
+            // Add the About Us Dashboard here and make the logic as follows:
+            PetOwner_AboutUs petOwnerAboutUs = new PetOwner_AboutUs();
+            petOwnerAboutUs.Visible = true;
+            mainPanel.Controls.Add(petOwnerAboutUs);
+        }
+
+        private void btnSettings_Click(object sender, EventArgs e)
+        {
+            UserSettings userSettings = new UserSettings(_currentUser);
+            userSettings.ShowDialog();
         }
     }
 }

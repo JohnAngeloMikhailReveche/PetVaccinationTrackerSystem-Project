@@ -56,6 +56,7 @@
             petpicture = new PictureBox();
             label1 = new Label();
             txtNotes = new TextBox();
+            btnRecords = new Button();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             PetProfilePanelVPetInfoP.SuspendLayout();
             PetProfilePanelVPetInfoCard.SuspendLayout();
@@ -354,7 +355,7 @@
             label1.AutoSize = true;
             label1.Font = new Font("Segoe UI", 10F);
             label1.ForeColor = Color.FromArgb(89, 85, 84);
-            label1.Location = new Point(519, 362);
+            label1.Location = new Point(519, 350);
             label1.Name = "label1";
             label1.Size = new Size(48, 19);
             label1.TabIndex = 41;
@@ -363,19 +364,30 @@
             // txtNotes
             // 
             txtNotes.BackColor = Color.FromArgb(249, 249, 249);
-            txtNotes.Location = new Point(519, 383);
+            txtNotes.Location = new Point(519, 371);
             txtNotes.Multiline = true;
             txtNotes.Name = "txtNotes";
             txtNotes.ReadOnly = true;
             txtNotes.ScrollBars = ScrollBars.Vertical;
-            txtNotes.Size = new Size(250, 120);
+            txtNotes.Size = new Size(250, 83);
             txtNotes.TabIndex = 40;
+            // 
+            // btnRecords
+            // 
+            btnRecords.Location = new Point(573, 471);
+            btnRecords.Name = "btnRecords";
+            btnRecords.Size = new Size(150, 43);
+            btnRecords.TabIndex = 42;
+            btnRecords.Text = "View Records";
+            btnRecords.UseVisualStyleBackColor = true;
+            btnRecords.Click += btnRecords_Click;
             // 
             // PetOwner_PetProfileInstance
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(784, 551);
+            Controls.Add(btnRecords);
             Controls.Add(label1);
             Controls.Add(txtNotes);
             Controls.Add(PetProfilePanelVPBPanel);
@@ -427,5 +439,6 @@
         private PictureBox petpicture;
         private Label label1;
         private TextBox txtNotes;
+        private Button btnRecords;
     }
 }
