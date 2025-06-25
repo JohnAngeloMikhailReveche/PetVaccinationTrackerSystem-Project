@@ -22,6 +22,8 @@ namespace PetVaccinationTrackerSystem_Project.Data.Entities
 
         public string FromUser { get; set; }
 
+        public int WrittenByUserID { get; set; }
+
         public bool IsRead { get; set; }
 
         public bool IsDeleted { get; set; }

@@ -33,6 +33,7 @@
             btnSearch = new Button();
             txtSearchBox = new TextBox();
             label1 = new Label();
+            btnWriteEmail = new Button();
             ((System.ComponentModel.ISupportInitialize)dgvEmails).BeginInit();
             SuspendLayout();
             // 
@@ -85,6 +86,16 @@
             label1.TabIndex = 10;
             label1.Text = "Inbox";
             // 
+            // btnWriteEmail
+            // 
+            btnWriteEmail.Location = new Point(660, 27);
+            btnWriteEmail.Name = "btnWriteEmail";
+            btnWriteEmail.Size = new Size(117, 36);
+            btnWriteEmail.TabIndex = 8;
+            btnWriteEmail.Text = "Write Email";
+            btnWriteEmail.UseVisualStyleBackColor = true;
+            btnWriteEmail.Click += btnWriteEmail_Click;
+            // 
             // InboxForm
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
@@ -92,6 +103,7 @@
             ClientSize = new Size(802, 497);
             Controls.Add(label1);
             Controls.Add(txtSearchBox);
+            Controls.Add(btnWriteEmail);
             Controls.Add(btnSearch);
             Controls.Add(cmbFilters);
             Controls.Add(dgvEmails);
@@ -99,6 +111,7 @@
             Name = "InboxForm";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "Inbox";
+            Load += InboxForm_Load;
             ((System.ComponentModel.ISupportInitialize)dgvEmails).EndInit();
             ResumeLayout(false);
             PerformLayout();
@@ -111,5 +124,6 @@
         private Button btnSearch;
         private TextBox txtSearchBox;
         private Label label1;
+        private Button btnWriteEmail;
     }
 }

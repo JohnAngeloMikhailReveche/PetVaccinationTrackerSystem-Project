@@ -24,7 +24,7 @@ namespace PetVaccinationTrackerSystem_Project.Forms
         {
             var emails = _context.EmailList
                 .Include(e => e.User)
-                .Where(e => e.UserID == _currentUser.UserID)
+                .Where(e => e.UserID == _currentUser.UserID && e.IsDeleted == false || e.WrittenByUserID == _currentUser.UserID)
                 .ToList();
 
             dgvEmails.DataSource = emails;
@@ -33,7 +33,7 @@ namespace PetVaccinationTrackerSystem_Project.Forms
             dgvEmails.AutoSizeRowsMode = DataGridViewAutoSizeRowsMode.AllCells;
 
             dgvEmails.Columns["Body"].Visible = false;
-            dgvEmails.Columns["IsDeleted"].Visible = false;
+            dgvEmails.Columns["WrittenByUserID"].Visible = false;
             dgvEmails.Columns["UserID"].Visible = false;
             dgvEmails.Columns["User"].Visible = false;
 
@@ -41,7 +41,8 @@ namespace PetVaccinationTrackerSystem_Project.Forms
             dgvEmails.Columns["Title"].HeaderText = "Email Subject";
             dgvEmails.Columns["DateAndTimeEmailSent"].HeaderText = "Date and Time Sent";
             dgvEmails.Columns["FromUser"].HeaderText = "From";
-            dgvEmails.Columns["IsRead"].HeaderText = "Is Read";
+            dgvEmails.Columns["IsRead"].HeaderText = "Is Read by Recipient";
+            dgvEmails.Columns["IsDeleted"].HeaderText = "Is Deleted by Recipient";
         }
 
         private void LoadFilterBox()
@@ -71,7 +72,7 @@ namespace PetVaccinationTrackerSystem_Project.Forms
         {
             if (dgvEmails.CurrentRow?.DataBoundItem is Email selectedEmail)
             {
-                EmailForm emailForm = new EmailForm(selectedEmail);
+                EmailForm emailForm = new EmailForm(selectedEmail, _currentUser);
 
                 // Subscribe to the FormClosed event to reload data when the email form is closed
                 emailForm.FormClosed += (s, args) =>
@@ -97,28 +98,28 @@ namespace PetVaccinationTrackerSystem_Project.Forms
                 .Where(e => e.UserID == _currentUser.UserID)
                 .AsQueryable();
 
-                switch(selectedFilterOption)
-                {
-                    case "All Emails":
-                        query = query.Where(
-                            e => e.Title.Contains(keywordQuery) 
-                            || e.Body.Contains(keywordQuery) 
-                            || e.FromUser.Contains(keywordQuery)
-                            );
-                        break;
+            switch (selectedFilterOption)
+            {
+                case "All Emails":
+                    query = query.Where(
+                        e => e.Title.Contains(keywordQuery)
+                        || e.Body.Contains(keywordQuery)
+                        || e.FromUser.Contains(keywordQuery)
+                        );
+                    break;
 
-                    case "Read":
-                        query = query.Where(e => e.IsRead);
-                        break;
+                case "Read":
+                    query = query.Where(e => e.IsRead);
+                    break;
 
-                    case "Not Read":
-                        query = query.Where(e => !e.IsRead);
-                        break;
+                case "Not Read":
+                    query = query.Where(e => !e.IsRead);
+                    break;
 
-                    default:
-                        MessageBox.Show("Please select a valid filter option.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                        return;
-                }
+                default:
+                    MessageBox.Show("Please select a valid filter option.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    return;
+            }
 
             // Select the data to display in the DataGridView
             var results = query
@@ -136,6 +137,28 @@ namespace PetVaccinationTrackerSystem_Project.Forms
 
             // Reload the DataGridView with the filtered results
             dgvEmails.DataSource = results;
+        }
+
+        private void btnWriteEmail_Click(object sender, EventArgs e)
+        {
+            ReadWriteEmailSystemForm writeEmailForm = new ReadWriteEmailSystemForm(_currentUser);
+
+            // Subscribe to Form Closed event
+            writeEmailForm.FormClosed += (s, args) =>
+            {
+                LoadData();
+            };
+
+            writeEmailForm.ShowDialog();
+        }
+
+        private void InboxForm_Load(object sender, EventArgs e)
+        {
+            if(_currentUser.VetID == null)
+            {
+                btnWriteEmail.Enabled = false;
+                btnWriteEmail.Visible = false;
+            }
         }
     }
 }

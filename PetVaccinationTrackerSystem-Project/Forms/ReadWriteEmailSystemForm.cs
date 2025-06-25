@@ -38,7 +38,7 @@ namespace PetVaccinationTrackerSystem_Project.Forms
                     // Check if the Recipient is Valid
                     if (userRecipient == null)
                     {
-                        MessageBox.Show("The User is Invalid!", "Error", MessageBoxButtons.OK,  MessageBoxIcon.Error);
+                        MessageBox.Show("The User is either not existing or invalid!", "Error", MessageBoxButtons.OK,  MessageBoxIcon.Error);
                         return;
                     }
 
@@ -51,16 +51,25 @@ namespace PetVaccinationTrackerSystem_Project.Forms
                         FromUser = _currentUser.UserEmail,
                         IsRead = false,
                         IsDeleted = false,
-                        UserID = toSendUserID
+                        UserID = toSendUserID,
+                        WrittenByUserID = _currentUser.UserID
                     };
 
-
+                    // Add the Email
                     context.EmailList.Add(emailToSend);
                     context.SaveChanges();
 
                     MessageBox.Show("Email sent successfully!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
-                } else
+                    // Clear Input Fields
+                    txtTitle.Clear();
+                    richtxtContent.Clear();
+                    txtToUser.Clear();
+                    datetimeDateSent.Value = DateTime.Now;
+
+                    this.Close();
+                }
+                else
                 {
                     MessageBox.Show("Please enter a valid numeric User ID.", "Invalid Input", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 }
