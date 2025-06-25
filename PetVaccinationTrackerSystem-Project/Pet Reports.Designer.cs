@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Pet_Reports));
             pictureBox1 = new PictureBox();
             VRDSVaccineCard = new Panel();
             cartesianChart1 = new LiveChartsCore.SkiaSharpView.WinForms.CartesianChart();
@@ -46,7 +47,7 @@
             // pictureBox1
             // 
             pictureBox1.BackColor = Color.White;
-            pictureBox1.Image = Properties.Resources.vaccination_reports_banner1;
+            pictureBox1.Image = (Image)resources.GetObject("pictureBox1.Image");
             pictureBox1.Location = new Point(0, 0);
             pictureBox1.Name = "pictureBox1";
             pictureBox1.Size = new Size(800, 70);
@@ -85,13 +86,13 @@
             // label1
             // 
             label1.AutoSize = true;
-            label1.Font = new Font("Segoe UI", 10.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            label1.ForeColor = Color.Black;
-            label1.Location = new Point(14, 70);
+            label1.Font = new Font("Segoe UI", 10.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label1.ForeColor = Color.FromArgb(89, 85, 84);
+            label1.Location = new Point(13, 70);
             label1.Name = "label1";
-            label1.Size = new Size(104, 19);
+            label1.Size = new Size(124, 19);
             label1.TabIndex = 37;
-            label1.Text = "Chart Overview";
+            label1.Text = "Charts Overview:";
             // 
             // pieChart1
             // 
@@ -108,12 +109,12 @@
             // 
             // dateTimePicker1
             // 
-            dateTimePicker1.CalendarFont = new Font("Segoe UI", 13.8F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            dateTimePicker1.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            dateTimePicker1.CalendarFont = new Font("Segoe UI", 9F);
+            dateTimePicker1.Font = new Font("Segoe UI", 9F);
             dateTimePicker1.Format = DateTimePickerFormat.Custom;
-            dateTimePicker1.Location = new Point(535, 15);
+            dateTimePicker1.Location = new Point(425, 36);
             dateTimePicker1.Name = "dateTimePicker1";
-            dateTimePicker1.Size = new Size(126, 29);
+            dateTimePicker1.Size = new Size(126, 23);
             dateTimePicker1.TabIndex = 34;
             dateTimePicker1.ValueChanged += dateTimePicker1_ValueChanged;
             // 
@@ -122,7 +123,7 @@
             button1.FlatStyle = FlatStyle.Flat;
             button1.Font = new Font("Segoe UI", 10.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
             button1.ForeColor = Color.FromArgb(89, 85, 84);
-            button1.Location = new Point(667, 15);
+            button1.Location = new Point(557, 30);
             button1.Name = "button1";
             button1.Size = new Size(100, 31);
             button1.TabIndex = 33;
@@ -131,26 +132,28 @@
             // 
             // comboBox3
             // 
-            comboBox3.BackColor = Color.FromArgb(249, 249, 249);
+            comboBox3.BackColor = Color.White;
+            comboBox3.ForeColor = Color.White;
             comboBox3.FormattingEnabled = true;
-            comboBox3.Location = new Point(140, 36);
+            comboBox3.Location = new Point(141, 36);
             comboBox3.Name = "comboBox3";
-            comboBox3.Size = new Size(121, 23);
+            comboBox3.Size = new Size(115, 23);
             comboBox3.TabIndex = 4;
             // 
             // comboBox2
             // 
-            comboBox2.BackColor = Color.FromArgb(249, 249, 249);
+            comboBox2.BackColor = Color.White;
+            comboBox2.ForeColor = Color.White;
             comboBox2.FormattingEnabled = true;
-            comboBox2.Location = new Point(267, 36);
+            comboBox2.Location = new Point(263, 36);
             comboBox2.Name = "comboBox2";
-            comboBox2.Size = new Size(121, 23);
+            comboBox2.Size = new Size(107, 23);
             comboBox2.TabIndex = 3;
             // 
             // comboBox1
             // 
-            comboBox1.BackColor = Color.FromArgb(249, 249, 249);
-            comboBox1.ForeColor = Color.FromArgb(249, 249, 249);
+            comboBox1.BackColor = Color.White;
+            comboBox1.ForeColor = Color.White;
             comboBox1.FormattingEnabled = true;
             comboBox1.Location = new Point(13, 36);
             comboBox1.Name = "comboBox1";
@@ -160,13 +163,13 @@
             // label7
             // 
             label7.AutoSize = true;
-            label7.Font = new Font("Segoe UI", 10.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            label7.ForeColor = Color.Black;
+            label7.Font = new Font("Segoe UI", 10.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label7.ForeColor = Color.FromArgb(89, 85, 84);
             label7.Location = new Point(13, 11);
             label7.Name = "label7";
-            label7.Size = new Size(45, 19);
+            label7.Size = new Size(53, 19);
             label7.TabIndex = 1;
-            label7.Text = "Filters";
+            label7.Text = "Filters:";
             // 
             // Pet_Reports
             // 

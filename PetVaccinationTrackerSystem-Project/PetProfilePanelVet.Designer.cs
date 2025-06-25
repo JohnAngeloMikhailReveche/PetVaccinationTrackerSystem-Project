@@ -143,7 +143,7 @@
             // 
             // txtUserID
             // 
-            txtUserID.BackColor = Color.FromArgb(249, 249, 249);
+            txtUserID.BackColor = Color.White;
             txtUserID.Font = new Font("Segoe UI", 10F);
             txtUserID.Location = new Point(218, 36);
             txtUserID.Multiline = true;
@@ -164,6 +164,7 @@
             // 
             // cmbGender
             // 
+            cmbGender.BackColor = Color.White;
             cmbGender.DropDownStyle = ComboBoxStyle.DropDownList;
             cmbGender.Font = new Font("Segoe UI", 10F);
             cmbGender.FormattingEnabled = true;
@@ -176,6 +177,7 @@
             // cmbDOB
             // 
             cmbDOB.CalendarFont = new Font("Segoe UI", 13.8F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            cmbDOB.CalendarMonthBackground = Color.White;
             cmbDOB.Font = new Font("Segoe UI", 10F);
             cmbDOB.Format = DateTimePickerFormat.Custom;
             cmbDOB.Location = new Point(218, 106);
@@ -185,6 +187,7 @@
             // 
             // cmbSpecies
             // 
+            cmbSpecies.BackColor = Color.White;
             cmbSpecies.DropDownStyle = ComboBoxStyle.DropDownList;
             cmbSpecies.Font = new Font("Segoe UI", 10F);
             cmbSpecies.FormattingEnabled = true;
@@ -199,7 +202,7 @@
             label10.AutoSize = true;
             label10.Font = new Font("Segoe UI", 10F);
             label10.ForeColor = Color.FromArgb(89, 85, 84);
-            label10.Location = new Point(219, 84);
+            label10.Location = new Point(219, 85);
             label10.Name = "label10";
             label10.Size = new Size(93, 19);
             label10.TabIndex = 15;
@@ -251,7 +254,7 @@
             // 
             // txtBreed
             // 
-            txtBreed.BackColor = Color.FromArgb(249, 249, 249);
+            txtBreed.BackColor = Color.White;
             txtBreed.Font = new Font("Segoe UI", 10F);
             txtBreed.Location = new Point(15, 177);
             txtBreed.Multiline = true;
@@ -283,7 +286,7 @@
             // 
             // txtColorMarkings
             // 
-            txtColorMarkings.BackColor = Color.FromArgb(249, 249, 249);
+            txtColorMarkings.BackColor = Color.White;
             txtColorMarkings.Font = new Font("Segoe UI", 10F);
             txtColorMarkings.Location = new Point(218, 177);
             txtColorMarkings.Multiline = true;
@@ -293,7 +296,7 @@
             // 
             // txtOwnerName
             // 
-            txtOwnerName.BackColor = Color.FromArgb(249, 249, 249);
+            txtOwnerName.BackColor = Color.White;
             txtOwnerName.Font = new Font("Segoe UI", 10F);
             txtOwnerName.Location = new Point(15, 246);
             txtOwnerName.Multiline = true;
@@ -303,7 +306,7 @@
             // 
             // txtcontact
             // 
-            txtcontact.BackColor = Color.FromArgb(249, 249, 249);
+            txtcontact.BackColor = Color.White;
             txtcontact.Location = new Point(15, 316);
             txtcontact.Multiline = true;
             txtcontact.Name = "txtcontact";
@@ -312,7 +315,7 @@
             // 
             // txtPetName
             // 
-            txtPetName.BackColor = Color.FromArgb(249, 249, 249);
+            txtPetName.BackColor = Color.White;
             txtPetName.Font = new Font("Segoe UI", 10F);
             txtPetName.Location = new Point(15, 36);
             txtPetName.Multiline = true;

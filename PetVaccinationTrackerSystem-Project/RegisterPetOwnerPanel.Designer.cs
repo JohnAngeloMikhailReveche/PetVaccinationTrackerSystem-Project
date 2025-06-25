@@ -33,7 +33,7 @@
             label1 = new Label();
             label14 = new Label();
             registerPOAccountDetsCard = new Panel();
-            registerPOPanelButton = new Button();
+            registerPOPanelButton = new ReaLTaiizor.Controls.HopeRoundButton();
             txtboxPassword = new TextBox();
             txtboxLastName = new TextBox();
             txtboxFirstName = new TextBox();
@@ -41,9 +41,9 @@
             label3 = new Label();
             label8 = new Label();
             label2 = new Label();
+            label4 = new Label();
             label7 = new Label();
             registerPOPanelBanner = new PictureBox();
-            label4 = new Label();
             registerPORegisterPanel.SuspendLayout();
             registerPOAccountDetsCard.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)registerPOPanelBanner).BeginInit();
@@ -55,9 +55,9 @@
             registerPORegisterPanel.Controls.Add(label1);
             registerPORegisterPanel.Controls.Add(label14);
             registerPORegisterPanel.Controls.Add(registerPOAccountDetsCard);
-            registerPORegisterPanel.Location = new Point(190, 216);
+            registerPORegisterPanel.Location = new Point(190, 210);
             registerPORegisterPanel.Name = "registerPORegisterPanel";
-            registerPORegisterPanel.Size = new Size(406, 322);
+            registerPORegisterPanel.Size = new Size(406, 345);
             registerPORegisterPanel.TabIndex = 18;
             // 
             // label1
@@ -100,38 +100,45 @@
             registerPOAccountDetsCard.Location = new Point(22, 55);
             registerPOAccountDetsCard.Margin = new Padding(20, 5, 0, 0);
             registerPOAccountDetsCard.Name = "registerPOAccountDetsCard";
-            registerPOAccountDetsCard.Size = new Size(361, 244);
+            registerPOAccountDetsCard.Size = new Size(361, 271);
             registerPOAccountDetsCard.TabIndex = 1;
             // 
             // registerPOPanelButton
             // 
-            registerPOPanelButton.FlatStyle = FlatStyle.Flat;
+            registerPOPanelButton.BorderColor = Color.FromArgb(220, 223, 230);
+            registerPOPanelButton.ButtonType = ReaLTaiizor.Util.HopeButtonType.Primary;
+            registerPOPanelButton.DangerColor = Color.FromArgb(245, 108, 108);
+            registerPOPanelButton.DefaultColor = Color.FromArgb(255, 255, 255);
             registerPOPanelButton.Font = new Font("Segoe UI", 10.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            registerPOPanelButton.ForeColor = Color.FromArgb(89, 85, 84);
-            registerPOPanelButton.Location = new Point(132, 180);
+            registerPOPanelButton.HoverTextColor = Color.White;
+            registerPOPanelButton.InfoColor = Color.FromArgb(144, 147, 153);
+            registerPOPanelButton.Location = new Point(116, 213);
             registerPOPanelButton.Name = "registerPOPanelButton";
-            registerPOPanelButton.Size = new Size(100, 40);
-            registerPOPanelButton.TabIndex = 28;
+            registerPOPanelButton.PrimaryColor = Color.FromArgb(89, 85, 84);
+            registerPOPanelButton.Size = new Size(130, 40);
+            registerPOPanelButton.SuccessColor = Color.FromArgb(103, 194, 58);
+            registerPOPanelButton.TabIndex = 20;
             registerPOPanelButton.Text = "Register";
-            registerPOPanelButton.UseVisualStyleBackColor = true;
+            registerPOPanelButton.TextColor = Color.White;
+            registerPOPanelButton.WarningColor = Color.FromArgb(230, 162, 60);
             registerPOPanelButton.Click += registerPOPanelButton_Click;
             // 
             // txtboxPassword
             // 
             txtboxPassword.BackColor = Color.White;
             txtboxPassword.Font = new Font("Segoe UI", 10F);
-            txtboxPassword.Location = new Point(14, 140);
+            txtboxPassword.Location = new Point(14, 159);
             txtboxPassword.Name = "txtboxPassword";
-            txtboxPassword.Size = new Size(250, 25);
+            txtboxPassword.Size = new Size(333, 25);
             txtboxPassword.TabIndex = 23;
             // 
             // txtboxLastName
             // 
             txtboxLastName.BackColor = Color.White;
             txtboxLastName.Font = new Font("Segoe UI", 10F);
-            txtboxLastName.Location = new Point(181, 23);
+            txtboxLastName.Location = new Point(181, 35);
             txtboxLastName.Name = "txtboxLastName";
-            txtboxLastName.Size = new Size(140, 25);
+            txtboxLastName.Size = new Size(166, 25);
             txtboxLastName.TabIndex = 22;
             txtboxLastName.TextChanged += txtboxLastName_TextChanged;
             // 
@@ -139,9 +146,9 @@
             // 
             txtboxFirstName.BackColor = Color.White;
             txtboxFirstName.Font = new Font("Segoe UI", 10F);
-            txtboxFirstName.Location = new Point(14, 24);
+            txtboxFirstName.Location = new Point(14, 35);
             txtboxFirstName.Name = "txtboxFirstName";
-            txtboxFirstName.Size = new Size(140, 25);
+            txtboxFirstName.Size = new Size(155, 25);
             txtboxFirstName.TabIndex = 22;
             txtboxFirstName.TextChanged += txtboxFirstName_TextChanged;
             // 
@@ -149,9 +156,9 @@
             // 
             txtboxUsername.BackColor = Color.White;
             txtboxUsername.Font = new Font("Segoe UI", 10F);
-            txtboxUsername.Location = new Point(14, 80);
+            txtboxUsername.Location = new Point(14, 98);
             txtboxUsername.Name = "txtboxUsername";
-            txtboxUsername.Size = new Size(174, 25);
+            txtboxUsername.Size = new Size(187, 25);
             txtboxUsername.TabIndex = 22;
             // 
             // label3
@@ -159,7 +166,7 @@
             label3.AutoSize = true;
             label3.Font = new Font("Segoe UI", 10F);
             label3.ForeColor = Color.FromArgb(89, 85, 84);
-            label3.Location = new Point(181, 1);
+            label3.Location = new Point(181, 13);
             label3.Name = "label3";
             label3.Size = new Size(77, 19);
             label3.TabIndex = 0;
@@ -170,7 +177,7 @@
             label8.AutoSize = true;
             label8.Font = new Font("Segoe UI", 10F);
             label8.ForeColor = Color.FromArgb(89, 85, 84);
-            label8.Location = new Point(14, 118);
+            label8.Location = new Point(14, 137);
             label8.Name = "label8";
             label8.Size = new Size(70, 19);
             label8.TabIndex = 11;
@@ -181,18 +188,29 @@
             label2.AutoSize = true;
             label2.Font = new Font("Segoe UI", 10F);
             label2.ForeColor = Color.FromArgb(89, 85, 84);
-            label2.Location = new Point(14, 2);
+            label2.Location = new Point(14, 13);
             label2.Name = "label2";
             label2.Size = new Size(78, 19);
             label2.TabIndex = 0;
             label2.Text = "First Name:";
+            // 
+            // label4
+            // 
+            label4.AutoSize = true;
+            label4.Font = new Font("Segoe UI", 10F);
+            label4.ForeColor = Color.FromArgb(89, 85, 84);
+            label4.Location = new Point(203, 100);
+            label4.Name = "label4";
+            label4.Size = new Size(138, 19);
+            label4.TabIndex = 0;
+            label4.Text = "@petownerclinic.com";
             // 
             // label7
             // 
             label7.AutoSize = true;
             label7.Font = new Font("Segoe UI", 10F);
             label7.ForeColor = Color.FromArgb(89, 85, 84);
-            label7.Location = new Point(14, 58);
+            label7.Location = new Point(14, 74);
             label7.Name = "label7";
             label7.Size = new Size(74, 19);
             label7.TabIndex = 0;
@@ -201,23 +219,12 @@
             // registerPOPanelBanner
             // 
             registerPOPanelBanner.Image = (Image)resources.GetObject("registerPOPanelBanner.Image");
-            registerPOPanelBanner.Location = new Point(212, 5);
+            registerPOPanelBanner.Location = new Point(218, 0);
             registerPOPanelBanner.Name = "registerPOPanelBanner";
             registerPOPanelBanner.Size = new Size(350, 250);
             registerPOPanelBanner.SizeMode = PictureBoxSizeMode.Zoom;
             registerPOPanelBanner.TabIndex = 19;
             registerPOPanelBanner.TabStop = false;
-            // 
-            // label4
-            // 
-            label4.AutoSize = true;
-            label4.Font = new Font("Segoe UI", 10F);
-            label4.ForeColor = Color.FromArgb(89, 85, 84);
-            label4.Location = new Point(190, 82);
-            label4.Name = "label4";
-            label4.Size = new Size(138, 19);
-            label4.TabIndex = 0;
-            label4.Text = "@petownerclinic.com";
             // 
             // registerPetOwnerPanel
             // 
@@ -239,7 +246,6 @@
         #endregion
 
         private Panel registerPORegisterPanel;
-        private Button registerPOPanelButton;
         private Label label14;
         private Panel registerPOAccountDetsCard;
         private TextBox txtboxPassword;
@@ -253,5 +259,6 @@
         private Label label3;
         private Label label2;
         private Label label4;
+        private ReaLTaiizor.Controls.HopeRoundButton registerPOPanelButton;
     }
 }
