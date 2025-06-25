@@ -27,6 +27,10 @@ namespace PetVaccinationTrackerSystem_Project.Data.Entities
         [StringLength(50)]
         public string UserRole { get; set; }
 
+        public bool? SentPasswordRequest { get; set; }
+
+        public bool? IsActive { get; set; }
+
 
 
         // Foregn Key
@@ -41,5 +45,6 @@ namespace PetVaccinationTrackerSystem_Project.Data.Entities
         // Navigation properties for related entities
         public List<UserContact>? UserContacts { get; set; }
         public List<Pet>? Pets { get; set; }
+        public List<Email>? Emails { get; set; }
     }
 }

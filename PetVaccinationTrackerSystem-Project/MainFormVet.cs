@@ -30,7 +30,6 @@ namespace PetVaccinationTrackerSystem_Project
         {
             InitializeComponent();
 
-
             // Force Loading of the current user from the database to ensure all related entities are loaded
             if (inUserReference != null)
             {
@@ -48,7 +47,7 @@ namespace PetVaccinationTrackerSystem_Project
                 this.Close(); // Close the form if no user reference is provided
                 return;
             }
-            
+
 
             mainFormVSideBHighlight.Height = btnHome.Height;
             mainFormVSideBHighlight.Top = btnHome.Top;
@@ -59,6 +58,7 @@ namespace PetVaccinationTrackerSystem_Project
         private void MainFormVet_Load(object sender, EventArgs e)
         {
             InitializeLabels();
+            DefaultPasswordMessage.CheckIfUserPasswordIsDefault(_currentUser);
         }
         private void mainFormVButtonExit_Click(object sender, EventArgs e)
         {
@@ -145,6 +145,12 @@ namespace PetVaccinationTrackerSystem_Project
         {
             UserSettings userSettings = new UserSettings(_currentUser);
             userSettings.ShowDialog();
+        }
+
+        private void mainFormVButtonAlerts_Click(object sender, EventArgs e)
+        {
+            InboxForm inboxForm = new InboxForm(_currentUser);
+            inboxForm.ShowDialog();
         }
     }
 }

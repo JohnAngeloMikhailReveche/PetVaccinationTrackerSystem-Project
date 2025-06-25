@@ -68,7 +68,9 @@ namespace PetVaccinationTrackerSystem_Project
                     LastName = txtboxLastName.Text,
                     UserEmail = $"{txtboxUsername.Text.Trim().ToLower()}@petownerclinic.com",
                     UserPassword = hashedPassword,
-                    UserRole = "PetOwner"
+                    UserRole = "PetOwner",
+                    SentPasswordRequest = false,
+                    IsActive = true
                 };
                 context.UserList.Add(user);
                 context.SaveChanges();

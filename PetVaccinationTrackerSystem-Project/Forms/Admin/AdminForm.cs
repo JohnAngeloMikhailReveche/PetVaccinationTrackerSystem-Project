@@ -110,5 +110,16 @@ namespace PetVaccinationTrackerSystem_Project.Forms.Admin
 
             registeredVetPanel1V.BringToFront();
         }
+
+        private void btnPasswordRequest_Click(object sender, EventArgs e)
+        {
+            mainFormVSideBHighlight.Height = btnPasswordRequest.Height;
+            mainFormVSideBHighlight.Top = btnPasswordRequest.Top;
+
+            // Load data
+            passwordRequestsForm1V.LoadData();
+
+            passwordRequestsForm1V.BringToFront();
+        }
     }
 }
