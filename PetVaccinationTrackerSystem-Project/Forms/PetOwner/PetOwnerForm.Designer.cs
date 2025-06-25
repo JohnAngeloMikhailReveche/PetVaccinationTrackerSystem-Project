@@ -112,6 +112,7 @@
             btnSettings.Size = new Size(25, 25);
             btnSettings.TabIndex = 1;
             btnSettings.UseVisualStyleBackColor = false;
+            btnSettings.Click += btnSettings_Click;
             // 
             // btnExit
             // 
