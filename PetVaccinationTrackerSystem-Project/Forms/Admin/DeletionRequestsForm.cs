@@ -46,7 +46,6 @@ namespace PetVaccinationTrackerSystem_Project.Forms.Admin
                 dgvUserList.Columns["LastName"].HeaderText = "Last Name";
                 dgvUserList.Columns["UserEmail"].HeaderText = "Email";
                 dgvUserList.Columns["UserRole"].HeaderText = "Role";
-                dgvUserList.Columns["IsActive"].HeaderText = "Account Active";
             }
         }
 
