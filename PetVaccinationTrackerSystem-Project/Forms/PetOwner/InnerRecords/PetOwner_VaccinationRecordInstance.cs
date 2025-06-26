@@ -72,6 +72,11 @@ namespace PetVaccinationTrackerSystem_Project.Forms.PetOwner.InnerRecords
             LoadData();
         }
 
+        private void mainFormVButtonExit_Click(object sender, EventArgs e)
+        {
+            this.Close(); // Close the current form to return to the previous one
+        }
+
         // Loading the PetHealthRecords data into the DataGridView
     }
 }
