@@ -54,7 +54,7 @@
             descriptionTitle.AutoSize = true;
             descriptionTitle.Font = new Font("Segoe UI", 18F, FontStyle.Bold);
             descriptionTitle.ForeColor = Color.FromArgb(85, 82, 81);
-            descriptionTitle.Location = new Point(33, 235);
+            descriptionTitle.Location = new Point(33, 210);
             descriptionTitle.Name = "descriptionTitle";
             descriptionTitle.Size = new Size(469, 32);
             descriptionTitle.TabIndex = 3;
@@ -65,7 +65,7 @@
             descriptionContent.AutoSize = true;
             descriptionContent.Font = new Font("Segoe UI", 10F);
             descriptionContent.ForeColor = Color.FromArgb(85, 82, 81);
-            descriptionContent.Location = new Point(36, 275);
+            descriptionContent.Location = new Point(36, 250);
             descriptionContent.MaximumSize = new Size(740, 0);
             descriptionContent.Name = "descriptionContent";
             descriptionContent.Size = new Size(661, 57);
@@ -76,7 +76,7 @@
             // 
             panel2.BackColor = Color.FromArgb(249, 249, 249);
             panel2.Controls.Add(pictureBox2);
-            panel2.Location = new Point(41, 375);
+            panel2.Location = new Point(41, 360);
             panel2.Name = "panel2";
             panel2.Size = new Size(73, 71);
             panel2.TabIndex = 5;
@@ -97,7 +97,7 @@
             missionTitle.AutoSize = true;
             missionTitle.Font = new Font("Segoe UI", 14F, FontStyle.Bold);
             missionTitle.ForeColor = Color.FromArgb(89, 85, 84);
-            missionTitle.Location = new Point(120, 379);
+            missionTitle.Location = new Point(120, 364);
             missionTitle.Name = "missionTitle";
             missionTitle.Size = new Size(80, 25);
             missionTitle.TabIndex = 7;
@@ -108,7 +108,7 @@
             missionText.AutoSize = true;
             missionText.Font = new Font("Segoe UI", 10F);
             missionText.ForeColor = Color.FromArgb(89, 85, 84);
-            missionText.Location = new Point(123, 406);
+            missionText.Location = new Point(123, 391);
             missionText.MaximumSize = new Size(650, 0);
             missionText.Name = "missionText";
             missionText.Size = new Size(626, 38);
@@ -119,7 +119,7 @@
             // 
             panel1.BackColor = Color.FromArgb(249, 249, 249);
             panel1.Controls.Add(pictureBox1);
-            panel1.Location = new Point(41, 475);
+            panel1.Location = new Point(41, 460);
             panel1.Name = "panel1";
             panel1.Size = new Size(73, 71);
             panel1.TabIndex = 9;
@@ -140,7 +140,7 @@
             visionTitle.AutoSize = true;
             visionTitle.Font = new Font("Segoe UI", 14F, FontStyle.Bold);
             visionTitle.ForeColor = Color.FromArgb(89, 85, 84);
-            visionTitle.Location = new Point(120, 479);
+            visionTitle.Location = new Point(120, 464);
             visionTitle.Name = "visionTitle";
             visionTitle.Size = new Size(67, 25);
             visionTitle.TabIndex = 10;
@@ -151,7 +151,7 @@
             visionText.AutoSize = true;
             visionText.Font = new Font("Segoe UI", 10F);
             visionText.ForeColor = Color.FromArgb(89, 85, 84);
-            visionText.Location = new Point(123, 506);
+            visionText.Location = new Point(123, 491);
             visionText.MaximumSize = new Size(650, 0);
             visionText.Name = "visionText";
             visionText.Size = new Size(619, 38);
