@@ -73,7 +73,7 @@ namespace PetVaccinationTrackerSystem_Project
                 DateOfBirth = cmbDOB.Value,
                 ColorsAndMarkings = txtColorMarkings.Text,
                 OwnerName = txtOwnerName.Text,
-                OwnerPhoneNumber = (int)parsedPhone,
+                OwnerPhoneNumber = txtcontact.Text.Trim(),
                 Notes = txtNotes.Text,
                 ImageRL = petpicture.Image != null ? Convert.ToBase64String((byte[])new ImageConverter().ConvertTo(petpicture.Image, typeof(byte[]))) : null,
                 UserID = int.Parse(txtUserID.Text)

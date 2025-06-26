@@ -43,7 +43,7 @@ namespace PetVaccinationTrackerSystem_Project.Data.Entities
 
 
         // Navigation properties for related entities
-        public List<UserContact>? UserContacts { get; set; }
+       
         public List<Pet>? Pets { get; set; }
         public List<Email>? Emails { get; set; }
     }

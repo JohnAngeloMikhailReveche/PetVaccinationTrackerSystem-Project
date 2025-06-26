@@ -3,6 +3,7 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using PetVaccinationTrackerSystem_Project.Data;
 
@@ -11,9 +12,11 @@ using PetVaccinationTrackerSystem_Project.Data;
 namespace PetVaccinationTrackerSystem_Project.Migrations
 {
     [DbContext(typeof(ModelContext))]
-    partial class ModelContextModelSnapshot : ModelSnapshot
+    [Migration("20250626154349_FixedPhoneNum")]
+    partial class FixedPhoneNum
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -321,6 +324,34 @@ namespace PetVaccinationTrackerSystem_Project.Migrations
                     b.ToTable("UserList");
                 });
 
+            modelBuilder.Entity("PetVaccinationTrackerSystem_Project.Data.Entities.UserContact", b =>
+                {
+                    b.Property<int>("ContactID")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("ContactID"));
+
+                    b.Property<string>("ContactType")
+                        .IsRequired()
+                        .HasMaxLength(50)
+                        .HasColumnType("nvarchar(50)");
+
+                    b.Property<string>("ContactValue")
+                        .IsRequired()
+                        .HasMaxLength(50)
+                        .HasColumnType("nvarchar(50)");
+
+                    b.Property<int>("UserID")
+                        .HasColumnType("int");
+
+                    b.HasKey("ContactID");
+
+                    b.HasIndex("UserID");
+
+                    b.ToTable("UserContactList");
+                });
+
             modelBuilder.Entity("PetVaccinationTrackerSystem_Project.Data.Entities.Veterinarian", b =>
                 {
                     b.Property<int>("VetID")
@@ -413,6 +444,17 @@ namespace PetVaccinationTrackerSystem_Project.Migrations
                     b.Navigation("Veterinarian");
                 });
 
+            modelBuilder.Entity("PetVaccinationTrackerSystem_Project.Data.Entities.UserContact", b =>
+                {
+                    b.HasOne("PetVaccinationTrackerSystem_Project.Data.Entities.User", "User")
+                        .WithMany("UserContacts")
+                        .HasForeignKey("UserID")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("User");
+                });
+
             modelBuilder.Entity("PetVaccinationTrackerSystem_Project.Data.Entities.Veterinarian", b =>
                 {
                     b.HasOne("PetVaccinationTrackerSystem_Project.Data.Entities.Clinic", "Clinic")
@@ -441,6 +483,8 @@ namespace PetVaccinationTrackerSystem_Project.Migrations
                     b.Navigation("Emails");
 
                     b.Navigation("Pets");
+
+                    b.Navigation("UserContacts");
                 });
 
             modelBuilder.Entity("PetVaccinationTrackerSystem_Project.Data.Entities.Veterinarian", b =>

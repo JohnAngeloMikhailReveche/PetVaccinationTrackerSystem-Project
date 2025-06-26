@@ -17,7 +17,7 @@ namespace PetVaccinationTrackerSystem_Project.Data
         public DbSet<Pet> PetList { get; set; }
         public DbSet<PetHealthRecords> PetHealthRecordsList { get; set; }
         public DbSet<User> UserList { get; set; }
-        public DbSet<UserContact> UserContactList { get; set; }
+      
         public DbSet<Veterinarian> VeterinarianList { get; set; }
         public DbSet<Email> EmailList { get; set; }
 

@@ -30,14 +30,13 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(TablePetProfile));
             label2 = new Label();
-            dgvClinicList = new DataGridView();
-            txtboxSearchClinic = new TextBox();
-            cmbboxFilterClinic = new ComboBox();
-            comboBox1 = new ComboBox();
+            dgvPetProfile = new DataGridView();
+            txtboxSearchPet = new TextBox();
+            cmbFilterSpecies = new ComboBox();
             panel1 = new Panel();
             pictureBox1 = new PictureBox();
             btnSearchPetProfile = new ReaLTaiizor.Controls.HopeRoundButton();
-            ((System.ComponentModel.ISupportInitialize)dgvClinicList).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)dgvPetProfile).BeginInit();
             panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             SuspendLayout();
@@ -53,47 +52,36 @@
             label2.TabIndex = 7;
             label2.Text = "Filter and Search:";
             // 
-            // dgvClinicList
+            // dgvPetProfile
             // 
-            dgvClinicList.AllowUserToAddRows = false;
-            dgvClinicList.BackgroundColor = Color.White;
-            dgvClinicList.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dgvClinicList.Location = new Point(24, 195);
-            dgvClinicList.MultiSelect = false;
-            dgvClinicList.Name = "dgvClinicList";
-            dgvClinicList.ReadOnly = true;
-            dgvClinicList.Size = new Size(754, 380);
-            dgvClinicList.TabIndex = 8;
+            dgvPetProfile.AllowUserToAddRows = false;
+            dgvPetProfile.BackgroundColor = Color.White;
+            dgvPetProfile.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dgvPetProfile.Location = new Point(24, 195);
+            dgvPetProfile.MultiSelect = false;
+            dgvPetProfile.Name = "dgvPetProfile";
+            dgvPetProfile.ReadOnly = true;
+            dgvPetProfile.Size = new Size(754, 380);
+            dgvPetProfile.TabIndex = 8;
             // 
-            // txtboxSearchClinic
+            // txtboxSearchPet
             // 
-            txtboxSearchClinic.Font = new Font("Segoe UI", 10F);
-            txtboxSearchClinic.Location = new Point(156, 157);
-            txtboxSearchClinic.Name = "txtboxSearchClinic";
-            txtboxSearchClinic.Size = new Size(270, 25);
-            txtboxSearchClinic.TabIndex = 9;
+            txtboxSearchPet.Font = new Font("Segoe UI", 10F);
+            txtboxSearchPet.Location = new Point(156, 157);
+            txtboxSearchPet.Name = "txtboxSearchPet";
+            txtboxSearchPet.Size = new Size(270, 25);
+            txtboxSearchPet.TabIndex = 9;
             // 
-            // cmbboxFilterClinic
+            // cmbFilterSpecies
             // 
-            cmbboxFilterClinic.DropDownStyle = ComboBoxStyle.DropDownList;
-            cmbboxFilterClinic.Font = new Font("Segoe UI", 10F);
-            cmbboxFilterClinic.FormattingEnabled = true;
-            cmbboxFilterClinic.Items.AddRange(new object[] { "Male", "Female" });
-            cmbboxFilterClinic.Location = new Point(434, 157);
-            cmbboxFilterClinic.Name = "cmbboxFilterClinic";
-            cmbboxFilterClinic.Size = new Size(121, 25);
-            cmbboxFilterClinic.TabIndex = 10;
-            // 
-            // comboBox1
-            // 
-            comboBox1.DropDownStyle = ComboBoxStyle.DropDownList;
-            comboBox1.Font = new Font("Segoe UI", 10F);
-            comboBox1.FormattingEnabled = true;
-            comboBox1.Items.AddRange(new object[] { "Dog", "Cat" });
-            comboBox1.Location = new Point(561, 157);
-            comboBox1.Name = "comboBox1";
-            comboBox1.Size = new Size(121, 25);
-            comboBox1.TabIndex = 11;
+            cmbFilterSpecies.DropDownStyle = ComboBoxStyle.DropDownList;
+            cmbFilterSpecies.Font = new Font("Segoe UI", 10F);
+            cmbFilterSpecies.FormattingEnabled = true;
+            cmbFilterSpecies.Items.AddRange(new object[] { "Dog", "Cat" });
+            cmbFilterSpecies.Location = new Point(561, 157);
+            cmbFilterSpecies.Name = "cmbFilterSpecies";
+            cmbFilterSpecies.Size = new Size(121, 25);
+            cmbFilterSpecies.TabIndex = 11;
             // 
             // panel1
             // 
@@ -133,6 +121,7 @@
             btnSearchPetProfile.Text = "Search";
             btnSearchPetProfile.TextColor = Color.White;
             btnSearchPetProfile.WarningColor = Color.FromArgb(230, 162, 60);
+            btnSearchPetProfile.Click += btnSearchPetProfile_Click;
             // 
             // TablePetProfile
             // 
@@ -141,14 +130,13 @@
             BackColor = Color.White;
             Controls.Add(btnSearchPetProfile);
             Controls.Add(panel1);
-            Controls.Add(comboBox1);
-            Controls.Add(cmbboxFilterClinic);
-            Controls.Add(txtboxSearchClinic);
-            Controls.Add(dgvClinicList);
+            Controls.Add(cmbFilterSpecies);
+            Controls.Add(txtboxSearchPet);
+            Controls.Add(dgvPetProfile);
             Controls.Add(label2);
             Name = "TablePetProfile";
             Size = new Size(800, 590);
-            ((System.ComponentModel.ISupportInitialize)dgvClinicList).EndInit();
+            ((System.ComponentModel.ISupportInitialize)dgvPetProfile).EndInit();
             panel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             ResumeLayout(false);
@@ -158,10 +146,9 @@
         #endregion
 
         private Label label2;
-        private DataGridView dgvClinicList;
-        private TextBox txtboxSearchClinic;
-        private ComboBox cmbboxFilterClinic;
-        private ComboBox comboBox1;
+        private DataGridView dgvPetProfile;
+        private TextBox txtboxSearchPet;
+        private ComboBox cmbFilterSpecies;
         private Panel panel1;
         private ReaLTaiizor.Controls.HopeRoundButton btnSearchPetProfile;
         private PictureBox pictureBox1;
