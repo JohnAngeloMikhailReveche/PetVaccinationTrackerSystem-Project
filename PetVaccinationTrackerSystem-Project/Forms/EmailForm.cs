@@ -1,4 +1,5 @@
-﻿using PetVaccinationTrackerSystem_Project.Data;
+﻿using PetVaccinationTrackerSystem_Project.Classes;
+using PetVaccinationTrackerSystem_Project.Data;
 using PetVaccinationTrackerSystem_Project.Data.Entities;
 using System;
 using System.Collections.Generic;
@@ -74,32 +75,16 @@ namespace PetVaccinationTrackerSystem_Project.Forms
         private void btnRead_Click(object sender, EventArgs e)
         {
 
-            if (_currentEmail.IsRead == false)
-            {
-                _currentEmail.IsRead = true; // Mark the email as read
 
-                using (var context = new ModelContext())
-                {
-                    context.EmailList.Update(_currentEmail); // Update the email in the database
-                    context.SaveChanges(); // Save changes to the database
-                }
+            bool emailStatus = !_currentEmail.IsRead;
 
-                MessageBox.Show("Email marked as read.", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                SetReadButton(false);
-            }
-            else
-            {
-                _currentEmail.IsRead = false; // Mark the email as unread
+            var emailService = new EmailService();
 
-                using (var context = new ModelContext())
-                {
-                    context.EmailList.Update(_currentEmail); // Update the email in the database
-                    context.SaveChanges(); // Save changes to the database
-                }
+            emailService.ToggleReadStatus(_currentEmail, emailStatus);
 
-                MessageBox.Show("Email marked as unread.", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                SetReadButton(true);
-            }
+            MessageBox.Show($"Email marked as {(emailStatus ? "read" : "unread")}", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            SetReadButton(!emailStatus);
+
 
         }
 
@@ -107,35 +92,14 @@ namespace PetVaccinationTrackerSystem_Project.Forms
         {
             var diagResult = MessageBox.Show("Are you sure you want to delete this email?\n\n You will not see the email once you accept its deletion.", "Delete Confirmation", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
 
-            if (_currentUser.VetID != null)
+            if (diagResult == DialogResult.Yes)
             {
-                if (diagResult == DialogResult.Yes)
-                {
-                    using (var context = new ModelContext())
-                    {
-                        context.EmailList.Remove(_currentEmail);
-                        context.SaveChanges();
+                var emailService = new EmailService();
 
-                        MessageBox.Show("The Email is deleted Successfully!", "Email Deleted", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                        this.Close();
-                    }
-                }
-            }
-            else
-            {
-                if (diagResult == DialogResult.Yes)
-                {
-                    using (var context = new ModelContext())
-                    {
-                        _currentEmail.IsDeleted = true;
+                emailService.DeleteEmail(_currentEmail, _currentUser.VetID != null);
 
-                        context.EmailList.Update(_currentEmail);
-                        context.SaveChanges();
-
-                        MessageBox.Show("The Email is deleted Successfully!", "Email Deleted", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                        this.Close();
-                    }
-                }
+                MessageBox.Show("The Email is deleted Successfully!", "Email Deleted", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                this.Close();
             }
 
         }

@@ -1,4 +1,4 @@
-﻿using PetVaccinationTrackerSystem_Project.Classes.Abstract;
+﻿using PetVaccinationTrackerSystem_Project.Classes.Interfaces;
 using PetVaccinationTrackerSystem_Project.Data;
 using PetVaccinationTrackerSystem_Project.Data.Entities;
 using System;
@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 
 namespace PetVaccinationTrackerSystem_Project.Classes
 {
-    public class VetRegistrar : EntityRegistrar
+    public class VetRegistrar : IEntityRegistrar
     {
         private readonly string _licenseNumber;
         private readonly int _clinicID;
@@ -25,12 +25,12 @@ namespace PetVaccinationTrackerSystem_Project.Classes
             _vet = new VetService();
         }
 
-        public override bool ValidateFields()
+        public bool ValidateFields()
         {
             return !string.IsNullOrEmpty(_licenseNumber);
         }
 
-        public override void Register()
+        public void Register()
         {
             using (var context = new ModelContext())
             {
@@ -46,7 +46,7 @@ namespace PetVaccinationTrackerSystem_Project.Classes
             }
         }
 
-        public override int GetID()
+        public int GetID()
         {
             return _registeredVetID;
         }

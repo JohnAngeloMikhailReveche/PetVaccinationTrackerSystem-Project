@@ -6,10 +6,10 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace PetVaccinationTrackerSystem_Project.Classes.Abstract
+namespace PetVaccinationTrackerSystem_Project.Classes.Interfaces
 {
-    public abstract class UserActionHandler
+    public interface IUserActionHandler
     {
-        public abstract void HandleAction(User user, ModelContext context);
+        public void HandleAction(User user, ModelContext context);
     }
 }
