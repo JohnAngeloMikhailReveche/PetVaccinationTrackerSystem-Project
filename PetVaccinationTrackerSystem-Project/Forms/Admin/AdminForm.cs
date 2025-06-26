@@ -48,7 +48,7 @@ namespace PetVaccinationTrackerSystem_Project.Forms.Admin
         {
             InitializeComponent();
             HighlightButton(mainFormVButtonHome, mainFormVSideBHighlight);
-            homePanel1.BringToFront();
+            homePanelAdmin1.BringToFront();
         }
 
         private void btnRegisterClinic_Click(object sender, EventArgs e)
@@ -93,7 +93,7 @@ namespace PetVaccinationTrackerSystem_Project.Forms.Admin
         private void mainFormVButtonHome_Click(object sender, EventArgs e)
         {
             HighlightButton(mainFormVButtonHome, mainFormVSideBHighlight);
-            homePanel1.BringToFront();
+            homePanelAdmin1.BringToFront();
         }
 
         private void mainFormVButtonSettings_Click(object sender, EventArgs e)
