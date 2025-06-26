@@ -1,5 +1,4 @@
 ﻿using PetVaccinationTrackerSystem_Project.Classes;
-using PetVaccinationTrackerSystem_Project.Classes.Abstract;
 using PetVaccinationTrackerSystem_Project.Classes.Interfaces;
 using PetVaccinationTrackerSystem_Project.Data;
 using PetVaccinationTrackerSystem_Project.Data.Entities;
@@ -78,12 +77,12 @@ namespace PetVaccinationTrackerSystem_Project.Forms.Admin
             int selectedClinic = Convert.ToInt32(cmbboxClinic.SelectedValue.ToString());
 
             // Register Vet
-            EntityRegistrar vetRegistrar = new VetRegistrar(txtboxLicenseNo.Text.Trim(), selectedClinic);
+            IEntityRegistrar vetRegistrar = new VetRegistrar(txtboxLicenseNo.Text.Trim(), selectedClinic);
             
             vetRegistrar.Register();
 
             // Register User
-            EntityRegistrar userRegistrar = new UserRegistrar(
+            IEntityRegistrar userRegistrar = new UserRegistrar(
                 txtboxName.Text.Trim(),
                 txtboxLastName.Text.Trim(),
                 txtboxAccountUsername.Text.Trim(),
