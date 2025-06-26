@@ -28,24 +28,16 @@
         /// </summary>
         private void InitializeComponent()
         {
-            DataGridViewCellStyle dataGridViewCellStyle1 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle2 = new DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(TablePetRecords));
             label1 = new Label();
-            textBox1 = new TextBox();
-            comboBox1 = new ComboBox();
-            comboBox2 = new ComboBox();
-            dataGridView1 = new DataGridView();
-            PetID = new DataGridViewTextBoxColumn();
-            PetName = new DataGridViewTextBoxColumn();
-            Species = new DataGridViewTextBoxColumn();
-            VaccineName = new DataGridViewTextBoxColumn();
-            DateGiven = new DataGridViewTextBoxColumn();
-            NextDueDate = new DataGridViewTextBoxColumn();
-            AdministeredBy = new DataGridViewTextBoxColumn();
+            cmbFilter = new ComboBox();
+            dgvPetRecords = new DataGridView();
             panel1 = new Panel();
             pictureBox1 = new PictureBox();
             btnSearchPetRecord = new ReaLTaiizor.Controls.HopeRoundButton();
-            ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
+            txtSearch = new TextBox();
+            ((System.ComponentModel.ISupportInitialize)dgvPetRecords).BeginInit();
             panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             SuspendLayout();
@@ -61,94 +53,34 @@
             label1.TabIndex = 1;
             label1.Text = "Filter and Search:";
             // 
-            // textBox1
+            // cmbFilter
             // 
-            textBox1.Font = new Font("Segoe UI", 10F);
-            textBox1.Location = new Point(156, 157);
-            textBox1.Name = "textBox1";
-            textBox1.Size = new Size(270, 25);
-            textBox1.TabIndex = 2;
+            cmbFilter.DropDownStyle = ComboBoxStyle.DropDownList;
+            cmbFilter.Font = new Font("Segoe UI", 10F);
+            cmbFilter.FormattingEnabled = true;
+            cmbFilter.Location = new Point(561, 157);
+            cmbFilter.Name = "cmbFilter";
+            cmbFilter.Size = new Size(121, 25);
+            cmbFilter.TabIndex = 4;
             // 
-            // comboBox1
+            // dgvPetRecords
             // 
-            comboBox1.DropDownStyle = ComboBoxStyle.DropDownList;
-            comboBox1.Font = new Font("Segoe UI", 10F);
-            comboBox1.FormattingEnabled = true;
-            comboBox1.Location = new Point(434, 157);
-            comboBox1.Name = "comboBox1";
-            comboBox1.Size = new Size(121, 25);
-            comboBox1.TabIndex = 3;
-            // 
-            // comboBox2
-            // 
-            comboBox2.DropDownStyle = ComboBoxStyle.DropDownList;
-            comboBox2.Font = new Font("Segoe UI", 10F);
-            comboBox2.FormattingEnabled = true;
-            comboBox2.Location = new Point(561, 157);
-            comboBox2.Name = "comboBox2";
-            comboBox2.Size = new Size(121, 25);
-            comboBox2.TabIndex = 4;
-            // 
-            // dataGridView1
-            // 
-            dataGridView1.AllowUserToAddRows = false;
-            dataGridView1.BackgroundColor = Color.White;
-            dataGridViewCellStyle1.Alignment = DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle1.BackColor = Color.White;
-            dataGridViewCellStyle1.Font = new Font("Segoe UI", 9F);
-            dataGridViewCellStyle1.ForeColor = Color.FromArgb(89, 85, 84);
-            dataGridViewCellStyle1.SelectionBackColor = Color.FromArgb(214, 180, 141);
-            dataGridViewCellStyle1.SelectionForeColor = SystemColors.HighlightText;
-            dataGridViewCellStyle1.WrapMode = DataGridViewTriState.True;
-            dataGridView1.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
-            dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridView1.Columns.AddRange(new DataGridViewColumn[] { PetID, PetName, Species, VaccineName, DateGiven, NextDueDate, AdministeredBy });
-            dataGridView1.Location = new Point(24, 195);
-            dataGridView1.Name = "dataGridView1";
-            dataGridView1.RowHeadersVisible = false;
-            dataGridView1.Size = new Size(754, 380);
-            dataGridView1.TabIndex = 6;
-            // 
-            // PetID
-            // 
-            PetID.HeaderText = "Pet ID";
-            PetID.Name = "PetID";
-            PetID.Width = 70;
-            // 
-            // PetName
-            // 
-            PetName.HeaderText = "Pet Name";
-            PetName.Name = "PetName";
-            // 
-            // Species
-            // 
-            Species.HeaderText = "Species";
-            Species.Name = "Species";
-            Species.Width = 90;
-            // 
-            // VaccineName
-            // 
-            VaccineName.HeaderText = "Vaccine Name";
-            VaccineName.Name = "VaccineName";
-            VaccineName.Width = 130;
-            // 
-            // DateGiven
-            // 
-            DateGiven.HeaderText = "Date Administered";
-            DateGiven.Name = "DateGiven";
-            DateGiven.Width = 105;
-            // 
-            // NextDueDate
-            // 
-            NextDueDate.HeaderText = "Next Due Date";
-            NextDueDate.Name = "NextDueDate";
-            NextDueDate.Width = 105;
-            // 
-            // AdministeredBy
-            // 
-            AdministeredBy.HeaderText = "Administered By";
-            AdministeredBy.Name = "AdministeredBy";
-            AdministeredBy.Width = 120;
+            dgvPetRecords.AllowUserToAddRows = false;
+            dgvPetRecords.BackgroundColor = Color.White;
+            dataGridViewCellStyle2.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = Color.White;
+            dataGridViewCellStyle2.Font = new Font("Segoe UI", 9F);
+            dataGridViewCellStyle2.ForeColor = Color.FromArgb(89, 85, 84);
+            dataGridViewCellStyle2.SelectionBackColor = Color.FromArgb(214, 180, 141);
+            dataGridViewCellStyle2.SelectionForeColor = SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = DataGridViewTriState.True;
+            dgvPetRecords.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
+            dgvPetRecords.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dgvPetRecords.Location = new Point(24, 195);
+            dgvPetRecords.Name = "dgvPetRecords";
+            dgvPetRecords.RowHeadersVisible = false;
+            dgvPetRecords.Size = new Size(754, 380);
+            dgvPetRecords.TabIndex = 6;
             // 
             // panel1
             // 
@@ -189,23 +121,30 @@
             btnSearchPetRecord.Text = "Search";
             btnSearchPetRecord.TextColor = Color.White;
             btnSearchPetRecord.WarningColor = Color.FromArgb(230, 162, 60);
+            btnSearchPetRecord.Click += btnSearchPetRecord_Click;
+            // 
+            // txtSearch
+            // 
+            txtSearch.Location = new Point(151, 158);
+            txtSearch.Name = "txtSearch";
+            txtSearch.Size = new Size(404, 23);
+            txtSearch.TabIndex = 17;
             // 
             // TablePetRecords
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.White;
+            Controls.Add(txtSearch);
             Controls.Add(btnSearchPetRecord);
             Controls.Add(panel1);
-            Controls.Add(dataGridView1);
-            Controls.Add(comboBox2);
-            Controls.Add(comboBox1);
-            Controls.Add(textBox1);
+            Controls.Add(dgvPetRecords);
+            Controls.Add(cmbFilter);
             Controls.Add(label1);
             Name = "TablePetRecords";
             Size = new Size(800, 590);
             Load += TablePetRecords_Load;
-            ((System.ComponentModel.ISupportInitialize)dataGridView1).EndInit();
+            ((System.ComponentModel.ISupportInitialize)dgvPetRecords).EndInit();
             panel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             ResumeLayout(false);
@@ -216,17 +155,11 @@
         private Label label1;
         private TextBox textBox1;
         private ComboBox comboBox1;
-        private ComboBox comboBox2;
-        private DataGridView dataGridView1;
-        private DataGridViewTextBoxColumn PetID;
-        private DataGridViewTextBoxColumn PetName;
-        private DataGridViewTextBoxColumn Species;
-        private DataGridViewTextBoxColumn VaccineName;
-        private DataGridViewTextBoxColumn DateGiven;
-        private DataGridViewTextBoxColumn NextDueDate;
-        private DataGridViewTextBoxColumn AdministeredBy;
+        private ComboBox cmbFilter;
+        private DataGridView dgvPetRecords;
         private Panel panel1;
         private ReaLTaiizor.Controls.HopeRoundButton btnSearchPetRecord;
         private PictureBox pictureBox1;
+        private TextBox txtSearch;
     }
 }
