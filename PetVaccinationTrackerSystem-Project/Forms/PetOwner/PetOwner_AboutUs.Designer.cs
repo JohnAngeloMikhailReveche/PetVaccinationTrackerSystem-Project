@@ -29,7 +29,6 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(PetOwner_AboutUs));
-            label1 = new Label();
             descriptionTitle = new Label();
             descriptionContent = new Label();
             panel2 = new Panel();
@@ -50,23 +49,12 @@
             ((System.ComponentModel.ISupportInitialize)pictureBox3).BeginInit();
             SuspendLayout();
             // 
-            // label1
-            // 
-            label1.AutoSize = true;
-            label1.Font = new Font("Segoe UI", 10F, FontStyle.Bold);
-            label1.ForeColor = Color.DimGray;
-            label1.Location = new Point(37, 210);
-            label1.Name = "label1";
-            label1.Size = new Size(79, 19);
-            label1.TabIndex = 2;
-            label1.Text = "ABOUT US";
-            // 
             // descriptionTitle
             // 
             descriptionTitle.AutoSize = true;
             descriptionTitle.Font = new Font("Segoe UI", 18F, FontStyle.Bold);
             descriptionTitle.ForeColor = Color.FromArgb(85, 82, 81);
-            descriptionTitle.Location = new Point(33, 240);
+            descriptionTitle.Location = new Point(33, 235);
             descriptionTitle.Name = "descriptionTitle";
             descriptionTitle.Size = new Size(469, 32);
             descriptionTitle.TabIndex = 3;
@@ -77,7 +65,7 @@
             descriptionContent.AutoSize = true;
             descriptionContent.Font = new Font("Segoe UI", 10F);
             descriptionContent.ForeColor = Color.FromArgb(85, 82, 81);
-            descriptionContent.Location = new Point(36, 280);
+            descriptionContent.Location = new Point(36, 275);
             descriptionContent.MaximumSize = new Size(740, 0);
             descriptionContent.Name = "descriptionContent";
             descriptionContent.Size = new Size(661, 57);
@@ -204,7 +192,6 @@
             Controls.Add(panel2);
             Controls.Add(descriptionContent);
             Controls.Add(descriptionTitle);
-            Controls.Add(label1);
             Name = "PetOwner_AboutUs";
             Size = new Size(800, 590);
             panel2.ResumeLayout(false);
@@ -218,7 +205,6 @@
         }
 
         #endregion
-        private Label label1;
         private Label descriptionTitle;
         private Label descriptionContent;
         private Panel panel2;
