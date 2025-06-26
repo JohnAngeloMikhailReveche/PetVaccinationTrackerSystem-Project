@@ -70,6 +70,8 @@ namespace PetVaccinationTrackerSystem_Project
             mainFormVSideBHighlight.Top = btnHome.Top;
             homePanel1.BringToFront();
 
+            tablePetRecords1.RefreshCurrentUser(_currentUser);
+
         }
 
         private void MainFormVet_Load(object sender, EventArgs e)
@@ -118,7 +120,9 @@ namespace PetVaccinationTrackerSystem_Project
         {
             mainFormVSideBHighlight.Height = btnVaccineRecords.Height;
             mainFormVSideBHighlight.Top = btnVaccineRecords.Top;
+            tablePetRecords1.LoadData();
             tablePetRecords1.BringToFront();
+
         }
 
         private void btnAddVaccineRecord_Click(object sender, EventArgs e)
@@ -126,6 +130,7 @@ namespace PetVaccinationTrackerSystem_Project
             mainFormVSideBHighlight.Height = btnAddVaccineRecord.Height;
             mainFormVSideBHighlight.Top = btnAddVaccineRecord.Top;
             vaccineRecordsPanelVet1.BringToFront();
+
         }
 
         private void btnVaccineReports_Click(object sender, EventArgs e)
