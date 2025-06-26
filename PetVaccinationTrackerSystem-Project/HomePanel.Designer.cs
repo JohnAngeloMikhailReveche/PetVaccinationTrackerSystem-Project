@@ -130,11 +130,11 @@
             label1.AutoSize = true;
             label1.Font = new Font("Segoe UI", 13.8F, FontStyle.Bold, GraphicsUnit.Point, 0);
             label1.ForeColor = Color.FromArgb(89, 85, 84);
-            label1.Location = new Point(72, 475);
+            label1.Location = new Point(70, 475);
             label1.Name = "label1";
-            label1.Size = new Size(152, 25);
+            label1.Size = new Size(160, 25);
             label1.TabIndex = 3;
-            label1.Text = "View Pet Profile";
+            label1.Text = "View Pet Profiles";
             // 
             // label2
             // 

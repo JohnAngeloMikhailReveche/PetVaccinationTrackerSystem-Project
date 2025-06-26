@@ -33,6 +33,7 @@
             mainFormVButtonSettings = new Button();
             mainFormVButtonExit = new Button();
             mainFormVSideB = new Panel();
+            btnAboutUs = new Button();
             mainFormVSideBHighlight = new Panel();
             mainFormVButtonLO = new ReaLTaiizor.Controls.HopeRoundButton();
             btnDeleteRequest = new Button();
@@ -52,6 +53,7 @@
             passwordRequestsForm1V = new PasswordRequestsForm();
             deletionRequestsForm1V = new DeletionRequestsForm();
             homePanel1 = new homePanel();
+            petOwner_AboutUs1 = new PetVaccinationTrackerSystem_Project.Forms.PetOwner.PetOwner_AboutUs();
             mainFormVTopB.SuspendLayout();
             mainFormVSideB.SuspendLayout();
             mainFormVPB.SuspendLayout();
@@ -101,6 +103,7 @@
             // 
             mainFormVSideB.BackColor = Color.White;
             mainFormVSideB.Controls.Add(mainFormVSideBHighlight);
+            mainFormVSideB.Controls.Add(btnAboutUs);
             mainFormVSideB.Controls.Add(mainFormVButtonLO);
             mainFormVSideB.Controls.Add(btnDeleteRequest);
             mainFormVSideB.Controls.Add(btnPasswordRequest);
@@ -116,12 +119,28 @@
             mainFormVSideB.Size = new Size(200, 590);
             mainFormVSideB.TabIndex = 4;
             // 
+            // btnAboutUs
+            // 
+            btnAboutUs.Dock = DockStyle.Top;
+            btnAboutUs.FlatAppearance.BorderSize = 0;
+            btnAboutUs.FlatStyle = FlatStyle.Flat;
+            btnAboutUs.Font = new Font("Segoe UI", 10.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            btnAboutUs.ForeColor = Color.FromArgb(89, 85, 84);
+            btnAboutUs.Location = new Point(0, 460);
+            btnAboutUs.Name = "btnAboutUs";
+            btnAboutUs.Size = new Size(200, 45);
+            btnAboutUs.TabIndex = 12;
+            btnAboutUs.Text = "     About Us";
+            btnAboutUs.TextAlign = ContentAlignment.MiddleLeft;
+            btnAboutUs.UseVisualStyleBackColor = true;
+            btnAboutUs.Click += btnAboutUs_Click;
+            // 
             // mainFormVSideBHighlight
             // 
             mainFormVSideBHighlight.BackColor = Color.FromArgb(168, 130, 95);
             mainFormVSideBHighlight.Location = new Point(0, 145);
             mainFormVSideBHighlight.Name = "mainFormVSideBHighlight";
-            mainFormVSideBHighlight.Size = new Size(10, 50);
+            mainFormVSideBHighlight.Size = new Size(10, 45);
             mainFormVSideBHighlight.TabIndex = 2;
             // 
             // mainFormVButtonLO
@@ -152,9 +171,9 @@
             btnDeleteRequest.FlatStyle = FlatStyle.Flat;
             btnDeleteRequest.Font = new Font("Segoe UI", 10.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
             btnDeleteRequest.ForeColor = Color.FromArgb(89, 85, 84);
-            btnDeleteRequest.Location = new Point(0, 445);
+            btnDeleteRequest.Location = new Point(0, 415);
             btnDeleteRequest.Name = "btnDeleteRequest";
-            btnDeleteRequest.Size = new Size(200, 50);
+            btnDeleteRequest.Size = new Size(200, 45);
             btnDeleteRequest.TabIndex = 11;
             btnDeleteRequest.Text = "     Deletion Requests";
             btnDeleteRequest.TextAlign = ContentAlignment.MiddleLeft;
@@ -168,9 +187,9 @@
             btnPasswordRequest.FlatStyle = FlatStyle.Flat;
             btnPasswordRequest.Font = new Font("Segoe UI", 10.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
             btnPasswordRequest.ForeColor = Color.FromArgb(89, 85, 84);
-            btnPasswordRequest.Location = new Point(0, 395);
+            btnPasswordRequest.Location = new Point(0, 370);
             btnPasswordRequest.Name = "btnPasswordRequest";
-            btnPasswordRequest.Size = new Size(200, 50);
+            btnPasswordRequest.Size = new Size(200, 45);
             btnPasswordRequest.TabIndex = 10;
             btnPasswordRequest.Text = "     Password Requests";
             btnPasswordRequest.TextAlign = ContentAlignment.MiddleLeft;
@@ -184,9 +203,9 @@
             btnRegisterVet.FlatStyle = FlatStyle.Flat;
             btnRegisterVet.Font = new Font("Segoe UI", 10.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
             btnRegisterVet.ForeColor = Color.FromArgb(89, 85, 84);
-            btnRegisterVet.Location = new Point(0, 345);
+            btnRegisterVet.Location = new Point(0, 325);
             btnRegisterVet.Name = "btnRegisterVet";
-            btnRegisterVet.Size = new Size(200, 50);
+            btnRegisterVet.Size = new Size(200, 45);
             btnRegisterVet.TabIndex = 6;
             btnRegisterVet.Text = "     Register Veterinarian";
             btnRegisterVet.TextAlign = ContentAlignment.MiddleLeft;
@@ -200,9 +219,9 @@
             btnRegisterClinic.FlatStyle = FlatStyle.Flat;
             btnRegisterClinic.Font = new Font("Segoe UI", 10.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
             btnRegisterClinic.ForeColor = Color.FromArgb(89, 85, 84);
-            btnRegisterClinic.Location = new Point(0, 295);
+            btnRegisterClinic.Location = new Point(0, 280);
             btnRegisterClinic.Name = "btnRegisterClinic";
-            btnRegisterClinic.Size = new Size(200, 50);
+            btnRegisterClinic.Size = new Size(200, 45);
             btnRegisterClinic.TabIndex = 7;
             btnRegisterClinic.Text = "     Register Clinic";
             btnRegisterClinic.TextAlign = ContentAlignment.MiddleLeft;
@@ -216,9 +235,9 @@
             btnVeterinarianList.FlatStyle = FlatStyle.Flat;
             btnVeterinarianList.Font = new Font("Segoe UI", 10.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
             btnVeterinarianList.ForeColor = Color.FromArgb(89, 85, 84);
-            btnVeterinarianList.Location = new Point(0, 245);
+            btnVeterinarianList.Location = new Point(0, 235);
             btnVeterinarianList.Name = "btnVeterinarianList";
-            btnVeterinarianList.Size = new Size(200, 50);
+            btnVeterinarianList.Size = new Size(200, 45);
             btnVeterinarianList.TabIndex = 8;
             btnVeterinarianList.Text = "     Veterinarian List";
             btnVeterinarianList.TextAlign = ContentAlignment.MiddleLeft;
@@ -232,9 +251,9 @@
             btnClinicList.FlatStyle = FlatStyle.Flat;
             btnClinicList.Font = new Font("Segoe UI", 10.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
             btnClinicList.ForeColor = Color.FromArgb(89, 85, 84);
-            btnClinicList.Location = new Point(0, 195);
+            btnClinicList.Location = new Point(0, 190);
             btnClinicList.Name = "btnClinicList";
-            btnClinicList.Size = new Size(200, 50);
+            btnClinicList.Size = new Size(200, 45);
             btnClinicList.TabIndex = 9;
             btnClinicList.Text = "     Clinic List";
             btnClinicList.TextAlign = ContentAlignment.MiddleLeft;
@@ -250,7 +269,7 @@
             mainFormVButtonHome.ForeColor = Color.FromArgb(89, 85, 84);
             mainFormVButtonHome.Location = new Point(0, 145);
             mainFormVButtonHome.Name = "mainFormVButtonHome";
-            mainFormVButtonHome.Size = new Size(200, 50);
+            mainFormVButtonHome.Size = new Size(200, 45);
             mainFormVButtonHome.TabIndex = 1;
             mainFormVButtonHome.Text = "     Home";
             mainFormVButtonHome.TextAlign = ContentAlignment.MiddleLeft;
@@ -342,11 +361,21 @@
             homePanel1.Size = new Size(800, 590);
             homePanel1.TabIndex = 13;
             // 
+            // petOwner_AboutUs1
+            // 
+            petOwner_AboutUs1.BackColor = Color.White;
+            petOwner_AboutUs1.Dock = DockStyle.Fill;
+            petOwner_AboutUs1.Location = new Point(200, 50);
+            petOwner_AboutUs1.Name = "petOwner_AboutUs1";
+            petOwner_AboutUs1.Size = new Size(800, 590);
+            petOwner_AboutUs1.TabIndex = 14;
+            // 
             // AdminForm
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(1000, 640);
+            Controls.Add(petOwner_AboutUs1);
             Controls.Add(homePanel1);
             Controls.Add(deletionRequestsForm1V);
             Controls.Add(passwordRequestsForm1V);
@@ -393,5 +422,7 @@
         private Button btnDeleteRequest;
         private DeletionRequestsForm deletionRequestsForm1V;
         private homePanel homePanel1;
+        private Button btnAboutUs;
+        private PetOwner.PetOwner_AboutUs petOwner_AboutUs1;
     }
 }

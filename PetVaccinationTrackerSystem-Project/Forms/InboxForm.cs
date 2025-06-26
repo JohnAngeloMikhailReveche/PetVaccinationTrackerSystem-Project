@@ -42,17 +42,18 @@ namespace PetVaccinationTrackerSystem_Project.Forms
             dgvEmails.Columns["DateAndTimeEmailSent"].HeaderText = "Date and Time Sent";
             dgvEmails.Columns["FromUser"].HeaderText = "From";
 
-            if(_currentUser.VetID != null)
+            if (_currentUser.VetID != null)
             {
                 dgvEmails.Columns["IsRead"].HeaderText = "Is Read by Recipient";
                 dgvEmails.Columns["IsDeleted"].HeaderText = "Is Deleted by Recipient";
-            } else
+            }
+            else
             {
                 dgvEmails.Columns["IsRead"].HeaderText = "Is Read";
                 dgvEmails.Columns["IsDeleted"].Visible = false;
             }
 
-            
+
         }
 
         private void LoadFilterBox()
@@ -164,11 +165,16 @@ namespace PetVaccinationTrackerSystem_Project.Forms
 
         private void InboxForm_Load(object sender, EventArgs e)
         {
-            if(_currentUser.VetID == null)
+            if (_currentUser.VetID == null)
             {
                 btnWriteEmail.Enabled = false;
                 btnWriteEmail.Visible = false;
             }
+        }
+
+        private void mainFormVButtonExit_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
 }

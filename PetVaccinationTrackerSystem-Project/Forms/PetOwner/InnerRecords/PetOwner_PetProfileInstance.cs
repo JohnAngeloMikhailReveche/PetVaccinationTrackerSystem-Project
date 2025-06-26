@@ -95,6 +95,11 @@ namespace PetVaccinationTrackerSystem_Project.Forms.PetOwner.InnerRecords
             PetOwner_VaccinationRecordInstance petOwnerVaccinationRecords = new PetOwner_VaccinationRecordInstance(_selectedPet);
             petOwnerVaccinationRecords.ShowDialog();
         }
+
+        private void mainFormVButtonExit_Click(object sender, EventArgs e)
+        {
+            this.Close(); // Close the current form to exit
+        }
     }
 
 }

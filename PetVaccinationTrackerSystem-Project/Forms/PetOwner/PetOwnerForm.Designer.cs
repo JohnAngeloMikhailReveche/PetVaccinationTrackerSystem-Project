@@ -136,13 +136,13 @@
             mainFormVPB.Dock = DockStyle.Top;
             mainFormVPB.Location = new Point(0, 0);
             mainFormVPB.Name = "mainFormVPB";
-            mainFormVPB.Size = new Size(200, 145);
+            mainFormVPB.Size = new Size(200, 160);
             mainFormVPB.TabIndex = 0;
             // 
             // pictureBox1
             // 
             pictureBox1.Image = (Image)resources.GetObject("pictureBox1.Image");
-            pictureBox1.Location = new Point(30, 2);
+            pictureBox1.Location = new Point(30, 9);
             pictureBox1.Name = "pictureBox1";
             pictureBox1.Size = new Size(140, 140);
             pictureBox1.SizeMode = PictureBoxSizeMode.Zoom;
@@ -156,7 +156,7 @@
             btnHome.FlatStyle = FlatStyle.Flat;
             btnHome.Font = new Font("Segoe UI", 10.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
             btnHome.ForeColor = Color.FromArgb(89, 85, 84);
-            btnHome.Location = new Point(0, 145);
+            btnHome.Location = new Point(0, 160);
             btnHome.Name = "btnHome";
             btnHome.Size = new Size(200, 50);
             btnHome.TabIndex = 1;
@@ -172,7 +172,7 @@
             btnPetProfiles.FlatStyle = FlatStyle.Flat;
             btnPetProfiles.Font = new Font("Segoe UI", 10.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
             btnPetProfiles.ForeColor = Color.FromArgb(89, 85, 84);
-            btnPetProfiles.Location = new Point(0, 195);
+            btnPetProfiles.Location = new Point(0, 210);
             btnPetProfiles.Name = "btnPetProfiles";
             btnPetProfiles.Size = new Size(200, 50);
             btnPetProfiles.TabIndex = 2;
@@ -188,7 +188,7 @@
             btnAboutUs.FlatStyle = FlatStyle.Flat;
             btnAboutUs.Font = new Font("Segoe UI", 10.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
             btnAboutUs.ForeColor = Color.FromArgb(89, 85, 84);
-            btnAboutUs.Location = new Point(0, 245);
+            btnAboutUs.Location = new Point(0, 260);
             btnAboutUs.Name = "btnAboutUs";
             btnAboutUs.Size = new Size(200, 50);
             btnAboutUs.TabIndex = 6;
@@ -221,7 +221,7 @@
             // mainFormVSideBHighlight
             // 
             mainFormVSideBHighlight.BackColor = Color.FromArgb(168, 130, 95);
-            mainFormVSideBHighlight.Location = new Point(0, 145);
+            mainFormVSideBHighlight.Location = new Point(0, 160);
             mainFormVSideBHighlight.Name = "mainFormVSideBHighlight";
             mainFormVSideBHighlight.Size = new Size(10, 50);
             mainFormVSideBHighlight.TabIndex = 2;

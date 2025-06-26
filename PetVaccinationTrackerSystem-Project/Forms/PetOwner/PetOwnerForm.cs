@@ -101,6 +101,8 @@ namespace PetVaccinationTrackerSystem_Project.Forms.PetOwner
             mainFormVSideBHighlight.Top = btnHome.Top;
 
             mainPanel.Controls.Clear(); // Clear the current controls in the main panel
+            
+            mainPanel.Controls.Add(homePanel1); // Add the home panel to the main panel
             homePanel1.BringToFront(); // Bring the home panel to the front
 
             // Add the Home Dashboard here and make the logic as follows:

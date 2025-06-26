@@ -1,4 +1,6 @@
-﻿using PetVaccinationTrackerSystem_Project.Data;
+﻿using PetVaccinationTrackerSystem_Project.Classes;
+using PetVaccinationTrackerSystem_Project.Classes.Interfaces;
+using PetVaccinationTrackerSystem_Project.Data;
 using PetVaccinationTrackerSystem_Project.Data.Entities;
 using PetVaccinationTrackerSystem_Project.Data.ViewModels;
 using System;
@@ -18,6 +20,8 @@ namespace PetVaccinationTrackerSystem_Project.Forms.Admin
     {
 
         private VeterinarianViewModel _currentVet;
+        private IVetService _vet;
+        private IUserService _user;
 
         private bool VerifyTextFields()
         {
@@ -51,7 +55,12 @@ namespace PetVaccinationTrackerSystem_Project.Forms.Admin
             InitializeComponent();
 
             _currentVet = inVetObj;
+            _vet = new VetService();
+            _user = new UserService();
+
             LoadData();
+
+
         }
 
         private void LoadData()
@@ -97,24 +106,14 @@ namespace PetVaccinationTrackerSystem_Project.Forms.Admin
                     userToUpdate.FirstName = txtboxFirstName.Text.Trim();
                     userToUpdate.LastName = txtboxLastName.Text.Trim();
                     userToUpdate.UserEmail = txtboxAccountEmail.Text.Trim();
-
-                    // Update changes to context
-                    context.UserList.Update(userToUpdate);
-
-                    // Save changes to the database
-                    context.SaveChanges();
+                    _user.UpdateUser(userToUpdate);
 
                     if (vetToUpdate != null)
                     {
                         // Update the veterinarian's properties
                         vetToUpdate.LicenseNumber = txtboxLicenseNo.Text;
                         vetToUpdate.ClinicID = (int)cmbboxClinic.SelectedValue;
-
-                        // Update changes to context
-                        context.VeterinarianList.Update(vetToUpdate);
-
-                        // Save changes to the database
-                        context.SaveChanges();
+                        _vet.Update(vetToUpdate);
 
                         MessageBox.Show("Veterinarian information updated successfully.", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
@@ -145,17 +144,8 @@ namespace PetVaccinationTrackerSystem_Project.Forms.Admin
                     // If Vet is Found
                     if (vetToDelete != null && userToDelete != null)
                     {
-                        // Remove the veterinarian from the context
-                        context.VeterinarianList.Remove(vetToDelete);
-
-                        // Save changes to the database
-                        context.SaveChanges();
-
-                        // Remove the user from the context
-                        context.UserList.Remove(userToDelete);
-
-                        // Save changes to the database
-                        context.SaveChanges();
+                        _vet.Delete(vetToDelete);
+                        _user.DeleteUser(userToDelete);
 
                         MessageBox.Show("Veterinarian Data deleted successfully.", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
 

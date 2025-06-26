@@ -1,4 +1,5 @@
 ﻿using Microsoft.EntityFrameworkCore;
+using PetVaccinationTrackerSystem_Project.Classes.Interfaces;
 using PetVaccinationTrackerSystem_Project.Data;
 using System;
 using System.Collections.Generic;
@@ -15,40 +16,62 @@ namespace PetVaccinationTrackerSystem_Project.Forms.Admin
     public partial class AdminForm : Form
     {
 
+        private void ShowRequestForm(IRequestForm requestForm)
+        {
+            requestForm.LoadData(); // Polymorphic Function (Password/Deletion)
+            
+            var control = requestForm as UserControl;
+            if (control != null)
+            {
+                control.BringToFront();
+            }
+        }
+
+        private void ShowListForm(ILoadData loadDataForm)
+        {
+            loadDataForm.LoadData(); // Polymorphic Function (Vet/Clinic)
+
+            var control = loadDataForm as UserControl;
+            if (control != null)
+            {
+                control.BringToFront();
+            }
+        }
+
+        protected void HighlightButton(Button target, Panel highlightPanel)
+        {
+            highlightPanel.Height = target.Height;
+            highlightPanel.Top = target.Top;
+        }
 
         public AdminForm()
         {
             InitializeComponent();
-            mainFormVSideBHighlight.Height = mainFormVButtonHome.Height;
-            mainFormVSideBHighlight.Top = mainFormVButtonHome.Top;
+            HighlightButton(mainFormVButtonHome, mainFormVSideBHighlight);
             homePanel1.BringToFront();
         }
 
         private void btnRegisterClinic_Click(object sender, EventArgs e)
         {
-            mainFormVSideBHighlight.Height = btnRegisterClinic.Height;
-            mainFormVSideBHighlight.Top = btnRegisterClinic.Top;
+            HighlightButton(btnRegisterClinic, mainFormVSideBHighlight);
             adminRegisterClinicUsCo1V.BringToFront();
         }
 
         private void mainFormVButtonRegister_Click(object sender, EventArgs e)
         {
-            mainFormVSideBHighlight.Height = btnRegisterVet.Height;
-            mainFormVSideBHighlight.Top = btnRegisterVet.Top;
+            HighlightButton(btnRegisterVet, mainFormVSideBHighlight);
             adminRegisterVetUsCo1V.RefreshData();
             adminRegisterVetUsCo1V.BringToFront();
         }
 
         private void mainFormVButtonExit_Click(object sender, EventArgs e)
         {
-            DialogResult diagResult = MessageBox.Show(
+            if(MessageBox.Show(
                 "Are you sure you want to log out?",
                 "Log Out Confirmation",
                 MessageBoxButtons.YesNo,
                 MessageBoxIcon.Question
-                );
-
-            if (diagResult == DialogResult.Yes)
+                ) == DialogResult.Yes)
             {
                 Application.Exit();
             }
@@ -56,81 +79,62 @@ namespace PetVaccinationTrackerSystem_Project.Forms.Admin
 
         private void mainFormVButtonLO_Click(object sender, EventArgs e)
         {
-            DialogResult diagResult = MessageBox.Show(
+            if (MessageBox.Show(
                 "Are you sure you want to log out?",
                 "Log Out Confirmation",
                 MessageBoxButtons.YesNo,
                 MessageBoxIcon.Question
-                );
-
-            if (diagResult == DialogResult.Yes)
+                ) == DialogResult.Yes )
             {
-                this.Close(); // Triggers the FormClosed event to switch back to the AuthForm.
+                this.Close();
             }
         }
 
         private void mainFormVButtonHome_Click(object sender, EventArgs e)
         {
-            mainFormVSideBHighlight.Height = mainFormVButtonHome.Height;
-            mainFormVSideBHighlight.Top = mainFormVButtonHome.Top;
-
+            HighlightButton(mainFormVButtonHome, mainFormVSideBHighlight);
             homePanel1.BringToFront();
         }
 
         private void mainFormVButtonSettings_Click(object sender, EventArgs e)
         {
             AdminSettingsForm adminSettingsForm = new AdminSettingsForm();
-
             adminSettingsForm.ShowDialog();
-        }
-
-        private void adminRegisterVetUsCo1V_Load(object sender, EventArgs e)
-        {
-
         }
 
         private void btnClinicList_Click(object sender, EventArgs e)
         {
-            mainFormVSideBHighlight.Height = btnClinicList.Height;
-            mainFormVSideBHighlight.Top = btnClinicList.Top;
-
-            // Load data for the home user control
-            registeredClinicPanel1V.LoadClinicData();
-
-            registeredClinicPanel1V.BringToFront();
+            HighlightButton(btnClinicList, mainFormVSideBHighlight);
+            ShowListForm(registeredClinicPanel1V);
         }
 
         private void btnVeterinarianList_Click(object sender, EventArgs e)
         {
-            mainFormVSideBHighlight.Height = btnVeterinarianList.Height;
-            mainFormVSideBHighlight.Top = btnVeterinarianList.Top;
-
-            // Load data for the home user control
-            registeredVetPanel1V.LoadVeterinarianData();
-
-            registeredVetPanel1V.BringToFront();
+            HighlightButton(btnVeterinarianList, mainFormVSideBHighlight);
+            ShowListForm(registeredVetPanel1V);
         }
 
         private void btnPasswordRequest_Click(object sender, EventArgs e)
         {
-            mainFormVSideBHighlight.Height = btnPasswordRequest.Height;
-            mainFormVSideBHighlight.Top = btnPasswordRequest.Top;
-
-            // Load data
-            passwordRequestsForm1V.LoadData();
-
-            passwordRequestsForm1V.BringToFront();
+            HighlightButton(btnPasswordRequest, mainFormVSideBHighlight);
+            ShowRequestForm(passwordRequestsForm1V);
         }
 
         private void btnDeleteRequest_Click(object sender, EventArgs e)
         {
-            mainFormVSideBHighlight.Height = btnDeleteRequest.Height;
-            mainFormVSideBHighlight.Top = btnDeleteRequest.Top;
+            HighlightButton(btnDeleteRequest, mainFormVSideBHighlight);
+            ShowRequestForm(deletionRequestsForm1V);
+        }
 
-            // Load data
-            deletionRequestsForm1V.LoadData();
+        private void adminRegisterVetUsCo1V_Load(object sender, EventArgs e)
+        {
+        }
 
-            deletionRequestsForm1V.BringToFront();
+        private void btnAboutUs_Click(object sender, EventArgs e)
+        {
+            mainFormVSideBHighlight.Height = btnAboutUs.Height;
+            mainFormVSideBHighlight.Top = btnAboutUs.Top;
+            petOwner_AboutUs1.BringToFront();
         }
     }
 }

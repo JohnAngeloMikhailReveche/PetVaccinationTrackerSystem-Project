@@ -1,4 +1,5 @@
 ﻿using PetVaccinationTrackerSystem_Project.Classes;
+using PetVaccinationTrackerSystem_Project.Classes.Abstract;
 using PetVaccinationTrackerSystem_Project.Data;
 using PetVaccinationTrackerSystem_Project.Data.Entities;
 using System;
@@ -16,56 +17,41 @@ namespace PetVaccinationTrackerSystem_Project.Forms.Admin
     public partial class AdminRegisterClinicUsCo : UserControl
     {
 
-        private ModelContext _context;
-
-        private bool VerifyTextFields()
-        {
-            // Check if any of the text fields are empty
-            if (string.IsNullOrWhiteSpace(txtboxClinicName.Text) ||
-                string.IsNullOrWhiteSpace(txtboxStreet.Text) ||
-                string.IsNullOrWhiteSpace(txtboxCity.Text) ||
-                string.IsNullOrWhiteSpace(txtboxState.Text) ||
-                string.IsNullOrWhiteSpace(txtboxZipCode.Text))
-            {
-                MessageBox.Show("Please fill in all fields.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                return false;
-            }
-
-            return true;
-        }
+    
         public AdminRegisterClinicUsCo()
         {
             InitializeComponent();
 
-            _context = new ModelContext();
         }
 
         private void btnRegisterClinic_Click(object sender, EventArgs e)
         {
-            // Validate input fields
-            if (!VerifyTextFields()) return;
 
-            // Validate input fields
-            Clinic clinic = new Clinic
+            EntityRegistrar clinicRegistrar = new ClinicRegistrar(
+                txtboxClinicName.Text.Trim(), 
+                txtboxStreet.Text.Trim(), 
+                txtboxCity.Text.Trim(), 
+                txtboxState.Text.Trim(), 
+                txtboxZipCode.Text.Trim());
+
+            if(clinicRegistrar.ValidateFields())
             {
-                ClinicName = txtboxClinicName.Text.Trim(),
-                Street = txtboxStreet.Text.Trim(),
-                City = txtboxCity.Text.Trim(),
-                State = txtboxState.Text.Trim(),
-                ZipCode = txtboxZipCode.Text.Trim()
-            };
+                clinicRegistrar.Register();
+                MessageBox.Show("Clinic registered successfully!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
 
-            _context.ClinicList.Add(clinic);
-            _context.SaveChanges();
+            var fieldHelper = new TextFieldHelper();
 
-            MessageBox.Show("Clinic registered successfully!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            fieldHelper.ClearFields(
+                new List<TextBox>
+                {
+                    txtboxClinicName,
+                    txtboxCity,
+                    txtboxState,
+                    txtboxZipCode,
+                    txtboxStreet
+                });
 
-            // Clear the input fields after successful registration
-            txtboxClinicName.Clear();
-            txtboxCity.Clear();
-            txtboxState.Clear();
-            txtboxStreet.Clear();
-            txtboxZipCode.Clear();
         }
     }
 }

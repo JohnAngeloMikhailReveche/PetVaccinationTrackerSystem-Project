@@ -45,8 +45,8 @@ namespace PetVaccinationTrackerSystem_Project.Forms
         private void CheckIfVeterinarian()
         {
             if (_currentUser == null) return;
-            
-            if(_currentUser.VetID != null)
+
+            if (_currentUser.VetID != null)
             {
                 btnRead.Enabled = false;
                 btnRead.Visible = false;
@@ -107,7 +107,7 @@ namespace PetVaccinationTrackerSystem_Project.Forms
         {
             var diagResult = MessageBox.Show("Are you sure you want to delete this email?\n\n You will not see the email once you accept its deletion.", "Delete Confirmation", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
 
-            if(_currentUser.VetID != null)
+            if (_currentUser.VetID != null)
             {
                 if (diagResult == DialogResult.Yes)
                 {
@@ -120,7 +120,8 @@ namespace PetVaccinationTrackerSystem_Project.Forms
                         this.Close();
                     }
                 }
-            } else
+            }
+            else
             {
                 if (diagResult == DialogResult.Yes)
                 {
@@ -136,9 +137,12 @@ namespace PetVaccinationTrackerSystem_Project.Forms
                     }
                 }
             }
-            
+
         }
 
-
+        private void mainFormVButtonExit_Click(object sender, EventArgs e)
+        {
+            this.Close(); // Close the form when the exit button is clicked
+        }
     }
 }

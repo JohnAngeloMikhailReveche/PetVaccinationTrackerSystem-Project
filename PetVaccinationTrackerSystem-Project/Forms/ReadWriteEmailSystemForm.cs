@@ -26,9 +26,9 @@ namespace PetVaccinationTrackerSystem_Project.Forms
 
         private void btnSend_Click(object sender, EventArgs e)
         {
-            using(var context = new ModelContext())
+            using (var context = new ModelContext())
             {
-                if(int.TryParse(txtToUser.Text.Trim(), out int toSendUserID))
+                if (int.TryParse(txtToUser.Text.Trim(), out int toSendUserID))
                 {
                     // Fetch the User Recipient
                     var userRecipient = context.UserList
@@ -38,7 +38,7 @@ namespace PetVaccinationTrackerSystem_Project.Forms
                     // Check if the Recipient is Valid
                     if (userRecipient == null)
                     {
-                        MessageBox.Show("The User is either not existing or invalid!", "Error", MessageBoxButtons.OK,  MessageBoxIcon.Error);
+                        MessageBox.Show("The User is either not existing or invalid!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                         return;
                     }
 
@@ -77,7 +77,9 @@ namespace PetVaccinationTrackerSystem_Project.Forms
 
         }
 
-
-
+        private void mainFormVButtonExit_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
     }
 }

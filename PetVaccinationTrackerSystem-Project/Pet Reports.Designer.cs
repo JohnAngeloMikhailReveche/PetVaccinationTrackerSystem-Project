@@ -31,11 +31,11 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Pet_Reports));
             pictureBox1 = new PictureBox();
             VRDSVaccineCard = new Panel();
+            button1 = new ReaLTaiizor.Controls.HopeRoundButton();
             cartesianChart1 = new LiveChartsCore.SkiaSharpView.WinForms.CartesianChart();
             label1 = new Label();
             pieChart1 = new LiveChartsCore.SkiaSharpView.WinForms.PieChart();
             dateTimePicker1 = new DateTimePicker();
-            button1 = new Button();
             cmbPetGender = new ComboBox();
             cmbVaccinenName = new ComboBox();
             cmbPettype = new ComboBox();
@@ -59,11 +59,11 @@
             // 
             VRDSVaccineCard.BackColor = Color.White;
             VRDSVaccineCard.BorderStyle = BorderStyle.FixedSingle;
+            VRDSVaccineCard.Controls.Add(button1);
             VRDSVaccineCard.Controls.Add(cartesianChart1);
             VRDSVaccineCard.Controls.Add(label1);
             VRDSVaccineCard.Controls.Add(pieChart1);
             VRDSVaccineCard.Controls.Add(dateTimePicker1);
-            VRDSVaccineCard.Controls.Add(button1);
             VRDSVaccineCard.Controls.Add(cmbPetGender);
             VRDSVaccineCard.Controls.Add(cmbVaccinenName);
             VRDSVaccineCard.Controls.Add(cmbPettype);
@@ -73,6 +73,27 @@
             VRDSVaccineCard.Name = "VRDSVaccineCard";
             VRDSVaccineCard.Size = new Size(782, 500);
             VRDSVaccineCard.TabIndex = 1;
+            // 
+            // button1
+            // 
+            button1.BackColor = Color.FromArgb(63, 59, 58);
+            button1.BorderColor = Color.FromArgb(220, 223, 230);
+            button1.ButtonType = ReaLTaiizor.Util.HopeButtonType.Primary;
+            button1.DangerColor = Color.FromArgb(245, 108, 108);
+            button1.DefaultColor = Color.FromArgb(255, 255, 255);
+            button1.Font = new Font("Segoe UI", 10.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            button1.HoverTextColor = Color.White;
+            button1.InfoColor = Color.FromArgb(144, 147, 153);
+            button1.Location = new Point(637, 33);
+            button1.Name = "button1";
+            button1.PrimaryColor = Color.FromArgb(63, 59, 58);
+            button1.Size = new Size(130, 27);
+            button1.SuccessColor = Color.FromArgb(103, 194, 58);
+            button1.TabIndex = 40;
+            button1.Text = "View Charts";
+            button1.TextColor = Color.White;
+            button1.WarningColor = Color.FromArgb(230, 162, 60);
+            button1.Click += button1_Click;
             // 
             // cartesianChart1
             // 
@@ -112,24 +133,11 @@
             dateTimePicker1.CalendarFont = new Font("Segoe UI", 9F);
             dateTimePicker1.Font = new Font("Segoe UI", 9F);
             dateTimePicker1.Format = DateTimePickerFormat.Custom;
-            dateTimePicker1.Location = new Point(425, 36);
+            dateTimePicker1.Location = new Point(494, 36);
             dateTimePicker1.Name = "dateTimePicker1";
-            dateTimePicker1.Size = new Size(126, 23);
+            dateTimePicker1.Size = new Size(135, 23);
             dateTimePicker1.TabIndex = 34;
             dateTimePicker1.ValueChanged += dateTimePicker1_ValueChanged;
-            // 
-            // button1
-            // 
-            button1.FlatStyle = FlatStyle.Flat;
-            button1.Font = new Font("Segoe UI", 10.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            button1.ForeColor = Color.FromArgb(89, 85, 84);
-            button1.Location = new Point(557, 30);
-            button1.Name = "button1";
-            button1.Size = new Size(100, 31);
-            button1.TabIndex = 33;
-            button1.Text = "Filters";
-            button1.UseVisualStyleBackColor = true;
-            button1.Click += button1_Click;
             // 
             // cmbPetGender
             // 
@@ -137,9 +145,9 @@
             cmbPetGender.ForeColor = Color.Black;
             cmbPetGender.FormattingEnabled = true;
             cmbPetGender.Items.AddRange(new object[] { "Male", "Female" });
-            cmbPetGender.Location = new Point(141, 36);
+            cmbPetGender.Location = new Point(175, 36);
             cmbPetGender.Name = "cmbPetGender";
-            cmbPetGender.Size = new Size(115, 23);
+            cmbPetGender.Size = new Size(158, 23);
             cmbPetGender.TabIndex = 4;
             // 
             // cmbVaccinenName
@@ -148,9 +156,9 @@
             cmbVaccinenName.ForeColor = Color.Black;
             cmbVaccinenName.FormattingEnabled = true;
             cmbVaccinenName.Items.AddRange(new object[] { "Rabies", "DHPP", "5-in-1", "6-in-1", "Canine Parvovirus", "Canine Distemper", "Canine Hepatitis", "Leptospirosis", "Bordetella", "Canine Influenza", "Lyme Disease", "Coronavirus (CCV)", "FVRCP", "FVR", "Calicivirus", "Panleukopenia", "FeLV (Feline Leukemia)", "FIV (Feline Immunodeficiency Virus)", "Chlamydia", "Myxomatosis (Rabbit)", "RHDV1 (Rabbit)", "RHDV2 (Rabbit)" });
-            cmbVaccinenName.Location = new Point(263, 36);
+            cmbVaccinenName.Location = new Point(339, 36);
             cmbVaccinenName.Name = "cmbVaccinenName";
-            cmbVaccinenName.Size = new Size(107, 23);
+            cmbVaccinenName.Size = new Size(145, 23);
             cmbVaccinenName.TabIndex = 3;
             // 
             // cmbPettype
@@ -161,7 +169,7 @@
             cmbPettype.Items.AddRange(new object[] { "Dog", "Cat" });
             cmbPettype.Location = new Point(13, 36);
             cmbPettype.Name = "cmbPettype";
-            cmbPettype.Size = new Size(121, 23);
+            cmbPettype.Size = new Size(156, 23);
             cmbPettype.TabIndex = 2;
             // 
             // label7
@@ -171,9 +179,9 @@
             label7.ForeColor = Color.FromArgb(89, 85, 84);
             label7.Location = new Point(13, 11);
             label7.Name = "label7";
-            label7.Size = new Size(53, 19);
+            label7.Size = new Size(93, 19);
             label7.TabIndex = 1;
-            label7.Text = "Filters:";
+            label7.Text = "Filter Charts:";
             // 
             // Pet_Reports
             // 
@@ -198,10 +206,10 @@
         private Label label1;
         private LiveChartsCore.SkiaSharpView.WinForms.PieChart pieChart1;
         private DateTimePicker dateTimePicker1;
-        private Button button1;
         private ComboBox cmbPetGender;
         private ComboBox cmbVaccinenName;
         private ComboBox cmbPettype;
         private Label label7;
+        private ReaLTaiizor.Controls.HopeRoundButton button1;
     }
 }
