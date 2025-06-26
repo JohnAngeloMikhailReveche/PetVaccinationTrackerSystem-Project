@@ -1,4 +1,6 @@
-﻿using PetVaccinationTrackerSystem_Project.Data;
+﻿using PetVaccinationTrackerSystem_Project.Classes;
+using PetVaccinationTrackerSystem_Project.Classes.Interfaces;
+using PetVaccinationTrackerSystem_Project.Data;
 using PetVaccinationTrackerSystem_Project.Data.Entities;
 using System;
 using System.Collections.Generic;
@@ -87,8 +89,8 @@ namespace PetVaccinationTrackerSystem_Project.Forms.Admin
                     clinicToUpdate.State = txtboxState.Text.Trim();
                     clinicToUpdate.ZipCode = txtboxZipCode.Text.Trim();
 
-                    context.ClinicList.Update(clinicToUpdate);
-                    context.SaveChanges();
+                    IClinicService clinicService = new ClinicService();
+                    clinicService.UpdateClinic(clinicToUpdate);
 
                     MessageBox.Show("Clinic information updated successfully.", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
@@ -116,8 +118,8 @@ namespace PetVaccinationTrackerSystem_Project.Forms.Admin
                     // If Clinic Data is found in Database
                     if (clinicToDelete != null)
                     {
-                        context.ClinicList.Remove(clinicToDelete);
-                        context.SaveChanges();
+                        IClinicService clinicService = new ClinicService();
+                        clinicService.DeleteClinic(clinicToDelete);
 
                         MessageBox.Show("Clinic Data deleted successfully.", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
 

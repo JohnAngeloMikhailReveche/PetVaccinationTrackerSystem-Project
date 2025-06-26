@@ -1,4 +1,6 @@
 ﻿using PetVaccinationTrackerSystem_Project.Classes;
+using PetVaccinationTrackerSystem_Project.Classes.Abstract;
+using PetVaccinationTrackerSystem_Project.Classes.Interfaces;
 using PetVaccinationTrackerSystem_Project.Data;
 using PetVaccinationTrackerSystem_Project.Data.Entities;
 using System;
@@ -16,9 +18,8 @@ namespace PetVaccinationTrackerSystem_Project.Forms.Admin
 {
     public partial class AdminRegisterVetUsCo : UserControl
     {
-
-        private ModelContext _context;
-
+        private IUserService _user;
+        private IVetService _vet;
 
         public void RefreshData()
         {
@@ -54,7 +55,6 @@ namespace PetVaccinationTrackerSystem_Project.Forms.Admin
         {
             InitializeComponent();
 
-            _context = new ModelContext();
         }
 
         private void AdminRegisterVetUsCo_Load(object sender, EventArgs e)
@@ -77,47 +77,37 @@ namespace PetVaccinationTrackerSystem_Project.Forms.Admin
             // Fetch the selected clinic ID
             int selectedClinic = Convert.ToInt32(cmbboxClinic.SelectedValue.ToString());
 
-            // Password Helper
-            PasswordHelper passwordHelper = new PasswordHelper();
-            string hashedPassword = passwordHelper.HashPassword(txtboxAccountPassword.Text.Trim());
+            // Register Vet
+            EntityRegistrar vetRegistrar = new VetRegistrar(txtboxLicenseNo.Text.Trim(), selectedClinic);
+            
+            vetRegistrar.Register();
 
+            // Register User
+            EntityRegistrar userRegistrar = new UserRegistrar(
+                txtboxName.Text.Trim(),
+                txtboxLastName.Text.Trim(),
+                txtboxAccountUsername.Text.Trim(),
+                txtboxAccountPassword.Text.Trim(),
+                vetRegistrar.GetID()
+                );
 
-            // Create a new Veterinarian object and populate it with data from the form
-            Veterinarian veterinarian = new Veterinarian
-            {
-                LicenseNumber = txtboxLicenseNo.Text.Trim(),
-                ClinicID = selectedClinic
-            };
+            userRegistrar.Register();
 
-            _context.VeterinarianList.Add(veterinarian);
-            _context.SaveChanges();
-
-            // Create a new User object for the veterinarian's account
-            User user = new User
-            {
-                FirstName = txtboxName.Text.Trim(),
-                LastName = txtboxLastName.Text.Trim(),
-                UserEmail = $"{txtboxAccountUsername.Text.Trim().ToLower()}@vetclinic.com",
-                UserPassword = hashedPassword,
-                UserRole = "Veterinarian",
-                SentPasswordRequest = false,
-                SentAccountDeletion = false,
-
-                VetID = veterinarian.VetID // Associate the user with the veterinarian
-            };
-
-            _context.UserList.Add(user);
-            _context.SaveChanges();
-
+            // Message
             MessageBox.Show($"Veterinarian {txtboxName.Text.Trim()} registered successfully!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
-            // Clear the input fields after successful registration
-            txtboxName.Clear();
-            txtboxLicenseNo.Clear();
-            txtboxLastName.Clear();
-            txtboxAccountUsername.Clear();
-            txtboxAccountPassword.Clear();
-            cmbboxClinic.SelectedIndex = -1;
+            // Clear Fields
+            var fieldHelper = new TextFieldHelper();
+            fieldHelper.ClearFields(new List<TextBox>
+            {
+                txtboxName,
+                txtboxLicenseNo,
+                txtboxLastName,
+                txtboxAccountUsername,
+                txtboxAccountPassword
+            });
+
+            cmbboxClinic.SelectedIndex = 0;
         }
     }
 }
