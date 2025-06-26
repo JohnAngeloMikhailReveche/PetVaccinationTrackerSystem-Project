@@ -1,4 +1,4 @@
-﻿using PetVaccinationTrackerSystem_Project.Classes.Abstract;
+﻿using PetVaccinationTrackerSystem_Project.Classes.Interfaces;
 using PetVaccinationTrackerSystem_Project.Data;
 using PetVaccinationTrackerSystem_Project.Data.Entities;
 using System;
@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 
 namespace PetVaccinationTrackerSystem_Project.Classes
 {
-    public class UserRegistrar : EntityRegistrar
+    public class UserRegistrar : IEntityRegistrar
     {
         private string _fName, _lName, _username, _password;
         private int? _vetID;
@@ -29,12 +29,12 @@ namespace PetVaccinationTrackerSystem_Project.Classes
             _passHelper = new PasswordHelper();
         }
 
-        public override int GetID()
+        public int GetID()
         {
             return _userID;
         }
 
-        public override void Register()
+        public void Register()
         {
             // Hash Password
             string hashedPassword = _passHelper.HashPassword(_password);
@@ -59,7 +59,7 @@ namespace PetVaccinationTrackerSystem_Project.Classes
             }
         }
 
-        public override bool ValidateFields()
+        public bool ValidateFields()
         {
             return (string.IsNullOrWhiteSpace(_fName) ||
                 string.IsNullOrWhiteSpace(_lName) ||

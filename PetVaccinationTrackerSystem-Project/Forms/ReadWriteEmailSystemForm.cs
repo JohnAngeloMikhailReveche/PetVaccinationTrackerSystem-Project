@@ -1,4 +1,5 @@
-﻿using PetVaccinationTrackerSystem_Project.Data;
+﻿using PetVaccinationTrackerSystem_Project.Classes;
+using PetVaccinationTrackerSystem_Project.Data;
 using PetVaccinationTrackerSystem_Project.Data.Entities;
 using System;
 using System.Collections.Generic;
@@ -26,55 +27,42 @@ namespace PetVaccinationTrackerSystem_Project.Forms
 
         private void btnSend_Click(object sender, EventArgs e)
         {
-            using (var context = new ModelContext())
+            if (int.TryParse(txtToUser.Text.Trim(), out int toUserID))
             {
-                if (int.TryParse(txtToUser.Text.Trim(), out int toSendUserID))
+                var emailService = new EmailService();
+
+                bool emailResult = emailService.SendEmail(
+
+                    _currentUser,
+                    toUserID,
+                    txtTitle.Text.Trim(),
+                    richtxtContent.Text.Trim(),
+                    datetimeDateSent.Value,
+                    out string error
+                    );
+
+                if(!emailResult)
                 {
-                    // Fetch the User Recipient
-                    var userRecipient = context.UserList
-                                    .Where(u => u.UserID == toSendUserID)
-                                    .FirstOrDefault();
-
-                    // Check if the Recipient is Valid
-                    if (userRecipient == null)
-                    {
-                        MessageBox.Show("The User is either not existing or invalid!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                        return;
-                    }
-
-                    // Make the email system
-                    var emailToSend = new Email
-                    {
-                        Title = txtTitle.Text.Trim(),
-                        DateAndTimeEmailSent = datetimeDateSent.Value,
-                        Body = richtxtContent.Text.Trim(),
-                        FromUser = _currentUser.UserEmail,
-                        IsRead = false,
-                        IsDeleted = false,
-                        UserID = toSendUserID,
-                        WrittenByUserID = _currentUser.UserID
-                    };
-
-                    // Add the Email
-                    context.EmailList.Add(emailToSend);
-                    context.SaveChanges();
-
-                    MessageBox.Show("Email sent successfully!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
-
-                    // Clear Input Fields
-                    txtTitle.Clear();
-                    richtxtContent.Clear();
-                    txtToUser.Clear();
-                    datetimeDateSent.Value = DateTime.Now;
-
-                    this.Close();
+                    MessageBox.Show(error, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    return;
                 }
-                else
+
+                MessageBox.Show("Email sent successfully!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+                var fieldHelper = new TextFieldHelper();
+                fieldHelper.ClearFields(new List<TextBox>
                 {
-                    MessageBox.Show("Please enter a valid numeric User ID.", "Invalid Input", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                }
+                    txtTitle,
+                    txtToUser,
+                });
+
+                richtxtContent.Clear();
+                datetimeDateSent.Value = DateTime.Now;
+                this.Close();
+            } else
+            {
+                MessageBox.Show("Invalid User ID.", "Input Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
-
         }
 
         private void mainFormVButtonExit_Click(object sender, EventArgs e)

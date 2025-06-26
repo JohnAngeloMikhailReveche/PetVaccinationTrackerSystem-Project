@@ -1,5 +1,5 @@
 ﻿using PetVaccinationTrackerSystem_Project.Classes;
-using PetVaccinationTrackerSystem_Project.Classes.Abstract;
+using PetVaccinationTrackerSystem_Project.Classes.Interfaces;
 using PetVaccinationTrackerSystem_Project.Data;
 using PetVaccinationTrackerSystem_Project.Data.Entities;
 using System;
@@ -27,7 +27,7 @@ namespace PetVaccinationTrackerSystem_Project.Forms.Admin
         private void btnRegisterClinic_Click(object sender, EventArgs e)
         {
 
-            EntityRegistrar clinicRegistrar = new ClinicRegistrar(
+            IEntityRegistrar clinicRegistrar = new ClinicRegistrar(
                 txtboxClinicName.Text.Trim(), 
                 txtboxStreet.Text.Trim(), 
                 txtboxCity.Text.Trim(), 

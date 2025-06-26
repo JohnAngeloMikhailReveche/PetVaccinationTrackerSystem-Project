@@ -34,76 +34,6 @@ namespace PetVaccinationTrackerSystem_Project.Forms
             }
         }
 
-        private void ClearPasswordFields()
-        {
-            // Clear the password fields
-            txtCurrPassword.Clear();
-            txtNewPassword.Clear();
-        }
-
-        private void ChangePassword()
-        {
-            if (_userRef != null)
-            {
-
-                // Confirm Current Password
-                if (string.IsNullOrWhiteSpace(txtCurrPassword.Text))
-                {
-                    MessageBox.Show("Please enter your current password.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                    return;
-                }
-                else
-                {
-                    PasswordHelper passwordHelper = new PasswordHelper();
-
-                    if (passwordHelper.VerifyPassword(_userRef.UserPassword, txtCurrPassword.Text))
-                    {
-                        // If the current password is correct, proceed to change the password
-                        if (string.IsNullOrWhiteSpace(txtNewPassword.Text))
-                        {
-                            MessageBox.Show("Please enter a new password.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                            return;
-                        }
-
-                        // If the new password is the same as the current password, show an error message
-                        if (txtCurrPassword.Text == txtNewPassword.Text)
-                        {
-                            MessageBox.Show("The new password cannot be the same as the current password.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                            return;
-                        }
-
-                        // Change password
-                        _userRef.UserPassword = passwordHelper.HashPassword(txtNewPassword.Text);
-
-                        // Update the Database
-                        using (var context = new ModelContext())
-                        {
-                            context.UserList.Update(_userRef);
-                            context.SaveChanges();
-                        }
-
-                        // Prompt success message
-                        MessageBox.Show("Password changed successfully.", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
-
-                        ClearPasswordFields();
-
-                        return;
-
-                    }
-                    else
-                    {
-                        // If the current password is incorrect, show an error message
-                        MessageBox.Show("The current password is incorrect. Please try again.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                        return;
-                    }
-                }
-            }
-
-
-
-
-        }
-
         public UserSettings(User inUserRef)
         {
             InitializeComponent();
@@ -114,69 +44,71 @@ namespace PetVaccinationTrackerSystem_Project.Forms
 
         private void btnChangePass_Click(object sender, EventArgs e)
         {
-            ChangePassword();
+            // Cache the Password Texts
+            string currentPass = txtCurrPassword.Text.Trim();
+            string newPass = txtNewPassword.Text.Trim();
+
+            // Change the Password through User Settings Service
+            var userSetService = new UserSettingService();
+            bool passwordChanged = userSetService.ChangePassword(_userRef, currentPass, newPass, out string error);
+
+            // Check if the Password is Changed
+            if (!passwordChanged)
+            {
+                MessageBox.Show(error, "Password Change Failed", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+
+            // Message
+            MessageBox.Show("Password changed successfully.", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+            // Clear Fields
+            var fieldHelper = new TextFieldHelper();
+            fieldHelper.ClearFields(new List<TextBox>{
+                txtCurrPassword,
+                txtNewPassword
+            });
         }
 
         private void btnRequestAccDelete_Click(object sender, EventArgs e)
         {
-            // Send a notification to the vetclinic requesting account deletion
+            // Send a Notification for Account Deletion
 
-            if (_userRef.SentAccountDeletion == false)
+            bool requestAccDelete = (bool)!_userRef.SentAccountDeletion;
+
+            if(requestAccDelete)
             {
-                var diagResult = MessageBox.Show("Are you sure that you want to request for account deletion? If your account gets deleted you wont be able to return it. \n\nYou can still cancel the request within 24 hours.", "Request Account Deletion Confirmation", MessageBoxButtons.OKCancel, MessageBoxIcon.Exclamation);
+                var diag = MessageBox.Show(
+                        "Are you sure you want to request account deletion?\n\nYou can cancel this within 24 hours.",
+                        "Confirm Deletion Request",
+                         MessageBoxButtons.OKCancel,
+                         MessageBoxIcon.Warning
+                         );
 
-                if (diagResult == DialogResult.OK)
-                {
-                    using (var context = new ModelContext())
-                    {
-                        _userRef.SentAccountDeletion = true;
-                        context.UserList.Update(_userRef);
-                        context.SaveChanges();
-                    }
-
-                    btnRequestAccDelete.Text = "Cancel Request";
-                }
+                if (diag != DialogResult.OK) return;
             }
             else
             {
-                using (var context = new ModelContext())
-                {
-                    _userRef.SentAccountDeletion = false;
-                    context.UserList.Update(_userRef);
-                    context.SaveChanges();
-                }
-
-                MessageBox.Show("You cancelled the deletion for your account.", "Cancelled Deletion", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                btnRequestAccDelete.Text = "Request Deletion";
+                MessageBox.Show("You cancelled the deletion for your account.", "Cancelled", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
 
-
+            var userSetService = new UserSettingService();
+            userSetService.ToggleAccountDeletionReq(_userRef, requestAccDelete);
+           
+            btnRequestAccDelete.Text = requestAccDelete ? "Cancel Request" : "Request Deletion";
 
         }
         private void UserSettings_Load(object sender, EventArgs e)
         {
-            if (_userRef.SentAccountDeletion == false)
-            {
-                btnRequestAccDelete.Text = "Request Deletion";
-            }
-            else
-            {
-                btnRequestAccDelete.Text = "Cancel Request";
-            }
+            btnRequestAccDelete.Text = (bool)_userRef.SentAccountDeletion ? "Cancel Request" : "Request Deletion";
         }
 
         private void btnSave_Click(object sender, EventArgs e)
         {
-            using (var context = new ModelContext())
-            {
-                _userRef.FirstName = txtFirstName.Text.Trim();
-                _userRef.LastName = txtLastName.Text.Trim();
+            var userSetService = new UserSettingService();
+            userSetService.UpdateName(_userRef, txtFirstName.Text.Trim(), txtLastName.Text.Trim());
 
-                context.UserList.Update(_userRef);
-                context.SaveChanges();
-
-                MessageBox.Show("Your account has been updated!", "Account Update", MessageBoxButtons.OK, MessageBoxIcon.Information);
-            }
+            MessageBox.Show("Your account has been updated!", "Account Update", MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
 
         private void mainFormVButtonExit_Click(object sender, EventArgs e)

@@ -1,4 +1,5 @@
 ﻿using Microsoft.EntityFrameworkCore;
+using PetVaccinationTrackerSystem_Project.Classes;
 using PetVaccinationTrackerSystem_Project.Data;
 using PetVaccinationTrackerSystem_Project.Data.Entities;
 using PetVaccinationTrackerSystem_Project.Data.ViewModels;
@@ -17,18 +18,10 @@ namespace PetVaccinationTrackerSystem_Project.Forms
     public partial class InboxForm : Form
     {
 
-        private ModelContext _context;
         private User _currentUser;
 
-        private void LoadData()
+        private void FormatDataGridView()
         {
-            var emails = _context.EmailList
-                .Include(e => e.User)
-                .Where(e => e.UserID == _currentUser.UserID && e.IsDeleted == false || e.WrittenByUserID == _currentUser.UserID)
-                .ToList();
-
-            dgvEmails.DataSource = emails;
-
             dgvEmails.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.AllCells;
             dgvEmails.AutoSizeRowsMode = DataGridViewAutoSizeRowsMode.AllCells;
 
@@ -52,7 +45,18 @@ namespace PetVaccinationTrackerSystem_Project.Forms
                 dgvEmails.Columns["IsRead"].HeaderText = "Is Read";
                 dgvEmails.Columns["IsDeleted"].Visible = false;
             }
+        }
 
+        private void LoadData()
+        {
+
+            var emailService = new EmailService();
+
+            var emails = emailService.GetInboxEmails(_currentUser);
+
+            dgvEmails.DataSource = emails;
+
+            FormatDataGridView();
 
         }
 
@@ -67,9 +71,6 @@ namespace PetVaccinationTrackerSystem_Project.Forms
         public InboxForm(User inUserRef)
         {
             InitializeComponent();
-
-            // Initialize the database context
-            _context = new ModelContext();
 
             // Set the current user
             _currentUser = inUserRef;
@@ -103,51 +104,9 @@ namespace PetVaccinationTrackerSystem_Project.Forms
             string selectedFilterOption = cmbFilters.SelectedItem?.ToString();
             string keywordQuery = txtSearchBox.Text.Trim();
 
-            // Query
-            var query = _context.EmailList
-                .Include(e => e.User)
-                .Where(e => e.UserID == _currentUser.UserID && e.IsDeleted == false || e.WrittenByUserID == _currentUser.UserID)
-                .AsQueryable();
-
-            switch (selectedFilterOption)
-            {
-                case "All Emails":
-                    query = query.Where(
-                        e => e.Title.Contains(keywordQuery)
-                        || e.Body.Contains(keywordQuery)
-                        || e.FromUser.Contains(keywordQuery)
-                        );
-                    break;
-
-                case "Read":
-                    query = query.Where(e => e.IsRead);
-                    break;
-
-                case "Not Read":
-                    query = query.Where(e => !e.IsRead);
-                    break;
-
-                default:
-                    MessageBox.Show("Please select a valid filter option.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                    return;
-            }
-
-            // Select the data to display in the DataGridView
-            var results = query
-                .Select(e => new Email
-                {
-                    EmailID = e.EmailID,
-                    Title = e.Title,
-                    DateAndTimeEmailSent = e.DateAndTimeEmailSent,
-                    FromUser = e.FromUser,
-                    IsRead = e.IsRead,
-                    Body = e.Body,
-                    UserID = e.UserID
-                })
-                .ToList();
-
-            // Reload the DataGridView with the filtered results
-            dgvEmails.DataSource = results;
+            var emailService = new EmailService();
+            var filteredEmails = emailService.SearchEmails(_currentUser, keywordQuery, selectedFilterOption);
+            dgvEmails.DataSource = filteredEmails;
         }
 
         private void btnWriteEmail_Click(object sender, EventArgs e)

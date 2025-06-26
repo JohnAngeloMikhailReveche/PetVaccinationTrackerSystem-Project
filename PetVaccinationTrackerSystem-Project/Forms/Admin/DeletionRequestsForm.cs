@@ -1,5 +1,4 @@
 ﻿using PetVaccinationTrackerSystem_Project.Classes;
-using PetVaccinationTrackerSystem_Project.Classes.Abstract;
 using PetVaccinationTrackerSystem_Project.Classes.ActionHandlers;
 using PetVaccinationTrackerSystem_Project.Classes.Interfaces;
 using PetVaccinationTrackerSystem_Project.Data;
@@ -19,7 +18,7 @@ namespace PetVaccinationTrackerSystem_Project.Forms.Admin
     public partial class DeletionRequestsForm : UserControl, IRequestForm
     {
 
-        private readonly UserActionHandler _handler;
+        private readonly IUserActionHandler _handler;
         private readonly UserListPanelHelper _listPanel;
 
         public void LoadData()
