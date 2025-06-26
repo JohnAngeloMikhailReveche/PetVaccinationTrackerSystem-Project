@@ -1,4 +1,4 @@
-﻿using Microsoft.EntityFrameworkCore;
+using Microsoft.EntityFrameworkCore;
 using PetVaccinationTrackerSystem_Project.Data;
 using PetVaccinationTrackerSystem_Project.Data.Entities;
 using System;
@@ -104,6 +104,7 @@ namespace PetVaccinationTrackerSystem_Project.Classes
             error = string.Empty;
             return true;
         }
+
 
     }
 }
