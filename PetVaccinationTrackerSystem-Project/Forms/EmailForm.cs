@@ -45,9 +45,12 @@ namespace PetVaccinationTrackerSystem_Project.Forms
         private void CheckIfVeterinarian()
         {
             if (_currentUser == null) return;
-
-            btnRead.Enabled = false;
-            btnRead.Visible = false;
+            
+            if(_currentUser.VetID != null)
+            {
+                btnRead.Enabled = false;
+                btnRead.Visible = false;
+            }
         }
 
         public EmailForm(Email inEmailRef, User inUserRef)
