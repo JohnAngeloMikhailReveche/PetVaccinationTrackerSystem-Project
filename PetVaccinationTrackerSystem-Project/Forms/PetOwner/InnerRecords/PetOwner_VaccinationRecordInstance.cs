@@ -21,6 +21,13 @@ namespace PetVaccinationTrackerSystem_Project.Forms.PetOwner.InnerRecords
 
         private void LoadData()
         {
+
+            if(_selectedPet == null)
+            {
+                MessageBox.Show("Pet is either not selected or invalid.");
+                return;
+            }    
+
             // Data Loading
             PetService petService = new PetService();
 
@@ -40,7 +47,6 @@ namespace PetVaccinationTrackerSystem_Project.Forms.PetOwner.InnerRecords
             dgvPetRecords.Columns["PetName"].HeaderText = "Pet Name";
             dgvPetRecords.Columns["RecordID"].HeaderText = "ID";
             dgvPetRecords.Columns["BatchNo"].HeaderText = "Batch No.";
-
 
         }
 

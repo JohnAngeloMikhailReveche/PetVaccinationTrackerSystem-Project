@@ -1,6 +1,7 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using PetVaccinationTrackerSystem_Project.Data;
 using PetVaccinationTrackerSystem_Project.Data.Entities;
+using PetVaccinationTrackerSystem_Project.Data.ViewModels;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -22,28 +23,29 @@ namespace PetVaccinationTrackerSystem_Project.Classes
             }
         }
 
-        public List<object> GetVaccinationRecords(int petId)
+        public List<VaccinationRecords> GetVaccinationRecords(int petId)
         {
             using (var context = new ModelContext())
             {
                 return context.PetHealthRecordsList
                     .Where(p => p.PetID == petId)
-                    .Select(p => new
+                    .Select(p => new VaccinationRecords
                     {
-                        p.RecordID,
-                        p.PetID,
-                        p.PetName,
-                        p.Gender,
-                        p.Species,
-                        p.Breed,
-                        p.VaccineName,
-                        p.AdministeredBy,
+                        RecordID = p.RecordID,
+                        PetID = p.PetID,
+                        PetName = p.PetName,
+                        Gender = p.Gender,
+                        Species = p.Species,
+                        Breed = p.Breed,
+                        VaccineName = p.VaccineName,
+                        AdministeredBy = p.AdministeredBy,
                         DateAdministered = p.DateAdministered.ToString("MM-dd-yyyy"),
                         NextDueDate = p.NextDueDate.ToString("MM-dd-yyyy"),
-                        p.BatchNo
-                    }).ToList<object>();
+                        BatchNo = p.BatchNo
+                    })
+                    .ToList();
             }
-                
+
         }
     }
 }
