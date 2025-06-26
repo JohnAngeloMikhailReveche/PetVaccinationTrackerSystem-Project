@@ -132,5 +132,12 @@ namespace PetVaccinationTrackerSystem_Project.Forms.Admin
 
             deletionRequestsForm1V.BringToFront();
         }
+
+        private void btnAboutUs_Click(object sender, EventArgs e)
+        {
+            mainFormVSideBHighlight.Height = btnAboutUs.Height;
+            mainFormVSideBHighlight.Top = btnAboutUs.Top;
+            petOwner_AboutUs1.BringToFront();
+        }
     }
 }

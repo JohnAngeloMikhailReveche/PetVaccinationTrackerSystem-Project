@@ -180,5 +180,12 @@ namespace PetVaccinationTrackerSystem_Project
             InboxForm inboxForm = new InboxForm(_currentUser);
             inboxForm.ShowDialog();
         }
+
+        private void btnAboutUs_Click(object sender, EventArgs e)
+        {
+            mainFormVSideBHighlight.Height = btnAboutUs.Height;
+            mainFormVSideBHighlight.Top = btnAboutUs.Top;
+            petOwner_AboutUs1.BringToFront();
+        }
     }
 }
