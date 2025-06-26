@@ -82,6 +82,7 @@
             dgvHistory.RowHeadersVisible = false;
             dgvHistory.Size = new Size(740, 415);
             dgvHistory.TabIndex = 2;
+            dgvHistory.CellContentClick += dgvHistory_CellContentClick;
             // 
             // PetName
             // 

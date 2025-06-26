@@ -129,6 +129,7 @@
             txtSearch.Name = "txtSearch";
             txtSearch.Size = new Size(404, 23);
             txtSearch.TabIndex = 17;
+            txtSearch.TextChanged += txtSearch_TextChanged;
             // 
             // TablePetRecords
             // 

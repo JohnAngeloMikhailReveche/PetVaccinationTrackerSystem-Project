@@ -31,7 +31,7 @@ namespace PetVaccinationTrackerSystem_Project.Data.Entities
 
         [StringLength(100)]
         public string ColorsAndMarkings { get; set; }
-        public long OwnerPhoneNumber { get; set; }
+        public string OwnerPhoneNumber { get; set; }
 
         [StringLength(300)]
         public string Notes { get; set; }
@@ -48,6 +48,7 @@ namespace PetVaccinationTrackerSystem_Project.Data.Entities
         [ForeignKey("Record")]
         public int RecordID { get; set; }
 
+
         // Navigation property to User entity
         public User User { get; set; }
 
@@ -55,5 +56,7 @@ namespace PetVaccinationTrackerSystem_Project.Data.Entities
         public List<Appointment>? Appointments { get; set; }
 
         public List<PetHealthRecords>? PetHealthRecords { get; set; }
+
+        
     }
 }

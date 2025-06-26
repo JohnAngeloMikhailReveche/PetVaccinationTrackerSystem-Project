@@ -113,7 +113,7 @@ namespace PetVaccinationTrackerSystem_Project
 
                 if (!string.IsNullOrWhiteSpace(search))
                 {
-                    
+
                     switch (selectedFilter)
                     {
                         case "Pet Name":
@@ -177,20 +177,9 @@ namespace PetVaccinationTrackerSystem_Project
             }
         }
 
+        private void txtSearch_TextChanged(object sender, EventArgs e)
+        {
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+        }
     }
 }

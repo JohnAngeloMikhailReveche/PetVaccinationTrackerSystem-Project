@@ -26,8 +26,11 @@ namespace PetVaccinationTrackerSystem_Project.Data.Entities
         public int ClinicID { get; set; }
 
 
+
+
         // Navigation property to Clinic entity
         public Clinic Clinic { get; set; }
+
 
 
         // Navigation properties list
@@ -35,6 +38,8 @@ namespace PetVaccinationTrackerSystem_Project.Data.Entities
 
         public List<PetHealthRecords>? PetHealthRecords { get; set; }
         public List<User>? Users { get; set; }
+
+        
 
     }
 }

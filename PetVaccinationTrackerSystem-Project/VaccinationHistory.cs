@@ -21,5 +21,10 @@ namespace PetVaccinationTrackerSystem_Project
         {
 
         }
+
+        private void dgvHistory_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
     }
 }
