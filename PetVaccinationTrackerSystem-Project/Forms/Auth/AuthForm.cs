@@ -18,6 +18,10 @@ namespace PetVaccinationTrackerSystem_Project.Forms.Auth
 {
     public partial class AuthForm : Form
     {
+        public static class SessionData
+        {
+            public static int? CurrentVetID { get; set; }
+        }
 
         private IAuthServices _authServices;
 
@@ -132,6 +136,7 @@ namespace PetVaccinationTrackerSystem_Project.Forms.Auth
 
                     if (user.UserRole == "Veterinarian")
                     {
+                        SessionData.CurrentVetID = user.Veterinarian.VetID;
                         FormManager.SwitchForm(this, new MainFormVet(user));
                     }
                     else
