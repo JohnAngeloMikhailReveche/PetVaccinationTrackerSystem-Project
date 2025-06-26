@@ -29,8 +29,6 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(PetOwner_PetProfileInstance));
-            btnBack = new Button();
-            pictureBox1 = new PictureBox();
             PetProfilePanelVPetInfoP = new Panel();
             PetProfilePanelVPetInfoCard = new Panel();
             txtboxDOB = new TextBox();
@@ -56,41 +54,26 @@
             petpicture = new PictureBox();
             label1 = new Label();
             txtNotes = new TextBox();
-            btnRecords = new Button();
-            ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
+            panel1 = new Panel();
+            mainFormVButtonExit = new Button();
+            panel2 = new Panel();
+            pictureBox1 = new PictureBox();
+            btnRecords = new ReaLTaiizor.Controls.HopeRoundButton();
             PetProfilePanelVPetInfoP.SuspendLayout();
             PetProfilePanelVPetInfoCard.SuspendLayout();
             PetProfilePanelVPBPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)petpicture).BeginInit();
+            panel1.SuspendLayout();
+            panel2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             SuspendLayout();
-            // 
-            // btnBack
-            // 
-            btnBack.Location = new Point(10, 14);
-            btnBack.Name = "btnBack";
-            btnBack.Size = new Size(90, 35);
-            btnBack.TabIndex = 1;
-            btnBack.Text = "BACK";
-            btnBack.UseVisualStyleBackColor = true;
-            btnBack.Click += btnBack_Click;
-            // 
-            // pictureBox1
-            // 
-            pictureBox1.Dock = DockStyle.Top;
-            pictureBox1.Image = (Image)resources.GetObject("pictureBox1.Image");
-            pictureBox1.Location = new Point(0, 0);
-            pictureBox1.Name = "pictureBox1";
-            pictureBox1.Size = new Size(784, 70);
-            pictureBox1.SizeMode = PictureBoxSizeMode.Zoom;
-            pictureBox1.TabIndex = 2;
-            pictureBox1.TabStop = false;
             // 
             // PetProfilePanelVPetInfoP
             // 
             PetProfilePanelVPetInfoP.BackColor = Color.FromArgb(249, 249, 249);
             PetProfilePanelVPetInfoP.Controls.Add(PetProfilePanelVPetInfoCard);
             PetProfilePanelVPetInfoP.Controls.Add(label14);
-            PetProfilePanelVPetInfoP.Location = new Point(24, 91);
+            PetProfilePanelVPetInfoP.Location = new Point(28, 115);
             PetProfilePanelVPetInfoP.Name = "PetProfilePanelVPetInfoP";
             PetProfilePanelVPetInfoP.Size = new Size(471, 435);
             PetProfilePanelVPetInfoP.TabIndex = 21;
@@ -125,7 +108,7 @@
             // 
             // txtboxDOB
             // 
-            txtboxDOB.BackColor = Color.FromArgb(249, 249, 249);
+            txtboxDOB.BackColor = Color.White;
             txtboxDOB.Font = new Font("Segoe UI", 10F);
             txtboxDOB.Location = new Point(219, 105);
             txtboxDOB.Multiline = true;
@@ -136,7 +119,7 @@
             // 
             // txtboxPetID
             // 
-            txtboxPetID.BackColor = Color.FromArgb(249, 249, 249);
+            txtboxPetID.BackColor = Color.White;
             txtboxPetID.Font = new Font("Segoe UI", 10F);
             txtboxPetID.Location = new Point(218, 36);
             txtboxPetID.Multiline = true;
@@ -213,7 +196,7 @@
             // 
             // txtBreed
             // 
-            txtBreed.BackColor = Color.FromArgb(249, 249, 249);
+            txtBreed.BackColor = Color.White;
             txtBreed.Font = new Font("Segoe UI", 10F);
             txtBreed.Location = new Point(15, 177);
             txtBreed.Multiline = true;
@@ -246,7 +229,7 @@
             // 
             // txtColorMarkings
             // 
-            txtColorMarkings.BackColor = Color.FromArgb(249, 249, 249);
+            txtColorMarkings.BackColor = Color.White;
             txtColorMarkings.Font = new Font("Segoe UI", 10F);
             txtColorMarkings.Location = new Point(218, 177);
             txtColorMarkings.Multiline = true;
@@ -257,7 +240,7 @@
             // 
             // txtOwnerName
             // 
-            txtOwnerName.BackColor = Color.FromArgb(249, 249, 249);
+            txtOwnerName.BackColor = Color.White;
             txtOwnerName.Font = new Font("Segoe UI", 10F);
             txtOwnerName.Location = new Point(15, 246);
             txtOwnerName.Multiline = true;
@@ -268,7 +251,7 @@
             // 
             // txtcontact
             // 
-            txtcontact.BackColor = Color.FromArgb(249, 249, 249);
+            txtcontact.BackColor = Color.White;
             txtcontact.Location = new Point(15, 316);
             txtcontact.Multiline = true;
             txtcontact.Name = "txtcontact";
@@ -278,7 +261,7 @@
             // 
             // txtboxGender
             // 
-            txtboxGender.BackColor = Color.FromArgb(249, 249, 249);
+            txtboxGender.BackColor = Color.White;
             txtboxGender.Font = new Font("Segoe UI", 10F);
             txtboxGender.Location = new Point(113, 104);
             txtboxGender.Multiline = true;
@@ -289,7 +272,7 @@
             // 
             // txtboxSpecies
             // 
-            txtboxSpecies.BackColor = Color.FromArgb(249, 249, 249);
+            txtboxSpecies.BackColor = Color.White;
             txtboxSpecies.Font = new Font("Segoe UI", 10F);
             txtboxSpecies.Location = new Point(13, 104);
             txtboxSpecies.Multiline = true;
@@ -300,7 +283,7 @@
             // 
             // txtPetName
             // 
-            txtPetName.BackColor = Color.FromArgb(249, 249, 249);
+            txtPetName.BackColor = Color.White;
             txtPetName.Font = new Font("Segoe UI", 10F);
             txtPetName.Location = new Point(15, 36);
             txtPetName.Multiline = true;
@@ -334,7 +317,7 @@
             // PetProfilePanelVPBPanel
             // 
             PetProfilePanelVPBPanel.Controls.Add(petpicture);
-            PetProfilePanelVPBPanel.Location = new Point(519, 91);
+            PetProfilePanelVPBPanel.Location = new Point(522, 115);
             PetProfilePanelVPBPanel.Name = "PetProfilePanelVPBPanel";
             PetProfilePanelVPBPanel.Size = new Size(250, 250);
             PetProfilePanelVPBPanel.TabIndex = 22;
@@ -355,7 +338,7 @@
             label1.AutoSize = true;
             label1.Font = new Font("Segoe UI", 10F);
             label1.ForeColor = Color.FromArgb(89, 85, 84);
-            label1.Location = new Point(519, 350);
+            label1.Location = new Point(522, 375);
             label1.Name = "label1";
             label1.Size = new Size(48, 19);
             label1.TabIndex = 41;
@@ -364,56 +347,112 @@
             // txtNotes
             // 
             txtNotes.BackColor = Color.FromArgb(249, 249, 249);
-            txtNotes.Location = new Point(519, 371);
+            txtNotes.Location = new Point(522, 397);
             txtNotes.Multiline = true;
             txtNotes.Name = "txtNotes";
             txtNotes.ReadOnly = true;
             txtNotes.ScrollBars = ScrollBars.Vertical;
-            txtNotes.Size = new Size(250, 83);
+            txtNotes.Size = new Size(250, 90);
             txtNotes.TabIndex = 40;
+            // 
+            // panel1
+            // 
+            panel1.BackColor = Color.FromArgb(63, 59, 58);
+            panel1.Controls.Add(mainFormVButtonExit);
+            panel1.Dock = DockStyle.Top;
+            panel1.Location = new Point(0, 0);
+            panel1.Name = "panel1";
+            panel1.Size = new Size(800, 30);
+            panel1.TabIndex = 43;
+            // 
+            // mainFormVButtonExit
+            // 
+            mainFormVButtonExit.BackColor = Color.FromArgb(63, 59, 58);
+            mainFormVButtonExit.BackgroundImage = (Image)resources.GetObject("mainFormVButtonExit.BackgroundImage");
+            mainFormVButtonExit.BackgroundImageLayout = ImageLayout.Zoom;
+            mainFormVButtonExit.FlatAppearance.BorderSize = 0;
+            mainFormVButtonExit.FlatStyle = FlatStyle.Flat;
+            mainFormVButtonExit.Location = new Point(775, 7);
+            mainFormVButtonExit.Name = "mainFormVButtonExit";
+            mainFormVButtonExit.Size = new Size(15, 15);
+            mainFormVButtonExit.TabIndex = 16;
+            mainFormVButtonExit.UseVisualStyleBackColor = false;
+            mainFormVButtonExit.Click += mainFormVButtonExit_Click;
+            // 
+            // panel2
+            // 
+            panel2.Controls.Add(pictureBox1);
+            panel2.Dock = DockStyle.Top;
+            panel2.Location = new Point(0, 30);
+            panel2.Name = "panel2";
+            panel2.Size = new Size(800, 70);
+            panel2.TabIndex = 44;
+            // 
+            // pictureBox1
+            // 
+            pictureBox1.Dock = DockStyle.Fill;
+            pictureBox1.Image = (Image)resources.GetObject("pictureBox1.Image");
+            pictureBox1.Location = new Point(0, 0);
+            pictureBox1.Name = "pictureBox1";
+            pictureBox1.Size = new Size(800, 70);
+            pictureBox1.SizeMode = PictureBoxSizeMode.Zoom;
+            pictureBox1.TabIndex = 0;
+            pictureBox1.TabStop = false;
             // 
             // btnRecords
             // 
-            btnRecords.Location = new Point(573, 471);
+            btnRecords.BackColor = Color.FromArgb(63, 59, 58);
+            btnRecords.BorderColor = Color.FromArgb(220, 223, 230);
+            btnRecords.ButtonType = ReaLTaiizor.Util.HopeButtonType.Primary;
+            btnRecords.DangerColor = Color.FromArgb(245, 108, 108);
+            btnRecords.DefaultColor = Color.FromArgb(255, 255, 255);
+            btnRecords.Font = new Font("Segoe UI", 10.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            btnRecords.ForeColor = Color.White;
+            btnRecords.HoverTextColor = Color.White;
+            btnRecords.InfoColor = Color.FromArgb(144, 147, 153);
+            btnRecords.Location = new Point(573, 505);
             btnRecords.Name = "btnRecords";
-            btnRecords.Size = new Size(150, 43);
-            btnRecords.TabIndex = 42;
+            btnRecords.PrimaryColor = Color.FromArgb(63, 59, 58);
+            btnRecords.Size = new Size(150, 40);
+            btnRecords.SuccessColor = Color.FromArgb(103, 194, 58);
+            btnRecords.TabIndex = 45;
             btnRecords.Text = "View Records";
-            btnRecords.UseVisualStyleBackColor = true;
+            btnRecords.TextColor = Color.White;
+            btnRecords.WarningColor = Color.FromArgb(230, 162, 60);
             btnRecords.Click += btnRecords_Click;
             // 
             // PetOwner_PetProfileInstance
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(784, 551);
+            BackColor = Color.White;
+            ClientSize = new Size(800, 570);
             Controls.Add(btnRecords);
+            Controls.Add(panel2);
+            Controls.Add(panel1);
             Controls.Add(label1);
             Controls.Add(txtNotes);
             Controls.Add(PetProfilePanelVPBPanel);
             Controls.Add(PetProfilePanelVPetInfoP);
-            Controls.Add(btnBack);
-            Controls.Add(pictureBox1);
             FormBorderStyle = FormBorderStyle.None;
             Name = "PetOwner_PetProfileInstance";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "PetOwner_PetProfileInstance";
             Load += PetOwner_PetProfileInstance_Load;
-            ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             PetProfilePanelVPetInfoP.ResumeLayout(false);
             PetProfilePanelVPetInfoP.PerformLayout();
             PetProfilePanelVPetInfoCard.ResumeLayout(false);
             PetProfilePanelVPetInfoCard.PerformLayout();
             PetProfilePanelVPBPanel.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)petpicture).EndInit();
+            panel1.ResumeLayout(false);
+            panel2.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
 
         #endregion
-
-        private Button btnBack;
-        private PictureBox pictureBox1;
         private Panel PetProfilePanelVPetInfoP;
         private Panel PetProfilePanelVPetInfoCard;
         private TextBox txtboxDOB;
@@ -439,6 +478,10 @@
         private PictureBox petpicture;
         private Label label1;
         private TextBox txtNotes;
-        private Button btnRecords;
+        private Panel panel1;
+        private Button mainFormVButtonExit;
+        private Panel panel2;
+        private PictureBox pictureBox1;
+        private ReaLTaiizor.Controls.HopeRoundButton btnRecords;
     }
 }
