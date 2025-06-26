@@ -45,6 +45,7 @@
             mainFormVSideB = new Panel();
             mainPanel = new Panel();
             homePanel1 = new homePanel();
+            homePanelPetOwner1 = new HomePanelPetOwner();
             mainFormVTopB.SuspendLayout();
             mainFormVPB.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
@@ -244,6 +245,7 @@
             // mainPanel
             // 
             mainPanel.BackColor = Color.White;
+            mainPanel.Controls.Add(homePanelPetOwner1);
             mainPanel.Controls.Add(homePanel1);
             mainPanel.Dock = DockStyle.Fill;
             mainPanel.Location = new Point(200, 50);
@@ -259,6 +261,15 @@
             homePanel1.Name = "homePanel1";
             homePanel1.Size = new Size(800, 590);
             homePanel1.TabIndex = 0;
+            // 
+            // homePanelPetOwner1
+            // 
+            homePanelPetOwner1.BackColor = Color.White;
+            homePanelPetOwner1.Dock = DockStyle.Fill;
+            homePanelPetOwner1.Location = new Point(0, 0);
+            homePanelPetOwner1.Name = "homePanelPetOwner1";
+            homePanelPetOwner1.Size = new Size(800, 590);
+            homePanelPetOwner1.TabIndex = 1;
             // 
             // PetOwnerForm
             // 
@@ -300,5 +311,6 @@
         private Panel mainFormVSideB;
         private Panel mainPanel;
         private homePanel homePanel1;
+        private HomePanelPetOwner homePanelPetOwner1;
     }
 }

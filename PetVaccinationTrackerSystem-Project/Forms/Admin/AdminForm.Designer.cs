@@ -33,8 +33,8 @@
             mainFormVButtonSettings = new Button();
             mainFormVButtonExit = new Button();
             mainFormVSideB = new Panel();
-            btnAboutUs = new Button();
             mainFormVSideBHighlight = new Panel();
+            btnAboutUs = new Button();
             mainFormVButtonLO = new ReaLTaiizor.Controls.HopeRoundButton();
             btnDeleteRequest = new Button();
             btnPasswordRequest = new Button();
@@ -54,6 +54,7 @@
             deletionRequestsForm1V = new DeletionRequestsForm();
             homePanel1 = new homePanel();
             petOwner_AboutUs1 = new PetVaccinationTrackerSystem_Project.Forms.PetOwner.PetOwner_AboutUs();
+            homePanelAdmin1 = new HomePanelAdmin();
             mainFormVTopB.SuspendLayout();
             mainFormVSideB.SuspendLayout();
             mainFormVPB.SuspendLayout();
@@ -119,6 +120,14 @@
             mainFormVSideB.Size = new Size(200, 590);
             mainFormVSideB.TabIndex = 4;
             // 
+            // mainFormVSideBHighlight
+            // 
+            mainFormVSideBHighlight.BackColor = Color.FromArgb(168, 130, 95);
+            mainFormVSideBHighlight.Location = new Point(0, 145);
+            mainFormVSideBHighlight.Name = "mainFormVSideBHighlight";
+            mainFormVSideBHighlight.Size = new Size(10, 45);
+            mainFormVSideBHighlight.TabIndex = 2;
+            // 
             // btnAboutUs
             // 
             btnAboutUs.Dock = DockStyle.Top;
@@ -134,14 +143,6 @@
             btnAboutUs.TextAlign = ContentAlignment.MiddleLeft;
             btnAboutUs.UseVisualStyleBackColor = true;
             btnAboutUs.Click += btnAboutUs_Click;
-            // 
-            // mainFormVSideBHighlight
-            // 
-            mainFormVSideBHighlight.BackColor = Color.FromArgb(168, 130, 95);
-            mainFormVSideBHighlight.Location = new Point(0, 145);
-            mainFormVSideBHighlight.Name = "mainFormVSideBHighlight";
-            mainFormVSideBHighlight.Size = new Size(10, 45);
-            mainFormVSideBHighlight.TabIndex = 2;
             // 
             // mainFormVButtonLO
             // 
@@ -370,11 +371,21 @@
             petOwner_AboutUs1.Size = new Size(800, 590);
             petOwner_AboutUs1.TabIndex = 14;
             // 
+            // homePanelAdmin1
+            // 
+            homePanelAdmin1.BackColor = Color.White;
+            homePanelAdmin1.Dock = DockStyle.Fill;
+            homePanelAdmin1.Location = new Point(200, 50);
+            homePanelAdmin1.Name = "homePanelAdmin1";
+            homePanelAdmin1.Size = new Size(800, 590);
+            homePanelAdmin1.TabIndex = 15;
+            // 
             // AdminForm
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(1000, 640);
+            Controls.Add(homePanelAdmin1);
             Controls.Add(petOwner_AboutUs1);
             Controls.Add(homePanel1);
             Controls.Add(deletionRequestsForm1V);
@@ -424,5 +435,6 @@
         private homePanel homePanel1;
         private Button btnAboutUs;
         private PetOwner.PetOwner_AboutUs petOwner_AboutUs1;
+        private HomePanelAdmin homePanelAdmin1;
     }
 }

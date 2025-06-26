@@ -100,7 +100,17 @@ namespace PetVaccinationTrackerSystem_Project.Forms
         }
         private void UserSettings_Load(object sender, EventArgs e)
         {
-            btnRequestAccDelete.Text = (bool)_userRef.SentAccountDeletion ? "Cancel Request" : "Request Deletion";
+            
+
+            if(_userRef.SentAccountDeletion == true)
+
+            {                 
+                btnRequestAccDelete.Text = "Cancel Deletion";
+
+            } else
+            {
+                btnRequestAccDelete.Text = "Request Deletion";
+            }
         }
 
         private void btnSave_Click(object sender, EventArgs e)

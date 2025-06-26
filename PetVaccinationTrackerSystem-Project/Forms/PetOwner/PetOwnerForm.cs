@@ -53,7 +53,7 @@ namespace PetVaccinationTrackerSystem_Project.Forms.PetOwner
             InitializeComponent();
 
             _currentUser = inUserReference;
-            homePanel1.BringToFront();
+            homePanelPetOwner1.BringToFront();
         }
 
         private void btnPetProfiles_Click(object sender, EventArgs e)
@@ -106,8 +106,8 @@ namespace PetVaccinationTrackerSystem_Project.Forms.PetOwner
         {
             HighlightButtons(btnHome);
 
-            SwitchForms(homePanel1);
-            homePanel1.BringToFront(); // Bring the home panel to the front
+            SwitchForms(homePanelPetOwner1);
+            homePanelPetOwner1.BringToFront(); // Bring the home panel to the front
 
         }
         private void btnAboutUs_Click(object sender, EventArgs e)
