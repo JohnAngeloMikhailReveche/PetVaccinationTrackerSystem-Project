@@ -41,8 +41,18 @@ namespace PetVaccinationTrackerSystem_Project.Forms
             dgvEmails.Columns["Title"].HeaderText = "Email Subject";
             dgvEmails.Columns["DateAndTimeEmailSent"].HeaderText = "Date and Time Sent";
             dgvEmails.Columns["FromUser"].HeaderText = "From";
-            dgvEmails.Columns["IsRead"].HeaderText = "Is Read by Recipient";
-            dgvEmails.Columns["IsDeleted"].HeaderText = "Is Deleted by Recipient";
+
+            if(_currentUser.VetID != null)
+            {
+                dgvEmails.Columns["IsRead"].HeaderText = "Is Read by Recipient";
+                dgvEmails.Columns["IsDeleted"].HeaderText = "Is Deleted by Recipient";
+            } else
+            {
+                dgvEmails.Columns["IsRead"].HeaderText = "Is Read";
+                dgvEmails.Columns["IsDeleted"].Visible = false;
+            }
+
+            
         }
 
         private void LoadFilterBox()
@@ -95,7 +105,7 @@ namespace PetVaccinationTrackerSystem_Project.Forms
             // Query
             var query = _context.EmailList
                 .Include(e => e.User)
-                .Where(e => e.UserID == _currentUser.UserID)
+                .Where(e => e.UserID == _currentUser.UserID && e.IsDeleted == false || e.WrittenByUserID == _currentUser.UserID)
                 .AsQueryable();
 
             switch (selectedFilterOption)
