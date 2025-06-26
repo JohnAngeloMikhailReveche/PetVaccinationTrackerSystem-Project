@@ -1,4 +1,6 @@
-﻿using PetVaccinationTrackerSystem_Project.Data;
+﻿using Microsoft.Data.SqlClient;
+using Microsoft.Extensions.Options;
+using PetVaccinationTrackerSystem_Project.Data;
 using PetVaccinationTrackerSystem_Project.Data.Entities;
 using System;
 using System.Collections.Generic;
@@ -60,81 +62,105 @@ namespace PetVaccinationTrackerSystem_Project
             ;
         }
 
-        private void btnAddRecord_Click(object sender, EventArgs e)
+
+
+
+
+        private void btnAddRecord_Click_1(object sender, EventArgs e)
         {
+            // Validate inputs before savingAdd commentMore actions
+            string errorMessage = "";
+
+            if (string.IsNullOrWhiteSpace(cmbVaccineName.Text))
+                errorMessage += "Vaccine Name is required.\n";
+
+            DateTime today = DateTime.Today;
+
+            if (dtpDateGiven.Value.Date < today)
+                errorMessage += "Date Administered cannot be earlier than today.\n";
+
+            if (dtpNextDue.Value.Date < today)
+                errorMessage += "Next Due Date cannot be earlier than today.\n";
+
+            if (string.IsNullOrWhiteSpace(txtBatchNo.Text))
+                errorMessage += "Batch Number is required.\n";
+
+            if (string.IsNullOrWhiteSpace(txtAdministeredBy.Text))
+                errorMessage += "Administered By is required.\n";
+
+            if (string.IsNullOrWhiteSpace(txtPetName.Text))
+                errorMessage += "Pet Name is required.\n";
+
+            if (string.IsNullOrWhiteSpace(txtSpecies.Text))
+                errorMessage += "Species is required.\n";
+
+            if (string.IsNullOrWhiteSpace(txtBreed.Text))
+                errorMessage += "Breed is required.\n";
+
+            if (string.IsNullOrWhiteSpace(txtGender.Text))
+                errorMessage += "Gender is required.\n";
+
+            if (string.IsNullOrWhiteSpace(txtPetID.Text))
+                errorMessage += "Pet ID is required.\n";
+
+            else if (!int.TryParse(txtPetID.Text, out _))
             {
-                // Validate inputs before savingAdd commentMore actions
-                string errorMessage = "";
+                errorMessage += "Pet ID must be a valid number.\n";
+            }
 
-                if (string.IsNullOrWhiteSpace(cmbVaccineName.Text))
-                    errorMessage += "Vaccine Name is required.\n";
-
-                DateTime today = DateTime.Today;
-
-                if (dtpDateGiven.Value.Date < today)
-                    errorMessage += "Date Administered cannot be earlier than today.\n";
-
-                if (dtpNextDue.Value.Date < today)
-                    errorMessage += "Next Due Date cannot be earlier than today.\n";
-
-                if (string.IsNullOrWhiteSpace(txtBatchNo.Text))
-                    errorMessage += "Batch Number is required.\n";
-
-                if (string.IsNullOrWhiteSpace(txtAdministeredBy.Text))
-                    errorMessage += "Administered By is required.\n";
-
-                if (string.IsNullOrWhiteSpace(txtPetName.Text))
-                    errorMessage += "Pet Name is required.\n";
-
-                if (string.IsNullOrWhiteSpace(txtSpecies.Text))
-                    errorMessage += "Species is required.\n";
-
-                if (string.IsNullOrWhiteSpace(txtBreed.Text))
-                    errorMessage += "Breed is required.\n";
-
-                if (string.IsNullOrWhiteSpace(txtGender.Text))
-                    errorMessage += "Gender is required.\n";
-
-                if (string.IsNullOrWhiteSpace(txtPetName.Text))
-                    errorMessage += "Pet ID is required.\n";
-
-
-
-                // Stop execution if there are missing fields
-                if (!string.IsNullOrEmpty(errorMessage))
+            bool petIdExists = false;
+            using (SqlConnection conn = new SqlConnection(@"Server=.\SQLEXPRESS;Database=PetVaccinationTrackerSystemDB;Trusted_Connection=True;Encrypt=False;"))
+            {
+                conn.Open();
+                string query = "SELECT COUNT(*) FROM PetList WHERE PetID = @PetID";
+                using (SqlCommand cmd = new SqlCommand(query, conn))
                 {
-                    MessageBox.Show(errorMessage, "Validation Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                    return;
-                }
+                    cmd.Parameters.AddWithValue("@PetID", txtPetID.Text.Trim());
 
-                using (var context = new ModelContext())
+                    int count = (int)cmd.ExecuteScalar();
+                    petIdExists = count > 0;
+                }
+            }
+
+            if (!petIdExists)
+            {
+                errorMessage += "Entered Pet ID does not exist in the system.\n";
+            }
+
+
+
+            // Stop execution if there are missing fields
+            if (!string.IsNullOrEmpty(errorMessage))
+            {
+                MessageBox.Show(errorMessage, "Validation Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+
+            using (var context = new ModelContext())
+            {
+
+                var PethealthRecord = new PetHealthRecords
                 {
 
-                    var PethealthRecord = new PetHealthRecords
-                    {
+                    PetID = int.Parse(txtPetID.Text),
+                    VetID = SessionData.CurrentVetID.Value,
+                    PetName = txtPetName.Text,
+                    Gender = txtGender.Text,
+                    Species = txtSpecies.Text,
+                    Breed = txtBreed.Text,
+                    VaccineName = cmbVaccineName.Text,
+                    DateAdministered = dtpDateGiven.Value,
+                    NextDueDate = dtpNextDue.Value,
+                    Notes = txtNotes.Text,
+                    BatchNo = txtBatchNo.Text,
+                    AdministeredBy = txtAdministeredBy.Text
 
-                        PetID = int.Parse(PetId.Text),
-                        VetID = SessionData.CurrentVetID.Value,
-                        PetName = txtPetName.Text,
-                        Gender = txtGender.Text,
-                        Species = txtSpecies.Text,
-                        Breed = txtBreed.Text,
-                        VaccineName = cmbVaccineName.Text,
-                        DateAdministered = dtpDateGiven.Value,
-                        NextDueDate = dtpNextDue.Value,
-                        Notes = txtNotes.Text,
-                        BatchNo = txtBatchNo.Text,
-                        AdministeredBy = txtAdministeredBy.Text
+                };
 
-                    };
+                context.PetHealthRecordsList.Add(PethealthRecord);
+                context.SaveChanges();
 
-                    context.PetHealthRecordsList.Add(PethealthRecord);
-                    context.SaveChanges();
-
-                    MessageBox.Show("Vaccination record and Pet Health Records saved successfully!");
-
-
-                }
+                MessageBox.Show("Vaccination record and Pet Health Records saved successfully!");
             }
         }
 
@@ -150,7 +176,7 @@ namespace PetVaccinationTrackerSystem_Project
             txtSpecies.Text = string.Empty;
             txtBreed.Text = string.Empty;
             txtGender.Text = string.Empty;
-            PetId.Text = string.Empty;
+            txtPetID.Text = string.Empty;
 
 
             // Reset date pickers to today's date
