@@ -29,7 +29,6 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(AdminRegisterClinicUsCo));
-            btnRegisterClinic = new Button();
             txtboxZipCode = new TextBox();
             txtboxState = new TextBox();
             txtboxCity = new TextBox();
@@ -45,23 +44,11 @@
             label7 = new Label();
             label14 = new Label();
             registerPORegisterPanel = new Panel();
+            btnRegisterClinic = new ReaLTaiizor.Controls.HopeRoundButton();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             panel1.SuspendLayout();
             registerPORegisterPanel.SuspendLayout();
             SuspendLayout();
-            // 
-            // btnRegisterClinic
-            // 
-            btnRegisterClinic.FlatStyle = FlatStyle.Flat;
-            btnRegisterClinic.Font = new Font("Segoe UI", 10.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            btnRegisterClinic.ForeColor = Color.FromArgb(89, 85, 84);
-            btnRegisterClinic.Location = new Point(239, 323);
-            btnRegisterClinic.Name = "btnRegisterClinic";
-            btnRegisterClinic.Size = new Size(100, 40);
-            btnRegisterClinic.TabIndex = 2;
-            btnRegisterClinic.Text = "Register";
-            btnRegisterClinic.UseVisualStyleBackColor = true;
-            btnRegisterClinic.Click += btnRegisterClinic_Click;
             // 
             // txtboxZipCode
             // 
@@ -185,7 +172,7 @@
             label7.AutoSize = true;
             label7.Font = new Font("Segoe UI", 10.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
             label7.ForeColor = Color.FromArgb(89, 85, 84);
-            label7.Location = new Point(19, 31);
+            label7.Location = new Point(19, 30);
             label7.Name = "label7";
             label7.Size = new Size(305, 19);
             label7.TabIndex = 25;
@@ -196,7 +183,7 @@
             label14.AutoSize = true;
             label14.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
             label14.ForeColor = Color.FromArgb(89, 85, 84);
-            label14.Location = new Point(19, 9);
+            label14.Location = new Point(19, 8);
             label14.Name = "label14";
             label14.Size = new Size(110, 21);
             label14.TabIndex = 2;
@@ -215,10 +202,32 @@
             registerPORegisterPanel.Controls.Add(label4);
             registerPORegisterPanel.Controls.Add(txtboxStreet);
             registerPORegisterPanel.Controls.Add(label3);
-            registerPORegisterPanel.Location = new Point(23, 59);
+            registerPORegisterPanel.Location = new Point(23, 58);
             registerPORegisterPanel.Name = "registerPORegisterPanel";
             registerPORegisterPanel.Size = new Size(316, 255);
             registerPORegisterPanel.TabIndex = 19;
+            // 
+            // btnRegisterClinic
+            // 
+            btnRegisterClinic.BackColor = Color.FromArgb(63, 59, 58);
+            btnRegisterClinic.BorderColor = Color.FromArgb(220, 223, 230);
+            btnRegisterClinic.ButtonType = ReaLTaiizor.Util.HopeButtonType.Primary;
+            btnRegisterClinic.DangerColor = Color.FromArgb(245, 108, 108);
+            btnRegisterClinic.DefaultColor = Color.FromArgb(255, 255, 255);
+            btnRegisterClinic.Font = new Font("Segoe UI", 10.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            btnRegisterClinic.ForeColor = Color.White;
+            btnRegisterClinic.HoverTextColor = Color.White;
+            btnRegisterClinic.InfoColor = Color.FromArgb(144, 147, 153);
+            btnRegisterClinic.Location = new Point(219, 323);
+            btnRegisterClinic.Name = "btnRegisterClinic";
+            btnRegisterClinic.PrimaryColor = Color.FromArgb(63, 59, 58);
+            btnRegisterClinic.Size = new Size(120, 40);
+            btnRegisterClinic.SuccessColor = Color.FromArgb(103, 194, 58);
+            btnRegisterClinic.TabIndex = 26;
+            btnRegisterClinic.Text = "Register";
+            btnRegisterClinic.TextColor = Color.White;
+            btnRegisterClinic.WarningColor = Color.FromArgb(230, 162, 60);
+            btnRegisterClinic.Click += btnRegisterClinic_Click;
             // 
             // AdminRegisterClinicUsCo
             // 
@@ -248,11 +257,11 @@
         private Label label4;
         private Label label3;
         private Label label2;
-        private Button btnRegisterClinic;
         private PictureBox pictureBox1;
         private Panel panel1;
         private Label label7;
         private Label label14;
         private Panel registerPORegisterPanel;
+        private ReaLTaiizor.Controls.HopeRoundButton btnRegisterClinic;
     }
 }

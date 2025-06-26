@@ -148,12 +148,12 @@
             // 
             // mainFormVButtonExit
             // 
-            mainFormVButtonExit.BackColor = Color.FromArgb(89, 85, 84);
+            mainFormVButtonExit.BackColor = Color.FromArgb(63, 59, 58);
             mainFormVButtonExit.BackgroundImage = (Image)resources.GetObject("mainFormVButtonExit.BackgroundImage");
             mainFormVButtonExit.BackgroundImageLayout = ImageLayout.Zoom;
             mainFormVButtonExit.FlatAppearance.BorderSize = 0;
             mainFormVButtonExit.FlatStyle = FlatStyle.Flat;
-            mainFormVButtonExit.Location = new Point(373, 10);
+            mainFormVButtonExit.Location = new Point(373, 7);
             mainFormVButtonExit.Name = "mainFormVButtonExit";
             mainFormVButtonExit.Size = new Size(15, 15);
             mainFormVButtonExit.TabIndex = 12;
@@ -162,12 +162,12 @@
             // 
             // panel1
             // 
-            panel1.BackColor = Color.FromArgb(89, 85, 84);
+            panel1.BackColor = Color.FromArgb(63, 59, 58);
             panel1.Controls.Add(mainFormVButtonExit);
             panel1.Dock = DockStyle.Top;
             panel1.Location = new Point(0, 0);
             panel1.Name = "panel1";
-            panel1.Size = new Size(400, 35);
+            panel1.Size = new Size(400, 30);
             panel1.TabIndex = 13;
             // 
             // label6
@@ -195,7 +195,7 @@
             panel2.Controls.Add(label2);
             panel2.Controls.Add(txtboxLicenseNo);
             panel2.Controls.Add(label5);
-            panel2.Location = new Point(30, 38);
+            panel2.Location = new Point(30, 35);
             panel2.Name = "panel2";
             panel2.Size = new Size(340, 390);
             panel2.TabIndex = 14;
@@ -209,9 +209,9 @@
             btnUpdate.Font = new Font("Segoe UI", 10.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
             btnUpdate.HoverTextColor = Color.White;
             btnUpdate.InfoColor = Color.FromArgb(144, 147, 153);
-            btnUpdate.Location = new Point(70, 437);
+            btnUpdate.Location = new Point(70, 435);
             btnUpdate.Name = "btnUpdate";
-            btnUpdate.PrimaryColor = Color.FromArgb(89, 85, 84);
+            btnUpdate.PrimaryColor = Color.FromArgb(63, 59, 58);
             btnUpdate.Size = new Size(120, 40);
             btnUpdate.SuccessColor = Color.FromArgb(103, 194, 58);
             btnUpdate.TabIndex = 11;
@@ -229,7 +229,7 @@
             btnDelete.Font = new Font("Segoe UI", 10.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
             btnDelete.HoverTextColor = Color.White;
             btnDelete.InfoColor = Color.FromArgb(144, 147, 153);
-            btnDelete.Location = new Point(210, 437);
+            btnDelete.Location = new Point(210, 435);
             btnDelete.Name = "btnDelete";
             btnDelete.PrimaryColor = Color.FromArgb(69, 0, 0);
             btnDelete.Size = new Size(120, 40);

@@ -105,6 +105,7 @@
             // 
             // registerPOPanelButton
             // 
+            registerPOPanelButton.BackColor = Color.FromArgb(63, 59, 58);
             registerPOPanelButton.BorderColor = Color.FromArgb(220, 223, 230);
             registerPOPanelButton.ButtonType = ReaLTaiizor.Util.HopeButtonType.Primary;
             registerPOPanelButton.DangerColor = Color.FromArgb(245, 108, 108);
@@ -114,7 +115,7 @@
             registerPOPanelButton.InfoColor = Color.FromArgb(144, 147, 153);
             registerPOPanelButton.Location = new Point(116, 213);
             registerPOPanelButton.Name = "registerPOPanelButton";
-            registerPOPanelButton.PrimaryColor = Color.FromArgb(89, 85, 84);
+            registerPOPanelButton.PrimaryColor = Color.FromArgb(63, 59, 58);
             registerPOPanelButton.Size = new Size(130, 40);
             registerPOPanelButton.SuccessColor = Color.FromArgb(103, 194, 58);
             registerPOPanelButton.TabIndex = 20;

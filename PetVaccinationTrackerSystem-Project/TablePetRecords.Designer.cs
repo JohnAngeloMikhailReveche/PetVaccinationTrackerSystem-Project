@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            DataGridViewCellStyle dataGridViewCellStyle4 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle1 = new DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(TablePetRecords));
             label1 = new Label();
             textBox1 = new TextBox();
@@ -43,8 +43,8 @@
             NextDueDate = new DataGridViewTextBoxColumn();
             AdministeredBy = new DataGridViewTextBoxColumn();
             panel1 = new Panel();
-            btnSearchPetRecord = new ReaLTaiizor.Controls.HopeRoundButton();
             pictureBox1 = new PictureBox();
+            btnSearchPetRecord = new ReaLTaiizor.Controls.HopeRoundButton();
             ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
             panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
@@ -93,14 +93,14 @@
             // 
             dataGridView1.AllowUserToAddRows = false;
             dataGridView1.BackgroundColor = Color.White;
-            dataGridViewCellStyle4.Alignment = DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle4.BackColor = Color.White;
-            dataGridViewCellStyle4.Font = new Font("Segoe UI", 9F);
-            dataGridViewCellStyle4.ForeColor = Color.FromArgb(89, 85, 84);
-            dataGridViewCellStyle4.SelectionBackColor = Color.FromArgb(214, 180, 141);
-            dataGridViewCellStyle4.SelectionForeColor = SystemColors.HighlightText;
-            dataGridViewCellStyle4.WrapMode = DataGridViewTriState.True;
-            dataGridView1.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle4;
+            dataGridViewCellStyle1.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = Color.White;
+            dataGridViewCellStyle1.Font = new Font("Segoe UI", 9F);
+            dataGridViewCellStyle1.ForeColor = Color.FromArgb(89, 85, 84);
+            dataGridViewCellStyle1.SelectionBackColor = Color.FromArgb(214, 180, 141);
+            dataGridViewCellStyle1.SelectionForeColor = SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = DataGridViewTriState.True;
+            dataGridView1.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             dataGridView1.Columns.AddRange(new DataGridViewColumn[] { PetID, PetName, Species, VaccineName, DateGiven, NextDueDate, AdministeredBy });
             dataGridView1.Location = new Point(24, 195);
@@ -159,25 +159,6 @@
             panel1.Size = new Size(800, 150);
             panel1.TabIndex = 7;
             // 
-            // btnSearchPetRecord
-            // 
-            btnSearchPetRecord.BorderColor = Color.FromArgb(220, 223, 230);
-            btnSearchPetRecord.ButtonType = ReaLTaiizor.Util.HopeButtonType.Primary;
-            btnSearchPetRecord.DangerColor = Color.FromArgb(245, 108, 108);
-            btnSearchPetRecord.DefaultColor = Color.FromArgb(255, 255, 255);
-            btnSearchPetRecord.Font = new Font("Segoe UI", 10.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            btnSearchPetRecord.HoverTextColor = Color.White;
-            btnSearchPetRecord.InfoColor = Color.FromArgb(144, 147, 153);
-            btnSearchPetRecord.Location = new Point(688, 153);
-            btnSearchPetRecord.Name = "btnSearchPetRecord";
-            btnSearchPetRecord.PrimaryColor = Color.FromArgb(89, 85, 84);
-            btnSearchPetRecord.Size = new Size(90, 30);
-            btnSearchPetRecord.SuccessColor = Color.FromArgb(103, 194, 58);
-            btnSearchPetRecord.TabIndex = 16;
-            btnSearchPetRecord.Text = "Search";
-            btnSearchPetRecord.TextColor = Color.White;
-            btnSearchPetRecord.WarningColor = Color.FromArgb(230, 162, 60);
-            // 
             // pictureBox1
             // 
             pictureBox1.Dock = DockStyle.Fill;
@@ -188,6 +169,26 @@
             pictureBox1.SizeMode = PictureBoxSizeMode.Zoom;
             pictureBox1.TabIndex = 0;
             pictureBox1.TabStop = false;
+            // 
+            // btnSearchPetRecord
+            // 
+            btnSearchPetRecord.BackColor = Color.FromArgb(63, 59, 58);
+            btnSearchPetRecord.BorderColor = Color.FromArgb(220, 223, 230);
+            btnSearchPetRecord.ButtonType = ReaLTaiizor.Util.HopeButtonType.Primary;
+            btnSearchPetRecord.DangerColor = Color.FromArgb(245, 108, 108);
+            btnSearchPetRecord.DefaultColor = Color.FromArgb(255, 255, 255);
+            btnSearchPetRecord.Font = new Font("Segoe UI", 10.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            btnSearchPetRecord.HoverTextColor = Color.White;
+            btnSearchPetRecord.InfoColor = Color.FromArgb(144, 147, 153);
+            btnSearchPetRecord.Location = new Point(688, 153);
+            btnSearchPetRecord.Name = "btnSearchPetRecord";
+            btnSearchPetRecord.PrimaryColor = Color.FromArgb(63, 59, 58);
+            btnSearchPetRecord.Size = new Size(90, 30);
+            btnSearchPetRecord.SuccessColor = Color.FromArgb(103, 194, 58);
+            btnSearchPetRecord.TabIndex = 16;
+            btnSearchPetRecord.Text = "Search";
+            btnSearchPetRecord.TextColor = Color.White;
+            btnSearchPetRecord.WarningColor = Color.FromArgb(230, 162, 60);
             // 
             // TablePetRecords
             // 

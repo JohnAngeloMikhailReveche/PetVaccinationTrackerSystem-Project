@@ -33,9 +33,9 @@
             mainFormVButtonSettings = new Button();
             mainFormVButtonExit = new Button();
             mainFormVSideB = new Panel();
-            btnDeleteRequest = new Button();
             mainFormVSideBHighlight = new Panel();
             mainFormVButtonLO = new ReaLTaiizor.Controls.HopeRoundButton();
+            btnDeleteRequest = new Button();
             btnPasswordRequest = new Button();
             btnRegisterVet = new Button();
             btnRegisterClinic = new Button();
@@ -51,6 +51,7 @@
             registeredVetPanel1V = new RegisteredVetPanel();
             passwordRequestsForm1V = new PasswordRequestsForm();
             deletionRequestsForm1V = new DeletionRequestsForm();
+            homePanel1 = new homePanel();
             mainFormVTopB.SuspendLayout();
             mainFormVSideB.SuspendLayout();
             mainFormVPB.SuspendLayout();
@@ -59,7 +60,7 @@
             // 
             // mainFormVTopB
             // 
-            mainFormVTopB.BackColor = Color.FromArgb(89, 85, 84);
+            mainFormVTopB.BackColor = Color.FromArgb(63, 59, 58);
             mainFormVTopB.Controls.Add(mainFormVButtonSettings);
             mainFormVTopB.Controls.Add(mainFormVButtonExit);
             mainFormVTopB.Dock = DockStyle.Top;
@@ -70,7 +71,7 @@
             // 
             // mainFormVButtonSettings
             // 
-            mainFormVButtonSettings.BackColor = Color.FromArgb(89, 85, 84);
+            mainFormVButtonSettings.BackColor = Color.FromArgb(63, 59, 58);
             mainFormVButtonSettings.BackgroundImage = (Image)resources.GetObject("mainFormVButtonSettings.BackgroundImage");
             mainFormVButtonSettings.BackgroundImageLayout = ImageLayout.Zoom;
             mainFormVButtonSettings.FlatAppearance.BorderSize = 0;
@@ -84,7 +85,7 @@
             // 
             // mainFormVButtonExit
             // 
-            mainFormVButtonExit.BackColor = Color.FromArgb(89, 85, 84);
+            mainFormVButtonExit.BackColor = Color.FromArgb(63, 59, 58);
             mainFormVButtonExit.BackgroundImage = (Image)resources.GetObject("mainFormVButtonExit.BackgroundImage");
             mainFormVButtonExit.BackgroundImageLayout = ImageLayout.Zoom;
             mainFormVButtonExit.FlatAppearance.BorderSize = 0;
@@ -115,33 +116,17 @@
             mainFormVSideB.Size = new Size(200, 590);
             mainFormVSideB.TabIndex = 4;
             // 
-            // btnDeleteRequest
-            // 
-            btnDeleteRequest.Dock = DockStyle.Top;
-            btnDeleteRequest.FlatAppearance.BorderSize = 0;
-            btnDeleteRequest.FlatStyle = FlatStyle.Flat;
-            btnDeleteRequest.Font = new Font("Segoe UI", 10.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            btnDeleteRequest.ForeColor = Color.FromArgb(89, 85, 84);
-            btnDeleteRequest.Location = new Point(0, 450);
-            btnDeleteRequest.Name = "btnDeleteRequest";
-            btnDeleteRequest.Size = new Size(200, 50);
-            btnDeleteRequest.TabIndex = 11;
-            btnDeleteRequest.Text = "     Deletion Requests";
-            btnDeleteRequest.TextAlign = ContentAlignment.MiddleLeft;
-            btnDeleteRequest.UseVisualStyleBackColor = true;
-            btnDeleteRequest.Click += btnDeleteRequest_Click;
-            // 
             // mainFormVSideBHighlight
             // 
             mainFormVSideBHighlight.BackColor = Color.FromArgb(168, 130, 95);
-            mainFormVSideBHighlight.Location = new Point(0, 150);
+            mainFormVSideBHighlight.Location = new Point(0, 145);
             mainFormVSideBHighlight.Name = "mainFormVSideBHighlight";
             mainFormVSideBHighlight.Size = new Size(10, 50);
             mainFormVSideBHighlight.TabIndex = 2;
             // 
             // mainFormVButtonLO
             // 
-            mainFormVButtonLO.BackColor = Color.FromArgb(89, 85, 84);
+            mainFormVButtonLO.BackColor = Color.FromArgb(63, 59, 58);
             mainFormVButtonLO.BorderColor = Color.FromArgb(220, 223, 230);
             mainFormVButtonLO.ButtonType = ReaLTaiizor.Util.HopeButtonType.Primary;
             mainFormVButtonLO.DangerColor = Color.FromArgb(245, 108, 108);
@@ -149,9 +134,9 @@
             mainFormVButtonLO.Font = new Font("Segoe UI", 10.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
             mainFormVButtonLO.HoverTextColor = Color.White;
             mainFormVButtonLO.InfoColor = Color.FromArgb(144, 147, 153);
-            mainFormVButtonLO.Location = new Point(38, 535);
+            mainFormVButtonLO.Location = new Point(38, 532);
             mainFormVButtonLO.Name = "mainFormVButtonLO";
-            mainFormVButtonLO.PrimaryColor = Color.FromArgb(89, 85, 84);
+            mainFormVButtonLO.PrimaryColor = Color.FromArgb(63, 59, 58);
             mainFormVButtonLO.Size = new Size(125, 40);
             mainFormVButtonLO.SuccessColor = Color.FromArgb(103, 194, 58);
             mainFormVButtonLO.TabIndex = 5;
@@ -160,6 +145,22 @@
             mainFormVButtonLO.WarningColor = Color.FromArgb(230, 162, 60);
             mainFormVButtonLO.Click += mainFormVButtonLO_Click;
             // 
+            // btnDeleteRequest
+            // 
+            btnDeleteRequest.Dock = DockStyle.Top;
+            btnDeleteRequest.FlatAppearance.BorderSize = 0;
+            btnDeleteRequest.FlatStyle = FlatStyle.Flat;
+            btnDeleteRequest.Font = new Font("Segoe UI", 10.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            btnDeleteRequest.ForeColor = Color.FromArgb(89, 85, 84);
+            btnDeleteRequest.Location = new Point(0, 445);
+            btnDeleteRequest.Name = "btnDeleteRequest";
+            btnDeleteRequest.Size = new Size(200, 50);
+            btnDeleteRequest.TabIndex = 11;
+            btnDeleteRequest.Text = "     Deletion Requests";
+            btnDeleteRequest.TextAlign = ContentAlignment.MiddleLeft;
+            btnDeleteRequest.UseVisualStyleBackColor = true;
+            btnDeleteRequest.Click += btnDeleteRequest_Click;
+            // 
             // btnPasswordRequest
             // 
             btnPasswordRequest.Dock = DockStyle.Top;
@@ -167,7 +168,7 @@
             btnPasswordRequest.FlatStyle = FlatStyle.Flat;
             btnPasswordRequest.Font = new Font("Segoe UI", 10.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
             btnPasswordRequest.ForeColor = Color.FromArgb(89, 85, 84);
-            btnPasswordRequest.Location = new Point(0, 400);
+            btnPasswordRequest.Location = new Point(0, 395);
             btnPasswordRequest.Name = "btnPasswordRequest";
             btnPasswordRequest.Size = new Size(200, 50);
             btnPasswordRequest.TabIndex = 10;
@@ -183,7 +184,7 @@
             btnRegisterVet.FlatStyle = FlatStyle.Flat;
             btnRegisterVet.Font = new Font("Segoe UI", 10.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
             btnRegisterVet.ForeColor = Color.FromArgb(89, 85, 84);
-            btnRegisterVet.Location = new Point(0, 350);
+            btnRegisterVet.Location = new Point(0, 345);
             btnRegisterVet.Name = "btnRegisterVet";
             btnRegisterVet.Size = new Size(200, 50);
             btnRegisterVet.TabIndex = 6;
@@ -199,7 +200,7 @@
             btnRegisterClinic.FlatStyle = FlatStyle.Flat;
             btnRegisterClinic.Font = new Font("Segoe UI", 10.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
             btnRegisterClinic.ForeColor = Color.FromArgb(89, 85, 84);
-            btnRegisterClinic.Location = new Point(0, 300);
+            btnRegisterClinic.Location = new Point(0, 295);
             btnRegisterClinic.Name = "btnRegisterClinic";
             btnRegisterClinic.Size = new Size(200, 50);
             btnRegisterClinic.TabIndex = 7;
@@ -215,7 +216,7 @@
             btnVeterinarianList.FlatStyle = FlatStyle.Flat;
             btnVeterinarianList.Font = new Font("Segoe UI", 10.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
             btnVeterinarianList.ForeColor = Color.FromArgb(89, 85, 84);
-            btnVeterinarianList.Location = new Point(0, 250);
+            btnVeterinarianList.Location = new Point(0, 245);
             btnVeterinarianList.Name = "btnVeterinarianList";
             btnVeterinarianList.Size = new Size(200, 50);
             btnVeterinarianList.TabIndex = 8;
@@ -231,7 +232,7 @@
             btnClinicList.FlatStyle = FlatStyle.Flat;
             btnClinicList.Font = new Font("Segoe UI", 10.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
             btnClinicList.ForeColor = Color.FromArgb(89, 85, 84);
-            btnClinicList.Location = new Point(0, 200);
+            btnClinicList.Location = new Point(0, 195);
             btnClinicList.Name = "btnClinicList";
             btnClinicList.Size = new Size(200, 50);
             btnClinicList.TabIndex = 9;
@@ -247,7 +248,7 @@
             mainFormVButtonHome.FlatStyle = FlatStyle.Flat;
             mainFormVButtonHome.Font = new Font("Segoe UI", 10.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
             mainFormVButtonHome.ForeColor = Color.FromArgb(89, 85, 84);
-            mainFormVButtonHome.Location = new Point(0, 150);
+            mainFormVButtonHome.Location = new Point(0, 145);
             mainFormVButtonHome.Name = "mainFormVButtonHome";
             mainFormVButtonHome.Size = new Size(200, 50);
             mainFormVButtonHome.TabIndex = 1;
@@ -262,15 +263,15 @@
             mainFormVPB.Dock = DockStyle.Top;
             mainFormVPB.Location = new Point(0, 0);
             mainFormVPB.Name = "mainFormVPB";
-            mainFormVPB.Size = new Size(200, 150);
+            mainFormVPB.Size = new Size(200, 145);
             mainFormVPB.TabIndex = 0;
             // 
             // pictureBox1
             // 
             pictureBox1.Image = (Image)resources.GetObject("pictureBox1.Image");
-            pictureBox1.Location = new Point(38, 12);
+            pictureBox1.Location = new Point(30, 2);
             pictureBox1.Name = "pictureBox1";
-            pictureBox1.Size = new Size(125, 125);
+            pictureBox1.Size = new Size(140, 140);
             pictureBox1.SizeMode = PictureBoxSizeMode.Zoom;
             pictureBox1.TabIndex = 0;
             pictureBox1.TabStop = false;
@@ -318,6 +319,7 @@
             // 
             // passwordRequestsForm1V
             // 
+            passwordRequestsForm1V.BackColor = Color.White;
             passwordRequestsForm1V.Location = new Point(200, 50);
             passwordRequestsForm1V.Name = "passwordRequestsForm1V";
             passwordRequestsForm1V.Size = new Size(800, 590);
@@ -325,16 +327,27 @@
             // 
             // deletionRequestsForm1V
             // 
+            deletionRequestsForm1V.BackColor = Color.White;
             deletionRequestsForm1V.Location = new Point(200, 50);
             deletionRequestsForm1V.Name = "deletionRequestsForm1V";
             deletionRequestsForm1V.Size = new Size(800, 590);
             deletionRequestsForm1V.TabIndex = 12;
+            // 
+            // homePanel1
+            // 
+            homePanel1.BackColor = Color.White;
+            homePanel1.Dock = DockStyle.Fill;
+            homePanel1.Location = new Point(200, 50);
+            homePanel1.Name = "homePanel1";
+            homePanel1.Size = new Size(800, 590);
+            homePanel1.TabIndex = 13;
             // 
             // AdminForm
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(1000, 640);
+            Controls.Add(homePanel1);
             Controls.Add(deletionRequestsForm1V);
             Controls.Add(passwordRequestsForm1V);
             Controls.Add(registeredVetPanel1V);
@@ -379,5 +392,6 @@
         private PasswordRequestsForm passwordRequestsForm1V;
         private Button btnDeleteRequest;
         private DeletionRequestsForm deletionRequestsForm1V;
+        private homePanel homePanel1;
     }
 }

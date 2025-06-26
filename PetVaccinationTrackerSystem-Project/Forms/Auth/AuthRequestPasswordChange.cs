@@ -66,5 +66,6 @@ namespace PetVaccinationTrackerSystem_Project.Forms.Auth
         {
             this.Close();
         }
+
     }
 }

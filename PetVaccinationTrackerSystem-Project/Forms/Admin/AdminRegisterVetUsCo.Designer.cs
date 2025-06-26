@@ -30,7 +30,6 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(AdminRegisterVetUsCo));
             cmbboxClinic = new ComboBox();
-            btnRegisterVet = new Button();
             txtboxAccountPassword = new TextBox();
             txtboxAccountUsername = new TextBox();
             txtboxLicenseNo = new TextBox();
@@ -47,6 +46,7 @@
             panel1 = new Panel();
             label7 = new Label();
             label14 = new Label();
+            btnRegisterVet = new ReaLTaiizor.Controls.HopeRoundButton();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             registerPORegisterPanel.SuspendLayout();
             panel1.SuspendLayout();
@@ -63,19 +63,6 @@
             cmbboxClinic.Name = "cmbboxClinic";
             cmbboxClinic.Size = new Size(200, 25);
             cmbboxClinic.TabIndex = 3;
-            // 
-            // btnRegisterVet
-            // 
-            btnRegisterVet.FlatStyle = FlatStyle.Flat;
-            btnRegisterVet.Font = new Font("Segoe UI", 10.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            btnRegisterVet.ForeColor = Color.FromArgb(89, 85, 84);
-            btnRegisterVet.Location = new Point(391, 300);
-            btnRegisterVet.Name = "btnRegisterVet";
-            btnRegisterVet.Size = new Size(100, 40);
-            btnRegisterVet.TabIndex = 2;
-            btnRegisterVet.Text = "Register";
-            btnRegisterVet.UseVisualStyleBackColor = true;
-            btnRegisterVet.Click += btnRegisterVet_Click;
             // 
             // txtboxAccountPassword
             // 
@@ -221,8 +208,8 @@
             // panel1
             // 
             panel1.BackColor = Color.FromArgb(249, 249, 249);
-            panel1.Controls.Add(label7);
             panel1.Controls.Add(btnRegisterVet);
+            panel1.Controls.Add(label7);
             panel1.Controls.Add(label14);
             panel1.Controls.Add(registerPORegisterPanel);
             panel1.Location = new Point(148, 190);
@@ -252,6 +239,28 @@
             label14.TabIndex = 2;
             label14.Text = "Account Details";
             // 
+            // btnRegisterVet
+            // 
+            btnRegisterVet.BackColor = Color.FromArgb(63, 59, 58);
+            btnRegisterVet.BorderColor = Color.FromArgb(220, 223, 230);
+            btnRegisterVet.ButtonType = ReaLTaiizor.Util.HopeButtonType.Primary;
+            btnRegisterVet.DangerColor = Color.FromArgb(245, 108, 108);
+            btnRegisterVet.DefaultColor = Color.FromArgb(255, 255, 255);
+            btnRegisterVet.Font = new Font("Segoe UI", 10.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            btnRegisterVet.ForeColor = Color.White;
+            btnRegisterVet.HoverTextColor = Color.White;
+            btnRegisterVet.InfoColor = Color.FromArgb(144, 147, 153);
+            btnRegisterVet.Location = new Point(371, 300);
+            btnRegisterVet.Name = "btnRegisterVet";
+            btnRegisterVet.PrimaryColor = Color.FromArgb(63, 59, 58);
+            btnRegisterVet.Size = new Size(120, 40);
+            btnRegisterVet.SuccessColor = Color.FromArgb(103, 194, 58);
+            btnRegisterVet.TabIndex = 27;
+            btnRegisterVet.Text = "Register";
+            btnRegisterVet.TextColor = Color.White;
+            btnRegisterVet.WarningColor = Color.FromArgb(230, 162, 60);
+            btnRegisterVet.Click += btnRegisterVet_Click;
+            // 
             // AdminRegisterVetUsCo
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
@@ -271,7 +280,6 @@
         }
 
         #endregion
-        private Button btnRegisterVet;
         private TextBox txtboxLicenseNo;
         private TextBox txtboxName;
         private Label label5;
@@ -289,5 +297,6 @@
         private Panel panel1;
         private Label label7;
         private Label label14;
+        private ReaLTaiizor.Controls.HopeRoundButton btnRegisterVet;
     }
 }

@@ -36,13 +36,13 @@
             panel1 = new Panel();
             label2 = new Label();
             label5 = new Label();
-            txtBreed = new TextBox();
+            textBox5 = new TextBox();
             label1 = new Label();
-            txtPetName = new TextBox();
-            txtSpecies = new TextBox();
+            textBox2 = new TextBox();
+            textBox4 = new TextBox();
             label4 = new Label();
-            PetId = new TextBox();
-            txtGender = new TextBox();
+            textBox1 = new TextBox();
+            textBox3 = new TextBox();
             label3 = new Label();
             label14 = new Label();
             VRDSVaccineCard = new Panel();
@@ -81,6 +81,7 @@
             // 
             // btnClear
             // 
+            btnClear.BackColor = Color.FromArgb(63, 59, 58);
             btnClear.BorderColor = Color.FromArgb(220, 223, 230);
             btnClear.ButtonType = ReaLTaiizor.Util.HopeButtonType.Primary;
             btnClear.DangerColor = Color.FromArgb(245, 108, 108);
@@ -90,17 +91,17 @@
             btnClear.InfoColor = Color.FromArgb(144, 147, 153);
             btnClear.Location = new Point(560, 424);
             btnClear.Name = "btnClear";
-            btnClear.PrimaryColor = Color.FromArgb(89, 85, 84);
+            btnClear.PrimaryColor = Color.FromArgb(63, 59, 58);
             btnClear.Size = new Size(120, 40);
             btnClear.SuccessColor = Color.FromArgb(103, 194, 58);
             btnClear.TabIndex = 33;
             btnClear.Text = "Clear";
             btnClear.TextColor = Color.White;
             btnClear.WarningColor = Color.FromArgb(230, 162, 60);
-            btnClear.Click += btnClear_Click;
             // 
             // btnAddRecord
             // 
+            btnAddRecord.BackColor = Color.FromArgb(63, 59, 58);
             btnAddRecord.BorderColor = Color.FromArgb(220, 223, 230);
             btnAddRecord.ButtonType = ReaLTaiizor.Util.HopeButtonType.Primary;
             btnAddRecord.DangerColor = Color.FromArgb(245, 108, 108);
@@ -110,14 +111,13 @@
             btnAddRecord.InfoColor = Color.FromArgb(144, 147, 153);
             btnAddRecord.Location = new Point(414, 424);
             btnAddRecord.Name = "btnAddRecord";
-            btnAddRecord.PrimaryColor = Color.FromArgb(89, 85, 84);
+            btnAddRecord.PrimaryColor = Color.FromArgb(63, 59, 58);
             btnAddRecord.Size = new Size(140, 40);
             btnAddRecord.SuccessColor = Color.FromArgb(103, 194, 58);
             btnAddRecord.TabIndex = 32;
             btnAddRecord.Text = "Add Record";
             btnAddRecord.TextColor = Color.White;
             btnAddRecord.WarningColor = Color.FromArgb(230, 162, 60);
-            btnAddRecord.Click += btnAddRecord_Click;
             // 
             // label6
             // 
@@ -136,13 +136,13 @@
             panel1.BorderStyle = BorderStyle.FixedSingle;
             panel1.Controls.Add(label2);
             panel1.Controls.Add(label5);
-            panel1.Controls.Add(txtBreed);
+            panel1.Controls.Add(textBox5);
             panel1.Controls.Add(label1);
-            panel1.Controls.Add(txtPetName);
-            panel1.Controls.Add(txtSpecies);
+            panel1.Controls.Add(textBox2);
+            panel1.Controls.Add(textBox4);
             panel1.Controls.Add(label4);
-            panel1.Controls.Add(PetId);
-            panel1.Controls.Add(txtGender);
+            panel1.Controls.Add(textBox1);
+            panel1.Controls.Add(textBox3);
             panel1.Controls.Add(label3);
             panel1.Location = new Point(17, 40);
             panel1.Name = "panel1";
@@ -171,14 +171,14 @@
             label5.TabIndex = 4;
             label5.Text = "Breed:";
             // 
-            // txtBreed
+            // textBox5
             // 
-            txtBreed.BackColor = Color.FromArgb(249, 249, 249);
-            txtBreed.Font = new Font("Segoe UI", 10F);
-            txtBreed.Location = new Point(360, 97);
-            txtBreed.Name = "txtBreed";
-            txtBreed.Size = new Size(284, 25);
-            txtBreed.TabIndex = 9;
+            textBox5.BackColor = Color.White;
+            textBox5.Font = new Font("Segoe UI", 10F);
+            textBox5.Location = new Point(360, 97);
+            textBox5.Name = "textBox5";
+            textBox5.Size = new Size(284, 25);
+            textBox5.TabIndex = 9;
             // 
             // label1
             // 
@@ -191,23 +191,23 @@
             label1.TabIndex = 0;
             label1.Text = "Pet ID:";
             // 
-            // txtPetName
+            // textBox2
             // 
-            txtPetName.BackColor = Color.FromArgb(249, 249, 249);
-            txtPetName.Font = new Font("Segoe UI", 10F);
-            txtPetName.Location = new Point(17, 36);
-            txtPetName.Name = "txtPetName";
-            txtPetName.Size = new Size(330, 25);
-            txtPetName.TabIndex = 6;
+            textBox2.BackColor = Color.White;
+            textBox2.Font = new Font("Segoe UI", 10F);
+            textBox2.Location = new Point(17, 36);
+            textBox2.Name = "textBox2";
+            textBox2.Size = new Size(330, 25);
+            textBox2.TabIndex = 6;
             // 
-            // txtSpecies
+            // textBox4
             // 
-            txtSpecies.BackColor = Color.FromArgb(249, 249, 249);
-            txtSpecies.Font = new Font("Segoe UI", 10F);
-            txtSpecies.Location = new Point(190, 97);
-            txtSpecies.Name = "txtSpecies";
-            txtSpecies.Size = new Size(137, 25);
-            txtSpecies.TabIndex = 8;
+            textBox4.BackColor = Color.White;
+            textBox4.Font = new Font("Segoe UI", 10F);
+            textBox4.Location = new Point(190, 97);
+            textBox4.Name = "textBox4";
+            textBox4.Size = new Size(137, 25);
+            textBox4.TabIndex = 8;
             // 
             // label4
             // 
@@ -220,23 +220,23 @@
             label4.TabIndex = 3;
             label4.Text = "Species:";
             // 
-            // PetId
+            // textBox1
             // 
-            PetId.BackColor = Color.FromArgb(249, 249, 249);
-            PetId.Font = new Font("Segoe UI", 10F);
-            PetId.Location = new Point(360, 36);
-            PetId.Name = "PetId";
-            PetId.Size = new Size(284, 25);
-            PetId.TabIndex = 5;
+            textBox1.BackColor = Color.White;
+            textBox1.Font = new Font("Segoe UI", 10F);
+            textBox1.Location = new Point(360, 36);
+            textBox1.Name = "textBox1";
+            textBox1.Size = new Size(284, 25);
+            textBox1.TabIndex = 5;
             // 
-            // txtGender
+            // textBox3
             // 
-            txtGender.BackColor = Color.FromArgb(249, 249, 249);
-            txtGender.Font = new Font("Segoe UI", 10F);
-            txtGender.Location = new Point(17, 97);
-            txtGender.Name = "txtGender";
-            txtGender.Size = new Size(140, 25);
-            txtGender.TabIndex = 7;
+            textBox3.BackColor = Color.White;
+            textBox3.Font = new Font("Segoe UI", 10F);
+            textBox3.Location = new Point(17, 97);
+            textBox3.Name = "textBox3";
+            textBox3.Size = new Size(140, 25);
+            textBox3.TabIndex = 7;
             // 
             // label3
             // 
@@ -305,7 +305,7 @@
             // 
             // txtBatchNo
             // 
-            txtBatchNo.BackColor = Color.FromArgb(249, 249, 249);
+            txtBatchNo.BackColor = Color.White;
             txtBatchNo.Font = new Font("Segoe UI", 10F);
             txtBatchNo.Location = new Point(484, 47);
             txtBatchNo.Name = "txtBatchNo";
@@ -325,7 +325,7 @@
             // 
             // txtAdministeredBy
             // 
-            txtAdministeredBy.BackColor = Color.FromArgb(249, 249, 249);
+            txtAdministeredBy.BackColor = Color.White;
             txtAdministeredBy.Font = new Font("Segoe UI", 10F);
             txtAdministeredBy.Location = new Point(484, 12);
             txtAdministeredBy.Name = "txtAdministeredBy";
@@ -347,7 +347,7 @@
             // 
             dtpNextDue.CalendarMonthBackground = Color.White;
             dtpNextDue.Format = DateTimePickerFormat.Short;
-            dtpNextDue.Location = new Point(146, 82);
+            dtpNextDue.Location = new Point(152, 82);
             dtpNextDue.Name = "dtpNextDue";
             dtpNextDue.Size = new Size(200, 23);
             dtpNextDue.TabIndex = 14;
@@ -367,7 +367,7 @@
             // 
             dtpDateGiven.CalendarMonthBackground = Color.White;
             dtpDateGiven.Format = DateTimePickerFormat.Short;
-            dtpDateGiven.Location = new Point(146, 47);
+            dtpDateGiven.Location = new Point(152, 47);
             dtpDateGiven.Name = "dtpDateGiven";
             dtpDateGiven.Size = new Size(200, 23);
             dtpDateGiven.TabIndex = 12;
@@ -390,7 +390,7 @@
             cmbVaccineName.Font = new Font("Segoe UI", 10F);
             cmbVaccineName.FormattingEnabled = true;
             cmbVaccineName.Items.AddRange(new object[] { "Rabies", "DHPP", "5-in-1", "6-in-1", "Canine Parvovirus", "Canine Distemper", "Canine Hepatitis", "Leptospirosis", "Bordetella", "Canine Influenza", "Lyme Disease", "Coronavirus (CCV)", "FVRCP", "FVR", "Calicivirus", "Panleukopenia", "FeLV (Feline Leukemia)", "FIV (Feline Immunodeficiency Virus)", "Chlamydia", "Myxomatosis (Rabbit)", "RHDV1 (Rabbit)", "RHDV2 (Rabbit)" });
-            cmbVaccineName.Location = new Point(146, 12);
+            cmbVaccineName.Location = new Point(152, 12);
             cmbVaccineName.Name = "cmbVaccineName";
             cmbVaccineName.Size = new Size(200, 25);
             cmbVaccineName.TabIndex = 10;
@@ -458,11 +458,11 @@
         private Label label4;
         private Label label3;
         private Label label2;
-        private TextBox txtGender;
-        private TextBox txtPetName;
-        private TextBox PetId;
-        private TextBox txtBreed;
-        private TextBox txtSpecies;
+        private TextBox textBox3;
+        private TextBox textBox2;
+        private TextBox textBox1;
+        private TextBox textBox5;
+        private TextBox textBox4;
         private Panel panel1;
         private Label label6;
         private ReaLTaiizor.Controls.HopeRoundButton btnAddRecord;

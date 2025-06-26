@@ -45,6 +45,7 @@ namespace PetVaccinationTrackerSystem_Project.Forms.PetOwner
             InitializeComponent();
 
             _currentUser = inUserReference;
+            homePanel1.BringToFront();
         }
 
         private void btnPetProfiles_Click(object sender, EventArgs e)
@@ -100,6 +101,7 @@ namespace PetVaccinationTrackerSystem_Project.Forms.PetOwner
             mainFormVSideBHighlight.Top = btnHome.Top;
 
             mainPanel.Controls.Clear(); // Clear the current controls in the main panel
+            homePanel1.BringToFront(); // Bring the home panel to the front
 
             // Add the Home Dashboard here and make the logic as follows:
             // PetOwner_PetProfile petOwnerPetProfile = new PetOwner_PetProfile(_currentUser);

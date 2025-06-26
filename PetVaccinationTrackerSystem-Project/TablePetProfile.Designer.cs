@@ -35,8 +35,8 @@
             cmbboxFilterClinic = new ComboBox();
             comboBox1 = new ComboBox();
             panel1 = new Panel();
-            btnSearchPetProfile = new ReaLTaiizor.Controls.HopeRoundButton();
             pictureBox1 = new PictureBox();
+            btnSearchPetProfile = new ReaLTaiizor.Controls.HopeRoundButton();
             ((System.ComponentModel.ISupportInitialize)dgvClinicList).BeginInit();
             panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
@@ -104,6 +104,17 @@
             panel1.Size = new Size(800, 150);
             panel1.TabIndex = 13;
             // 
+            // pictureBox1
+            // 
+            pictureBox1.Dock = DockStyle.Fill;
+            pictureBox1.Image = (Image)resources.GetObject("pictureBox1.Image");
+            pictureBox1.Location = new Point(0, 0);
+            pictureBox1.Name = "pictureBox1";
+            pictureBox1.Size = new Size(800, 150);
+            pictureBox1.SizeMode = PictureBoxSizeMode.Zoom;
+            pictureBox1.TabIndex = 0;
+            pictureBox1.TabStop = false;
+            // 
             // btnSearchPetProfile
             // 
             btnSearchPetProfile.BorderColor = Color.FromArgb(220, 223, 230);
@@ -115,24 +126,13 @@
             btnSearchPetProfile.InfoColor = Color.FromArgb(144, 147, 153);
             btnSearchPetProfile.Location = new Point(688, 153);
             btnSearchPetProfile.Name = "btnSearchPetProfile";
-            btnSearchPetProfile.PrimaryColor = Color.FromArgb(89, 85, 84);
+            btnSearchPetProfile.PrimaryColor = Color.FromArgb(63, 59, 58);
             btnSearchPetProfile.Size = new Size(90, 30);
             btnSearchPetProfile.SuccessColor = Color.FromArgb(103, 194, 58);
             btnSearchPetProfile.TabIndex = 15;
             btnSearchPetProfile.Text = "Search";
             btnSearchPetProfile.TextColor = Color.White;
             btnSearchPetProfile.WarningColor = Color.FromArgb(230, 162, 60);
-            // 
-            // pictureBox1
-            // 
-            pictureBox1.Dock = DockStyle.Fill;
-            pictureBox1.Image = (Image)resources.GetObject("pictureBox1.Image");
-            pictureBox1.Location = new Point(0, 0);
-            pictureBox1.Name = "pictureBox1";
-            pictureBox1.Size = new Size(800, 150);
-            pictureBox1.SizeMode = PictureBoxSizeMode.Zoom;
-            pictureBox1.TabIndex = 0;
-            pictureBox1.TabStop = false;
             // 
             // TablePetProfile
             // 

@@ -28,50 +28,69 @@
         /// </summary>
         private void InitializeComponent()
         {
-            label1 = new Label();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(PetOwner_PetProfile));
             dgvRegisteredPet = new DataGridView();
+            pictureBox1 = new PictureBox();
+            label2 = new Label();
             ((System.ComponentModel.ISupportInitialize)dgvRegisteredPet).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             SuspendLayout();
-            // 
-            // label1
-            // 
-            label1.AutoSize = true;
-            label1.Font = new Font("Segoe UI", 20F, FontStyle.Bold);
-            label1.Location = new Point(44, 38);
-            label1.Name = "label1";
-            label1.Size = new Size(204, 37);
-            label1.TabIndex = 1;
-            label1.Text = "Pet Registered";
             // 
             // dgvRegisteredPet
             // 
             dgvRegisteredPet.AllowUserToAddRows = false;
             dgvRegisteredPet.BackgroundColor = Color.White;
             dgvRegisteredPet.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dgvRegisteredPet.Location = new Point(34, 78);
+            dgvRegisteredPet.Location = new Point(24, 195);
             dgvRegisteredPet.MultiSelect = false;
             dgvRegisteredPet.Name = "dgvRegisteredPet";
             dgvRegisteredPet.ReadOnly = true;
-            dgvRegisteredPet.Size = new Size(733, 233);
+            dgvRegisteredPet.Size = new Size(754, 350);
             dgvRegisteredPet.TabIndex = 6;
             dgvRegisteredPet.DoubleClick += dgvRegisteredPet_DoubleClick;
+            // 
+            // pictureBox1
+            // 
+            pictureBox1.Dock = DockStyle.Top;
+            pictureBox1.Image = (Image)resources.GetObject("pictureBox1.Image");
+            pictureBox1.Location = new Point(0, 0);
+            pictureBox1.Name = "pictureBox1";
+            pictureBox1.Size = new Size(800, 150);
+            pictureBox1.SizeMode = PictureBoxSizeMode.Zoom;
+            pictureBox1.TabIndex = 7;
+            pictureBox1.TabStop = false;
+            // 
+            // label2
+            // 
+            label2.AutoSize = true;
+            label2.Font = new Font("Segoe UI", 10.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label2.ForeColor = Color.FromArgb(89, 85, 84);
+            label2.Location = new Point(24, 168);
+            label2.Name = "label2";
+            label2.Size = new Size(327, 19);
+            label2.TabIndex = 8;
+            label2.Text = "Double-click any pet to view more information:";
             // 
             // PetOwner_PetProfile
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
+            BackColor = Color.White;
+            Controls.Add(label2);
+            Controls.Add(pictureBox1);
             Controls.Add(dgvRegisteredPet);
-            Controls.Add(label1);
             Name = "PetOwner_PetProfile";
             Size = new Size(800, 590);
             Load += PetOwner_PetProfile_Load;
             ((System.ComponentModel.ISupportInitialize)dgvRegisteredPet).EndInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
 
         #endregion
-        private Label label1;
         private DataGridView dgvRegisteredPet;
+        private PictureBox pictureBox1;
+        private Label label2;
     }
 }

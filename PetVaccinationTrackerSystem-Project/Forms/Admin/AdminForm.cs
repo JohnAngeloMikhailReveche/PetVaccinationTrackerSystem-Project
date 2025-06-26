@@ -21,7 +21,7 @@ namespace PetVaccinationTrackerSystem_Project.Forms.Admin
             InitializeComponent();
             mainFormVSideBHighlight.Height = mainFormVButtonHome.Height;
             mainFormVSideBHighlight.Top = mainFormVButtonHome.Top;
-            homeUserControl1V.BringToFront();
+            homePanel1.BringToFront();
         }
 
         private void btnRegisterClinic_Click(object sender, EventArgs e)
@@ -74,7 +74,7 @@ namespace PetVaccinationTrackerSystem_Project.Forms.Admin
             mainFormVSideBHighlight.Height = mainFormVButtonHome.Height;
             mainFormVSideBHighlight.Top = mainFormVButtonHome.Top;
 
-            homeUserControl1V.BringToFront();
+            homePanel1.BringToFront();
         }
 
         private void mainFormVButtonSettings_Click(object sender, EventArgs e)
