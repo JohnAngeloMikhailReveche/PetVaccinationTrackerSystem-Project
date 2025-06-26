@@ -32,17 +32,10 @@
             DataGridViewCellStyle dataGridViewCellStyle1 = new DataGridViewCellStyle();
             panel1 = new Panel();
             pictureBox1 = new PictureBox();
-            dataGridView1 = new DataGridView();
-            PetID = new DataGridViewTextBoxColumn();
-            PetName = new DataGridViewTextBoxColumn();
-            Species = new DataGridViewTextBoxColumn();
-            VaccineName = new DataGridViewTextBoxColumn();
-            DateGiven = new DataGridViewTextBoxColumn();
-            NextDueDate = new DataGridViewTextBoxColumn();
-            AdministeredBy = new DataGridViewTextBoxColumn();
+            dgvPetRecords = new DataGridView();
             panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)dgvPetRecords).BeginInit();
             SuspendLayout();
             // 
             // panel1
@@ -65,10 +58,10 @@
             pictureBox1.TabIndex = 0;
             pictureBox1.TabStop = false;
             // 
-            // dataGridView1
+            // dgvPetRecords
             // 
-            dataGridView1.AllowUserToAddRows = false;
-            dataGridView1.BackgroundColor = Color.White;
+            dgvPetRecords.AllowUserToAddRows = false;
+            dgvPetRecords.BackgroundColor = Color.White;
             dataGridViewCellStyle1.Alignment = DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle1.BackColor = Color.White;
             dataGridViewCellStyle1.Font = new Font("Segoe UI", 9F);
@@ -76,70 +69,29 @@
             dataGridViewCellStyle1.SelectionBackColor = Color.FromArgb(214, 180, 141);
             dataGridViewCellStyle1.SelectionForeColor = SystemColors.HighlightText;
             dataGridViewCellStyle1.WrapMode = DataGridViewTriState.True;
-            dataGridView1.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
-            dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridView1.Columns.AddRange(new DataGridViewColumn[] { PetID, PetName, Species, VaccineName, DateGiven, NextDueDate, AdministeredBy });
-            dataGridView1.Location = new Point(51, 174);
-            dataGridView1.Name = "dataGridView1";
-            dataGridView1.RowHeadersVisible = false;
-            dataGridView1.Size = new Size(754, 380);
-            dataGridView1.TabIndex = 9;
-            // 
-            // PetID
-            // 
-            PetID.HeaderText = "Pet ID";
-            PetID.Name = "PetID";
-            PetID.Width = 70;
-            // 
-            // PetName
-            // 
-            PetName.HeaderText = "Pet Name";
-            PetName.Name = "PetName";
-            // 
-            // Species
-            // 
-            Species.HeaderText = "Species";
-            Species.Name = "Species";
-            Species.Width = 90;
-            // 
-            // VaccineName
-            // 
-            VaccineName.HeaderText = "Vaccine Name";
-            VaccineName.Name = "VaccineName";
-            VaccineName.Width = 130;
-            // 
-            // DateGiven
-            // 
-            DateGiven.HeaderText = "Date Administered";
-            DateGiven.Name = "DateGiven";
-            DateGiven.Width = 105;
-            // 
-            // NextDueDate
-            // 
-            NextDueDate.HeaderText = "Next Due Date";
-            NextDueDate.Name = "NextDueDate";
-            NextDueDate.Width = 105;
-            // 
-            // AdministeredBy
-            // 
-            AdministeredBy.HeaderText = "Administered By";
-            AdministeredBy.Name = "AdministeredBy";
-            AdministeredBy.Width = 120;
+            dgvPetRecords.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            dgvPetRecords.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dgvPetRecords.Location = new Point(51, 174);
+            dgvPetRecords.Name = "dgvPetRecords";
+            dgvPetRecords.RowHeadersVisible = false;
+            dgvPetRecords.Size = new Size(754, 380);
+            dgvPetRecords.TabIndex = 9;
             // 
             // PetOwner_VaccinationRecordInstance
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(848, 574);
-            Controls.Add(dataGridView1);
+            Controls.Add(dgvPetRecords);
             Controls.Add(panel1);
             FormBorderStyle = FormBorderStyle.FixedSingle;
             Name = "PetOwner_VaccinationRecordInstance";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "PetOwner_VaccinationRecordInstance";
+            Load += PetOwner_VaccinationRecordInstance_Load;
             panel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
-            ((System.ComponentModel.ISupportInitialize)dataGridView1).EndInit();
+            ((System.ComponentModel.ISupportInitialize)dgvPetRecords).EndInit();
             ResumeLayout(false);
         }
 
@@ -147,13 +99,6 @@
 
         private Panel panel1;
         private PictureBox pictureBox1;
-        private DataGridView dataGridView1;
-        private DataGridViewTextBoxColumn PetID;
-        private DataGridViewTextBoxColumn PetName;
-        private DataGridViewTextBoxColumn Species;
-        private DataGridViewTextBoxColumn VaccineName;
-        private DataGridViewTextBoxColumn DateGiven;
-        private DataGridViewTextBoxColumn NextDueDate;
-        private DataGridViewTextBoxColumn AdministeredBy;
+        private DataGridView dgvPetRecords;
     }
 }
