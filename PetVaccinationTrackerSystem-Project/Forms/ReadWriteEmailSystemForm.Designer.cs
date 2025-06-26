@@ -100,16 +100,16 @@
             txtTitle.Font = new Font("Segoe UI", 10F);
             txtTitle.Location = new Point(34, 147);
             txtTitle.Name = "txtTitle";
-            txtTitle.Size = new Size(375, 25);
+            txtTitle.Size = new Size(360, 25);
             txtTitle.TabIndex = 5;
             // 
             // datetimeDateSent
             // 
             datetimeDateSent.CalendarFont = new Font("Segoe UI", 10F);
             datetimeDateSent.CalendarMonthBackground = Color.White;
-            datetimeDateSent.Location = new Point(416, 147);
+            datetimeDateSent.Location = new Point(401, 149);
             datetimeDateSent.Name = "datetimeDateSent";
-            datetimeDateSent.Size = new Size(200, 23);
+            datetimeDateSent.Size = new Size(216, 23);
             datetimeDateSent.TabIndex = 13;
             // 
             // panel1

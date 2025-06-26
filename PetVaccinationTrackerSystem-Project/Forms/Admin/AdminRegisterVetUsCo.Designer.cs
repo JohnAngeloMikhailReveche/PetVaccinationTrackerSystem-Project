@@ -44,9 +44,9 @@
             pictureBox1 = new PictureBox();
             registerPORegisterPanel = new Panel();
             panel1 = new Panel();
+            btnRegisterVet = new ReaLTaiizor.Controls.HopeRoundButton();
             label7 = new Label();
             label14 = new Label();
-            btnRegisterVet = new ReaLTaiizor.Controls.HopeRoundButton();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             registerPORegisterPanel.SuspendLayout();
             panel1.SuspendLayout();
@@ -178,7 +178,7 @@
             // pictureBox1
             // 
             pictureBox1.Image = (Image)resources.GetObject("pictureBox1.Image");
-            pictureBox1.Location = new Point(227, 15);
+            pictureBox1.Location = new Point(227, 20);
             pictureBox1.Name = "pictureBox1";
             pictureBox1.Size = new Size(350, 200);
             pictureBox1.SizeMode = PictureBoxSizeMode.Zoom;
@@ -202,7 +202,7 @@
             registerPORegisterPanel.Controls.Add(label2);
             registerPORegisterPanel.Location = new Point(19, 65);
             registerPORegisterPanel.Name = "registerPORegisterPanel";
-            registerPORegisterPanel.Size = new Size(472, 223);
+            registerPORegisterPanel.Size = new Size(472, 220);
             registerPORegisterPanel.TabIndex = 19;
             // 
             // panel1
@@ -212,10 +212,32 @@
             panel1.Controls.Add(label7);
             panel1.Controls.Add(label14);
             panel1.Controls.Add(registerPORegisterPanel);
-            panel1.Location = new Point(148, 190);
+            panel1.Location = new Point(148, 195);
             panel1.Name = "panel1";
-            panel1.Size = new Size(509, 355);
+            panel1.Size = new Size(509, 348);
             panel1.TabIndex = 20;
+            // 
+            // btnRegisterVet
+            // 
+            btnRegisterVet.BackColor = Color.FromArgb(63, 59, 58);
+            btnRegisterVet.BorderColor = Color.FromArgb(220, 223, 230);
+            btnRegisterVet.ButtonType = ReaLTaiizor.Util.HopeButtonType.Primary;
+            btnRegisterVet.DangerColor = Color.FromArgb(245, 108, 108);
+            btnRegisterVet.DefaultColor = Color.FromArgb(255, 255, 255);
+            btnRegisterVet.Font = new Font("Segoe UI", 10.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            btnRegisterVet.ForeColor = Color.White;
+            btnRegisterVet.HoverTextColor = Color.White;
+            btnRegisterVet.InfoColor = Color.FromArgb(144, 147, 153);
+            btnRegisterVet.Location = new Point(371, 295);
+            btnRegisterVet.Name = "btnRegisterVet";
+            btnRegisterVet.PrimaryColor = Color.FromArgb(63, 59, 58);
+            btnRegisterVet.Size = new Size(120, 40);
+            btnRegisterVet.SuccessColor = Color.FromArgb(103, 194, 58);
+            btnRegisterVet.TabIndex = 27;
+            btnRegisterVet.Text = "Register";
+            btnRegisterVet.TextColor = Color.White;
+            btnRegisterVet.WarningColor = Color.FromArgb(230, 162, 60);
+            btnRegisterVet.Click += btnRegisterVet_Click;
             // 
             // label7
             // 
@@ -238,28 +260,6 @@
             label14.Size = new Size(130, 21);
             label14.TabIndex = 2;
             label14.Text = "Account Details";
-            // 
-            // btnRegisterVet
-            // 
-            btnRegisterVet.BackColor = Color.FromArgb(63, 59, 58);
-            btnRegisterVet.BorderColor = Color.FromArgb(220, 223, 230);
-            btnRegisterVet.ButtonType = ReaLTaiizor.Util.HopeButtonType.Primary;
-            btnRegisterVet.DangerColor = Color.FromArgb(245, 108, 108);
-            btnRegisterVet.DefaultColor = Color.FromArgb(255, 255, 255);
-            btnRegisterVet.Font = new Font("Segoe UI", 10.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            btnRegisterVet.ForeColor = Color.White;
-            btnRegisterVet.HoverTextColor = Color.White;
-            btnRegisterVet.InfoColor = Color.FromArgb(144, 147, 153);
-            btnRegisterVet.Location = new Point(371, 300);
-            btnRegisterVet.Name = "btnRegisterVet";
-            btnRegisterVet.PrimaryColor = Color.FromArgb(63, 59, 58);
-            btnRegisterVet.Size = new Size(120, 40);
-            btnRegisterVet.SuccessColor = Color.FromArgb(103, 194, 58);
-            btnRegisterVet.TabIndex = 27;
-            btnRegisterVet.Text = "Register";
-            btnRegisterVet.TextColor = Color.White;
-            btnRegisterVet.WarningColor = Color.FromArgb(230, 162, 60);
-            btnRegisterVet.Click += btnRegisterVet_Click;
             // 
             // AdminRegisterVetUsCo
             // 

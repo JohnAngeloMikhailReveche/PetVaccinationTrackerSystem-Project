@@ -89,7 +89,7 @@ namespace PetVaccinationTrackerSystem_Project
             lblClinic.AutoSize = true;
             lblClinic.Font = new Font("Segoe UI", 10F);
             lblClinic.ForeColor = SystemColors.Control;
-            lblClinic.Location = new Point(139, 4);
+            lblClinic.Location = new Point(139, 7);
             lblClinic.Name = "lblClinic";
             lblClinic.Size = new Size(54, 19);
             lblClinic.TabIndex = 3;
@@ -111,7 +111,7 @@ namespace PetVaccinationTrackerSystem_Project
             label2.AutoSize = true;
             label2.Font = new Font("Segoe UI", 10.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
             label2.ForeColor = SystemColors.Control;
-            label2.Location = new Point(12, 4);
+            label2.Location = new Point(12, 7);
             label2.Name = "label2";
             label2.Size = new Size(49, 19);
             label2.TabIndex = 3;

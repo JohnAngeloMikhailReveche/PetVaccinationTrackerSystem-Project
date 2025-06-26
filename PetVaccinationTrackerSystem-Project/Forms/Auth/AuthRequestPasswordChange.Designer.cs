@@ -46,9 +46,9 @@
             label1.ForeColor = Color.FromArgb(89, 85, 84);
             label1.Location = new Point(26, 175);
             label1.Name = "label1";
-            label1.Size = new Size(169, 19);
+            label1.Size = new Size(179, 19);
             label1.TabIndex = 0;
-            label1.Text = "Enter the email address:";
+            label1.Text = "Enter your email address:";
             // 
             // txtboxEmail
             // 

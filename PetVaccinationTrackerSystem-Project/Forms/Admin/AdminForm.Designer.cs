@@ -55,6 +55,8 @@
             homePanel1 = new homePanel();
             petOwner_AboutUs1 = new PetVaccinationTrackerSystem_Project.Forms.PetOwner.PetOwner_AboutUs();
             homePanelAdmin1 = new HomePanelAdmin();
+            label1 = new Label();
+            lblPetOwnerName = new Label();
             mainFormVTopB.SuspendLayout();
             mainFormVSideB.SuspendLayout();
             mainFormVPB.SuspendLayout();
@@ -64,6 +66,8 @@
             // mainFormVTopB
             // 
             mainFormVTopB.BackColor = Color.FromArgb(63, 59, 58);
+            mainFormVTopB.Controls.Add(lblPetOwnerName);
+            mainFormVTopB.Controls.Add(label1);
             mainFormVTopB.Controls.Add(mainFormVButtonSettings);
             mainFormVTopB.Controls.Add(mainFormVButtonExit);
             mainFormVTopB.Dock = DockStyle.Top;
@@ -380,6 +384,28 @@
             homePanelAdmin1.Size = new Size(800, 590);
             homePanelAdmin1.TabIndex = 15;
             // 
+            // label1
+            // 
+            label1.AutoSize = true;
+            label1.Font = new Font("Segoe UI", 10.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label1.ForeColor = SystemColors.Control;
+            label1.Location = new Point(12, 14);
+            label1.Name = "label1";
+            label1.Size = new Size(100, 19);
+            label1.TabIndex = 4;
+            label1.Text = "Logged In As:";
+            // 
+            // lblPetOwnerName
+            // 
+            lblPetOwnerName.AutoSize = true;
+            lblPetOwnerName.Font = new Font("Segoe UI", 10F);
+            lblPetOwnerName.ForeColor = SystemColors.Control;
+            lblPetOwnerName.Location = new Point(150, 14);
+            lblPetOwnerName.Name = "lblPetOwnerName";
+            lblPetOwnerName.Size = new Size(49, 19);
+            lblPetOwnerName.TabIndex = 5;
+            lblPetOwnerName.Text = "Admin";
+            // 
             // AdminForm
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
@@ -402,6 +428,7 @@
             StartPosition = FormStartPosition.CenterScreen;
             Text = "AdminForm";
             mainFormVTopB.ResumeLayout(false);
+            mainFormVTopB.PerformLayout();
             mainFormVSideB.ResumeLayout(false);
             mainFormVPB.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
@@ -436,5 +463,7 @@
         private Button btnAboutUs;
         private PetOwner.PetOwner_AboutUs petOwner_AboutUs1;
         private HomePanelAdmin homePanelAdmin1;
+        private Label label1;
+        private Label lblPetOwnerName;
     }
 }
