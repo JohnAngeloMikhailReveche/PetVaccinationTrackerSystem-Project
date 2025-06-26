@@ -18,58 +18,26 @@ namespace PetVaccinationTrackerSystem_Project.Forms.Auth
 {
     public partial class AuthForm : Form
     {
+        private IAuthServices _authServices;
+
         public static class SessionData
         {
             public static int? CurrentVetID { get; set; } // Refactored for Veterinarian ID session management
         }
 
-        private IAuthServices _authServices;
-
-        // Private fields to store the admin credentials
-        private string _fullPathToAdminConfigFile;
-        private string _adminUsername;
-        private string _adminPassword;
-
-        private string GetAdminConfigFile()
-        {
-            string baseDir = AppDomain.CurrentDomain.BaseDirectory; // Gets the base directory of the application
-            string projectRoot = Path.GetFullPath(Path.Combine(baseDir, "..", "..", "..")); // Navigate to the project root directory
-            string relativePath = Path.Combine(projectRoot, "admin", "admin_config.txt"); // Combine with the relative path to the admin config file
-            string fullPath = Path.GetFullPath(relativePath);
-
-            return fullPath;
-        }
-        private void LoadAdminConfigFile()
-        {
-            if (File.Exists(_fullPathToAdminConfigFile))
-            {
-                string[] lines = File.ReadAllLines(_fullPathToAdminConfigFile);
-
-                if (lines.Length >= 2)
-                {
-                    string username = lines[0].Trim();
-                    string password = lines[1].Trim();
-
-                    // Store the admin credentials in private fields
-                    _adminUsername = username;
-                    _adminPassword = password;
-                }
-            }
-        }
-
         private bool CheckIfAdminLogin(string email, string password)
         {
 
-            if (string.IsNullOrEmpty(_fullPathToAdminConfigFile))
-            {
-                _fullPathToAdminConfigFile = GetAdminConfigFile(); // Get the full path to the admin config file
-            }
+            var adminConfig = new AdminConfigService();
 
-            LoadAdminConfigFile(); // Load the admin config file to get the admin credentials
+            string[] adminCred = adminConfig.LoadCredentials();
 
-            if (email == _adminUsername && password == _adminPassword)
+            if(adminCred.Length > 0)
             {
-                return true;
+                if (email == adminCred[0] && password == adminCred[1])
+                {
+                    return true;
+                }
             }
 
             return false;
@@ -82,8 +50,13 @@ namespace PetVaccinationTrackerSystem_Project.Forms.Auth
 
         private void ClearTextBoxes()
         {
-            txtboxEmail.Clear();
-            txtboxPassword.Clear();
+            var fieldHelper = new TextFieldHelper();
+            fieldHelper.ClearFields(
+                new List<TextBox>
+                {
+                    txtboxEmail,
+                    txtboxPassword
+                });    
         }
 
         private void AdminLogin()
@@ -98,7 +71,6 @@ namespace PetVaccinationTrackerSystem_Project.Forms.Auth
         {
             InitializeComponent();
 
-            var context = new ModelContext();
         }
 
         private void AuthForm_Shown(object sender, EventArgs e)
@@ -131,9 +103,10 @@ namespace PetVaccinationTrackerSystem_Project.Forms.Auth
                 // If the user non-null value that means the user exists and the password matches.
                 if (user != null)
                 {
-
+                    // Message
                     MessageBox.Show($"Welcome {user.FirstName} {user.LastName}! You are logged in as {user.UserRole}.", "Login Successful", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
+                    // Switch between Forms (Polymorphic Function)
                     if (user.UserRole == "Veterinarian")
                     {
                         SessionData.CurrentVetID = user.Veterinarian.VetID; // Refactored to use the SessionData class
@@ -144,6 +117,7 @@ namespace PetVaccinationTrackerSystem_Project.Forms.Auth
                         FormManager.SwitchForm(this, new PetOwnerForm(user));
                     }
 
+                    // Clear TextFields
                     ClearTextBoxes();
 
                 }
