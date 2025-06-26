@@ -18,19 +18,6 @@ namespace PetVaccinationTrackerSystem_Project
 
         private User _currentUser;
 
-        /*
-                    PetName
-                   Gender
-                   Species
-                   Breed
-                   Vaccine
-                   AdministeredBy
-                   DateAdministered
-                   NextDueDate
-                   BatchNo
-                   PetID
-                    */
-
         private void LoadComboBox()
         {
             cmbFilter.Items.Clear();
