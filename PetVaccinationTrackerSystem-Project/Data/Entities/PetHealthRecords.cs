@@ -52,8 +52,6 @@ namespace PetVaccinationTrackerSystem_Project.Data.Entities
         [ForeignKey("Pet")]
         public int PetID { get; set; }
 
-        [ForeignKey("Vaccination")]
-        public int? VaccinationID { get; set; }
 
 
         // Navigation properties
@@ -61,6 +59,5 @@ namespace PetVaccinationTrackerSystem_Project.Data.Entities
         public Veterinarian Vet { get; set; }
 
         public Pet Pet { get; set; }
-        public Vaccination Vaccination { get; set; }
     }
 }
