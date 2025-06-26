@@ -178,5 +178,10 @@ namespace PetVaccinationTrackerSystem_Project.Forms
                 MessageBox.Show("Your account has been updated!", "Account Update", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
         }
+
+        private void mainFormVButtonExit_Click(object sender, EventArgs e)
+        {
+            this.Close(); // Close the current form to return to the previous one
+        }
     }
 }
