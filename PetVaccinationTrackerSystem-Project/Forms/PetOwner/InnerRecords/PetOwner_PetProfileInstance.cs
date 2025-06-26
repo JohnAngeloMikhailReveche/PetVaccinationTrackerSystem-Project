@@ -1,4 +1,5 @@
-﻿using PetVaccinationTrackerSystem_Project.Data.Entities;
+﻿using PetVaccinationTrackerSystem_Project.Classes;
+using PetVaccinationTrackerSystem_Project.Data.Entities;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -15,16 +16,6 @@ namespace PetVaccinationTrackerSystem_Project.Forms.PetOwner.InnerRecords
     {
         private Pet _selectedPet;
         private User? _currentUser;
-
-        // Converts a Base64 string to an Image object
-        private Image Base64ToImage(string base64String)
-        {
-            byte[] imageBytes = Convert.FromBase64String(base64String);
-            using (var memoryStream = new MemoryStream(imageBytes))
-            {
-                return Image.FromStream(memoryStream);
-            }
-        }
 
         private void SetAllTextboxToReadOnly()
         {
@@ -47,7 +38,7 @@ namespace PetVaccinationTrackerSystem_Project.Forms.PetOwner.InnerRecords
             if (_selectedPet.ImageRL != null)
             {
                 string base64Image = _selectedPet.ImageRL;
-                Image loadedImage = Base64ToImage(base64Image);
+                Image loadedImage = ImageHelper.Base64ToImage(base64Image);
                 petpicture.Image = loadedImage;
             }
 

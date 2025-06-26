@@ -19,19 +19,27 @@ namespace PetVaccinationTrackerSystem_Project.Forms.PetOwner
 
         private User _currentUser;
 
+        private void HighlightButtons(Button btn)
+        {
+            mainFormVSideBHighlight.Height = btn.Height;
+            mainFormVSideBHighlight.Top = btn.Top;
+        }
+
+        private void SwitchForms(Control control)
+        {
+            mainPanel.Controls.Clear(); // Clear the current controls in the main panel
+            mainPanel.Controls.Add(control);
+        }
+
         private void RefreshCurrentUser()
         {
-            using(var context = new ModelContext())
+            var updatedUser = UserSessionManager.RefreshUser(_currentUser);
+
+            // If the updated user is valid and has a value
+            if (updatedUser != null)
             {
-                // Get the User again from the Context
-                var updatedUser = context.UserList.FirstOrDefault(u => u.UserID == _currentUser.UserID);
-            
-                // Check if the user is valid
-                if (updatedUser != null)
-                {
-                    _currentUser = updatedUser;
-                    InitializeLabels();
-                }
+                _currentUser = updatedUser;
+                InitializeLabels();
             }
         }
 
@@ -50,13 +58,12 @@ namespace PetVaccinationTrackerSystem_Project.Forms.PetOwner
 
         private void btnPetProfiles_Click(object sender, EventArgs e)
         {
-            mainFormVSideBHighlight.Height = btnPetProfiles.Height;
-            mainFormVSideBHighlight.Top = btnPetProfiles.Top;
+            HighlightButtons(btnPetProfiles);
 
-            mainPanel.Controls.Clear(); // Clear the current controls in the main panel
             PetOwner_PetProfile petOwnerPetProfile = new PetOwner_PetProfile(_currentUser);
             petOwnerPetProfile.Visible = true;
-            mainPanel.Controls.Add(petOwnerPetProfile);
+            SwitchForms(petOwnerPetProfile);
+
         }
 
         private void PetOwnerForm_Load(object sender, EventArgs e)
@@ -97,30 +104,20 @@ namespace PetVaccinationTrackerSystem_Project.Forms.PetOwner
 
         private void btnHome_Click(object sender, EventArgs e)
         {
-            mainFormVSideBHighlight.Height = btnHome.Height;
-            mainFormVSideBHighlight.Top = btnHome.Top;
+            HighlightButtons(btnHome);
 
-            mainPanel.Controls.Clear(); // Clear the current controls in the main panel
-            
-            mainPanel.Controls.Add(homePanel1); // Add the home panel to the main panel
+            SwitchForms(homePanel1);
             homePanel1.BringToFront(); // Bring the home panel to the front
 
-            // Add the Home Dashboard here and make the logic as follows:
-            // PetOwner_PetProfile petOwnerPetProfile = new PetOwner_PetProfile(_currentUser);
-            // petOwnerPetProfile.Visible = true;
-            // mainPanel.Controls.Add(petOwnerPetProfile);
         }
         private void btnAboutUs_Click(object sender, EventArgs e)
         {
-            mainFormVSideBHighlight.Height = btnAboutUs.Height;
-            mainFormVSideBHighlight.Top = btnAboutUs.Top;
-
-            mainPanel.Controls.Clear(); // Clear the current controls in the main panel
+            HighlightButtons(btnAboutUs);
 
             // Add the About Us Dashboard here and make the logic as follows:
             PetOwner_AboutUs petOwnerAboutUs = new PetOwner_AboutUs();
             petOwnerAboutUs.Visible = true;
-            mainPanel.Controls.Add(petOwnerAboutUs);
+            SwitchForms(petOwnerAboutUs);
         }
 
         private void btnSettings_Click(object sender, EventArgs e)

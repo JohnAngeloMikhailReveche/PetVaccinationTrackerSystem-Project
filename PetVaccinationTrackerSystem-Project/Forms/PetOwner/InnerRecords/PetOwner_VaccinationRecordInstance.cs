@@ -1,4 +1,5 @@
 ﻿using Microsoft.EntityFrameworkCore;
+using PetVaccinationTrackerSystem_Project.Classes;
 using PetVaccinationTrackerSystem_Project.Data;
 using PetVaccinationTrackerSystem_Project.Data.Entities;
 using System;
@@ -20,41 +21,27 @@ namespace PetVaccinationTrackerSystem_Project.Forms.PetOwner.InnerRecords
 
         private void LoadData()
         {
-            using (var context = new ModelContext())
-            {
-                var petRecords = context.PetHealthRecordsList
-                    .Where(p => p.PetID == _selectedPet.PetID)
-                    .Select(p => new
-                    {
-                        p.RecordID,
-                        p.PetID,
-                        p.PetName,
-                        p.Gender,
-                        p.Species,
-                        p.Breed,
-                        p.VaccineName,
-                        p.AdministeredBy,
-                        DateAdministered = p.DateAdministered.ToString("MM-dd-yyyy"),
-                        NextDueDate = p.NextDueDate.ToString("MM-dd-yyyy"),
-                        p.BatchNo
-                    })
-                    .ToList();
+            // Data Loading
+            PetService petService = new PetService();
 
-                dgvPetRecords.DataSource = petRecords;
+            var petList = petService.GetVaccinationRecords(_selectedPet.PetID);
 
-                dgvPetRecords.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.AllCells;
-                dgvPetRecords.AutoSizeRowsMode = DataGridViewAutoSizeRowsMode.AllCells;
+            dgvPetRecords.DataSource = petList;
 
-                dgvPetRecords.Columns["PetID"].HeaderText = "Pet ID";
-                dgvPetRecords.Columns["NextDueDate"].HeaderText = "Next Due Date";
-                dgvPetRecords.Columns["DateAdministered"].HeaderText = "Date Administered";
-                dgvPetRecords.Columns["AdministeredBy"].HeaderText = "Administered By";
-                dgvPetRecords.Columns["VaccineName"].HeaderText = "Vaccine";
-                dgvPetRecords.Columns["PetName"].HeaderText = "Pet Name";
-                dgvPetRecords.Columns["RecordID"].HeaderText = "ID";
-                dgvPetRecords.Columns["BatchNo"].HeaderText = "Batch No.";
+            // DataGridView Formatting
+            dgvPetRecords.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.AllCells;
+            dgvPetRecords.AutoSizeRowsMode = DataGridViewAutoSizeRowsMode.AllCells;
 
-            }
+            dgvPetRecords.Columns["PetID"].HeaderText = "Pet ID";
+            dgvPetRecords.Columns["NextDueDate"].HeaderText = "Next Due Date";
+            dgvPetRecords.Columns["DateAdministered"].HeaderText = "Date Administered";
+            dgvPetRecords.Columns["AdministeredBy"].HeaderText = "Administered By";
+            dgvPetRecords.Columns["VaccineName"].HeaderText = "Vaccine";
+            dgvPetRecords.Columns["PetName"].HeaderText = "Pet Name";
+            dgvPetRecords.Columns["RecordID"].HeaderText = "ID";
+            dgvPetRecords.Columns["BatchNo"].HeaderText = "Batch No.";
+
+
         }
 
         public PetOwner_VaccinationRecordInstance(Pet inPetRef)
