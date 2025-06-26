@@ -48,7 +48,7 @@
             dgvUserList.ReadOnly = true;
             dgvUserList.Size = new Size(760, 412);
             dgvUserList.TabIndex = 9;
-            dgvUserList.DoubleClick += dgvUserList_DoubleClick;
+            dgvUserList.DoubleClick += DgvUserList_DoubleClick;
             // 
             // panel1
             // 

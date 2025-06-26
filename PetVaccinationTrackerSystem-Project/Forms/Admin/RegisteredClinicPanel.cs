@@ -1,4 +1,5 @@
-﻿using PetVaccinationTrackerSystem_Project.Data;
+﻿using PetVaccinationTrackerSystem_Project.Classes.Interfaces;
+using PetVaccinationTrackerSystem_Project.Data;
 using PetVaccinationTrackerSystem_Project.Data.Entities;
 using System;
 using System.Collections.Generic;
@@ -12,9 +13,9 @@ using System.Windows.Forms;
 
 namespace PetVaccinationTrackerSystem_Project.Forms.Admin
 {
-    public partial class RegisteredClinicPanel : UserControl
+    public partial class RegisteredClinicPanel : UserControl, ILoadData
     {
-        public void LoadClinicData()
+        public void LoadData()
         {
 
             if(!string.IsNullOrEmpty(txtboxSearchClinic.Text))
@@ -56,7 +57,7 @@ namespace PetVaccinationTrackerSystem_Project.Forms.Admin
         {
             InitializeComponent();
 
-            LoadClinicData();
+            LoadData();
             LoadComboBoxWithData();
             dgvClinicList.ScrollBars = ScrollBars.Both;
         }
@@ -72,7 +73,7 @@ namespace PetVaccinationTrackerSystem_Project.Forms.Admin
                 // Refresh the data after closing the form
                 clinicInfoForm.FormClosed += (s, args) =>
                 {
-                    LoadClinicData();
+                    LoadData();
                 };
 
                 clinicInfoForm.ShowDialog();
