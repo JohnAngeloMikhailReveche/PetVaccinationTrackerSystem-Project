@@ -1,4 +1,5 @@
 ﻿using PetVaccinationTrackerSystem_Project.Classes;
+using PetVaccinationTrackerSystem_Project.Classes.Interfaces;
 using PetVaccinationTrackerSystem_Project.Data;
 using PetVaccinationTrackerSystem_Project.Data.Entities;
 using System;
@@ -56,30 +57,21 @@ namespace PetVaccinationTrackerSystem_Project
         {
             if (IsFieldsEmpty()) return;
 
-            using (var context = new ModelContext())
-            {
+            IEntityRegistrar userRegistrar = new UserRegistrar(
+                txtboxFirstName.Text.Trim(),
+                txtboxLastName.Text.Trim(),
+                txtboxUsername.Text.Trim(),
+                txtboxPassword.Text.Trim(),
+                null,
+                false
+                );
+            userRegistrar.Register();
 
-                var passwordHelper = new PasswordHelper();
-                string hashedPassword = passwordHelper.HashPassword(txtboxPassword.Text);
+            var userDetails = userRegistrar.GetDetails();
 
-                var user = new User
-                {
-                    FirstName = txtboxFirstName.Text,
-                    LastName = txtboxLastName.Text,
-                    UserEmail = $"{txtboxUsername.Text.Trim().ToLower()}@petownerclinic.com",
-                    UserPassword = hashedPassword,
-                    UserRole = "PetOwner",
-                    SentPasswordRequest = false,
-                    SentAccountDeletion = false
-                };
-                context.UserList.Add(user);
-                context.SaveChanges();
+            MessageBox.Show($"Pet Owner {userDetails["FirstName"]} {userDetails["LastName"]} is registered successfully! \n\n Details: \n Account User ID: {userRegistrar.GetID()} \n\n Account Email: {userDetails["Username"]}@petownerclinic.com \n\n Account Password: {userDetails["Password"]}", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            ClearFields();
 
-                MessageBox.Show($"Pet Owner {user.FirstName} {user.LastName} is registered successfully! \n\n Details: \n Account User ID: {user.UserID} \n\n Account Email: {user.UserEmail} \n\n Account Password: {txtboxPassword.Text}", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
-
-                ClearFields();
-
-            }
         }
 
         private void txtboxFirstName_TextChanged(object sender, EventArgs e)

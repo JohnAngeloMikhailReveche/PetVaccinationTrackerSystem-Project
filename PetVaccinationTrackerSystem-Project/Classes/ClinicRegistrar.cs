@@ -27,6 +27,18 @@ namespace PetVaccinationTrackerSystem_Project.Classes
             _clinicService = new ClinicService();
         }
 
+        public Dictionary<string, string> GetDetails()
+        {
+            return new Dictionary<string, string>
+            {
+                { "ClinicName", _name },
+                { "Street",  _street},
+                { "City", _city },
+                { "State", _state },
+                { "ZIP", _zip }
+            }; 
+        }
+
         public bool ValidateFields()
         {
             return !string.IsNullOrWhiteSpace(_name) ||
@@ -59,5 +71,7 @@ namespace PetVaccinationTrackerSystem_Project.Classes
         {
             return _clinicID;
         }
+
+        
     }
 }

@@ -11,5 +11,6 @@ namespace PetVaccinationTrackerSystem_Project.Classes.Interfaces
         public bool ValidateFields();
         public void Register();
         public int GetID();
+        public Dictionary<string, string> GetDetails();
     }
 }

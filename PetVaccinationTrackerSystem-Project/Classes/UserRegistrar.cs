@@ -13,20 +13,35 @@ namespace PetVaccinationTrackerSystem_Project.Classes
     {
         private string _fName, _lName, _username, _password;
         private int? _vetID;
+        private bool _isVet;
+        private int _userID;
         private UserService _user;
         private PasswordHelper _passHelper;
-        private int _userID;
 
-        public UserRegistrar(string fName, string lName, string username, string password, int? vetID) 
+        public UserRegistrar(string fName, string lName, string username, string password, int? vetID, bool isVet) 
         {
             _fName = fName;
             _lName = lName;
             _username = username;
             _password = password;
             _vetID = vetID;
+            _isVet = isVet;
 
             _user = new UserService();
             _passHelper = new PasswordHelper();
+        }
+
+        public Dictionary<string, string> GetDetails()
+        {
+            return new Dictionary<string, string>
+            {
+                { "FirstName", _fName },
+                { "LastName", _lName },
+                { "Username", _username },
+                { "Password", _password },
+                { "VetID", _vetID?.ToString() ?? "N/A" },
+                { "IsVet", _isVet.ToString() }
+            };
         }
 
         public int GetID()
@@ -39,24 +54,52 @@ namespace PetVaccinationTrackerSystem_Project.Classes
             // Hash Password
             string hashedPassword = _passHelper.HashPassword(_password);
 
-            using(var context = new ModelContext())
+            if (_isVet == true)
             {
-                User user = new User
+                // If the user is a Vet
+                using (var context = new ModelContext())
                 {
-                    FirstName = _fName,
-                    LastName = _lName,
-                    UserEmail = $"{_username}@vetclinic.com",
-                    UserPassword = hashedPassword,
-                    UserRole = "Veterinarian",
-                    SentPasswordRequest = false,
-                    SentAccountDeletion = false,
-                    VetID = _vetID
-                };
+                    User user = new User
+                    {
+                        FirstName = _fName,
+                        LastName = _lName,
+                        UserEmail = $"{_username}@vetclinic.com",
+                        UserPassword = hashedPassword,
+                        UserRole = "Veterinarian",
+                        SentPasswordRequest = false,
+                        SentAccountDeletion = false,
+                        VetID = _vetID
+                    };
 
-                _user.RegisterUser(user);
+                    _user.RegisterUser(user);
 
-                _userID = user.UserID;
+                    _userID = user.UserID;
+                }
             }
+            else
+            {
+                // If the User is a PetOwner
+                using (var context = new ModelContext())
+                {
+                    User user = new User
+                    {
+                        FirstName = _fName,
+                        LastName = _lName,
+                        UserEmail = $"{_username}@petownerclinic.com",
+                        UserPassword = hashedPassword,
+                        UserRole = "PetOwner",
+                        SentPasswordRequest = false,
+                        SentAccountDeletion = false,
+                        VetID = null
+                    };
+
+                    _user.RegisterUser(user);
+
+                    _userID = user.UserID;
+                }
+            }
+
+           
         }
 
         public bool ValidateFields()

@@ -78,7 +78,6 @@ namespace PetVaccinationTrackerSystem_Project.Forms.Admin
 
             // Register Vet
             IEntityRegistrar vetRegistrar = new VetRegistrar(txtboxLicenseNo.Text.Trim(), selectedClinic);
-            
             vetRegistrar.Register();
 
             // Register User
@@ -87,7 +86,8 @@ namespace PetVaccinationTrackerSystem_Project.Forms.Admin
                 txtboxLastName.Text.Trim(),
                 txtboxAccountUsername.Text.Trim(),
                 txtboxAccountPassword.Text.Trim(),
-                vetRegistrar.GetID()
+                vetRegistrar.GetID(),
+                true
                 );
 
             userRegistrar.Register();

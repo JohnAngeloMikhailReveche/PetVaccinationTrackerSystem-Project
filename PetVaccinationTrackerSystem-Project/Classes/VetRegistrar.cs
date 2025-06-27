@@ -13,8 +13,8 @@ namespace PetVaccinationTrackerSystem_Project.Classes
     {
         private readonly string _licenseNumber;
         private readonly int _clinicID;
-        private readonly VetService _vet;
         private int _registeredVetID;
+        private readonly VetService _vet;
 
         public VetRegistrar(string licenseNumber, int clinicID)
         {
@@ -49,6 +49,17 @@ namespace PetVaccinationTrackerSystem_Project.Classes
         public int GetID()
         {
             return _registeredVetID;
+        }
+
+        public Dictionary<string, string> GetDetails()
+        {
+            return new Dictionary<string, string>
+            {
+                {"LicenseNumber", _licenseNumber},
+                {"ClinicID", _clinicID.ToString() },
+                {"VetID", _registeredVetID.ToString() }
+            };
+
         }
     }
 }
