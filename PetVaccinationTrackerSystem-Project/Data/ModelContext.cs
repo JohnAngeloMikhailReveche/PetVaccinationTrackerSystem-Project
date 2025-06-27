@@ -12,12 +12,10 @@ namespace PetVaccinationTrackerSystem_Project.Data
     {
 
         // Lists of the Models
-        public DbSet<Appointment> AppointmentList { get; set; }
         public DbSet<Clinic> ClinicList { get; set; }
         public DbSet<Pet> PetList { get; set; }
         public DbSet<PetHealthRecords> PetHealthRecordsList { get; set; }
         public DbSet<User> UserList { get; set; }
-      
         public DbSet<Veterinarian> VeterinarianList { get; set; }
         public DbSet<Email> EmailList { get; set; }
 
@@ -32,19 +30,6 @@ namespace PetVaccinationTrackerSystem_Project.Data
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             // Fix multiple cascade path issue
-
-            // Appointments
-            modelBuilder.Entity<Appointment>()
-                .HasOne(a => a.Vet)
-                .WithMany(v => v.Appointments)
-                .HasForeignKey(a => a.VetID)
-                .OnDelete(DeleteBehavior.Restrict);
-
-            modelBuilder.Entity<Appointment>()
-                .HasOne(a => a.Pet)
-                .WithMany(p => p.Appointments)
-                .HasForeignKey(a => a.PetID)
-                .OnDelete(DeleteBehavior.Cascade);
 
             // Pet Health Records
             modelBuilder.Entity<PetHealthRecords>()

@@ -52,8 +52,6 @@ namespace PetVaccinationTrackerSystem_Project.Data.Entities
         public User User { get; set; }
 
         // Navigation property for Appointment
-        public List<Appointment>? Appointments { get; set; }
-
         public List<PetHealthRecords>? PetHealthRecords { get; set; }
     }
 }
