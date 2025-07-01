@@ -1,18 +1,20 @@
-# Pet Vaccination Tracker System
-
+# 🐾 Pet Vaccination Tracker System
 
 
 A C# WinForms system project developed by second-year Bachelor of Science in Information Technology students (Section 2) from the Polytechnic University of the Philippines – Quezon City Branch, submitted as a requirement for the Object-Oriented Programming course.
 
+
 ---
 
-## Developers of Pet Vaccination Tracker System:
- 1. Romalyn Amante (Frontend Developer)
- 2. Stephanie Niccole Calawod (Backend Developer)
- 3. Reca Maelah Conag (Frontend Developer)
- 4. Odessa Kern Decano (Frontend Developer)
- 5. Daphnie Regis Lorenzo (Frontend Developer)
- 6. John Angelo Mikhail Reveche (Backend Developer)
+## 👨‍💻 Team Members - Developers
+| Name                          | Role               |
+|-------------------------------|--------------------|
+| Romalyn Amante                | Frontend Developer |
+| Stephanie Niccole Calawod     | Backend Developer  |
+| Reca Maelah Conag             | Frontend Developer |
+| Odessa Kern Decano            | Frontend Developer |
+| Daphnie Regis Lorenzo         | Frontend Developer |
+| John Angelo Mikhail Reveche   | Backend Developer  |
 
 
 ---
@@ -73,3 +75,8 @@ Basic reports help quickly determine which pets are vaccinated and which are sti
 - ⭕ Optional: Flowcharts or diagrams to visualize user navigation
 
 ---
+
+## 🗺️ Roadmap
+
+This project will continue to be developed and maintained even after its submission and grading for the Object-Oriented Programming course. Some of the developers will actively work on optimizing the system’s performance, improving its structure, and releasing future updates. These enhancements aim to benefit users who may utilize the application for educational or professional purposes.
+
