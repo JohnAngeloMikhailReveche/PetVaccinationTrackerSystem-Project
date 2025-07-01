@@ -7,12 +7,12 @@ A C# WinForms system project developed by second-year Bachelor of Science in Inf
 ---
 
 ## Developers of Pet Vaccination Tracker System:
- 1. Romalyn Amante
- 2. Stephanie Niccole Calawod
- 3. Reca Maelah Conag
- 4. Odessa Kern Decano
- 5. Daphnie Regis Lorenzo
- 6. John Angelo Mikhail Reveche
+ 1. Romalyn Amante (Frontend Developer)
+ 2. Stephanie Niccole Calawod (Backend Developer)
+ 3. Reca Maelah Conag (Frontend Developer)
+ 4. Odessa Kern Decano (Frontend Developer)
+ 5. Daphnie Regis Lorenzo (Frontend Developer)
+ 6. John Angelo Mikhail Reveche (Backend Developer)
 
 
 ---
