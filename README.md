@@ -4,7 +4,7 @@
 
 A C# Winforms System Project developed by Bachelor of Science in Information Technology 2-2 Students from Polytechnic University of the Philippines, Quezon City Branch.
 
-#
+---
 
 ## Developers of Pet Vaccination Tracker System:
  1. Romalyn Amante
@@ -15,7 +15,8 @@ A C# Winforms System Project developed by Bachelor of Science in Information Tec
  6. John Angelo Mikhail Reveche
 
 
-#
+---
+
 # 🐾 Pet Vaccination Tracker System
 
 The **Pet Vaccination Tracker System** is a simple yet practical tool designed to help both pet owners and veterinarians keep track of pet vaccination records.  
@@ -24,6 +25,8 @@ It aims to make storing and managing important vaccination information easier, h
 This application allows users to create profiles for their pets, track vaccination history, and receive reminders for upcoming shots.  
 It's designed to assist pet owners in staying on top of their pets’ health and give veterinary clinics a streamlined way to organize and access records.  
 Basic reports help quickly determine which pets are vaccinated and which are still due.
+
+---
 
 ## 📌 Overview
 
