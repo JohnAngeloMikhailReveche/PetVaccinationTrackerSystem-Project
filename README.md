@@ -2,7 +2,7 @@
 
 
 
-A C# Winforms System Project developed by Bachelor of Science in Information Technology 2-2 Students from Polytechnic University of the Philippines, Quezon City Branch.
+A C# WinForms system project developed by second-year Bachelor of Science in Information Technology students (Section 2) from the Polytechnic University of the Philippines – Quezon City Branch, submitted as a requirement for the Object-Oriented Programming course.
 
 ---
 
@@ -17,7 +17,7 @@ A C# Winforms System Project developed by Bachelor of Science in Information Tec
 
 ---
 
-# 🐾 Pet Vaccination Tracker System
+# 🐾 Overview of the Pet Vaccination Tracker System
 
 The **Pet Vaccination Tracker System** is a simple yet practical tool designed to help both pet owners and veterinarians keep track of pet vaccination records.  
 It aims to make storing and managing important vaccination information easier, helping pets stay healthy and avoid preventable diseases.
